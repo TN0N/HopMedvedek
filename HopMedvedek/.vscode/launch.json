@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "C#: HopMedvedek00 Debug",
+        "name": "C#: HopMedvedek Debug",
         "type": "dotnet",
         "request": "launch",
-        "projectPath": "${workspaceFolder}/HopMedvedek00.csproj"
+        "projectPath": "${workspaceFolder}/HopMedvedek.csproj"
       }
     ],
   }
