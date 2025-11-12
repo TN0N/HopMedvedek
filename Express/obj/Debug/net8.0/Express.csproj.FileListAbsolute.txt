@@ -1,0 +1,15 @@
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\bin\Debug\net8.0\Express.deps.json
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\bin\Debug\net8.0\Express.dll
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\bin\Debug\net8.0\Express.pdb
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\bin\Debug\net8.0\Artificial.dll
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\bin\Debug\net8.0\Artificial.pdb
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.csproj.AssemblyReference.cache
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.AssemblyInfoInputs.cache
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.AssemblyInfo.cs
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.csproj.CoreCompileInputs.cache
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.csproj.Up2Date
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.dll
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\refint\Express.dll
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.pdb
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\ref\Express.dll
