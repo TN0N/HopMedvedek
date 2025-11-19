@@ -13,3 +13,4 @@ C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0
 C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\refint\Express.dll
 C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.pdb
 C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\ref\Express.dll
+C:\Users\antma\Documents\FRI\3. Letnik\TINR\HopMedvedek\Express\obj\Debug\net8.0\Express.sourcelink.json

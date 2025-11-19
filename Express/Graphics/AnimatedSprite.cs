@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+
 
 namespace Express.Graphics;
 
@@ -12,6 +15,21 @@ public class AnimatedSprite
     {
         _frames = new List<AnimatedSpriteFrame>();
         _duration = duration;
+    }
+    public AnimatedSprite(Texture2D texture, Rectangle sourceRectangle, Vector2 origin, int frames, double duration, bool looping) {
+        _frames = new List<AnimatedSpriteFrame>();
+        _duration = duration;
+        _looping = looping;
+
+        for (double i = 0; i < frames; i++)
+        { 
+            Sprite frame = new Sprite();
+            frame.Texture = texture;
+            frame.SourceRectangle = new Rectangle(sourceRectangle.X + (int)i* sourceRectangle.Width, sourceRectangle.Y, sourceRectangle.Width, sourceRectangle.Height);
+            frame.Origin = origin;
+            System.Diagnostics.Debug.WriteLine(_duration*(i/frames));
+            _frames.Add(new AnimatedSpriteFrame(frame, _duration * (i/frames)));
+        }
     }
 
     public double Duration {

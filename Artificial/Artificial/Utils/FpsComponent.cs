@@ -1,0 +1,57 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+
+namespace Artificial.Artificial.Utils;
+
+public class FpsComponent: DrawableGameComponent
+{
+    private SpriteBatch _spriteBatch;
+    private SpriteFont _spriteFont;
+
+    private int _frameRate = 0;
+    private int _frameCounter = 0;
+    private TimeSpan _elapsedTime = TimeSpan.Zero;
+    private bool _writeToConsole = false;
+
+    public FpsComponent(Game game, SpriteBatch spriteBatch, SpriteFont spriteFont): base(game)
+    { 
+        _spriteBatch = spriteBatch;
+        _spriteFont = spriteFont;
+    }
+    public FpsComponent(Game game) : base(game)
+    {
+        _spriteBatch = null;
+        _spriteFont = null;
+    }
+    public override void Update(GameTime gameTime)
+    {
+        _writeToConsole = false;
+        _elapsedTime += gameTime.ElapsedGameTime;
+
+        if (_elapsedTime > TimeSpan.FromSeconds(1))
+        {
+            _elapsedTime -= TimeSpan.FromSeconds(1);
+            _frameRate = _frameCounter;
+            _frameCounter = 0;
+            _writeToConsole = true;
+        }
+    }
+    public override void Draw(GameTime gameTime)
+    {
+        _frameCounter++;
+
+        string fps = $"fps: {_frameRate} mem : {GC.GetTotalMemory(false)}";
+        if (_spriteBatch != null && _spriteFont != null)
+        {
+            _spriteBatch.DrawString(_spriteFont, fps, new Vector2(1, 1), Color.Black);
+            _spriteBatch.DrawString(_spriteFont, fps, new Vector2(0, 0), Color.White);
+        }
+        else if (_writeToConsole)
+        {
+            Console.WriteLine(fps);
+        }
+    }
+
+    public int FrameRate => _frameRate;
+}
