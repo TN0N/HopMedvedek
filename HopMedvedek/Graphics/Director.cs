@@ -11,6 +11,7 @@ public class Director: DrawableGameComponent
         _camera = new Camera { Position = 300 };
         GraphicsDevice.DeviceReset += DeviceResetEvent;
     }
+
     public Camera Camera => _camera;
 
     public override void Update(GameTime gameTime)
