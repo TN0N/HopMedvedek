@@ -36,15 +36,12 @@ public class PhysicsEngine : GameComponent
         Vector2 gravity = new Vector2(0, 1000 * (float)gameTime.ElapsedGameTime.TotalSeconds);
         foreach (object item in _level.Scene)
         {
-            if (item == _level.Grounds)
+            if (item is Ground ground)
             {
-                foreach (Ground ground in _level.Grounds)
-                {
                     Collision.CollisionBetween(_level.Bear, ground);
-                }
             }
                 
-            if (item is Bear bear && bear.Grounded == false)
+            if (item is Bear bear)
             {
                 bear.Velocity += gravity;
             }

@@ -22,6 +22,8 @@ public class Player: GameComponent
     }
     private void ChangeState()
     {
+        System.Diagnostics.Debug.WriteLine(_bear.Velocity);
+        _bear.Grounded = true;
         if (_bear.Velocity.X < 0)
         {
             _bear.Facing = Bear.FacingEnum.Left;
@@ -30,12 +32,12 @@ public class Player: GameComponent
             _bear.Facing = Bear.FacingEnum.Right;
 
 
-        if (_bear.Velocity.Y < 0)
+        if (_bear.Velocity.Y < -17)
         {
             _bear.State = Bear.StateEnum.JumpUp;
             _bear.Grounded = false;
         }
-        else if (_bear.Velocity.Y > 0)
+        else if (_bear.Velocity.Y > 17)
         {
             _bear.State = Bear.StateEnum.JumpDown;
             _bear.Grounded = false;

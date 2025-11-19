@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 public class Ground : IAARectangleCollider, ICustomCollider
 {
-    protected float _width = 16;
+    protected float _width = 320;
     protected float _height = 16;
 
 
@@ -27,14 +27,15 @@ public class Ground : IAARectangleCollider, ICustomCollider
 
     public bool CollidingWith(object item)
     {
+        System.Diagnostics.Debug.WriteLine("colliding");
         return true;
     }
     public void CollidedWith(object item)
     {
         if (item is Bear bear)
         {
-            bear.Grounded = true;
-            bear.Velocity.Y = 0;
+            //bear.Grounded = true;
+            bear.Velocity.Y -= bear.Velocity.Y;
         }
     }
 }

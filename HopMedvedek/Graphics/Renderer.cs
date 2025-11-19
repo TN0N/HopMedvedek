@@ -53,11 +53,11 @@ public class Renderer : DrawableGameComponent
 
         // Load player animations
         _playerSprites = new Dictionary<string, AnimatedSprite>();
-        _playerSprites.Add("idle", new AnimatedSprite(_playerTexture, new Rectangle(0, 0, 36, 42), new Vector2(0,0), 12, playerAnimationSpeed, true));
-        _playerSprites.Add("throw", new AnimatedSprite(_playerTexture, new Rectangle(0, 42, 36, 42), new Vector2(0, 0), 8, playerAnimationSpeed, true));
-        _playerSprites.Add("walk", new AnimatedSprite(_playerTexture, new Rectangle(0, 84, 36, 42), new Vector2(0, 0), 8, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpUp", new AnimatedSprite(_playerTexture, new Rectangle(0, 126, 36, 42), new Vector2(0, 0), 5, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpDown", new AnimatedSprite(_playerTexture, new Rectangle(0, 168, 36, 42), new Vector2(0, 0), 5, playerAnimationSpeed, true));
+        _playerSprites.Add("idle", new AnimatedSprite(_playerTexture, new Rectangle(0, 0, 36, 42), new Vector2(18,21), 12, playerAnimationSpeed, true));
+        _playerSprites.Add("throw", new AnimatedSprite(_playerTexture, new Rectangle(0, 42, 36, 42), new Vector2(18, 21), 8, playerAnimationSpeed, true));
+        _playerSprites.Add("walk", new AnimatedSprite(_playerTexture, new Rectangle(0, 84, 36, 42), new Vector2(18, 21), 8, playerAnimationSpeed, true));
+        _playerSprites.Add("jumpUp", new AnimatedSprite(_playerTexture, new Rectangle(0, 126, 36, 42), new Vector2(18, 21), 5, playerAnimationSpeed, true));
+        _playerSprites.Add("jumpDown", new AnimatedSprite(_playerTexture, new Rectangle(0, 168, 36, 42), new Vector2(18, 21), 5, playerAnimationSpeed, true));
         
 
         _trunkBase = new Sprite();
@@ -72,8 +72,8 @@ public class Renderer : DrawableGameComponent
 
         _ground = new Sprite();
         _ground.Texture = _natureTexture;
-        _ground.SourceRectangle = new Rectangle(0, 37, 16, 320);
-        _ground.Origin = new Vector2(0, 0);
+        _ground.SourceRectangle = new Rectangle(0, 37, 320, 16);
+        _ground.Origin = new Vector2(160, 8);
     }
     public override void Draw(GameTime gameTime)
     {
@@ -86,25 +86,13 @@ public class Renderer : DrawableGameComponent
             SpriteEffects spriteEffects = SpriteEffects.None;
             switch (item)
             {
-                case List<Ground> grounds:
-                    foreach (var ground in grounds)
-                    {
-                        sprite = _ground;
-                        if (ground is IPosition groundWithPos && sprite is not null)
-                            _spriteBatch.Draw(sprite.Texture, groundWithPos.Position, sprite.SourceRectangle,
-                                 Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
-                    }
+                case Ground:
+                    sprite = _ground;
                     break;
                 case TreeBase:
                     sprite = _trunkBase; break;
-                case List<TreeMid> treeMids:
-                    foreach (var treeMid in treeMids)
-                    {
-                        sprite = _trunkMid;
-                        if (treeMid is IPosition treeMidWithPos && sprite is not null)
-                            _spriteBatch.Draw(sprite.Texture, treeMidWithPos.Position, sprite.SourceRectangle,
-                                 Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
-                    }
+                case TreeMid:
+                    sprite = _trunkMid;
                     break;
                 case Bear _bear:
                     switch (_bear.State)
