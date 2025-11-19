@@ -1,5 +1,6 @@
 ﻿using Artificial.Artificial.Utils;
 using HopMedvedek.Graphics;
+using HopMedvedek.Physics;
 using HopMedvedek.Scene;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

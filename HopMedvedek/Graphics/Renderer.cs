@@ -84,11 +84,9 @@ public class Renderer : DrawableGameComponent
         {
             Sprite sprite = null;
             SpriteEffects spriteEffects = SpriteEffects.None;
-            System.Diagnostics.Debug.WriteLine(item);
             switch (item)
             {
                 case List<Ground> grounds:
-                    System.Diagnostics.Debug.WriteLine("drawing ground");
                     foreach (var ground in grounds)
                     {
                         sprite = _ground;
@@ -99,8 +97,15 @@ public class Renderer : DrawableGameComponent
                     break;
                 case TreeBase:
                     sprite = _trunkBase; break;
-                case TreeMid:
-                    sprite = _trunkMid; break;
+                case List<TreeMid> treeMids:
+                    foreach (var treeMid in treeMids)
+                    {
+                        sprite = _trunkMid;
+                        if (treeMid is IPosition treeMidWithPos && sprite is not null)
+                            _spriteBatch.Draw(sprite.Texture, treeMidWithPos.Position, sprite.SourceRectangle,
+                                 Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
+                    }
+                    break;
                 case Bear _bear:
                     switch (_bear.State)
                     { 

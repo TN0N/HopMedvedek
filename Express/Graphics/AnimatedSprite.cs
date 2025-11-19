@@ -27,7 +27,6 @@ public class AnimatedSprite
             frame.Texture = texture;
             frame.SourceRectangle = new Rectangle(sourceRectangle.X + (int)i* sourceRectangle.Width, sourceRectangle.Y, sourceRectangle.Width, sourceRectangle.Height);
             frame.Origin = origin;
-            System.Diagnostics.Debug.WriteLine(_duration*(i/frames));
             _frames.Add(new AnimatedSpriteFrame(frame, _duration * (i/frames)));
         }
     }
