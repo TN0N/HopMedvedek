@@ -10,7 +10,10 @@ public static class MovementPhysics
     {
         if (item is IMovable movable)
         {
+            
+            movable.Velocity += movable.Acceleration * (float)elapsed.TotalSeconds;
             movable.Position += movable.Velocity * (float)elapsed.TotalSeconds;
+            movable.Velocity.X *= movable.Decay;
         }
 
         if (item is IRotatable rotatable)
@@ -21,6 +24,8 @@ public static class MovementPhysics
     
     public static void SimulateMovement(IMovable item, TimeSpan elapsed)
     {
+        item.Velocity += item.Acceleration * (float)elapsed.TotalSeconds;
         item.Position += item.Velocity * (float)elapsed.TotalSeconds;
+        item.Velocity.X *= item.Decay;
     }
 }

@@ -4,6 +4,7 @@ using HopMedvedek.Scene.Objects;
 using Express.Physics;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Composites;
+using Artificial;
 
 namespace HopMedvedek.Entities;
 
@@ -16,6 +17,7 @@ public class Player: GameComponent
     {
         _bear = bear;
         _bear.Velocity = Vector2.Zero;
+        _bear.Acceleration = Vector2.Zero;
     }
     public void SetCamera(Matrix camera) {
         _inverseView = Matrix.Invert(camera);
@@ -41,9 +43,9 @@ public class Player: GameComponent
             _bear.State = Bear.StateEnum.JumpDown;
             //_bear.Grounded = false;
         }
-        else if (_bear.Velocity.X < 0)
+        else if (_bear.Velocity.X < -2)
             _bear.State = Bear.StateEnum.Walk;
-        else if (_bear.Velocity.X > 0)
+        else if (_bear.Velocity.X > 2)
             _bear.State = Bear.StateEnum.Walk;
         else
             _bear.State = Bear.StateEnum.Idle;
@@ -51,25 +53,22 @@ public class Player: GameComponent
     }
     public override void Update(GameTime gameTime)
     {
-        /*_bear.Velocity = Vector2.Zero;*/;
-        bool Areleased = Keyboard.GetState().IsKeyUp(Keys.A);
-        bool Dreleased = Keyboard.GetState().IsKeyUp(Keys.D);
-
         ChangeState();
 
+        PrintHelper.Print(_bear.Velocity);
         if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
         {
             _bear.Velocity.Y -= 500;
             _bear.Jumping = true;
         }
-        if (Keyboard.GetState().IsKeyDown(Keys.A) && _bear.Velocity.X >= 0)
-            _bear.Velocity.X -= 180;
-        if (Keyboard.GetState().IsKeyDown(Keys.D) && _bear.Velocity.X <= 0)
-            _bear.Velocity.X += 180;
-        if (Keyboard.GetState().IsKeyUp(Keys.A) && _bear.Velocity.X < 0)
-            _bear.Velocity.X += 180;
-        if (Keyboard.GetState().IsKeyUp(Keys.D) && _bear.Velocity.X > 0)
-            _bear.Velocity.X -= 180;
+        if (Keyboard.GetState().IsKeyDown(Keys.A) && _bear.Acceleration.X >= 0)
+            _bear.Acceleration.X -= 2000;
+        if (Keyboard.GetState().IsKeyDown(Keys.D) && _bear.Acceleration.X <= 0)
+            _bear.Acceleration.X += 2000;
+        if (Keyboard.GetState().IsKeyUp(Keys.A) && _bear.Acceleration.X < 0)
+            _bear.Acceleration.X += 2000;
+        if (Keyboard.GetState().IsKeyUp(Keys.D) && _bear.Acceleration.X > 0)
+            _bear.Acceleration.X -= 2000;
 
         if (Keyboard.GetState().IsKeyDown(Keys.F))
             _bear.State = Bear.StateEnum.Dazed;

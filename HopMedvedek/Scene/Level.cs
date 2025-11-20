@@ -11,6 +11,7 @@ namespace HopMedvedek.Scene;
 public class Level : GameComponent {
     protected SimpleScene _scene;
     protected Bear _bear;
+    protected Bear _otherBear;
     protected List<Ground> _grounds;
     protected Rectangle _bounds;
     protected TreeBase _treeBase;
@@ -22,6 +23,7 @@ public class Level : GameComponent {
         Game.Components.Add(_scene);
         
         _bear = new Bear();
+        _otherBear = new Bear();
         _grounds = new List<Ground>();
         _treeMids = new List<TreeMid>();
         _treeBase = new TreeBase();
@@ -44,6 +46,9 @@ public class Level : GameComponent {
         _bear.Position.X = 160;
         _bear.Position.Y = 240;
 
+        _otherBear.Position.X = 260;
+        _otherBear.Position.Y = 440;
+
 
         _treeBase.Position.X = Game.Window.ClientBounds.Width/2;
         _treeBase.Position.Y = Game.Window.ClientBounds.Height - 16;
@@ -53,59 +58,43 @@ public class Level : GameComponent {
         {
             Ground ground = new Ground();
             ground.Position.Y = Game.Window.ClientBounds.Height - 8;
-            ground.Position.X = (_grounds.Count > 0) ? _grounds.Last<Ground>().Position.X + _grounds.Last<Ground>().Width : 0;
+            ground.Position.X = (_grounds.Count > 0) ? _grounds.Last<Ground>().Position.X + _grounds.Last<Ground>().Width : ground.Width/2;
             _grounds.Add(ground);
         }
-
-        Ground ground0 = new Ground();
-        ground0.Position.Y = Game.Window.ClientBounds.Height - 45;
-        ground0.Position.X = Game.Window.ClientBounds.Width / 2;
-        _grounds.Add(ground0);
-
-        Ground ground1 = new Ground();
-        ground1.Position.Y = Game.Window.ClientBounds.Height - 345;
-        ground1.Position.X = Game.Window.ClientBounds.Width / 2;
-        _grounds.Add(ground1);
-
-        Ground ground2 = new Ground();
-        ground2.Position.Y = Game.Window.ClientBounds.Height - 245;
-        ground2.Position.X = Game.Window.ClientBounds.Width / 2 - 200;
-        _grounds.Add(ground2);
-
-        Ground ground3 = new Ground();
-        ground3.Position.Y = Game.Window.ClientBounds.Height - 145;
-        ground3.Position.X = Game.Window.ClientBounds.Width / 2 + 200;
-        _grounds.Add(ground3);
-
-        
-
     }
     public virtual void ResetLevel()
     {
         _scene.Clear();
         _scene.Add(_treeBase);
-        //_scene.Add(_treeMids);
         foreach(var treeMid in _treeMids)
             _scene.Add(treeMid);
         foreach (var ground in _grounds)
             _scene.Add(ground);
         _scene.Add(_bear);
+        _scene.Add(_otherBear);
     }
-    public override void Update(GameTime gameTime)
+    private void CheckPlayerOutOfBounds(GameTime gameTime)
     {
-        if (_bear.Position.X - _bear.Width/2 > Game.Window.ClientBounds.Width)
+        if (_bear.Position.X - _bear.Width / 2 > Game.Window.ClientBounds.Width)
             _bear.Position.X = 0 - _bear.Width / 2;
         if (_bear.Position.X + _bear.Width / 2 < 0)
             _bear.Position.X = Game.Window.ClientBounds.Width + _bear.Width / 2;
-        System.Diagnostics.Debug.WriteLine(_camera.Translation.Y);
+    }
+    private void BuildTree(GameTime gameTime) {
         while (_treeMids.Count < 1 || _treeMids.Last<TreeMid>().Position.Y > _bear.Position.Y - Game.Window.ClientBounds.Height + 138)
         {
             TreeMid treeMid = new TreeMid();
             treeMid.Position.X = Game.Window.ClientBounds.Width / 2; ;
-            treeMid.Position.Y = (_treeMids.Count > 0) ? _treeMids.Last<TreeMid>().Position.Y - treeMid.Height : _treeBase.Position.Y  - treeMid.Height;
+            treeMid.Position.Y = (_treeMids.Count > 0) ? _treeMids.Last<TreeMid>().Position.Y - treeMid.Height : _treeBase.Position.Y - treeMid.Height;
             _treeMids.Add(treeMid);
             _scene.Add(treeMid);
         }
+    }
+    public override void Update(GameTime gameTime)
+    {
+        
+        CheckPlayerOutOfBounds(gameTime);
+        BuildTree(gameTime);
         _camera.Translation = new Vector3(0,-(_bear.Position.Y - Game.Window.ClientBounds.Height + 138), 0);
     }
 }
