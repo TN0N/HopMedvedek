@@ -17,6 +17,10 @@ public class HopMedvedek : Game {
     public HopMedvedek()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = 320;
+        _graphics.PreferredBackBufferHeight = 560;
+
+        _graphics.ApplyChanges();
         Content.RootDirectory = "Content";
         IsMouseVisible = false;
 
