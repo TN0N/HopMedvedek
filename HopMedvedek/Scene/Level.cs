@@ -15,11 +15,12 @@ public class Level : GameComponent {
     protected Rectangle _bounds;
     protected TreeBase _treeBase;
     protected List<TreeMid> _treeMids;
+    protected Matrix _camera;
 
     public Level(Game game) : base(game) {
         _scene = new SimpleScene(Game);
         Game.Components.Add(_scene);
-
+        
         _bear = new Bear();
         _grounds = new List<Ground>();
         _treeMids = new List<TreeMid>();
@@ -28,6 +29,8 @@ public class Level : GameComponent {
     public IScene Scene => _scene;
     public Bear Bear => _bear;
     public Rectangle Bounds => _bounds;
+    public Matrix Camera => _camera;
+
 
     public override void Initialize()
     {
@@ -35,6 +38,8 @@ public class Level : GameComponent {
                                    Game.Window.ClientBounds.Height;
 
         _bounds = new Rectangle(0, 0, Game.Window.ClientBounds.Width, Game.Window.ClientBounds.Height);
+
+        _camera = Matrix.CreateScale(new Vector3(1, 1, 1));
 
         _bear.Position.X = 160;
         _bear.Position.Y = 240;
@@ -51,13 +56,28 @@ public class Level : GameComponent {
             ground.Position.X = (_grounds.Count > 0) ? _grounds.Last<Ground>().Position.X + _grounds.Last<Ground>().Width : 0;
             _grounds.Add(ground);
         }
-        while (_treeMids.Count < 1 || _treeMids.Last<TreeMid>().Position.Y > 0)
-        {
-            TreeMid treeMid = new TreeMid();
-            treeMid.Position.X = Game.Window.ClientBounds.Width / 2; ;
-            treeMid.Position.Y = (_treeMids.Count > 0)? _treeMids.Last<TreeMid>().Position.Y - treeMid.Height : _treeBase.Position.Y + treeMid.Height;
-            _treeMids.Add(treeMid);
-        }
+
+        Ground ground0 = new Ground();
+        ground0.Position.Y = Game.Window.ClientBounds.Height - 45;
+        ground0.Position.X = Game.Window.ClientBounds.Width / 2;
+        _grounds.Add(ground0);
+
+        Ground ground1 = new Ground();
+        ground1.Position.Y = Game.Window.ClientBounds.Height - 345;
+        ground1.Position.X = Game.Window.ClientBounds.Width / 2;
+        _grounds.Add(ground1);
+
+        Ground ground2 = new Ground();
+        ground2.Position.Y = Game.Window.ClientBounds.Height - 245;
+        ground2.Position.X = Game.Window.ClientBounds.Width / 2 - 200;
+        _grounds.Add(ground2);
+
+        Ground ground3 = new Ground();
+        ground3.Position.Y = Game.Window.ClientBounds.Height - 145;
+        ground3.Position.X = Game.Window.ClientBounds.Width / 2 + 200;
+        _grounds.Add(ground3);
+
+        
 
     }
     public virtual void ResetLevel()
@@ -77,6 +97,15 @@ public class Level : GameComponent {
             _bear.Position.X = 0 - _bear.Width / 2;
         if (_bear.Position.X + _bear.Width / 2 < 0)
             _bear.Position.X = Game.Window.ClientBounds.Width + _bear.Width / 2;
-        
+        System.Diagnostics.Debug.WriteLine(_camera.Translation.Y);
+        while (_treeMids.Count < 1 || _treeMids.Last<TreeMid>().Position.Y > _bear.Position.Y - Game.Window.ClientBounds.Height + 138)
+        {
+            TreeMid treeMid = new TreeMid();
+            treeMid.Position.X = Game.Window.ClientBounds.Width / 2; ;
+            treeMid.Position.Y = (_treeMids.Count > 0) ? _treeMids.Last<TreeMid>().Position.Y - treeMid.Height : _treeBase.Position.Y  - treeMid.Height;
+            _treeMids.Add(treeMid);
+            _scene.Add(treeMid);
+        }
+        _camera.Translation = new Vector3(0,-(_bear.Position.Y - Game.Window.ClientBounds.Height + 138), 0);
     }
 }

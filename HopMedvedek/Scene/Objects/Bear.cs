@@ -9,16 +9,18 @@ public class Bear: IAARectangle
 {
     protected Vector2 _velocity = new();
     protected Vector2 _position = new();
-    protected float _width = 36;
-    protected float _height = 42;
+    protected float _width = 23;
+    protected float _height = 32;
     protected float _mass = 1;
     protected float _maxSpeed = 150;
     protected bool _grounded = false;
+    protected bool _jumping = false;
 
     public ref Vector2 Position => ref _position;
     public ref Vector2 Velocity => ref _velocity;
 
     public bool Grounded { get => _grounded; set => _grounded = value; }
+    public bool Jumping { get => _jumping; set => _jumping = value; }
     public float Mass { get => _mass; set => _mass = value; }
     public float Width { get => _width; set => _width = value; }
     public float Height { get => _height; set => _height = value; }
@@ -30,7 +32,10 @@ public class Bear: IAARectangle
         Idle,
         JumpUp,
         JumpDown,
-        Walk
+        Walk,
+        WalkThrow,
+        JumpThrow,
+        Dazed
     }
     public enum FacingEnum
     {

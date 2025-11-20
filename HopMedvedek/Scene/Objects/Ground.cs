@@ -36,6 +36,7 @@ public class Ground : IAARectangleCollider, ICustomCollider
         {
             //bear.Grounded = true;
             bear.Velocity.Y -= bear.Velocity.Y;
+            bear.Jumping = false;
         }
     }
 }

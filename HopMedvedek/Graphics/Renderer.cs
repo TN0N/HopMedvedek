@@ -23,18 +23,15 @@ public class Renderer : DrawableGameComponent
 
     protected Sprite _trunkBase, _trunkMid, _ground;
     protected Gameplay _gameplay;
-    protected Matrix _camera;
 
     public Renderer(Game game, Gameplay gameplay) : base(game)
     {
         _gameplay = gameplay;
     }
 
-    public Matrix Camera => _camera;
 
     public override void Initialize()
     {
-        _camera = Matrix.CreateScale(new Vector3(1, 1, 1));
         base.Initialize();
     }
 
@@ -53,17 +50,19 @@ public class Renderer : DrawableGameComponent
 
         // Load player animations
         _playerSprites = new Dictionary<string, AnimatedSprite>();
-        _playerSprites.Add("idle", new AnimatedSprite(_playerTexture, new Rectangle(0, 0, 36, 42), new Vector2(18,21), 12, playerAnimationSpeed, true));
-        _playerSprites.Add("throw", new AnimatedSprite(_playerTexture, new Rectangle(0, 42, 36, 42), new Vector2(18, 21), 8, playerAnimationSpeed, true));
-        _playerSprites.Add("walk", new AnimatedSprite(_playerTexture, new Rectangle(0, 84, 36, 42), new Vector2(18, 21), 8, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpUp", new AnimatedSprite(_playerTexture, new Rectangle(0, 126, 36, 42), new Vector2(18, 21), 5, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpDown", new AnimatedSprite(_playerTexture, new Rectangle(0, 168, 36, 42), new Vector2(18, 21), 5, playerAnimationSpeed, true));
-        
+        _playerSprites.Add("idle", new AnimatedSprite(_playerTexture, new Rectangle(0, 0, 23, 32), new Vector2(12,16), 12, playerAnimationSpeed, true));
+        _playerSprites.Add("walkThrow", new AnimatedSprite(_playerTexture, new Rectangle(0, 32, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
+        _playerSprites.Add("walk", new AnimatedSprite(_playerTexture, new Rectangle(0, 64, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
+        _playerSprites.Add("jumpUp", new AnimatedSprite(_playerTexture, new Rectangle(0, 96, 23, 32), new Vector2(12, 16), 6, playerAnimationSpeed, true));
+        _playerSprites.Add("jumpDown", new AnimatedSprite(_playerTexture, new Rectangle(115, 96, 23, 32), new Vector2(12, 16), 6, playerAnimationSpeed, true));
+        _playerSprites.Add("jumpThrow", new AnimatedSprite(_playerTexture, new Rectangle(0, 128, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
+        _playerSprites.Add("dazed", new AnimatedSprite(_playerTexture, new Rectangle(0, 160, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
+
 
         _trunkBase = new Sprite();
         _trunkBase.Texture = _natureTexture;
         _trunkBase.SourceRectangle = new Rectangle(28, 11, 47, 26);
-        _trunkBase.Origin = new Vector2(23, 26);
+        _trunkBase.Origin = new Vector2(23, 13);
 
         _trunkMid = new Sprite();
         _trunkMid.Texture = _natureTexture;
@@ -78,7 +77,7 @@ public class Renderer : DrawableGameComponent
     public override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.LightSkyBlue);
-            _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, _camera);
+        _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, _gameplay.Level.Camera);
 
         foreach (object item in _gameplay.Level.Scene)
         {
@@ -103,11 +102,20 @@ public class Renderer : DrawableGameComponent
                         case Bear.StateEnum.Walk:
                             sprite = _playerSprites["walk"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
                             break;
+                        case Bear.StateEnum.WalkThrow:
+                            sprite = _playerSprites["walkThrow"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
+                            break;
                         case Bear.StateEnum.JumpUp:
                             sprite = _playerSprites["jumpUp"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
                             break;
                         case Bear.StateEnum.JumpDown:
                             sprite = _playerSprites["jumpDown"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
+                            break;
+                        case Bear.StateEnum.JumpThrow:
+                            sprite = _playerSprites["jumpThrow"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
+                            break;
+                        case Bear.StateEnum.Dazed:
+                            sprite = _playerSprites["dazed"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
                             break;
                     }
                     switch (_bear.Facing)
@@ -125,8 +133,7 @@ public class Renderer : DrawableGameComponent
             }
             if (item is IPosition itemWithPos && sprite is not null)
             {
-                _spriteBatch.Draw(sprite.Texture, itemWithPos.Position, sprite.SourceRectangle,
-                                  Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
+                _spriteBatch.Draw(sprite.Texture, itemWithPos.Position, sprite.SourceRectangle, Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
             }
         }
         _spriteBatch.End();

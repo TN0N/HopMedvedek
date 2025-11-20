@@ -49,14 +49,14 @@ public class Gameplay: GameComponent
         _debugRenderer.ColliderColor = Color.Black;
         _debugRenderer.MovementColor = Color.Blue;
         _debugRenderer.ItemColor = Color.Red;
-        _debugRenderer.TransformMatrix = _renderer.Camera;
-        _player.SetCamera(_renderer.Camera);
+        _debugRenderer.TransformMatrix = _level.Camera;
+        _player.SetCamera(_level.Camera);
         Reset();
         base.Initialize();
     }
     public override void Update(GameTime gameTime)
     {
-        
+        _debugRenderer.TransformMatrix = _level.Camera;
     }
     public void Reset()
     {

@@ -22,7 +22,6 @@ public class Player: GameComponent
     }
     private void ChangeState()
     {
-        System.Diagnostics.Debug.WriteLine(_bear.Velocity);
         _bear.Grounded = true;
         if (_bear.Velocity.X < 0)
         {
@@ -35,12 +34,12 @@ public class Player: GameComponent
         if (_bear.Velocity.Y < -17)
         {
             _bear.State = Bear.StateEnum.JumpUp;
-            _bear.Grounded = false;
+            //_bear.Grounded = false;
         }
         else if (_bear.Velocity.Y > 17)
         {
             _bear.State = Bear.StateEnum.JumpDown;
-            _bear.Grounded = false;
+            //_bear.Grounded = false;
         }
         else if (_bear.Velocity.X < 0)
             _bear.State = Bear.StateEnum.Walk;
@@ -56,8 +55,13 @@ public class Player: GameComponent
         bool Areleased = Keyboard.GetState().IsKeyUp(Keys.A);
         bool Dreleased = Keyboard.GetState().IsKeyUp(Keys.D);
 
-        if (Keyboard.GetState().IsKeyDown(Keys.Space) && _bear.Grounded)
+        ChangeState();
+
+        if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
+        {
             _bear.Velocity.Y -= 500;
+            _bear.Jumping = true;
+        }
         if (Keyboard.GetState().IsKeyDown(Keys.A) && _bear.Velocity.X >= 0)
             _bear.Velocity.X -= 180;
         if (Keyboard.GetState().IsKeyDown(Keys.D) && _bear.Velocity.X <= 0)
@@ -66,6 +70,13 @@ public class Player: GameComponent
             _bear.Velocity.X += 180;
         if (Keyboard.GetState().IsKeyUp(Keys.D) && _bear.Velocity.X > 0)
             _bear.Velocity.X -= 180;
+
+        if (Keyboard.GetState().IsKeyDown(Keys.F))
+            _bear.State = Bear.StateEnum.Dazed;
+        if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            _bear.State = Bear.StateEnum.WalkThrow;
+        if (Mouse.GetState().RightButton == ButtonState.Pressed)
+            _bear.State = Bear.StateEnum.JumpThrow;
 
 
 
@@ -77,7 +88,7 @@ public class Player: GameComponent
             _bear.Velocity.Y = 0;
         _bear.Velocity *= _bear.MaxSpeed;
         */
-        ChangeState();
+        
     }
 
 }
