@@ -5,18 +5,27 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Artificial.Artificial.Spectrum;
-
+/// <summary>
+/// Defines primitive shapes.
+/// </summary>
 public class PrimitiveBatch
 {
-    private BlendState _blendState;
-    private DepthStencilState _depthStencilState;
-    private RasterizerState _rasterizerState;
-    private Effect _effect;
-    private BasicEffect _basicEffect;
-    private bool _beginCalled;
-    private List<VertexPositionColor> _vertexArray = new List<VertexPositionColor>(256);
-    private readonly GraphicsDevice _graphicsDevice;
+    private BlendState _blendState; // The blendsate
+    private DepthStencilState _depthStencilState; // The depthSencilState
+    private RasterizerState _rasterizerState; // The rasterizer state
+    private Effect _effect; // The effect
+    private BasicEffect _basicEffect; // The basic effect
+    private bool _beginCalled; // Bool if begin has been called
+    private List<VertexPositionColor> _vertexArray = new List<VertexPositionColor>(256); // List of vertecies
+    private readonly GraphicsDevice _graphicsDevice; // The Graphics device
 
+    /// <summary>
+    /// Defines a <see cref="PrimitiveBatch"/>. A new <see cref="BasicEffect"/> is created. 
+    /// By default <see cref="BasicEffect.VertexColorEnabled"/>=<see langword="true"/> and <see cref="BasicEffect.TextureEnabled"/>=<see langword="false"/>.
+    /// A new <see cref="BasicEffect.Projection"/> is with <see cref="SetProjection(object, EventArgs)"/>.
+    /// <see cref="SetProjection(object, EventArgs)"/> is set to fire when <see cref="GraphicsDevice.DeviceReset"/> event happens.
+    /// </summary>
+    /// <param name="graphicsDevice">The <see cref="GraphicsDevice"/>.</param>
     public PrimitiveBatch(GraphicsDevice graphicsDevice)
     {
         _graphicsDevice = graphicsDevice;
@@ -28,7 +37,11 @@ public class PrimitiveBatch
         SetProjection();
         graphicsDevice.DeviceReset += SetProjection;
     }
-
+    /// <summary>
+    /// Creates an orthographic projection for the given <see langword="object"/>.
+    /// </summary>
+    /// <param name="o"></param>
+    /// <param name="args"></param>
     public void SetProjection(object o = null, EventArgs args = null)
     {
         _basicEffect.Projection = Matrix.CreateOrthographicOffCenter(-0.5f, _graphicsDevice.Viewport.Width - 0.5f, _graphicsDevice.Viewport.Height - 0.5f, -0.5f, 0, -1);
