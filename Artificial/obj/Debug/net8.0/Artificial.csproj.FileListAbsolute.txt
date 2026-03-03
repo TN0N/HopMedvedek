@@ -1,0 +1,13 @@
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\bin\Debug\net8.0\Artificial.deps.json
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\bin\Debug\net8.0\Artificial.dll
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\bin\Debug\net8.0\Artificial.pdb
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.csproj.AssemblyReference.cache
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.AssemblyInfoInputs.cache
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.AssemblyInfo.cs
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.csproj.CoreCompileInputs.cache
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.sourcelink.json
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.dll
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\refint\Artificial.dll
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.pdb
+C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\ref\Artificial.dll
