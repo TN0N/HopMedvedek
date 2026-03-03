@@ -3,23 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\idecay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\iacceleration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\ivelocity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\physics\\movementphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\imovable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\mirage\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +13,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,80 +21,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IVelocity.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T09:36:15.005Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IDecay.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "Image.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\Image.cs",
+              "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Mirage\\Image.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\Image.cs",
+              "RelativeToolTip": "..\\Artificial\\Artificial\\Mirage\\Image.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T09:37:19.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IAcceleration.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T09:36:47.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MovementPhysics.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Physics\\MovementPhysics.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
-              "RelativeToolTip": "..\\Express\\Physics\\MovementPhysics.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T09:34:39.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IMovable.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T09:34:22.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Gameplay.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Gameplay.cs",
-              "RelativeDocumentMoniker": "Gameplay.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Gameplay.cs",
-              "RelativeToolTip": "Gameplay.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwAcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T09:33:42.913Z",
+              "WhenOpened": "2026-03-03T10:00:42.145Z",
               "EditorCaption": ""
             }
           ]

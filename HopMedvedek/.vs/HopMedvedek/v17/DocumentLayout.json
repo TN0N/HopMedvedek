@@ -3,6 +3,21 @@
   "WorkspaceRootPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\utils\\srandom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\utils\\fpscomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\spectrum\\primitivebatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\mirage\\mirageenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\mirage\\label.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1FC5DE25-5603-4799-92F5-4975A919BC04}|..\\Artificial\\Artificial.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\artificial\\artificial\\mirage\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -13,21 +28,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SRandom.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Utils\\SRandom.cs",
+              "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Utils\\SRandom.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Utils\\SRandom.cs",
+              "RelativeToolTip": "..\\Artificial\\Artificial\\Utils\\SRandom.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAUwBMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T14:16:56.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FpsComponent.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Utils\\FpsComponent.cs",
+              "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Utils\\FpsComponent.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Utils\\FpsComponent.cs",
+              "RelativeToolTip": "..\\Artificial\\Artificial\\Utils\\FpsComponent.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAA9wDwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T14:05:51.359Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "PrimitiveBatch.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Spectrum\\PrimitiveBatch.cs",
+              "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Spectrum\\PrimitiveBatch.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Spectrum\\PrimitiveBatch.cs",
+              "RelativeToolTip": "..\\Artificial\\Artificial\\Spectrum\\PrimitiveBatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAN0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T12:08:19.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Label.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\Label.cs",
+              "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Mirage\\Label.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\Label.cs",
+              "RelativeToolTip": "..\\Artificial\\Artificial\\Mirage\\Label.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAkwHcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T11:37:19.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MirageEnums.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\MirageEnums.cs",
+              "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Mirage\\MirageEnums.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\MirageEnums.cs",
+              "RelativeToolTip": "..\\Artificial\\Artificial\\Mirage\\MirageEnums.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T11:34:56.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Image.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\Image.cs",
               "RelativeDocumentMoniker": "..\\Artificial\\Artificial\\Mirage\\Image.cs",
               "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial\\Mirage\\Image.cs",
               "RelativeToolTip": "..\\Artificial\\Artificial\\Mirage\\Image.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T10:00:42.145Z",
               "EditorCaption": ""
