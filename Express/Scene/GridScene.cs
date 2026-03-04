@@ -5,13 +5,14 @@ using Express.Scene.Objects.Movement;
 using Microsoft.Xna.Framework;
 
 namespace Express.Scene;
-
+/// <summary>
+/// 
+/// </summary>
 public class GridScene : SimpleScene
 {
     protected Dictionary<Point, ArrayList> _grid;
 
-    public GridScene(Game game)
-        : base(game)
+    public GridScene(Game game) : base(game)
     {
         _grid = new();
         ItemAdded += ItemAddedToParent;

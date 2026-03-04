@@ -6,15 +6,25 @@ using Express.Scene.Objects.Rotation;
 using Microsoft.Xna.Framework;
 
 namespace Express.Physics.Collision.Arbitrary;
-
+/// <summary>
+/// Defines the collision behvaiour between a Particle collider and Convex collider.
+/// </summary>
 public class ParticleConvexCollision : CollisionAlgorithm<IParticleCollider, IConvexCollider>
 {
+    /// <summary>
+    /// Creates a new <see cref="ParticleConvexCollision"/>.
+    /// </summary>
     private ParticleConvexCollision()
     {
     }
-
+    /// <summary>
+    /// The instance of the collision.
+    /// </summary>
     protected static ParticleConvexCollision _instance;
-
+    /// <summary>
+    /// Creates an instance of a <see cref="ParticleConvexCollision"/>.
+    /// </summary>
+    /// <returns>The created instance of <see cref="ParticleConvexCollision"/>.</returns>
     public static ParticleConvexCollision Instance()
     {
         if (_instance is null)
@@ -24,7 +34,11 @@ public class ParticleConvexCollision : CollisionAlgorithm<IParticleCollider, ICo
 
         return _instance;
     }
-
+    /// <summary>
+    /// Detects and determines if a collision should be resolved.
+    /// </summary>
+    /// <param name="particle">The particle collider.</param>
+    /// <param name="convex">The convex collider.</param>
     public override void CollisionBetween(IParticleCollider particle, IConvexCollider convex)
     {
         if (DetectCollision(particle, convex) && ShouldResolveCollision(particle, convex))
@@ -33,31 +47,47 @@ public class ParticleConvexCollision : CollisionAlgorithm<IParticleCollider, ICo
             ReportCollision(particle, convex);
         }
     }
-
+    /// <summary>
+    /// Determines if a collision has occured.
+    /// </summary>
+    /// <param name="particle">The particle collider.</param>
+    /// <param name="convex">The convex collider.</param>
+    /// <returns>A <see langword="bool"/> that determines if a collision has taken place.</returns>
     protected override bool DetectCollision(IParticleCollider particle, IConvexCollider convex)
     {
-        Vector2 pointOfImpact = new();
-        Vector2 relaxDistance = CalculateRelaxDistance(particle, convex, ref pointOfImpact);
-        return relaxDistance.LengthSquared() > 0;
+        Vector2 pointOfImpact = new(); // Create new empty point of impact
+        Vector2 relaxDistance = CalculateRelaxDistance(particle, convex, ref pointOfImpact); // Calculate the relax distance
+        return relaxDistance.LengthSquared() > 0; // Return true if the relax distance is greater than 0. 
     }
-
+    /// <summary>
+    /// Determines how a collision between a particle collider and convex colliders is resolved.
+    /// </summary>
+    /// <param name="particle">The particle collider.</param>
+    /// <param name="convex">The convex collider.</param>
     protected override void ResolveCollision(IParticleCollider particle, IConvexCollider convex)
     {
-        Vector2 pointOfImpact = new();
-        Vector2 relaxDistance = CalculateRelaxDistance(particle, convex, ref pointOfImpact);
-        RelaxCollision(particle, convex, relaxDistance);
-        Vector2 collisionNormal = Vector2.Normalize(relaxDistance);
-        ExchangeEnergy(particle, convex, collisionNormal, pointOfImpact);
+        Vector2 pointOfImpact = new(); // Create ne empty point of impact
+        Vector2 relaxDistance = CalculateRelaxDistance(particle, convex, ref pointOfImpact); // Calculate the relax distance
+        RelaxCollision(particle, convex, relaxDistance); // Relax the collsion.
+        Vector2 collisionNormal = Vector2.Normalize(relaxDistance); // Normalize the collision normal
+        ExchangeEnergy(particle, convex, collisionNormal, pointOfImpact); // Exchange energy between the two objects.
     }
-
+    /// <summary>
+    /// Determines how to calculate the relax distance.
+    /// </summary>
+    /// <param name="particle">The particle collider.</param>
+    /// <param name="convex">The convex collider.</param>
+    /// <param name="pointOfImpact">The point of impact.</param>
+    /// <returns>A <see cref="Vector2"/> representing the point of impact.</returns>
     private Vector2 CalculateRelaxDistance(IParticleCollider particle, IConvexCollider convex,
         ref Vector2 pointOfImpact)
     {
-        // First move particle in coordinate space of the convex.
+        // First move particle in coordinate space of the convex collider.
         Vector2 offset = convex is IPosition ? ((IPosition)convex).Position : Vector2.Zero;
         float angle = convex is IRotation ? ((IRotation)convex).RotationAngle : 0;
         Matrix transform = Matrix.CreateRotationZ(angle) * (Matrix.CreateTranslation(offset.X, offset.Y, 0));
         Vector2 relativeParticlePosition = Vector2.Transform(particle.Position, Matrix.Invert(transform));
+
         List<Vector2> vertices = convex.Bounds.Vertices;
         List<HalfPlane> halfPlanes = convex.Bounds.HalfPlanes;
         bool voronoiNearEdge = false;
@@ -103,9 +133,7 @@ public class ParticleConvexCollision : CollisionAlgorithm<IParticleCollider, ICo
                 {
                     voronoiNearEdge = true;
                     if (smallestDifferenceIndex == i)
-                    {
                         pointOfImpact = vertices[i] + (edge * ((center - start) / (end - start)));
-                    }
                 }
             }
             else
