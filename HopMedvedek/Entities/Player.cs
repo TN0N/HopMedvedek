@@ -55,7 +55,7 @@ public class Player: GameComponent
     {
         ChangeState();
 
-        PrintHelper.Print(_bear.Velocity);
+        //PrintHelper.Print(_bear.Velocity);
         if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
         {
             _bear.Velocity.Y -= 500;

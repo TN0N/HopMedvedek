@@ -1,37 +1,64 @@
 using System;
+using System.Runtime.Intrinsics.X86;
 using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
 using Express.Scene.Objects.Rotation;
-using Microsoft.VisualBasic.FileIO;
 using Microsoft.Xna.Framework;
 
 namespace Express.Physics.Collision;
-
+/// <summary>
+/// Defines the collision algorithm used for detecting and resolving collisions.
+/// </summary>
+/// <typeparam name="T1">The first collider.</typeparam>
+/// <typeparam name="T2">The second collider.</typeparam>
 public class CollisionAlgorithm<T1,T2>
 {
+    /// <summary>
+    /// Created a new empty collision Algorithm
+    /// </summary>
     protected CollisionAlgorithm()
     {
     }
-
+    /// <summary>
+    /// <see langword="virtual"/> method to be overriden. Checks for collision between two colliders.
+    /// </summary>
+    /// <param name="item1">The first collider.</param>
+    /// <param name="item2">The second collider.</param>
     public virtual void CollisionBetween(T1 item1, T2 item2)
     {
     }
-
+    /// <summary>
+    /// <see langword="virtual"/> method to be overriden. Detects collision between two colliders.
+    /// </summary>
+    /// <param name="item1">The first collider.</param>
+    /// <param name="item2">The second collider.</param>
+    /// <returns><see langword="false"/></returns>
     protected virtual bool DetectCollision(T1 item1, T2 item2)
     {
         return false;
     }
-
+    /// <summary>
+    /// <see langword = "virtual" /> method to be overriden. Defines how a collision should be resolved.
+    /// </summary>
+    /// <param name="item1">The first collider.</param>
+    /// <param name="item2">The second collider.</param>
     protected virtual void ResolveCollision(T1 item1, T2 item2)
     {
     }
-
+    /// <summary>
+    /// Defines whether a collision should be resolved.
+    /// </summary>
+    /// <param name="item1">The first collider.</param>
+    /// <param name="item2">The second collider.</param>
+    /// <returns></returns>
     protected bool ShouldResolveCollision(object item1, object item2)
     {
         ICustomCollider customCollider1 = item1 as ICustomCollider;
         ICustomCollider customCollider2 = item2 as ICustomCollider;
         bool result = true;
+
+        // If both colliders are customColliders then result is set to the customColliders.CollidingWith output.
         if (customCollider1 is not null)
         {
             result &= customCollider1.CollidingWith(item2, true);
@@ -44,7 +71,12 @@ public class CollisionAlgorithm<T1,T2>
 
         return result;
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="item1">The first collider.</param>
+    /// <param name="item2">The second collider.</param>
+    /// <param name="relaxDistance"></param>
     protected void RelaxCollision(object item1, object item2, Vector2 relaxDistance)
     {
         float relaxPercentage1 = 0.5f;
@@ -53,6 +85,7 @@ public class CollisionAlgorithm<T1,T2>
         IMass itemWithMass2 = item2 as IMass;
         IPosition itemWithPosition1 = item1 as IPosition;
         IPosition itemWithPosition2 = item2 as IPosition;
+
         if (itemWithMass1 is not null && itemWithMass2 is not null)
         {
             float mass1 = itemWithMass1.Mass;
@@ -85,14 +118,10 @@ public class CollisionAlgorithm<T1,T2>
         }
 
         if (itemWithPosition1 is not null)
-        {
             itemWithPosition1.Position -= relaxDistance * relaxPercentage1;
-        }
 
         if (itemWithPosition2 is not null)
-        {
             itemWithPosition2.Position += relaxDistance * relaxPercentage2;
-        }
     }
     
     

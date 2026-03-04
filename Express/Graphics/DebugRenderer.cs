@@ -11,10 +11,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Express.Graphics;
-
+/// <summary>
+/// Defines a <see cref="DrawableGameComponent"/> that displays debug information like hitboxes.
+/// </summary>
 public class DebugRenderer : DrawableGameComponent
 {
-    protected IScene _scene;
+    protected IScene _scene; // The scene being rendered for
     protected PrimitiveBatch _primitiveBatch;
     protected Color _itemColor;
     protected Color _movementColor;
@@ -25,6 +27,11 @@ public class DebugRenderer : DrawableGameComponent
     protected Effect _effect;
     protected Matrix _transformMatrix;
 
+    /// <summary>
+    /// Creates a new <see cref="DebugRenderer"/>.
+    /// </summary>
+    /// <param name="theGame">The <see cref="Game"/> being rendered for.</param>
+    /// <param name="theScene">The <see cref="Scene"/> being rendered for.</param>
     public DebugRenderer(Game theGame, IScene theScene)
         : base (theGame)
     {
@@ -34,60 +41,81 @@ public class DebugRenderer : DrawableGameComponent
         ColliderColor = Color.Lime;
         _transformMatrix = Matrix.Identity;
     }
-
+    /// <summary>
+    /// The color for items being rendered.
+    /// </summary>
     public Color ItemColor
     {
         get => _itemColor;
         set => _itemColor = value;
     }
-
+    /// <summary>
+    /// The color for movement being rednered.
+    /// </summary>
     public Color MovementColor
     {
         get => _movementColor;
         set => _movementColor = value;
     }
-
+    /// <summary>
+    /// The color for colliders being rendered.
+    /// </summary>
     public Color ColliderColor
     {
         get => _colliderColor;
         set => _colliderColor = value;
     }
-
+    /// <summary>
+    /// The <see cref="BlendState"/> for rendering.
+    /// </summary>
     public BlendState BlendState
     {
         get => _blendState;
         set => _blendState = value;
     }
-
+    /// <summary>
+    /// The <see cref="DepthStencilState"/> for rendering.
+    /// </summary>
     public DepthStencilState DepthStencilState
     {
         get => _depthStencilState;
         set => _depthStencilState = value;
     }
-
+    /// <summary>
+    /// The <see cref="RasterizerState"/> for rendering.
+    /// </summary>
     public RasterizerState RasterizerState
     {
         get => _rasterizerState;
         set => _rasterizerState = value;
     }
-
+    /// <summary>
+    /// The <see cref="Effect"/> for rendering.
+    /// </summary>
     public Effect Effect
     {
         get => _effect;
         set => _effect = value;
     }
-
+    /// <summary>
+    /// The transformation <see cref="Matrix"/> for rendering.
+    /// </summary>
     public Matrix TransformMatrix
     {
         get => _transformMatrix;
         set => _transformMatrix = value;
     }
-
+    /// <summary>
+    /// Creates a new <see cref="PrimitiveBatch"/> for the renderer.
+    /// </summary>
     protected override void LoadContent()
     {
         _primitiveBatch = new PrimitiveBatch(GraphicsDevice);
     }
-
+    /// <summary>
+    /// Draws various different colors depending on the <see langword="object"/> being drawn.
+    /// </summary>
+    /// <param name="gameTime">The current game time.</param>
     public override void Draw(GameTime gameTime)
     {
         Matrix transformInverse = Matrix.Invert(_transformMatrix);

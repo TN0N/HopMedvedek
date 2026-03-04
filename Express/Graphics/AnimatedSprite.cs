@@ -4,19 +4,35 @@ using System.Collections.Generic;
 
 
 namespace Express.Graphics;
-
+/// <summary>
+/// Defines a frame of an animation sprite.
+/// </summary>
 public class AnimatedSprite
 {
-    protected List<AnimatedSpriteFrame> _frames;
-    protected double _duration;
-    protected bool _looping;
+    protected List<AnimatedSpriteFrame> _frames; // The frames of the animation
+    protected double _duration; // The duration of the animation
+    protected bool _looping; // Boolean whether the animation loops or not
 
+    /// <summary>
+    /// Creates a new <see cref="AnimatedSprite"/> that lasts <paramref name="duration"/> ms.
+    /// </summary>
+    /// <param name="duration">The duration of the animation in ms.</param>
     public AnimatedSprite(double duration)
     {
         _frames = new List<AnimatedSpriteFrame>();
         _duration = duration;
     }
+    /// <summary>
+    /// Generates an <see cref="AnimatedSprite"/> from a texture passed as a parameter.
+    /// </summary>
+    /// <param name="texture">The texture for the animation.</param>
+    /// <param name="sourceRectangle">The souceRectangle for each frame.</param>
+    /// <param name="origin">The origin for each frame.</param>
+    /// <param name="frames">The number of frames.</param>
+    /// <param name="duration">The duration of the animation in ms.</param>
+    /// <param name="looping">Definies whether the animation loops or not.</param>
     public AnimatedSprite(Texture2D texture, Rectangle sourceRectangle, Vector2 origin, int frames, double duration, bool looping) {
+
         _frames = new List<AnimatedSpriteFrame>();
         _duration = duration;
         _looping = looping;
@@ -30,26 +46,42 @@ public class AnimatedSprite
             _frames.Add(new AnimatedSpriteFrame(frame, _duration * (i/frames)));
         }
     }
-
+    /// <summary>
+    /// The duration of the animation in ms.
+    /// </summary>
     public double Duration {
         get => _duration;
         set => _duration = value;
     }
-
+    /// <summary>
+    /// Defines whether the animation loops.
+    /// </summary>
     public bool Looping { 
         get => _looping;
         set => _looping = value;
     }
-
+    /// <summary>
+    /// Sets the looping duration.
+    /// </summary>
+    /// <param name="duration">The duration of the animation in ms.</param>
     void SetLoopingDuration(double duration)
     { 
         _looping = true;
         _duration = duration;
     }
+    /// <summary>
+    /// Adds a frame onto the animation.
+    /// </summary>
+    /// <param name="frame">The frame to be added.</param>
     public void AddFrame(AnimatedSpriteFrame frame) { 
         _frames.Add(frame);
         _frames.Sort((x, y) => x.Start.CompareTo(y.Start));
     }
+    /// <summary>
+    /// Finds the frame at a given timeframe.
+    /// </summary>
+    /// <param name="time">The timeframe of the animation.</param>
+    /// <returns><see cref="AnimatedSpriteFrame"/> at the given <paramref name="time"/>.</returns>
     public Sprite SpriteAtTime(double time)
     {
         if (_looping)
