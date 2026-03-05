@@ -3,6 +3,94 @@
   "WorkspaceRootPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\bear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\bear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\physics\\movementphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\iscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\shapes\\irectanglesize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\shapes\\iradius.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\rotation\\irotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\rotation\\irotatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\rotation\\iangularvelocity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\physical properties\\iangularmass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\physical properties\\icoefficientofrestitution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\physical properties\\imass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\ivelocity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\iposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\imovable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\idecay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\movement\\iacceleration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\composites\\iparticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\composites\\icircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\composites\\iaarectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\colliders\\iparticlecollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\colliders\\ihalfplanecollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\colliders\\icustomcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\colliders\\iconvexcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\colliders\\iaarectanglecollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\colliders\\iaahalfplanecollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\lifetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\isceneuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\ilifetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\objects\\icustomupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\gridscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -10,9 +98,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\sceneaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\scene\\iscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\physics\\collision\\axisaligned\\particleaarectanglecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -43,58 +128,420 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GridScene.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\GridScene.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\GridScene.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\GridScene.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\GridScene.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAAFAAAAAAAAAA==",
+              "Title": "Bear.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Bear.cs",
+              "RelativeDocumentMoniker": "Scene\\Objects\\Bear.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Bear.cs",
+              "RelativeToolTip": "Scene\\Objects\\Bear.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T14:19:07.193Z",
+              "WhenOpened": "2026-03-05T12:03:24.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SimpleScene.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SimpleScene.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\SimpleScene.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SimpleScene.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\SimpleScene.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAA0wGwAAAAoAAAAAAAAAA==",
+              "Title": "MovementPhysics.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Physics\\MovementPhysics.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
+              "RelativeToolTip": "..\\Express\\Physics\\MovementPhysics.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAIA0wBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:59:19.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SceneAction.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SceneAction.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Scene\\SceneAction.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SceneAction.cs",
-              "RelativeToolTip": "..\\Express\\Scene\\SceneAction.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:56:52.251Z",
+              "WhenOpened": "2026-03-05T12:03:10.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "IRectangleSize.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Shapes\\IRectangleSize.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Shapes\\IRectangleSize.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Shapes\\IRectangleSize.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Shapes\\IRectangleSize.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T12:02:03.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IRadius.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Shapes\\IRadius.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Shapes\\IRadius.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Shapes\\IRadius.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Shapes\\IRadius.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T12:01:20.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRotation.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Rotation\\IRotation.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Rotation\\IRotation.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Rotation\\IRotation.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Rotation\\IRotation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T12:00:21.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRotatable.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Rotation\\IRotatable.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Rotation\\IRotatable.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Rotation\\IRotatable.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Rotation\\IRotatable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:59:07.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAngularVelocity.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Rotation\\IAngularVelocity.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Rotation\\IAngularVelocity.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Rotation\\IAngularVelocity.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Rotation\\IAngularVelocity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:57:52.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IMass.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Physical Properties\\IMass.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Physical Properties\\IMass.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Physical Properties\\IMass.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Physical Properties\\IMass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:54:30.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ICoefficientOfRestitution.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Physical Properties\\ICoefficientOfRestitution.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Physical Properties\\ICoefficientOfRestitution.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Physical Properties\\ICoefficientOfRestitution.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Physical Properties\\ICoefficientOfRestitution.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:54:25.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAngularMass.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Physical Properties\\IAngularMass.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Physical Properties\\IAngularMass.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Physical Properties\\IAngularMass.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Physical Properties\\IAngularMass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:54:17.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IMovable.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IMovable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAB8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:49:04.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IVelocity.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IVelocity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:48:58.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IPosition.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IPosition.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IPosition.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IPosition.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IPosition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:48:54.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IDecay.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IDecay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:48:36.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IAcceleration.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Movement\\IAcceleration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:47:59.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IParticle.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Composites\\IParticle.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Composites\\IParticle.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Composites\\IParticle.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Composites\\IParticle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:47:10.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "IScene.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\IScene.cs",
               "RelativeDocumentMoniker": "..\\Express\\Scene\\IScene.cs",
               "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\IScene.cs",
               "RelativeToolTip": "..\\Express\\Scene\\IScene.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-04T13:54:00.281Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
+              "Title": "ICircle.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Composites\\ICircle.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Composites\\ICircle.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Composites\\ICircle.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Composites\\ICircle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:46:27.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IAARectangle.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Composites\\IAARectangle.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Composites\\IAARectangle.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Composites\\IAARectangle.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Composites\\IAARectangle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:45:38.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IParticleCollider.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IParticleCollider.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Colliders\\IParticleCollider.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IParticleCollider.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Colliders\\IParticleCollider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:45:12.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IHalfPlaneCollider.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IHalfPlaneCollider.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Colliders\\IHalfPlaneCollider.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IHalfPlaneCollider.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Colliders\\IHalfPlaneCollider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:44:34.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ICustomCollider.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\ICustomCollider.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Colliders\\ICustomCollider.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\ICustomCollider.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Colliders\\ICustomCollider.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:28:36.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IConvexCollider.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IConvexCollider.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Colliders\\IConvexCollider.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IConvexCollider.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Colliders\\IConvexCollider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:28:04.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IAARectangleCollider.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IAARectangleCollider.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Colliders\\IAARectangleCollider.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IAARectangleCollider.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Colliders\\IAARectangleCollider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:27:37.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IAAHalfPlaneCollider.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IAAHalfPlaneCollider.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Colliders\\IAAHalfPlaneCollider.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Colliders\\IAAHalfPlaneCollider.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Colliders\\IAAHalfPlaneCollider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T11:26:50.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Lifetime.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Lifetime.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\Lifetime.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\Lifetime.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\Lifetime.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:19:25.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ISceneUser.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\ISceneUser.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\ISceneUser.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\ISceneUser.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\ISceneUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:13:05.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ILifetime.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\ILifetime.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\ILifetime.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\ILifetime.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\ILifetime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAC1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:11:59.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ICustomUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\ICustomUpdate.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\Objects\\ICustomUpdate.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\Objects\\ICustomUpdate.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\Objects\\ICustomUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:10:31.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GridScene.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\GridScene.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\GridScene.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\GridScene.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\GridScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T14:19:07.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "SimpleScene.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SimpleScene.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\SimpleScene.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SimpleScene.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\SimpleScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T13:59:19.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SceneAction.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SceneAction.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scene\\SceneAction.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Scene\\SceneAction.cs",
+              "RelativeToolTip": "..\\Express\\Scene\\SceneAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T13:56:52.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "ParticleAARectangleCollision.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\Collision\\AxisAligned\\ParticleAARectangleCollision.cs",
               "RelativeDocumentMoniker": "..\\Express\\Physics\\Collision\\AxisAligned\\ParticleAARectangleCollision.cs",
@@ -102,12 +549,11 @@
               "RelativeToolTip": "..\\Express\\Physics\\Collision\\AxisAligned\\ParticleAARectangleCollision.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:33:34.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:33:34.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 33,
               "Title": "ParticleAAHalfPlaneCollision.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\Collision\\AxisAligned\\ParticleAAHalfPlaneCollision.cs",
               "RelativeDocumentMoniker": "..\\Express\\Physics\\Collision\\AxisAligned\\ParticleAAHalfPlaneCollision.cs",
@@ -115,12 +561,11 @@
               "RelativeToolTip": "..\\Express\\Physics\\Collision\\AxisAligned\\ParticleAAHalfPlaneCollision.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:27:10.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:27:10.513Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 34,
               "Title": "AARectangleAARectangleCollision.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\Collision\\AxisAligned\\AARectangleAARectangleCollision.cs",
               "RelativeDocumentMoniker": "..\\Express\\Physics\\Collision\\AxisAligned\\AARectangleAARectangleCollision.cs",
@@ -128,12 +573,11 @@
               "RelativeToolTip": "..\\Express\\Physics\\Collision\\AxisAligned\\AARectangleAARectangleCollision.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwEQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:20:53.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:20:53.023Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 35,
               "Title": "AARectangleAAHalfPlaneCollision.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\Collision\\AxisAligned\\AARectangleAAHalfPlaneCollision.cs",
               "RelativeDocumentMoniker": "..\\Express\\Physics\\Collision\\AxisAligned\\AARectangleAAHalfPlaneCollision.cs",
@@ -141,8 +585,7 @@
               "RelativeToolTip": "..\\Express\\Physics\\Collision\\AxisAligned\\AARectangleAAHalfPlaneCollision.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T13:01:23.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T13:01:23.983Z"
             }
           ]
         }

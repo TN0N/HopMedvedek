@@ -1,13 +1,6 @@
 ﻿using Artificial.Artificial.Utils;
-using HopMedvedek.Graphics;
-using HopMedvedek.Physics;
-using HopMedvedek.Scene;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using System.ComponentModel;
-
 
 namespace HopMedvedek;
 
@@ -29,8 +22,7 @@ public class HopMedvedek : Game {
     }
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-            Keyboard.GetState().IsKeyDown(Keys.Escape))
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
         base.Update(gameTime);

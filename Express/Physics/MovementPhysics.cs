@@ -20,7 +20,7 @@ public static class MovementPhysics
             
             movable.Velocity += movable.Acceleration * (float)elapsed.TotalSeconds;
             movable.Position += movable.Velocity * (float)elapsed.TotalSeconds;
-            movable.Velocity.X *= movable.Decay;
+            movable.Velocity *= movable.Decay;
         }
 
         if (item is IRotatable rotatable)

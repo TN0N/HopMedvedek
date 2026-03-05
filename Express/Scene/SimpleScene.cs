@@ -111,8 +111,6 @@ public class SimpleScene : GameComponent, IScene
     public void Clear()
     {
         foreach (var item in _items)
-        {
             Remove(item);
-        }
     }
 }

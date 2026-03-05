@@ -1,6 +1,4 @@
-﻿using System;
-using Express.Scene.Objects.Colliders;
-using Express.Scene.Objects.Composites;
+﻿using Express.Scene.Objects.Composites;
 using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Scene.Objects;
@@ -13,7 +11,7 @@ public class Bear: IAARectangle
     protected float _width = 23;
     protected float _height = 32;
     protected float _mass = 1;
-    protected float _decay = 0.85f;
+    protected Vector2 _decay = new(0.85f, 1f);
     protected float _maxSpeed = 150;
     protected bool _grounded = false;
     protected bool _jumping = false;
@@ -21,7 +19,7 @@ public class Bear: IAARectangle
     public ref Vector2 Position => ref _position;
     public ref Vector2 Velocity => ref _velocity;
     public ref Vector2 Acceleration => ref _acceleration;
-    public ref float Decay => ref _decay;
+    public ref Vector2 Decay => ref _decay;
 
     public bool Grounded { get => _grounded; set => _grounded = value; }
     public bool Jumping { get => _jumping; set => _jumping = value; }
