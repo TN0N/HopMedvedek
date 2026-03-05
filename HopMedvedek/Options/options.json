@@ -1,0 +1,9 @@
+{
+  "GraphicsDeviceWidth": 720,
+  "GraphicsDeviceHeight": 720,
+  "GameVolume": 1,
+  "MusicVolume": 1,
+  "Language": 0,
+  "IsMouseVisible": true,
+  "RootDirectory": "Content"
+}

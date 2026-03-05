@@ -43,3 +43,4 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\obj\Debug\net8.0\refi
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\obj\Debug\net8.0\HopMedvedek.pdb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\obj\Debug\net8.0\HopMedvedek.genruntimeconfig.cache
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\obj\Debug\net8.0\ref\HopMedvedek.dll
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Options\options.json
