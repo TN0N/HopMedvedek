@@ -5,6 +5,6 @@ namespace Express.Scene.Objects.Colliders;
 /// <summary>
 /// Interface representing a RectangleCollider.
 /// </summary>
-public interface IAARectangleCollider : IPosition, IRectangleSize
+public interface IAARectangleCollider : IPosition, IRectangleSize, ICollider
 {
 }

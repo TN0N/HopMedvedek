@@ -2,7 +2,7 @@ namespace Express.Scene.Objects.Colliders;
 /// <summary>
 /// Defines the interface for a custom collider - custom behaviour after a collision
 /// </summary>
-public interface ICustomCollider
+public interface ICustomCollider : ICollider
 {
     /// <summary>
     /// Determines if an object's collision is valid. Fires during a collision

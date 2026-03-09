@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Express.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace Express.Scene;
@@ -40,4 +41,11 @@ public interface IScene : IEnumerable<object>, IUpdateable
     /// Event handler for removing items.
     /// </summary>
     public event EventHandler<SceneEventArgs> ItemRemoved;
+
+    public Matrix CameraMatrix
+    { 
+        get; set;
+    }
+
+    public Dictionary<Enum, ITextureData> TextureData { get; set; }
 }

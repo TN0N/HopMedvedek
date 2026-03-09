@@ -1,10 +1,11 @@
 ﻿using Express.Physics;
 using Express.Physics.Collision;
+using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
-using HopMedvedek.Scene;
+using Express.Scene.Objects.Physical_Properties;
+using HopMedvedek.Level;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
-using System;
 
 namespace HopMedvedek.Physics;
 /// <summary>
@@ -15,14 +16,14 @@ public class PhysicsEngine : GameComponent
     /// <summary>
     /// This is the level whose objects physics will be simulated by <see cref="PhysicsEngine"/>.
     /// </summary>
-    protected Level _level;
+    protected LevelBase _level;
 
     /// <summary>
     /// The constructor for <see cref="PhysicsEngine"/> which sets a reference for the level and the game.
     /// </summary>
     /// <param name="game">The <see cref="Game"/></param>
     /// <param name="level">The <see cref="Level"/></param>
-    public PhysicsEngine(Game game, Level level): base(game)
+    public PhysicsEngine(Game game, LevelBase level): base(game)
     { 
         _level = level;
     }
@@ -32,19 +33,27 @@ public class PhysicsEngine : GameComponent
     /// <param name="gameTime">The <see cref="GameTime"/>.</param>
     public override void Update(GameTime gameTime)
     {
+        //float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
         MovementPhysics.SimulateMovement(_level.Bear, gameTime.ElapsedGameTime);
-        Vector2 gravity = new Vector2(0, 1000 * (float)gameTime.ElapsedGameTime.TotalSeconds);
+        
+
+        // Apply gravity
         foreach (object item in _level.Scene)
-        {
-            if (item is Ground ground)
+            if (item is IGravity gravityItem && item is IVelocity velocityItem)
             {
-                    Collision.CollisionBetween(_level.Bear, ground);
+                float gravity = gravityItem.GravitationalAcceleration * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                velocityItem.Velocity.Y += gravity;
             }
-                
-            if (item is Bear bear)
-            {
-                bear.Velocity += gravity;
-            }
-        }
+
+        // Check bear for collisions
+        foreach (object item in _level.Scene)
+            if (item is not Bear && item is ICollider)
+                Collision.CollisionBetween(_level.Bear, item);
+
+        // Check pinecone for collisions
+        /*
+        foreach (object item in _level.Scene)
+            if (item is not Pinecone prinecone)
+                Collision.CollisionBetween(pinecone, item);*/
     }
 }

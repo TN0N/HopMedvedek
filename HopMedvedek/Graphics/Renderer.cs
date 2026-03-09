@@ -1,86 +1,68 @@
 ﻿using Express.Graphics;
+using Express.Scene;
 using Express.Scene.Objects.Movement;
-using HopMedvedek.Entities;
-using HopMedvedek.Scene;
-using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace HopMedvedek.Graphics;
 
 public class Renderer : DrawableGameComponent
 {
+    
     protected SpriteBatch _spriteBatch;
-    protected Texture2D _levelBackground, _natureTexture, _playerTexture;
-    protected Dictionary<string, AnimatedSprite> _playerSprites;
+    protected SpriteSortMode _spriteSortMode = SpriteSortMode.Deferred;
+    protected BlendState _blendState = null;
+    protected SamplerState _samplerState = null;
+    protected DepthStencilState _depthStencilState = null;
+    protected RasterizerState _rasterizerState = null;
+    protected Effect _effect = null;
 
-    protected Sprite _trunkBase, _trunkMid, _ground;
-    protected Gameplay _gameplay;
+    protected IScene _scene;
 
-    public Renderer(Game game, Gameplay gameplay) : base(game)
+    public Renderer(Game game, IScene scene) : base(game)
     {
-        _gameplay = gameplay;
+        _scene = scene;
+        _spriteBatch = new SpriteBatch(game.GraphicsDevice);
     }
+    protected void ChangeSpriteMode(ITexture textureItem)
+    {
+
+        if (textureItem.SpriteSortMode != _spriteSortMode
+         || textureItem.BlendState != _blendState
+         || textureItem.SamplerState != _samplerState
+         || textureItem.DepthStencilState != _depthStencilState
+         || textureItem.RasterizerState != _rasterizerState
+         || textureItem.Effect != _effect)
+        {
+            _spriteSortMode = textureItem.SpriteSortMode;
+            _blendState = textureItem.BlendState;
+            _samplerState = textureItem.SamplerState;
+            _depthStencilState = textureItem.DepthStencilState;
+            _rasterizerState = textureItem.RasterizerState;
+            _effect = textureItem.Effect;
+            _spriteBatch.End();
+            _spriteBatch.Begin(_spriteSortMode, _blendState, _samplerState, _depthStencilState, _rasterizerState, _effect, _scene.CameraMatrix);
+        }
 
 
+    }
     public override void Initialize()
     {
         base.Initialize();
     }
-
-
-    protected override void LoadContent()
-    {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-        _levelBackground = Game.Content.Load<Texture2D>("sky");
-        _natureTexture = Game.Content.Load<Texture2D>("nature");
-        _playerTexture = Game.Content.Load<Texture2D>("bear");
-
-        const int playerAnimationSpeed = 500;
-
-
-
-        // Load player animations
-        _playerSprites = new Dictionary<string, AnimatedSprite>();
-        _playerSprites.Add("idle", new AnimatedSprite(_playerTexture, new Rectangle(0, 0, 23, 32), new Vector2(12,16), 12, playerAnimationSpeed, true));
-        _playerSprites.Add("walkThrow", new AnimatedSprite(_playerTexture, new Rectangle(0, 32, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
-        _playerSprites.Add("walk", new AnimatedSprite(_playerTexture, new Rectangle(0, 64, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpUp", new AnimatedSprite(_playerTexture, new Rectangle(0, 96, 23, 32), new Vector2(12, 16), 6, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpDown", new AnimatedSprite(_playerTexture, new Rectangle(115, 96, 23, 32), new Vector2(12, 16), 6, playerAnimationSpeed, true));
-        _playerSprites.Add("jumpThrow", new AnimatedSprite(_playerTexture, new Rectangle(0, 128, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
-        _playerSprites.Add("dazed", new AnimatedSprite(_playerTexture, new Rectangle(0, 160, 23, 32), new Vector2(12, 16), 12, playerAnimationSpeed, true));
-
-
-        _trunkBase = new Sprite();
-        _trunkBase.Texture = _natureTexture;
-        _trunkBase.SourceRectangle = new Rectangle(28, 11, 47, 26);
-        _trunkBase.Origin = new Vector2(23, 13);
-
-        _trunkMid = new Sprite();
-        _trunkMid.Texture = _natureTexture;
-        _trunkMid.SourceRectangle = new Rectangle(0, 0, 28, 37);
-        _trunkMid.Origin = new Vector2(14, 37);
-
-        _ground = new Sprite();
-        _ground.Texture = _natureTexture;
-        _ground.SourceRectangle = new Rectangle(0, 37, 320, 16);
-        _ground.Origin = new Vector2(160, 8);
-    }
     public override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.LightSkyBlue);
-        _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, _gameplay.Level.Camera);
 
-        foreach (object item in _gameplay.Level.Scene)
+        
+
+        _spriteBatch.Begin(_spriteSortMode, _blendState, _samplerState, _depthStencilState, _rasterizerState, _effect, _scene.CameraMatrix);
+        foreach (object item in _scene)
         {
+            if (item is ITexture textureItem && item is IPosition itemPosition)
+            {
+                ChangeSpriteMode(textureItem);
+            }
+            /*
             Sprite sprite = null;
             SpriteEffects spriteEffects = SpriteEffects.None;
             switch (item)
@@ -130,11 +112,12 @@ public class Renderer : DrawableGameComponent
                     break;
                 default:
                     break;
+                    
             }
             if (item is IPosition itemWithPos && sprite is not null)
             {
                 _spriteBatch.Draw(sprite.Texture, itemWithPos.Position, sprite.SourceRectangle, Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
-            }
+            }*/
         }
         _spriteBatch.End();
     }

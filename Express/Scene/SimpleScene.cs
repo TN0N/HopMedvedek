@@ -10,8 +10,9 @@ namespace Express.Scene;
 /// </summary>
 public class SimpleScene : GameComponent, IScene
 {
-    private List<object> _items; // List of objects in the scene.
-    private List<SceneAction> _actions = new List<SceneAction>(); // List of actions available for scene manipulation.
+    protected List<object> _items; // List of objects in the scene.
+    protected List<SceneAction> _actions = new List<SceneAction>(); // List of actions available for scene manipulation.
+    protected Matrix _cameraMatrix = Matrix.Identity; // The camera matrix for the scene.
 
     public event EventHandler<IScene.SceneEventArgs> ItemAdded; // Event handler for adding items.
     public event EventHandler<IScene.SceneEventArgs> ItemRemoved; // Event handler for removing items.
@@ -112,5 +113,11 @@ public class SimpleScene : GameComponent, IScene
     {
         foreach (var item in _items)
             Remove(item);
+    }
+
+    public Matrix CameraMatrix
+    {
+        get => _cameraMatrix;
+        set => _cameraMatrix = value;
     }
 }

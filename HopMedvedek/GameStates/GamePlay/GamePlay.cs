@@ -1,11 +1,11 @@
 ﻿using Artificial.Artificial.Utils;
 using HopMedvedek.Entities;
 using HopMedvedek.Graphics;
+using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
 using HopMedvedek.Physics;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
 
 namespace HopMedvedek.GameStates.GamePlay;
 
@@ -20,8 +20,8 @@ public class GamePlay : GameState
     private int _hearts;
 
     private GameHud _hud;
-    private GameRenderer _gameRenderer;
-    private GuiRenderer _hudRenderer;
+    private Renderer _gameRenderer;
+    private Renderer _hudRenderer;
     private PhysicsEngine _physics;
 
     private FpsComponent _fpsComponent;
@@ -39,10 +39,10 @@ public class GamePlay : GameState
     private void _finishInit()
     { 
         _physics = new PhysicsEngine(Game, _level);
-        _gameRenderer = new GameRenderer(Game, _level);
+        _gameRenderer = new Renderer(Game, _level.Scene);
         _fpsComponent = new FpsComponent(Game);
         _hud = new GameHud(Game);
-        _hudRenderer = new GuiRenderer(Game, _hud.Scene);
+        _hudRenderer = new Renderer(Game, _hud.Scene);
 
         _hudRenderer.DrawOrder = 1;
 

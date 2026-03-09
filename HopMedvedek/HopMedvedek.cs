@@ -1,5 +1,8 @@
 ﻿using Artificial.Artificial.Utils;
 using HopMedvedek.Data;
+using HopMedvedek.GameStates;
+using HopMedvedek.GameStates.GamePlay;
+using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -11,17 +14,18 @@ public class HopMedvedek : Game {
     private GraphicsDeviceManager _graphics; // The graphics device.
     private Type[] _levelClasses; // The level types
 
-    //private Stack<GameState> _stateStack; // The game states
+    private Stack<GameState> _stateStack; // The game states
 
     public HopMedvedek()
     {
         _graphics = new GraphicsDeviceManager(this);
 
-        LoadOptions();
-
-        Components.Add(new Gameplay(this));
+        //Components.Add(new GamePlay(this));
         Components.Add(new FpsComponent(this));
+
+        _stateStack = new Stack<GameState>();
     }
+    public Type GetLevelType(LevelType type) => _levelClasses[(int)type];
     private void LoadOptions()
     {
         Options.Options.LoadOptions();
@@ -34,6 +38,32 @@ public class HopMedvedek : Game {
 
         _graphics.ApplyChanges();
 
+    }
+    public void PushState(GameState gameState)
+    {
+        // Deactivate Current
+        if (_stateStack.Count > 0)
+        {
+            GameState currentActiveState = _stateStack.Peek();
+            currentActiveState.Deactivate();
+            Components.Remove(currentActiveState);
+        }
+
+        // Push new
+        _stateStack.Push(gameState);
+        Components.Add(gameState);
+        gameState.Activate();
+    }
+    protected override void Initialize()
+    {
+        LoadOptions();
+
+        _levelClasses = new Type[(int)LevelType.LastType] {
+           typeof(Level.Levels.LanguageLevel),
+           typeof(Level.Levels.MathLevel)
+        };
+
+        PushState(new GamePlay(this, _levelClasses[0]));
     }
     protected override void Update(GameTime gameTime)
     {

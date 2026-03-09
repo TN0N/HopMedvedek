@@ -5,6 +5,6 @@ namespace Express.Scene.Objects.Colliders;
 /// <summary>
 /// Defines the interface describing a particle collider.
 /// </summary>
-public interface IParticleCollider : IRadius, IPosition
+public interface IParticleCollider : IRadius, IPosition, ICollider
 {
 }
