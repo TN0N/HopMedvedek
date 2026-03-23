@@ -1,6 +1,7 @@
 using System;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Rotation;
+using Microsoft.Xna.Framework;
 
 namespace Express.Physics;
 /// <summary>
@@ -23,9 +24,33 @@ public static class MovementPhysics
             movable.Velocity *= movable.Decay;
         }
 
-        if (item is IRotatable rotatable)
+        if (item is IRotatable rotatable && item is IPosition position)
         {
-            rotatable.RotationAngle += rotatable.AngularVelocity * (float)elapsed.TotalSeconds;
+            //System.Diagnostics.Debug.WriteLine("rotating");
+
+
+            // Direction from pivot to object
+            Vector2 dir = position.Position - rotatable.PivotPoint;
+
+            // Rotate that direction
+            float angle = rotatable.AngularVelocity * (float)elapsed.TotalSeconds;
+
+            float cos = (float)MathF.Cos(angle);
+            float sin = (float)MathF.Sin(angle);
+
+            Vector2 rotatedDir = new Vector2(
+                dir.X * cos - dir.Y * sin,
+                dir.X * sin + dir.Y * cos
+            );
+
+            // New position
+            position.Position = rotatable.PivotPoint + rotatedDir;
+
+            // Still update rotation angle if needed
+            rotatable.RotationAngle += angle;
+
+
+            //rotatable.RotationAngle += rotatable.AngularVelocity * (float)elapsed.TotalSeconds;
         }
     }
     /*

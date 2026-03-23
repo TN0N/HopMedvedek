@@ -1,29 +1,35 @@
 ﻿using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects.Movement;
+using Express.Scene.Objects.Rotation;
+using Express.Scene.Objects.Shapes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using static System.Net.Mime.MediaTypeNames;
 namespace HopMedvedek.Graphics;
 
 public class Renderer : DrawableGameComponent
 {
     
     protected SpriteBatch _spriteBatch;
-    protected SpriteSortMode _spriteSortMode = SpriteSortMode.Deferred;
+
+    protected SpriteSortMode _spriteSortMode = SpriteSortMode.FrontToBack;
     protected BlendState _blendState = null;
-    protected SamplerState _samplerState = null;
+    protected SamplerState _samplerState = SamplerState.PointClamp;
     protected DepthStencilState _depthStencilState = null;
     protected RasterizerState _rasterizerState = null;
     protected Effect _effect = null;
-
     protected IScene _scene;
+    //private Matrix _camera; 
 
     public Renderer(Game game, IScene scene) : base(game)
     {
         _scene = scene;
+        //_camera = Matrix.CreateScale(new Vector3(Game.Window.ClientBounds.Width / 320f, Game.Window.ClientBounds.Height / 480f, 1));
+        // _camera = _scene.CameraMatrix;
         _spriteBatch = new SpriteBatch(game.GraphicsDevice);
     }
-    protected void ChangeSpriteMode(ITexture textureItem)
+    protected void ChangeSpriteMode(Sprite textureItem)
     {
 
         if (textureItem.SpriteSortMode != _spriteSortMode
@@ -47,78 +53,58 @@ public class Renderer : DrawableGameComponent
     }
     public override void Initialize()
     {
+        
         base.Initialize();
     }
+    
     public override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.LightSkyBlue);
 
-        
 
+        //System.Diagnostics.Debug.WriteLine("drawing");
         _spriteBatch.Begin(_spriteSortMode, _blendState, _samplerState, _depthStencilState, _rasterizerState, _effect, _scene.CameraMatrix);
+        //_spriteBatch.Begin();
         foreach (object item in _scene)
         {
-            if (item is ITexture textureItem && item is IPosition itemPosition)
+            if (item is ITextured texturedItem && item is IPosition itemPosition)
             {
-                ChangeSpriteMode(textureItem);
+                // Get items sprite to display at current time
+                //System.Diagnostics.Debug.WriteLine("Drawing " + item);
+                Sprite sprite = texturedItem.Sprite(gameTime);
+
+                ChangeSpriteMode(sprite);
+                SpriteEffects effect = (item is IFacing facingItem && facingItem.Facing)? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+
+                Rectangle drawRectangle = sprite.SourceRectangle;
+
+                if (item is ICustomDrawRect customDrawRectItem)
+                    drawRectangle = new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)customDrawRectItem.CustomWidth, (int)customDrawRectItem.CustomHeight);
+                else if (item is IRectangleSize rectangleItem)
+                    drawRectangle = new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height);
+
+                    // = (item is IRectangleSize rectangleItem) ? new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height) : sprite.SourceRectangle;
+
+                float rotationAngle = (item is IRotatable rotatableItem)? rotatableItem.RotationAngle : 0f;
+
+                Vector2 origin = (item is ICustomOrigin customOriginItem) ? customOriginItem.CustomOrigin : sprite.Origin;
+                //float layerDepth = (itemPosition.Position.Y + drawRectangle.Height) / (_scene.CameraMatrix.Translation.Y + Game.Window.ClientBounds.Height);
+
+                //System.Diagnostics.Debug.WriteLine(item + " " + layerDepth);
+
+                _spriteBatch.Draw(
+                    _scene.SceneTextureData[sprite.Src],
+                    drawRectangle,
+                    sprite.SourceRectangle, 
+                    Color.White,
+                    rotationAngle,
+                    origin, 
+                    effect,
+                    texturedItem.LayerDepth);
             }
-            /*
-            Sprite sprite = null;
-            SpriteEffects spriteEffects = SpriteEffects.None;
-            switch (item)
-            {
-                case Ground:
-                    sprite = _ground;
-                    break;
-                case TreeBase:
-                    sprite = _trunkBase; break;
-                case TreeMid:
-                    sprite = _trunkMid;
-                    break;
-                case Bear _bear:
-                    switch (_bear.State)
-                    { 
-                        case Bear.StateEnum.Idle:
-                            sprite = _playerSprites["idle"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                        case Bear.StateEnum.Walk:
-                            sprite = _playerSprites["walk"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                        case Bear.StateEnum.WalkThrow:
-                            sprite = _playerSprites["walkThrow"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                        case Bear.StateEnum.JumpUp:
-                            sprite = _playerSprites["jumpUp"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                        case Bear.StateEnum.JumpDown:
-                            sprite = _playerSprites["jumpDown"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                        case Bear.StateEnum.JumpThrow:
-                            sprite = _playerSprites["jumpThrow"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                        case Bear.StateEnum.Dazed:
-                            sprite = _playerSprites["dazed"].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-                            break;
-                    }
-                    switch (_bear.Facing)
-                    { 
-                        case Bear.FacingEnum.Left:
-                            spriteEffects = SpriteEffects.None;
-                            break;
-                        case Bear.FacingEnum.Right:
-                            spriteEffects = SpriteEffects.FlipHorizontally;
-                            break;
-                    }
-                    break;
-                default:
-                    break;
-                    
-            }
-            if (item is IPosition itemWithPos && sprite is not null)
-            {
-                _spriteBatch.Draw(sprite.Texture, itemWithPos.Position, sprite.SourceRectangle, Color.White, 0f, sprite.Origin, 1f, spriteEffects, 0);
-            }*/
+  
         }
         _spriteBatch.End();
+        
     }
 }

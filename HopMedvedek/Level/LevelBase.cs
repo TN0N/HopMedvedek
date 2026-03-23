@@ -1,8 +1,13 @@
-﻿using Express.Scene;
+﻿using Express.Graphics;
+using Express.Scene;
 using Express.Scene.Objects;
+using HopMedvedek.Data;
 using HopMedvedek.Graphics;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 
 namespace HopMedvedek.Level;
 /// <summary>
@@ -17,25 +22,44 @@ public class LevelBase : GameComponent
     // protected QuestionGenerator _questionGenerator;
     // protected List<Crow> _crows;
 
+    protected Dictionary<string, Texture2D> _textureData;
+
     protected Vector2 _bearSpawn;
     protected Vector2 _treeBaseSpawn;
+    protected Vector2 _groundSpawn;
 
     protected LevelBase(Game game): base(game)
     {
         _scene = new SimpleScene(game);
-        _tree = new Tree(game);
+        _tree = new Tree(game, _scene);
 
-        _bear = new Bear();
-        _ground = new Ground();
+        _bear = new Bear(game);
+        _ground = new Ground(game);
 
         _scene.Add(_bear);
         _scene.Add(_tree);
         _scene.Add(_ground);
+
+
+
+        _scene.SceneTextureData = new Dictionary<string, Texture2D>
+        {
+            [HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE),
+        };
     }
     public override void Initialize()
     {
         base.Initialize();
+
+        //_bear.Position = _bearSpawn;
+        //_ground.Position = _groundSpawn;
+        //_tree.Position = _treeBaseSpawn;
+
         Game.Components.Add(_scene);
+        
     }
     public override void Update(GameTime gameTime)
     {
@@ -44,7 +68,15 @@ public class LevelBase : GameComponent
             var updateable = item as ICustomUpdate;
             updateable?.Update(gameTime);
         }
+
+        _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0);
     }
+    public Dictionary<string, Texture2D> TextureData
+    {
+        get => _textureData;
+        set => _textureData = value;
+    }
+
     public SimpleScene Scene { 
         get => _scene;
         set => _scene = value;

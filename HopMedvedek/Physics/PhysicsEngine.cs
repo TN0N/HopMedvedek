@@ -33,17 +33,20 @@ public class PhysicsEngine : GameComponent
     /// <param name="gameTime">The <see cref="GameTime"/>.</param>
     public override void Update(GameTime gameTime)
     {
-        //float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
-        MovementPhysics.SimulateMovement(_level.Bear, gameTime.ElapsedGameTime);
         
+
 
         // Apply gravity
         foreach (object item in _level.Scene)
+        {
+            //float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            MovementPhysics.SimulateMovement(item, gameTime.ElapsedGameTime);
             if (item is IGravity gravityItem && item is IVelocity velocityItem)
             {
                 float gravity = gravityItem.GravitationalAcceleration * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 velocityItem.Velocity.Y += gravity;
             }
+        }
 
         // Check bear for collisions
         foreach (object item in _level.Scene)

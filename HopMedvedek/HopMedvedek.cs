@@ -29,7 +29,7 @@ public class HopMedvedek : Game {
     private void LoadOptions()
     {
         Options.Options.LoadOptions();
-
+        Window.AllowUserResizing = true;
         _graphics.PreferredBackBufferWidth = Options.Options.Current.GraphicsDeviceWidth;
         _graphics.PreferredBackBufferHeight = Options.Options.Current.GraphicsDeviceHeight;
         
@@ -64,6 +64,7 @@ public class HopMedvedek : Game {
         };
 
         PushState(new GamePlay(this, _levelClasses[0]));
+        base.Initialize();
     }
     protected override void Update(GameTime gameTime)
     {
@@ -71,6 +72,11 @@ public class HopMedvedek : Game {
             Exit();
 
         base.Update(gameTime);
+    }
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.Black);
+        base.Draw(gameTime);
     }
 }
 

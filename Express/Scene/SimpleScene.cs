@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Express.Graphics;
 using Express.Scene.Objects;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Express.Scene;
 /// <summary>
@@ -13,6 +15,7 @@ public class SimpleScene : GameComponent, IScene
     protected List<object> _items; // List of objects in the scene.
     protected List<SceneAction> _actions = new List<SceneAction>(); // List of actions available for scene manipulation.
     protected Matrix _cameraMatrix = Matrix.Identity; // The camera matrix for the scene.
+    protected Dictionary<string, Texture2D> _sceneTextureData;
 
     public event EventHandler<IScene.SceneEventArgs> ItemAdded; // Event handler for adding items.
     public event EventHandler<IScene.SceneEventArgs> ItemRemoved; // Event handler for removing items.
@@ -113,6 +116,12 @@ public class SimpleScene : GameComponent, IScene
     {
         foreach (var item in _items)
             Remove(item);
+    }
+
+    public Dictionary<string, Texture2D> SceneTextureData
+    {
+        get => _sceneTextureData;
+        set => _sceneTextureData = value;
     }
 
     public Matrix CameraMatrix

@@ -11,3 +11,16 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artif
 C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\refint\Artificial.dll
 C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.pdb
 C:\Users\AMT\Documents\My projects\HopMedvedek\Artificial\obj\Debug\net8.0\ref\Artificial.dll
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\bin\Debug\net8.0\Artificial.deps.json
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\bin\Debug\net8.0\Artificial.dll
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\bin\Debug\net8.0\Artificial.pdb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.csproj.AssemblyReference.cache
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.AssemblyInfoInputs.cache
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.AssemblyInfo.cs
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.csproj.CoreCompileInputs.cache
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.sourcelink.json
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.dll
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\refint\Artificial.dll
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\Artificial.pdb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\Artificial\obj\Debug\net8.0\ref\Artificial.dll

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Express.Scene.Objects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
@@ -12,6 +13,22 @@ public class AnimatedSprite
     protected List<AnimatedSpriteFrame> _frames; // The frames of the animation
     protected double _duration; // The duration of the animation
     protected bool _looping; // Boolean whether the animation loops or not
+    protected Lifetime _lifeTime;
+
+    public AnimatedSprite(string src, Rectangle sourceRectange, Vector2 origin, int frames, double duration, bool looping)
+    { 
+        _duration = duration;
+        _looping = looping;
+
+        _frames = new List<AnimatedSpriteFrame>();
+
+        for (int i = 0; i < frames; i++)
+        {
+            Rectangle frameRectange = new Rectangle(sourceRectange.X + i * sourceRectange.Width, sourceRectange.Y, sourceRectange.Width, sourceRectange.Height);
+            _frames.Add(new AnimatedSpriteFrame(new Sprite(src, frameRectange, origin), i * (duration/frames)));
+        }
+    }
+
 
     /// <summary>
     /// Creates a new <see cref="AnimatedSprite"/> that lasts <paramref name="duration"/> ms.
@@ -21,30 +38,6 @@ public class AnimatedSprite
     {
         _frames = new List<AnimatedSpriteFrame>();
         _duration = duration;
-    }
-    /// <summary>
-    /// Generates an <see cref="AnimatedSprite"/> from a texture passed as a parameter.
-    /// </summary>
-    /// <param name="texture">The texture for the animation.</param>
-    /// <param name="sourceRectangle">The souceRectangle for each frame.</param>
-    /// <param name="origin">The origin for each frame.</param>
-    /// <param name="frames">The number of frames.</param>
-    /// <param name="duration">The duration of the animation in ms.</param>
-    /// <param name="looping">Definies whether the animation loops or not.</param>
-    public AnimatedSprite(Texture2D texture, Rectangle sourceRectangle, Vector2 origin, int frames, double duration, bool looping) {
-
-        _frames = new List<AnimatedSpriteFrame>();
-        _duration = duration;
-        _looping = looping;
-
-        for (double i = 0; i < frames; i++)
-        { 
-            Sprite frame = new Sprite();
-            frame.Texture = texture;
-            frame.SourceRectangle = new Rectangle(sourceRectangle.X + (int)i* sourceRectangle.Width, sourceRectangle.Y, sourceRectangle.Width, sourceRectangle.Height);
-            frame.Origin = origin;
-            _frames.Add(new AnimatedSpriteFrame(frame, _duration * (i/frames)));
-        }
     }
     /// <summary>
     /// The duration of the animation in ms.
@@ -84,16 +77,29 @@ public class AnimatedSprite
     /// <returns><see cref="AnimatedSpriteFrame"/> at the given <paramref name="time"/>.</returns>
     public Sprite SpriteAtTime(double time)
     {
+
         if (_looping)
         {
+            
             int loops = (int)System.Math.Floor(time / _duration);
             time -= loops * _duration;
         }
-        if (time >= Duration)
-            return null;
+        /*
+        else
+        {
+            if (_lifeTime == null)
+            { 
+                _lifeTime = new Lifetime(time, _duration);
+            }
+            time = _lifeTime.Progress;
+        }*/
+
+            
+        
+
         for (int i = 0; i < _frames.Count - 1; i++)
-        { 
-            AnimatedSpriteFrame nextFrame = _frames[i+1];
+        {
+            AnimatedSpriteFrame nextFrame = _frames[i + 1];
             if (nextFrame.Start > time)
             {
                 AnimatedSpriteFrame frame = _frames[i];

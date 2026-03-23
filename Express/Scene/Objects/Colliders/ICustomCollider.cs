@@ -10,7 +10,7 @@ public interface ICustomCollider : ICollider
     /// <param name="item">The item the collision happened on.</param>
     /// <param name="defaultValue">The default assumption if a collision is valid.</param>
     /// <returns>A <see langword="bool"/> determining if a collision is valid.</returns>
-    public bool CollidingWith(object item, bool defaultValue = true)
+    public virtual bool CollidingWith(object item, bool defaultValue = true)
     {
         return defaultValue; // override
     }
@@ -19,7 +19,7 @@ public interface ICustomCollider : ICollider
     /// Defines the behaviour of an object after it has collided.
     /// </summary>
     /// <param name="item">The item the collision happened on.</param>
-    public void CollidedWith(object item)
+    public virtual void CollidedWith(object item)
     {
         //override
     }

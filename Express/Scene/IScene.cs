@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Express.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Express.Scene;
 /// <summary>
@@ -47,5 +48,5 @@ public interface IScene : IEnumerable<object>, IUpdateable
         get; set;
     }
 
-    public Dictionary<Enum, ITextureData> TextureData { get; set; }
+    public Dictionary<string, Texture2D> SceneTextureData { get; set; }
 }

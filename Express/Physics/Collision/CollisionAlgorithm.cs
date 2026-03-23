@@ -103,6 +103,7 @@ public class CollisionAlgorithm<T1,T2>
             relaxPercentage2 = 1;
         }
         // Neither has mass
+
         else
         {
             // only item 1 has position
@@ -118,6 +119,7 @@ public class CollisionAlgorithm<T1,T2>
                 relaxPercentage2 = 1;
             }
         }
+        
         // item 1 relaxes
         if (itemWithPosition1 is not null)
             itemWithPosition1.Position -= relaxDistance * relaxPercentage1;
@@ -146,6 +148,7 @@ public class CollisionAlgorithm<T1,T2>
     /// <param name="collisionNormal">The collision normal.</param>
     protected void ExchangeEnergy(object item1, object item2, Vector2 collisionNormal)
     {
+        
         IVelocity itemWithVelocity1 = item1 as IVelocity;
         IVelocity itemWithVelocity2 = item2 as IVelocity;
         
@@ -169,7 +172,7 @@ public class CollisionAlgorithm<T1,T2>
         // Apply changes to the objects velocity.
         if (mass1Inverse > 0 && itemWithVelocity1 is not null)
             itemWithVelocity1.Velocity += collisionNormal * (impact * mass1Inverse);
-
+        
         if (mass2Inverse > 0 && itemWithVelocity2 is not null)
             itemWithVelocity2.Velocity -= collisionNormal * (impact * mass2Inverse);
     }
@@ -182,6 +185,13 @@ public class CollisionAlgorithm<T1,T2>
     /// <param name="pointOfImpact">The point of impact</param>
     protected void ExchangeEnergy(object item1, object item2, Vector2 collisionNormal, Vector2 pointOfImpact)
     {
+        /*
+        System.Diagnostics.Debug.WriteLine(item1);
+        System.Diagnostics.Debug.WriteLine(item2);
+        System.Diagnostics.Debug.WriteLine(collisionNormal);
+        System.Diagnostics.Debug.WriteLine(pointOfImpact);*/
+
+
         IPosition item1WithPosition = item1 as IPosition;
         IMovable movableItem1 = item1 as IMovable;
         IRotatable rotatableItem1 = item1 as IRotatable;
@@ -194,13 +204,15 @@ public class CollisionAlgorithm<T1,T2>
         Vector2 lever2 = new();
         Vector2 tangentialDirection1 = new();
         Vector2 tangentialDirection2 = new();
-
+        
         // Check if items have position and are rotatable.
         if (item1WithPosition is not null && rotatableItem1 is not null)
         {
             lever1 = pointOfImpact - item1WithPosition.Position;
             tangentialDirection1 = Vector2.Normalize(new Vector2(-lever1.Y, lever1.X));
+            
             Vector2 rotationalVelocity = tangentialDirection1 * (lever1.Length() * rotatableItem1.AngularVelocity);
+            
             velocity1 += rotationalVelocity;
         }
         if (item2WithPosition is not null && rotatableItem2 is not null)
@@ -208,6 +220,7 @@ public class CollisionAlgorithm<T1,T2>
             lever2 = pointOfImpact - item2WithPosition.Position;
             tangentialDirection2 = Vector2.Normalize(new Vector2(-lever2.Y, lever2.X));
             Vector2 rotationalVelocity = tangentialDirection2 * (lever2.Length() * rotatableItem2.AngularVelocity);
+            
             velocity2 += rotationalVelocity;
         }
 
@@ -215,6 +228,7 @@ public class CollisionAlgorithm<T1,T2>
         float speed1 = Vector2.Dot(velocity1, collisionNormal);
         float speed2 = Vector2.Dot(velocity2, collisionNormal);
         float speedDifference = speed1 - speed2;
+        //System.Diagnostics.Debug.WriteLine(collisionNormal);
         if (speedDifference < 0)
             return;
 
@@ -226,7 +240,7 @@ public class CollisionAlgorithm<T1,T2>
         float mass2Inverse = item2 is IMass ? 1.0f / ((IMass)item2).Mass : 0;
         IAngularMass item1WithAngularMass = item1 as IAngularMass;
         IAngularMass item2WithAngularMass = item2 as IAngularMass;
-
+        
         // Calculate the inverse angular mass for each object.
         float angularMass1Inverse = item1WithAngularMass is not null?
             MathF.Pow(Vector2.Dot(tangentialDirection1, collisionNormal) * lever1.Length(), 2) / item1WithAngularMass.AngularMass : 0;
@@ -235,8 +249,9 @@ public class CollisionAlgorithm<T1,T2>
 
         // Calculate the impact of each object.
         float impact = -(cor + 1) * speedDifference / (mass1Inverse + mass2Inverse + angularMass1Inverse + angularMass2Inverse);
-
+        //System.Diagnostics.Debug.WriteLine(impact);
         // Apply changes to velocity and rotation.
+        /*
         if (mass1Inverse > 0 && movableItem1 is not null)
             movableItem1.Velocity += (collisionNormal * (impact * mass1Inverse));
 
@@ -246,16 +261,21 @@ public class CollisionAlgorithm<T1,T2>
         if (item1WithAngularMass is not null)
         {
             float tangentialForce = Vector2.Dot(tangentialDirection1, collisionNormal) * impact;
+
+            System.Diagnostics.Debug.WriteLine(tangentialForce);
             float change = tangentialForce * lever1.Length() / item1WithAngularMass.AngularMass;
+            System.Diagnostics.Debug.WriteLine(item1);
             rotatableItem1.AngularVelocity += change;
         }
 
         if (item2WithAngularMass is not null)
         {
+            System.Diagnostics.Debug.WriteLine("aaaa");
             float tangentialForce = Vector2.Dot(tangentialDirection2, collisionNormal) * -impact;
+
             float change = tangentialForce * lever2.Length() / item2WithAngularMass.AngularMass;
             rotatableItem2.AngularVelocity += change;
-        }
+        }*/
     }
 
 }

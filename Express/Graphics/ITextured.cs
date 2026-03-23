@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Express.Graphics;
 
-public interface ITextureData
+public interface ITextured
 {
-    public string Name { get; set; }
-    public Sprite Sprite { get; set; }
-
-    public Dictionary<Enum, AnimatedSprite> Animation { get; set; }
-
+    public float LayerDepth { get; }
+    public abstract Sprite Sprite(GameTime gameTime);
 }

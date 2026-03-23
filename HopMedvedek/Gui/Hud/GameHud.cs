@@ -22,6 +22,7 @@ public class GameHud : GameComponent
     }
     public override void Initialize()
     {
+        /*
         SpriteFont font = Game.Content.Load<SpriteFont>("Hudfont");
 
         _playerScore = new Label(font, "Score: 0", new Vector2(0, 0));
@@ -38,6 +39,7 @@ public class GameHud : GameComponent
         _scene.Add(_playerCoins);
         _scene.Add(_playerHearts);
         _scene.Add(_playerPinecones);
+        */
     }
     public override void Update(GameTime gameTime)
     {
