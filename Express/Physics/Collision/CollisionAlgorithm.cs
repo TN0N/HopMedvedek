@@ -251,7 +251,7 @@ public class CollisionAlgorithm<T1,T2>
         float impact = -(cor + 1) * speedDifference / (mass1Inverse + mass2Inverse + angularMass1Inverse + angularMass2Inverse);
         //System.Diagnostics.Debug.WriteLine(impact);
         // Apply changes to velocity and rotation.
-        /*
+        
         if (mass1Inverse > 0 && movableItem1 is not null)
             movableItem1.Velocity += (collisionNormal * (impact * mass1Inverse));
 
@@ -262,20 +262,20 @@ public class CollisionAlgorithm<T1,T2>
         {
             float tangentialForce = Vector2.Dot(tangentialDirection1, collisionNormal) * impact;
 
-            System.Diagnostics.Debug.WriteLine(tangentialForce);
+            //System.Diagnostics.Debug.WriteLine(tangentialForce);
             float change = tangentialForce * lever1.Length() / item1WithAngularMass.AngularMass;
-            System.Diagnostics.Debug.WriteLine(item1);
+            //System.Diagnostics.Debug.WriteLine(item1);
             rotatableItem1.AngularVelocity += change;
         }
 
         if (item2WithAngularMass is not null)
         {
-            System.Diagnostics.Debug.WriteLine("aaaa");
+            //System.Diagnostics.Debug.WriteLine("aaaa");
             float tangentialForce = Vector2.Dot(tangentialDirection2, collisionNormal) * -impact;
 
             float change = tangentialForce * lever2.Length() / item2WithAngularMass.AngularMass;
             rotatableItem2.AngularVelocity += change;
-        }*/
+        }
     }
 
 }

@@ -82,6 +82,7 @@ public class ParticleConvexCollision : CollisionAlgorithm<IParticleCollider, ICo
     private Vector2 CalculateRelaxDistance(IParticleCollider particle, IConvexCollider convex,
         ref Vector2 pointOfImpact)
     {
+        //System.Diagnostics.Debug.WriteLine("poi: " + pointOfImpact);
         // First move particle in coordinate space of the convex collider.
         Vector2 offset = convex is IPosition ? ((IPosition)convex).Position : Vector2.Zero;
         float angle = convex is IRotation ? ((IRotation)convex).RotationAngle : 0;

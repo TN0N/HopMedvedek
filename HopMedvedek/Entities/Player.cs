@@ -30,8 +30,8 @@ public class Player: GameComponent
 
             if (_stateLifeTime == null)
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
-            else
-                System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
+            //else
+            //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
 
             if (!_stateLifeTime.IsAlive)
             {

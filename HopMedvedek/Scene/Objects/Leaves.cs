@@ -18,16 +18,21 @@ public enum LeavesState
     BearLanding,
     BearLanded
 }
-public class Leaves : GameComponent, ICustomCollider, IConvexCollider, IPosition, ICustomDrawRect, ITextured, IRotatable, IAngularMass, IAngularVelocity//, ICustomOrigin
+public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution, IAARectangleCollider,/*, IConvexCollider*/ IPosition, ICustomDrawRect, ITextured, IRotatable /*, IAngularMass*IAngularVelocity , ICustomOrigin*/
 {
+    protected float _leafBottomBound;
+    protected float _leafTopBound;
+
     protected float _width;
     protected float _height;
-
+    protected float _coefficientOfRestitution;
     protected List<Vector2> _boundVerticies;
     protected ConvexPolygon _bounds;
 
+    protected Bear _bear;
+
     protected Vector2 _pivotPoint;
-    protected float _angularMass = 1f;
+    protected float _angularMass;
 
     protected float _rotationAngle;
     protected float _angularVelocity;
@@ -56,9 +61,11 @@ public class Leaves : GameComponent, ICustomCollider, IConvexCollider, IPosition
         _drawWidth = 62;
         _drawHeight = 34;
 
+        _angularMass = 125000f;
         _rotationAngle =0f;
         _angularVelocity = 0f;
 
+        _coefficientOfRestitution = 0f;
         _state = LeavesState.Default;
         _playerLanded = false;
 
@@ -98,10 +105,15 @@ public class Leaves : GameComponent, ICustomCollider, IConvexCollider, IPosition
     }
     public ref Vector2 Position => ref _position;
 
-
+    public float CoefficientOfRestitution
+    {
+        get => _coefficientOfRestitution;
+        set => _coefficientOfRestitution = value;
+    }
 
     public bool CollidingWith(object item, bool defaultValue = false)
     {
+        
         if (item is Bear bear)
         {
             float bearBottom = bear.Position.Y + bear.Height / 2;
@@ -110,12 +122,14 @@ public class Leaves : GameComponent, ICustomCollider, IConvexCollider, IPosition
             // Only collide if falling AND above the leaf
             if (bear.Velocity.Y > 0 && bearBottom <= leafTop + 5) // small tolerance
             {
-                bear.Velocity.Y = 0;
-                bear.Position.Y = leafTop - bear.Height / 2; // snap on top
+                //bear.Velocity.Y = 0;
+                //bear.Position.Y = leafTop - bear.Height / 2; // snap on top
                 return true;
             }
         }
         return false;
+         
+        //return true;
     }
     private void ChangeState(GameTime gameTime)
     {
@@ -137,6 +151,59 @@ public class Leaves : GameComponent, ICustomCollider, IConvexCollider, IPosition
     }
     public override void Update(GameTime gameTime)
     {
+        bool side = (_position.X <= Game.Window.ClientBounds.Width/2)? false : true;
+        //if (_rotationAngle != 0f)
+        //    System.Diagnostics.Debug.WriteLine(_rotationAngle);
+        float angle = 0.05f;
+        float speed = 1f;
+
+        if (side)
+        {
+            if (_playerLanded)
+            {
+                _angularVelocity = speed;
+                if (_rotationAngle >= angle)
+                {
+                    _rotationAngle = angle;
+                    _angularVelocity = 0;
+                }
+            }
+            else
+            {
+                _angularVelocity = -speed;
+                if (_rotationAngle <= 0)
+                {
+                    _rotationAngle = 0f;
+                    _angularVelocity = 0;
+                }
+
+            }
+
+        }
+        else
+        {
+            if (_playerLanded)
+            {
+                _angularVelocity = -speed;
+                if (_rotationAngle <= -angle)
+                {
+                    _rotationAngle = -angle;
+                    _angularVelocity = 0;
+                }
+            }
+            else
+            {
+                _angularVelocity = speed;
+                if (_rotationAngle >= 0)
+                {
+                    _rotationAngle = 0f;
+                    _angularVelocity = 0;
+                }
+
+            }
+        }
+        if (_bear is not null && (_bear.Velocity.Y < 0 || _bear.Velocity.Y > 100))
+            _playerLanded = false;
         ChangeState(gameTime);
     }
     public void CollidedWith(object item)
@@ -148,7 +215,10 @@ public class Leaves : GameComponent, ICustomCollider, IConvexCollider, IPosition
             _playerLanded = true;
             //bear.Velocity.Y -= bear.Velocity.Y;
             bear.Jumping = false;
+
+            _bear = bear;
         }
+        
     }
 
     public Sprite Sprite(GameTime gameTime)

@@ -7,13 +7,16 @@ using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Scene.Objects;
 
-public class Twig : IRectangleSize, IPosition, ITextured//, IRotatable
+public class Twig : IRectangleSize, IPosition, ITextured, IRotatable
 {
     //protected float _rotationAngle;
     //protected float _angularVelocity;
 
     protected float _width;
     protected float _height;
+    protected float _rotationAngle;
+    protected float _angularVelocity;
+    protected Vector2 _pivotPoint;
 
     protected Sprite _twigSprite;
     protected Vector2 _position;
@@ -45,7 +48,7 @@ public class Twig : IRectangleSize, IPosition, ITextured//, IRotatable
         return _twigSprite;
     }
     public float LayerDepth => 0.5f;
-    /*
+    
     public float RotationAngle
     { 
         get => _rotationAngle; 
@@ -55,5 +58,10 @@ public class Twig : IRectangleSize, IPosition, ITextured//, IRotatable
     {
         get => _angularVelocity;
         set => _angularVelocity = value;
-    }*/
+    }
+    public Vector2 PivotPoint
+    {
+        get => _pivotPoint;
+        set => _pivotPoint = value;
+    }
 }

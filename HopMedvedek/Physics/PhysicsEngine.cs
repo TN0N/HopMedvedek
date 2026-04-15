@@ -51,7 +51,7 @@ public class PhysicsEngine : GameComponent
         // Check bear for collisions
         foreach (object item in _level.Scene)
             if (item is not Bear && item is ICollider)
-                Collision.CollisionBetween(_level.Bear, item);
+                Collision.CollisionBetween(item, _level.Bear);
 
         // Check pinecone for collisions
         /*

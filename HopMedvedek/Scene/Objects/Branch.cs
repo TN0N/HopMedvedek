@@ -26,8 +26,9 @@ public class Branch : GameComponent
         _leaves = new Leaves(game);
         _leaves.Position = new Vector2(_position.X - width, _position.Y);
         _leaves.PivotPoint = _position;
+        _twig.PivotPoint = _position;
         //_leaves.CustomOrigin = new Vector2(width, _leaves.Height/2);
-        
+
 
         _scene.Add(_twig);
         _scene.Add(_leaves);
@@ -48,6 +49,8 @@ public class Branch : GameComponent
     public override void Update(GameTime time)
     { 
         _leaves.Update(time);
+        _twig.RotationAngle = _leaves.RotationAngle;
+        _twig.Position.Y = _leaves.Position.Y;
     }
     private void GenerateAnswer()
     {

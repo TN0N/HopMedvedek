@@ -22,7 +22,7 @@ public enum BearState {
     BearJumpThrow,
     BearDazed
 }
-public class Bear : Entity, /*IAARectangleCollider,*/IPosition, IRectangleSize, IParticle, ITextured, IGravity, ICoefficientOfRestitution, IAngularMass, IAngularVelocity, IRotatable
+public class Bear : Entity, IAARectangleCollider,IPosition, IRectangleSize, /*IParticle*/ ITextured, IGravity, ICoefficientOfRestitution, /*IAngularMass,*/ IAngularVelocity, IRotatable
 {
     protected bool _grounded;
     protected bool _jumping;
@@ -44,10 +44,11 @@ public class Bear : Entity, /*IAARectangleCollider,*/IPosition, IRectangleSize, 
         _height = 45;
         _grounded = false;
         _jumping = false;
+
         _coefficientOfRestitution = 0f;
         _gravitationalAcceleration = HopMedvedekConstants.HOP_MEDVEDEK_GRAVITATIONAL_ACCELERATION;
         _mass = 10f;
-        _angularMass = 10f;
+        _angularMass = 367968.47f;
         _angularVelocity = 0f;
         _rotationAngle = 0f;
 
