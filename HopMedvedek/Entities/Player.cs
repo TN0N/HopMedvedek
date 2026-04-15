@@ -32,7 +32,7 @@ public class Player: GameComponent
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
-
+            _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
             {
                 _stateLifeTime = null;
@@ -41,11 +41,43 @@ public class Player: GameComponent
             else
             {
                 _bear.State = BearState.BearDazed;
-                _stateLifeTime.Update(gameTime);
             }
             return;
         }
+        if (_bear.State == BearState.BearWalkThrow)
+        {
+            if (_stateLifeTime == null)
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
 
+            _stateLifeTime.Update(gameTime);
+            if (!_stateLifeTime.IsAlive)
+            {
+                _stateLifeTime = null;
+                _bear.State = BearState.BearIdle;
+            }
+            else
+            {
+                _bear.State = BearState.BearWalkThrow;
+            }
+            return;
+        }
+        if (_bear.State == BearState.BearJumpThrow)
+        {
+            if (_stateLifeTime == null)
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
+
+            _stateLifeTime.Update(gameTime);
+            if (!_stateLifeTime.IsAlive)
+            {
+                _stateLifeTime = null;
+                _bear.State = BearState.BearIdle;
+            }
+            else
+            {
+                _bear.State = BearState.BearJumpThrow;
+            }
+            return;
+        }
         if (_bear.Velocity.Y < -17)
         {
             _bear.State = BearState.BearJumpUp;
@@ -88,10 +120,16 @@ public class Player: GameComponent
 
         if (Keyboard.GetState().IsKeyDown(Keys.F) && _bear.State != BearState.BearDazed)
             _bear.State = BearState.BearDazed;
-        if (Mouse.GetState().LeftButton == ButtonState.Pressed)
-            _bear.State = BearState.BearWalkThrow;
-        if (Mouse.GetState().RightButton == ButtonState.Pressed)
-            _bear.State = BearState.BearJumpThrow;
+        if (Mouse.GetState().LeftButton == ButtonState.Pressed && _bear.State != BearState.BearDazed)
+        { 
+            if (_bear.Jumping)
+                _bear.State = BearState.BearJumpThrow;
+            else
+                _bear.State = BearState.BearWalkThrow;
+        }
+            
+        //if (Mouse.GetState().RightButton == ButtonState.Pressed)
+        //    _bear.State = BearState.BearJumpThrow;
 
        
 

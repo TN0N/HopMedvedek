@@ -22,7 +22,7 @@ public enum BearState {
     BearJumpThrow,
     BearDazed
 }
-public class Bear : Entity, IAARectangleCollider,IPosition, IRectangleSize, /*IParticle*/ ITextured, IGravity, ICoefficientOfRestitution, /*IAngularMass,*/ IAngularVelocity, IRotatable
+public class Bear : Entity, IAARectangleCollider, IPosition, IRectangleSize, ITextured, IGravity, ICoefficientOfRestitution, IAngularVelocity, IRotatable
 {
     protected bool _grounded;
     protected bool _jumping;

@@ -185,13 +185,6 @@ public class CollisionAlgorithm<T1,T2>
     /// <param name="pointOfImpact">The point of impact</param>
     protected void ExchangeEnergy(object item1, object item2, Vector2 collisionNormal, Vector2 pointOfImpact)
     {
-        /*
-        System.Diagnostics.Debug.WriteLine(item1);
-        System.Diagnostics.Debug.WriteLine(item2);
-        System.Diagnostics.Debug.WriteLine(collisionNormal);
-        System.Diagnostics.Debug.WriteLine(pointOfImpact);*/
-
-
         IPosition item1WithPosition = item1 as IPosition;
         IMovable movableItem1 = item1 as IMovable;
         IRotatable rotatableItem1 = item1 as IRotatable;

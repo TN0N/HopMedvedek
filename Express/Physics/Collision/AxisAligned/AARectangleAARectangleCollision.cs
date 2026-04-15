@@ -46,9 +46,10 @@ public class AARectangleAARectangleCollision : CollisionAlgorithm<IAARectangleCo
     /// <returns>A <see cref="bool"/> indicating if a collision has occurred.</returns>
     protected override bool DetectCollision(IAARectangleCollider aaRectangle1, IAARectangleCollider aaRectangle2)
     {
+        float tolerance = 5f;
         float horizontalDistance = System.Math.Abs(aaRectangle1.Position.X - aaRectangle2.Position.X);
         float verticalDistance = System.Math.Abs(aaRectangle1.Position.Y - aaRectangle2.Position.Y);
-        return horizontalDistance < aaRectangle1.Width / 2 + aaRectangle2.Width / 2 && verticalDistance < aaRectangle1.Height / 2 + aaRectangle2.Height / 2;
+        return horizontalDistance < aaRectangle1.Width / 2 + aaRectangle2.Width / 2 && verticalDistance < aaRectangle1.Height / 2 + aaRectangle2.Height / 2 + tolerance;
     }
     /// <summary>
     /// Determines how a collision between two AARectangle colliders is resolved.

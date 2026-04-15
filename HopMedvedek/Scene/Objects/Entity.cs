@@ -1,10 +1,14 @@
-﻿using Express.Scene.Objects.Movement;
+﻿using Express.Graphics;
+using Express.Scene.Objects.Colliders;
+using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
+using Express.Scene.Objects.Rotation;
+using Express.Scene.Objects.Shapes;
 using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Scene.Objects;
 
-public class Entity : GameComponent, IMass, IMovable
+public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRectangleSize, ITextured, ICoefficientOfRestitution, IAngularVelocity, IRotatable
 {
     protected float _mass = 1.0f;
     protected Vector2 _position;

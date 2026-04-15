@@ -18,7 +18,7 @@ public enum LeavesState
     BearLanding,
     BearLanded
 }
-public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution, IAARectangleCollider,/*, IConvexCollider*/ IPosition, ICustomDrawRect, ITextured, IRotatable /*, IAngularMass*IAngularVelocity , ICustomOrigin*/
+public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution, IAARectangleCollider, IPosition, ICustomDrawRect, ITextured, IRotatable
 {
     protected float _leafBottomBound;
     protected float _leafTopBound;
@@ -45,7 +45,6 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
 
     protected Sprite _defaultSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(0, 37, 62, 33), new Vector2(31, 16));
     protected Sprite _bearLanededSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(372, 37, 62, 33), new Vector2(31, 16));
-    //protected Sprite _groundSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE, new Rectangle(0, 0, 256, 256), new Vector2(128, 128));
     protected LeavesState _state;
 
     protected Dictionary<Enum, AnimatedSprite> _leafAnimations = new()
@@ -119,17 +118,10 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
             float bearBottom = bear.Position.Y + bear.Height / 2;
             float leafTop = _position.Y - _height / 2;
 
-            // Only collide if falling AND above the leaf
-            if (bear.Velocity.Y > 0 && bearBottom <= leafTop + 5) // small tolerance
-            {
-                //bear.Velocity.Y = 0;
-                //bear.Position.Y = leafTop - bear.Height / 2; // snap on top
+            if (bear.Velocity.Y > 0 && bearBottom <= leafTop + 5)
                 return true;
-            }
         }
         return false;
-         
-        //return true;
     }
     private void ChangeState(GameTime gameTime)
     {
@@ -152,10 +144,8 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     public override void Update(GameTime gameTime)
     {
         bool side = (_position.X <= Game.Window.ClientBounds.Width/2)? false : true;
-        //if (_rotationAngle != 0f)
-        //    System.Diagnostics.Debug.WriteLine(_rotationAngle);
         float angle = 0.05f;
-        float speed = 1f;
+        float speed = 3f;
 
         if (side)
         {
@@ -213,7 +203,6 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
         {
             bear.Grounded = true;
             _playerLanded = true;
-            //bear.Velocity.Y -= bear.Velocity.Y;
             bear.Jumping = false;
 
             _bear = bear;
