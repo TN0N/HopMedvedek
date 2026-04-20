@@ -2,6 +2,7 @@
 using HopMedvedek.Data;
 using HopMedvedek.GameStates;
 using HopMedvedek.GameStates.GamePlay;
+using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -54,16 +55,27 @@ public class HopMedvedek : Game {
         Components.Add(gameState);
         gameState.Activate();
     }
+
+    public void PopState()
+    { 
+        GameState currentActiveState = _stateStack.Pop();
+        currentActiveState.Deactivate();
+        Components.Remove(currentActiveState);
+
+        currentActiveState = _stateStack.Peek();
+        Components.Add(currentActiveState);
+        currentActiveState.Activate();
+    }
     protected override void Initialize()
     {
         LoadOptions();
-
+        /*
         _levelClasses = new Type[(int)LevelType.LastType] {
            typeof(Level.Levels.LanguageLevel),
            typeof(Level.Levels.MathLevel)
-        };
+        };*/
 
-        PushState(new GamePlay(this, _levelClasses[0]));
+        PushState(new MainMenu(this));
         base.Initialize();
     }
     protected override void Update(GameTime gameTime)

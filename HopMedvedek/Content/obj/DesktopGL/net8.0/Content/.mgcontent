@@ -7,6 +7,8 @@
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/crow.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/grass.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/LuckiestGuy.spritefont</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/main_menu_button.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/nature.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/no_texture.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/objects.png</File>
@@ -15,6 +17,8 @@
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/speech.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

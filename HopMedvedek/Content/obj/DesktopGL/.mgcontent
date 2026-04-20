@@ -4,17 +4,21 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bear.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/crow.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/grass.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/nature.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/no_texture.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/objects.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/owl.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/sky.png</File>
-    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/speech.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/crow.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/grass.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/LuckiestGuy.spritefont</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/main_menu_button.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/nature.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/no_texture.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/objects.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/owl.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/sky.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/speech.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

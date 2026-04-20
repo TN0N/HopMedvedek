@@ -1,13 +1,8 @@
 ﻿using Express.Graphics;
-using Express.Math;
 using Express.Scene.Objects.Colliders;
-using Express.Scene.Objects.Composites;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
-using Express.Scene.Objects.Rotation;
-using Express.Scene.Objects.Shapes;
 using HopMedvedek.Data;
-using HopMedvedek.Graphics;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -22,20 +17,11 @@ public enum BearState {
     BearJumpThrow,
     BearDazed
 }
-public class Bear : Entity, IAARectangleCollider, IPosition, IRectangleSize, ITextured, IGravity, ICoefficientOfRestitution, IAngularVelocity, IRotatable
+public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
 {
     protected bool _grounded;
     protected bool _jumping;
     protected float _gravitationalAcceleration;
-    protected float _coefficientOfRestitution;
-    protected float _angularVelocity;
-    protected float _rotationAngle;
-
-    protected int _width;
-    protected int _height;
-
-    protected float _angularMass;
-    protected float _radius;
 
     protected BearState _state = BearState.BearIdle;
     public Bear(Game game) : base(game)
@@ -48,11 +34,9 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IRectangleSize, ITe
         _coefficientOfRestitution = 0f;
         _gravitationalAcceleration = HopMedvedekConstants.HOP_MEDVEDEK_GRAVITATIONAL_ACCELERATION;
         _mass = 10f;
-        _angularMass = 367968.47f;
         _angularVelocity = 0f;
         _rotationAngle = 0f;
-
-        _radius = _width / 2;
+        _layerDepth = 0.8f;
     }
 
     protected Dictionary<Enum, AnimatedSprite> _bearStateAnimations = new()
@@ -86,49 +70,8 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IRectangleSize, ITe
         get => _state;
         set => _state = value;
     }
-    public float Width {
-        get => _width;
-        set => _width = (int)value;
-    }
-    public float Height
-    {
-        get => _height;
-        set => _height = (int)value;
-    }
-    public Sprite Sprite(GameTime gameTime)
+    public override Sprite Sprite(GameTime gameTime)
     {
         return _bearStateAnimations[_state].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
-    }
-    public float CoefficientOfRestitution
-    {
-        get =>_coefficientOfRestitution;
-        set => _coefficientOfRestitution = value;
-    }
-    public float LayerDepth => 0.8f;
-
-    public float AngularMass
-    {
-        get => _angularMass;
-        set => _angularMass = value;
-    }
-    public float Radius
-    {
-        get => _radius;
-        set => _radius = value;
-    }
-    public float AngularVelocity
-    {
-        get => _angularVelocity;
-        set => _angularVelocity = value;
-    }
-    public Vector2 PivotPoint
-    {
-        get => new Vector2(_width / 2, _height / 2);
-        set { }
-    }
-    public float RotationAngle
-    {
-        get => 0f;
-        set => _rotationAngle = value;
     }
 }

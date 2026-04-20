@@ -3,6 +3,7 @@ using Express.Scene;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Rotation;
 using Express.Scene.Objects.Shapes;
+using HopMedvedek.Gui.Elements;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using static System.Net.Mime.MediaTypeNames;
@@ -74,7 +75,7 @@ public class Renderer : DrawableGameComponent
                 Sprite sprite = texturedItem.Sprite(gameTime);
 
                 ChangeSpriteMode(sprite);
-                SpriteEffects effect = (item is IFacing facingItem && facingItem.Facing)? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                SpriteEffects effect = (item is IFacing facingItem && facingItem.Facing) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 
                 Rectangle drawRectangle = sprite.SourceRectangle;
 
@@ -83,9 +84,9 @@ public class Renderer : DrawableGameComponent
                 else if (item is IRectangleSize rectangleItem)
                     drawRectangle = new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height);
 
-                    // = (item is IRectangleSize rectangleItem) ? new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height) : sprite.SourceRectangle;
+                // = (item is IRectangleSize rectangleItem) ? new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height) : sprite.SourceRectangle;
 
-                float rotationAngle = (item is IRotatable rotatableItem)? rotatableItem.RotationAngle : 0f;
+                float rotationAngle = (item is IRotatable rotatableItem) ? rotatableItem.RotationAngle : 0f;
 
                 Vector2 origin = (item is ICustomOrigin customOriginItem) ? customOriginItem.CustomOrigin : sprite.Origin;
                 //float layerDepth = (itemPosition.Position.Y + drawRectangle.Height) / (_scene.CameraMatrix.Translation.Y + Game.Window.ClientBounds.Height);
@@ -95,14 +96,26 @@ public class Renderer : DrawableGameComponent
                 _spriteBatch.Draw(
                     _scene.SceneTextureData[sprite.Src],
                     drawRectangle,
-                    sprite.SourceRectangle, 
+                    sprite.SourceRectangle,
                     Color.White,
                     rotationAngle,
-                    origin, 
+                    origin,
                     effect,
                     texturedItem.LayerDepth);
             }
-  
+            else if (item is Button button)
+            {
+                System.Diagnostics.Debug.WriteLine("Drawing button");
+                _spriteBatch.Draw(
+                    _scene.SceneTextureData[button.BackgroundImage.Src],
+                    button.InputArea,
+                    button.BackgroundImage.SourceRectangle,
+                    button.Color,
+                    0f,
+                    Vector2.Zero,
+                    SpriteEffects.None,
+                    0.8f);
+            }
         }
         _spriteBatch.End();
         
