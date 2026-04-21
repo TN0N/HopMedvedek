@@ -96,3 +96,5 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Cont
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\no_texture.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\LuckiestGuy.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\main_menu_button.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\main_menu_background.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\pinecone.xnb

@@ -11,6 +11,7 @@ public class Player: GameComponent
     protected Bear _bear;
     protected Matrix _inverseView;
     protected Lifetime _stateLifeTime;
+    protected Vector2 _throwMouseClickPosition;
 
     public Player(Game game, Bear bear): base(game)
     {
@@ -29,7 +30,10 @@ public class Player: GameComponent
         {
 
             if (_stateLifeTime == null)
+            {
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
+                
+            }
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
             _stateLifeTime.Update(gameTime);
@@ -53,6 +57,7 @@ public class Player: GameComponent
             if (!_stateLifeTime.IsAlive)
             {
                 _stateLifeTime = null;
+                _bear.ThrowPinecone(_throwMouseClickPosition);
                 _bear.State = BearState.BearIdle;
             }
             else
@@ -70,6 +75,7 @@ public class Player: GameComponent
             if (!_stateLifeTime.IsAlive)
             {
                 _stateLifeTime = null;
+                _bear.ThrowPinecone(_throwMouseClickPosition);
                 _bear.State = BearState.BearIdle;
             }
             else
@@ -120,8 +126,15 @@ public class Player: GameComponent
 
         if (Keyboard.GetState().IsKeyDown(Keys.F) && _bear.State != BearState.BearDazed)
             _bear.State = BearState.BearDazed;
-        if (Mouse.GetState().LeftButton == ButtonState.Pressed && _bear.State != BearState.BearDazed)
+        if (Mouse.GetState().LeftButton == ButtonState.Pressed && (_bear.State != BearState.BearDazed || _bear.State == BearState.BearWalkThrow || _bear.State == BearState.BearJumpThrow))
         { 
+            _throwMouseClickPosition = Mouse.GetState().Position.ToVector2();
+
+            //_throwMouseClickPosition.Y -= _bear.Position.Y;
+            _throwMouseClickPosition = Vector2.Transform(_throwMouseClickPosition, Matrix.Invert(_bear.Level.Scene.CameraMatrix));
+
+            System.Diagnostics.Debug.WriteLine(_throwMouseClickPosition);
+
             if (_bear.Jumping)
                 _bear.State = BearState.BearJumpThrow;
             else

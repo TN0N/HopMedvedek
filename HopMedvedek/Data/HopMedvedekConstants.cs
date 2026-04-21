@@ -18,15 +18,17 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_GRASS_TEXTURE = "grass";
     public static readonly string HOP_MEDVEDEK_DEFAULT_TEXTURE = "no_texture";
     public static readonly string HOP_MEDVEDEK_NATURE_TEXTURE = "nature";
+    public static readonly string HOP_MEDVEDEK_PINECONE_TEXTURE = "pinecone";
 
-    // Menu texture names
+    // Menu Button texture names
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE = "main_menu_button";
 
     // Font names
     public static readonly string HOP_MEDVEDEK_LUCKIESTGUY_FONT = "LuckiestGuy";
 
 
-    // Strings
-    public static readonly string HOP_MEDVEDEK_COMMON_MENU_BACK_STRING = "←";
+    // Backgrounds
+    public static readonly string HOP_MEDVEDEK_MAIN_MENU_BACKGROUND = "main_menu_background";
+
 
 }

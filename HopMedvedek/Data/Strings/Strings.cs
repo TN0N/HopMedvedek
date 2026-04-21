@@ -8,7 +8,13 @@ public enum StringKey
 
     // Main menu
     HOP_MEDVEDEK_MAIN_MENU_PLAY,
-    HOP_MEDVEDEK_MAIN_MENU_OPTIONS
+    HOP_MEDVEDEK_MAIN_MENU_OPTIONS,
+
+    // Options menu
+    HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL,
+    HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL,
+    HOP_MEDVEDEK_OPTIONS_MUSIC_VOLUME_LABEL,
+    HOP_MEDVEDEK_OPTIONS_LANGUAGE_LABEL,
 
 }
 public static class Strings
@@ -29,6 +35,26 @@ public static class Strings
         {
             [LanguageEnum.en] = "Options",
             [LanguageEnum.si] = "Nastavitve",
+        },
+        [StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Resolution",
+            [LanguageEnum.si] = "Ločljivost",
+        },
+        [StringKey.HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Game Volume",
+            [LanguageEnum.si] = "Glasnost igre",
+        },
+        [StringKey.HOP_MEDVEDEK_OPTIONS_MUSIC_VOLUME_LABEL] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Music Volume",
+            [LanguageEnum.si] = "Glasnost glasbe",
+        },
+        [StringKey.HOP_MEDVEDEK_OPTIONS_LANGUAGE_LABEL] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Language",
+            [LanguageEnum.si] = "Jezik",
         },
     };
 }

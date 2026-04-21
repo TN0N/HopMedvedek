@@ -127,7 +127,7 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     {
         if (_state == LeavesState.Default)
         {
-            if (_playerLanded == true && _stateLifeTime == null)
+            if (_playerLanded == true && (_stateLifeTime == null || !_stateLifeTime.IsAlive))
             {
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, (HopMedvedekConstants.HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION)/1000);
                 _state = LeavesState.BearLanding;
@@ -139,6 +139,11 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
                 _stateLifeTime.Update(gameTime);
             else
                 _state = LeavesState.BearLanded;
+        }
+        if (_state == LeavesState.BearLanded)
+        { 
+            if (!_playerLanded)
+                _state = LeavesState.Default;
         }
     }
     public override void Update(GameTime gameTime)
@@ -220,7 +225,7 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
             default: return _defaultSprite;
         }
     }
-    public float LayerDepth => 0.6f;
+    public float LayerDepth => 0.7f;
     public float RotationAngle
     {
         get => _rotationAngle;

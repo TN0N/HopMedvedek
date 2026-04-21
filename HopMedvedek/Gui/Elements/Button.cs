@@ -29,14 +29,17 @@ public class Button
         _inputArea = inputArea;
         _enabled = true;
         _backgroundImage = backgroundImage;
-        _label = new Label(font, text, new Vector2(_inputArea.X + 10, _inputArea.Y + _inputArea.Height / 2f));
+        _label = new Label(font, text, new Vector2(_inputArea.X + inputArea.Width/2, _inputArea.Y + inputArea.Height/2));
         _label.VerticalAlign = VerticalAlign.Middle;
+        _label.HorizontalAlign = HorizontalAlign.Center;
+
         _backgroundColor = Color.White;
         _backgroundHoverColor = Color.DarkGoldenrod;
         _backgroundPressedColor = Color.DimGray;
-        _labelColor = Color.Black;
+        _labelColor = Color.White;
         _labelHoverColor = Color.Gray;
-        _labelPressedColor = Color.White;
+        _labelPressedColor = Color.DarkGray;
+        _label.LayerDepth = 0.9f;
 
         _layerDepth = 0.8f;
 

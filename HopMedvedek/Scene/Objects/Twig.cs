@@ -9,9 +9,6 @@ namespace HopMedvedek.Scene.Objects;
 
 public class Twig : IRectangleSize, IPosition, ITextured, IRotatable
 {
-    //protected float _rotationAngle;
-    //protected float _angularVelocity;
-
     protected float _width;
     protected float _height;
     protected float _rotationAngle;

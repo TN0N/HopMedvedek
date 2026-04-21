@@ -33,7 +33,7 @@ public class LevelBase : GameComponent
         _scene = new SimpleScene(game);
         _tree = new Tree(game, _scene);
 
-        _bear = new Bear(game);
+        _bear = new Bear(game, this);
         _ground = new Ground(game);
 
         _scene.Add(_bear);
@@ -48,6 +48,7 @@ public class LevelBase : GameComponent
             [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE),
         };
     }
     public override void Initialize()

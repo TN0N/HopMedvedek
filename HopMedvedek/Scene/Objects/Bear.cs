@@ -3,6 +3,7 @@ using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
 using HopMedvedek.Data;
+using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -22,14 +23,17 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     protected bool _grounded;
     protected bool _jumping;
     protected float _gravitationalAcceleration;
+    protected LevelBase _level;
 
     protected BearState _state = BearState.BearIdle;
-    public Bear(Game game) : base(game)
+    public Bear(Game game, LevelBase level) : base(game)
     {
         _width = 32;
         _height = 45;
         _grounded = false;
         _jumping = false;
+
+        _level = level;
 
         _coefficientOfRestitution = 0f;
         _gravitationalAcceleration = HopMedvedekConstants.HOP_MEDVEDEK_GRAVITATIONAL_ACCELERATION;
@@ -49,6 +53,21 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
         [BearState.BearJumpThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 128, 23, 32),   new Vector2(12, 16), 12, 700, true),
         [BearState.BearDazed] =     new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 160, 23, 32),   new Vector2(12, 16), 12, 700, true),
     };
+    public void ThrowPinecone(Vector2 mousePosition)
+    {
+        //Vector2 pineconeVelocity = new Vector2(0f, -500f);
+        float throwSpeed = 800f;
+
+        Pinecone pinecone = new Pinecone(Game);
+
+        Vector2 direction = Vector2.Normalize(mousePosition - Position);
+
+        pinecone.Position = _position;
+        pinecone.Velocity = direction * throwSpeed;
+        //pinecone.Velocity = pineconeVelocity;
+
+        _level.Scene.Add(pinecone);
+    }
 
     public float GravitationalAcceleration
     {
@@ -70,6 +89,12 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
         get => _state;
         set => _state = value;
     }
+    public LevelBase Level
+    {
+        get => _level;
+        set => _level = value;
+    }
+
     public override Sprite Sprite(GameTime gameTime)
     {
         return _bearStateAnimations[_state].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);

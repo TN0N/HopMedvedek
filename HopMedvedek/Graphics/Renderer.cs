@@ -1,4 +1,5 @@
-﻿using Express.Graphics;
+﻿using Artificial.Artificial.Mirage;
+using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Rotation;
@@ -6,7 +7,6 @@ using Express.Scene.Objects.Shapes;
 using HopMedvedek.Gui.Elements;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using static System.Net.Mime.MediaTypeNames;
 namespace HopMedvedek.Graphics;
 
 public class Renderer : DrawableGameComponent
@@ -105,7 +105,6 @@ public class Renderer : DrawableGameComponent
             }
             else if (item is Button button)
             {
-                System.Diagnostics.Debug.WriteLine("Drawing button");
                 _spriteBatch.Draw(
                     _scene.SceneTextureData[button.BackgroundImage.Src],
                     button.InputArea,
@@ -115,6 +114,34 @@ public class Renderer : DrawableGameComponent
                     Vector2.Zero,
                     SpriteEffects.None,
                     0.8f);
+
+                if (button.Label is not null)
+                {
+                    _spriteBatch.DrawString(
+                    button.Label.Font,
+                    button.Label.Text,
+                    button.Label.Position,
+                    button.Label.Color,
+                    button.Label.Rotation,
+                    button.Label.Origin,
+                    button.Label.Scale,
+                    SpriteEffects.None,
+                    button.Label.LayerDepth);
+                }
+            }
+            else if (item is Label label)
+            {
+                //System.Diagnostics.Debug.WriteLine("Drawing label");
+                _spriteBatch.DrawString(
+                    label.Font,
+                    label.Text,
+                    label.Position,
+                    label.Color,
+                    label.Rotation,
+                    label.Origin,
+                    label.Scale,
+                    SpriteEffects.None,
+                    label.LayerDepth);
             }
         }
         _spriteBatch.End();
