@@ -62,6 +62,8 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
 
         Vector2 direction = Vector2.Normalize(mousePosition - Position);
 
+        _velocity.X = (mousePosition.X > _position.X)? 0.01f : -0.01f;
+
         pinecone.Position = _position;
         pinecone.Velocity = direction * throwSpeed;
         //pinecone.Velocity = pineconeVelocity;

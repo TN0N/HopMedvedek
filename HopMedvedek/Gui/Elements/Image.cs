@@ -17,6 +17,7 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable//, ICustom
     //protected Vector2 _origin;
     protected Sprite _sprite;
     protected Vector2 _position;
+    protected AnimatedSprite _animatedSprite;
 
     public Image(Sprite sprite, Rectangle dstRectangle/*, Vector2 Origin*/)
     {
@@ -28,6 +29,17 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable//, ICustom
         _position = new Vector2(dstRectangle.X, dstRectangle.Y);
         _layerDepth = 0.1f;
         _sprite = sprite;
+    }
+    public Image(AnimatedSprite animatedSprite, Rectangle dstRectangle/*, Vector2 Origin*/)
+    {
+        //_angularVelocity = 1f;
+        //_rotationAngle = 2f;
+        //_origin = Origin;
+        _width = dstRectangle.Width;
+        _height = dstRectangle.Height;
+        _position = new Vector2(dstRectangle.X, dstRectangle.Y);
+        _layerDepth = 0.1f;
+        _animatedSprite = animatedSprite;
     }
 
     public float Width
@@ -44,6 +56,8 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable//, ICustom
 
     public Sprite Sprite(GameTime gameTime)
     {
+        if (_animatedSprite != null)
+            return _animatedSprite.SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
         return _sprite;
     }
     public float LayerDepth {

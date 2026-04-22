@@ -22,7 +22,7 @@ public class GamePlay : GameState
 
     private GameHud _hud;
     private Renderer _gameRenderer;
-    //private Renderer _hudRenderer;
+    private Renderer _hudRenderer;
     private PhysicsEngine _physics;
     private DebugRenderer _debugRenderer;
 
@@ -47,10 +47,10 @@ public class GamePlay : GameState
         _fpsComponent = new FpsComponent(Game);
         _hud = new GameHud(Game);
         _debugRenderer = new DebugRenderer(Game, _level.Scene);
-        //_hudRenderer = new Renderer(Game, _hud.Scene);
-
-        _gameRenderer.DrawOrder = 2;
-        //_hudRenderer.DrawOrder = 1;
+        _hudRenderer = new Renderer(Game, _hud.Scene);
+        _hudRenderer.ClearScreen = false;
+        _gameRenderer.DrawOrder = 1;
+        _hudRenderer.DrawOrder = 2;
 
         _player.UpdateOrder =       0;
         _physics.UpdateOrder =      1;
@@ -65,7 +65,7 @@ public class GamePlay : GameState
         
         Game.Components.Add(_hud);
         Game.Components.Add(_debugRenderer);
-        //Game.Components.Add(_hudRenderer);
+        Game.Components.Add(_hudRenderer);
         Game.Components.Add(_gameRenderer);
         Game.Components.Add(_physics);
         Game.Components.Add(_player);
@@ -81,7 +81,7 @@ public class GamePlay : GameState
         Game.Components.Remove(_level);
         Game.Components.Remove(_hud);
         Game.Components.Remove(_debugRenderer);
-        //Game.Components.Remove(_hudRenderer);
+        Game.Components.Remove(_hudRenderer);
         Game.Components.Remove(_gameRenderer);
         Game.Components.Remove(_physics);
         Game.Components.Remove(_player);

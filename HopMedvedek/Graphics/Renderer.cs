@@ -21,6 +21,7 @@ public class Renderer : DrawableGameComponent
     protected RasterizerState _rasterizerState = null;
     protected Effect _effect = null;
     protected IScene _scene;
+    protected bool _clearScreen = true;
     //private Matrix _camera; 
 
     public Renderer(Game game, IScene scene) : base(game)
@@ -57,10 +58,16 @@ public class Renderer : DrawableGameComponent
         
         base.Initialize();
     }
-    
+    public bool ClearScreen
+    {
+        get => _clearScreen;
+        set => _clearScreen = value;
+    }
+
     public override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.LightSkyBlue);
+        if (_clearScreen)
+            GraphicsDevice.Clear(Color.LightSkyBlue);
 
 
         //System.Diagnostics.Debug.WriteLine("drawing");

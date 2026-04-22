@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/coin.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/crow.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/grass.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/heart.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/LuckiestGuy.spritefont</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/main_menu_background.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/main_menu_button.png</File>
@@ -14,11 +16,15 @@
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/no_texture.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/objects.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/owl.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/pinecone_rotate.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/pinecone.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/sky.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/speech.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -20,6 +20,11 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_NATURE_TEXTURE = "nature";
     public static readonly string HOP_MEDVEDEK_PINECONE_TEXTURE = "pinecone";
 
+    // Hud
+    public static readonly string HOP_MEDVEDEK_COIN_TEXTURE = "coin";
+    public static readonly string HOP_MEDVEDEK_HEART_TEXTURE = "heart";
+    public static readonly string HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE = "pinecone_rotate";
+
     // Menu Button texture names
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE = "main_menu_button";
 

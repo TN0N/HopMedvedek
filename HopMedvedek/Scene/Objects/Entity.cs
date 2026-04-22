@@ -24,6 +24,7 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
     protected float _angularVelocity;
     protected float _rotationAngle;
     protected Vector2 _pivotPoint;
+    protected bool _facing;
 
     public Entity(Game game) : base(game)
     {
@@ -31,6 +32,7 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
         _width = 2f;
         _height = 2f;
         _layerDepth = 0.1f;
+        _facing = true;
 
         _velocity = new();
         _acceleration = new();
