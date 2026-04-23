@@ -7,6 +7,7 @@ public static class HopMedvedekConstants
     public static float HOP_MEDVEDEK_BEAR_JUMP_VELOCITY = 500;
     public static float HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION = 2000;
     public static readonly float HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION = 500f;
+    public static readonly float HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED = 700f;
 
     // Directorys
     public static readonly string HOP_MEDVEDEK_OPTIONS_PATH = "Options/options.json";

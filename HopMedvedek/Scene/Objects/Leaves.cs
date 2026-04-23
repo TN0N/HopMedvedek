@@ -150,7 +150,7 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     {
         bool side = (_position.X <= Game.Window.ClientBounds.Width/2)? false : true;
         float angle = 0.05f;
-        float speed = 3f;
+        float speed = 1f;
 
         if (side)
         {

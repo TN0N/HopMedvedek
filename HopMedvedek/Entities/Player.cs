@@ -13,6 +13,8 @@ public class Player: GameComponent
     protected Lifetime _stateLifeTime;
     protected Vector2 _throwMouseClickPosition;
 
+    protected bool _canThrowPinecone = true;
+
     public Player(Game game, Bear bear): base(game)
     {
         _bear = bear;
@@ -51,17 +53,23 @@ public class Player: GameComponent
         if (_bear.State == BearState.BearWalkThrow)
         {
             if (_stateLifeTime == null)
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED/1000);
 
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
             {
                 _stateLifeTime = null;
-                _bear.ThrowPinecone(_throwMouseClickPosition);
                 _bear.State = BearState.BearIdle;
+                _canThrowPinecone = true;
             }
             else
             {
+                if (_stateLifeTime.Percentage >= 0.5f && _canThrowPinecone)
+                {
+                    _bear.ThrowPinecone(_throwMouseClickPosition);
+                    _canThrowPinecone = false;
+                }
+                    
                 _bear.State = BearState.BearWalkThrow;
             }
             return;
@@ -69,17 +77,23 @@ public class Player: GameComponent
         if (_bear.State == BearState.BearJumpThrow)
         {
             if (_stateLifeTime == null)
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED/1000);
 
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
             {
                 _stateLifeTime = null;
-                _bear.ThrowPinecone(_throwMouseClickPosition);
+                _canThrowPinecone = true;
                 _bear.State = BearState.BearIdle;
             }
             else
             {
+                if (_stateLifeTime.Percentage >= 0.5f && _canThrowPinecone)
+                {
+                    _bear.ThrowPinecone(_throwMouseClickPosition);
+                    _canThrowPinecone = false;
+                }
+
                 _bear.State = BearState.BearJumpThrow;
             }
             return;
@@ -104,14 +118,21 @@ public class Player: GameComponent
     }
     public override void Update(GameTime gameTime)
     {
-        
-        
+
+        /*
         //PrintHelper.Print(_bear.Velocity);
         if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
+        {
+            //_bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
+            //_bear.Jumping = true;
+        }*/
+
+        if (_bear.Grounded && !_bear.Jumping)
         {
             _bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
             _bear.Jumping = true;
         }
+
         if (Keyboard.GetState().IsKeyDown(Keys.A) && _bear.Acceleration.X >= 0)
             _bear.Acceleration.X -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION;
             

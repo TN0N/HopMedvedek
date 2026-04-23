@@ -49,8 +49,8 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
         [BearState.BearWalk] =      new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 64, 23, 32),    new Vector2(12, 16), 12, 700, true),
         [BearState.BearJumpUp] =    new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 96, 23, 32),    new Vector2(12, 16), 6,  350, true),
         [BearState.BearJumpDown] =  new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(138, 96, 23, 32),  new Vector2(12, 16), 6,  350, true),
-        [BearState.BearWalkThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 32, 23, 32),    new Vector2(12, 16), 12, 700, true),
-        [BearState.BearJumpThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 128, 23, 32),   new Vector2(12, 16), 12, 700, true),
+        [BearState.BearWalkThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 32, 23, 32),    new Vector2(12, 16), 12, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED, true),
+        [BearState.BearJumpThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 128, 23, 32),   new Vector2(12, 16), 12, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED, true),
         [BearState.BearDazed] =     new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 160, 23, 32),   new Vector2(12, 16), 12, 700, true),
     };
     public void ThrowPinecone(Vector2 mousePosition)
