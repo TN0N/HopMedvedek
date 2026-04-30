@@ -19,9 +19,13 @@
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/pinecone_rotate.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/pinecone.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/sky.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/slider_thumb.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/slider_track.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/speech.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

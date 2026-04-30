@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Artificial.Artificial.Mirage;
 using HopMedvedek.Data.Strings;
 using System.Collections.Generic;
+using System;
 
 namespace HopMedvedek.GameStates.Menus;
 
@@ -20,6 +21,7 @@ public class Menu : GameState
     protected Button _back;
     protected int _buttonWidth;
     protected int _buttonHeight;
+    protected bool _dropdownActive = false;
 
     public Menu(Game game) : base(game)
     {
@@ -59,9 +61,23 @@ public class Menu : GameState
         Matrix inverseView = Matrix.Invert(_scene.CameraMatrix);
         foreach (object item in _scene)
         {
+            if (item is Dropdown dropdown)
+            {
+                dropdown.UpdateWithInverseView(inverseView);
+                if (dropdown.IsActive)
+                    return;
+            }
+
+        }
+        foreach (object item in _scene)
+        {
             if (item is Button button)
             {
                 button.UpdateWithInverseView(inverseView);
+            }
+            else if (item is Slider slider)
+            {
+                slider.UpdateWithInverseView(inverseView);
             }
 
         }

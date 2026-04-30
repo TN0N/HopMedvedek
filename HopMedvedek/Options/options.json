@@ -1,8 +1,8 @@
 {
   "GraphicsDeviceWidth": 408,
   "GraphicsDeviceHeight": 906,
-  "GameVolume": 1,
-  "MusicVolume": 1,
+  "GameVolume": 0.7,
+  "MusicVolume": 0.7,
   "Language": 1,
   "IsMouseVisible": true,
   "RootDirectory": "Content"

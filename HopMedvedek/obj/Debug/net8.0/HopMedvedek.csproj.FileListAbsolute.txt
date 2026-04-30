@@ -101,3 +101,5 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Cont
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\coin.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\heart.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\pinecone_rotate.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\slider_thumb.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\slider_track.xnb

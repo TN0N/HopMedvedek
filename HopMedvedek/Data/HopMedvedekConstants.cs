@@ -9,7 +9,7 @@ public static class HopMedvedekConstants
     public static readonly float HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION = 500f;
     public static readonly float HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED = 700f;
 
-    // Directorys
+    // Directories
     public static readonly string HOP_MEDVEDEK_OPTIONS_PATH = "Options/options.json";
     public static readonly string HOP_MEDVEDEK_ROOT_DIRECTORY = "Content";
 
@@ -28,6 +28,8 @@ public static class HopMedvedekConstants
 
     // Menu Button texture names
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE = "main_menu_button";
+    public static readonly string HOP_MEDVEDEK_COMMON_SLIDER_THUMB_TEXTURE = "slider_thumb";
+    public static readonly string HOP_MEDVEDEK_COMMON_SLIDER_TRACK_TEXTURE = "slider_track";
 
     // Font names
     public static readonly string HOP_MEDVEDEK_LUCKIESTGUY_FONT = "LuckiestGuy";

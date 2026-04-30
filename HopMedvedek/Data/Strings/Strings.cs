@@ -16,6 +16,9 @@ public enum StringKey
     HOP_MEDVEDEK_OPTIONS_MUSIC_VOLUME_LABEL,
     HOP_MEDVEDEK_OPTIONS_LANGUAGE_LABEL,
 
+    HOP_MEDVEDEK_OPTIONS_LANGUAGE_ENGLISH,
+    HOP_MEDVEDEK_OPTIONS_LANGUAGE_SLOVENIAN,
+
 }
 public static class Strings
 {
@@ -55,6 +58,16 @@ public static class Strings
         {
             [LanguageEnum.en] = "Language",
             [LanguageEnum.si] = "Jezik",
+        },
+        [StringKey.HOP_MEDVEDEK_OPTIONS_LANGUAGE_ENGLISH] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "English",
+            [LanguageEnum.si] = "English",
+        },
+        [StringKey.HOP_MEDVEDEK_OPTIONS_LANGUAGE_SLOVENIAN] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Slovenščina",
+            [LanguageEnum.si] = "Slovenščina",
         },
     };
 }

@@ -150,6 +150,41 @@ public class Renderer : DrawableGameComponent
                     SpriteEffects.None,
                     label.LayerDepth);
             }
+            else if (item is Slider slider)
+            {
+                // Track
+                _spriteBatch.Draw(
+                    _scene.SceneTextureData[slider.TrackTexture.Src],
+                    slider.InputArea,
+                    slider.TrackTexture.SourceRectangle,
+                    slider.Color,
+                    0f,
+                    Vector2.Zero,
+                    SpriteEffects.None,
+                    0.6f);
+                // Thumb
+                _spriteBatch.Draw(
+                    _scene.SceneTextureData[slider.ThumbTexture.Src],
+                    slider.ThumbArea,
+                    slider.ThumbTexture.SourceRectangle,
+                    slider.Color,
+                    0f,
+                    Vector2.Zero,
+                    SpriteEffects.None,
+                    0.7f);
+                // Value Fill
+                _spriteBatch.DrawString(
+                    slider.ValueFill.Font,
+                    slider.Value.ToString("P0"),
+                    slider.ValueFill.Position,
+                    slider.ValueFill.Color,
+                    0f,
+                    Vector2.Zero,
+                    1f,
+                    SpriteEffects.None,
+                    slider.ValueFill.LayerDepth
+                    );
+            }
         }
         _spriteBatch.End();
         

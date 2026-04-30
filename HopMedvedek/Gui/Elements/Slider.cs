@@ -1,38 +1,46 @@
-﻿using Artificial.Artificial.Mirage;
+using Artificial.Artificial.Mirage;
 using Express.Graphics;
 using Express.Scene;
-using Express.Scene.Objects.Movement;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace HopMedvedek.Gui.Elements;
 
-public class Button
+public class Slider
 {
     protected IScene _scene;
     //protected Image _backgroundImage;
-    protected Sprite _backgroundImage;
-    protected Label _label;
-    protected Rectangle _inputArea;
+    protected Sprite _trackTexture, _thumbTexture;
+    protected float _value;
+
+
+    protected Label _valueFill;
+    protected Rectangle _inputArea, _thumbArea;
     protected bool _enabled;
     protected bool _isDown;
     protected bool _wasPressed;
     protected bool _wasReleased;
     protected float _layerDepth;
-    protected bool _isHovering;
 
     protected Color _activeBackgroundColor, _activeLabelColor;
     protected Color _labelColor, _labelHoverColor, _labelPressedColor, _backgroundColor, _backgroundHoverColor, _backgroundPressedColor;
 
-    public Button(Rectangle inputArea, Sprite backgroundImage, SpriteFont font, string text)
-    { 
+    public Slider(Rectangle inputArea, Vector2 thumbArea, Sprite trackTexture, Sprite thumbTexture, SpriteFont font, float value)
+    {
         _inputArea = inputArea;
+        _thumbArea = new Rectangle((int)(_inputArea.X + _inputArea.Width * value), (int)(_inputArea.Y - thumbArea.Y / 2), (int)thumbArea.X, (int)thumbArea.Y);
+        _value = value;
+
         _enabled = true;
-        _backgroundImage = backgroundImage;
-        _label = new Label(font, text, new Vector2(_inputArea.X + inputArea.Width/2, _inputArea.Y + inputArea.Height/2));
-        _label.VerticalAlign = VerticalAlign.Middle;
-        _label.HorizontalAlign = HorizontalAlign.Center;
+        _trackTexture = trackTexture;
+        _thumbTexture = thumbTexture;
+
+        _valueFill = new Label(font, _value.ToString("P0"), new Vector2(_inputArea.Right + 20, _inputArea.Y - 5));
+
+        _valueFill.VerticalAlign = VerticalAlign.Middle;
+        _valueFill.HorizontalAlign = HorizontalAlign.Left;
 
         _backgroundColor = Color.White;
         _backgroundHoverColor = Color.DarkGoldenrod;
@@ -40,7 +48,7 @@ public class Button
         _labelColor = Color.White;
         _labelHoverColor = Color.Gray;
         _labelPressedColor = Color.DarkGray;
-        _label.LayerDepth = 0.9f;
+        _valueFill.LayerDepth = 0.9f;
 
         _layerDepth = 0.8f;
 
@@ -48,6 +56,7 @@ public class Button
         _activeLabelColor = _labelColor;
     }
     public Rectangle InputArea => _inputArea;
+    public Rectangle ThumbArea => _thumbArea;
 
     public bool Enabled
     {
@@ -61,23 +70,14 @@ public class Button
 
     public bool WasReleased => _wasReleased;
 
-    public ref Sprite BackgroundImage => ref _backgroundImage;
+    public ref Sprite TrackTexture => ref _trackTexture;
 
-    public bool IsHovering
-    {
-        get => _isHovering;
-        set => _isHovering = value;
-    }
-
-    public ref Label Label => ref _label;
+    public ref Sprite ThumbTexture => ref _thumbTexture;
+    public ref Label ValueFill => ref _valueFill;
     public float LayerDepth
     {
         get => _layerDepth;
         set => _layerDepth = value;
-    }
-    public Sprite Sprite(GameTime gameTime)
-    {
-        return _backgroundImage;
     }
     public Color LabelColor
     {
@@ -85,7 +85,7 @@ public class Button
         set
         {
             _labelColor = value;
-            _label.Color = _labelColor;
+            _valueFill.Color = _labelColor;
         }
     }
     public Color Color
@@ -125,10 +125,22 @@ public class Button
         set => _backgroundPressedColor = value;
     }
 
+    public float Value
+    {
+        get => _value;
+        set
+        {
+            _value = MathHelper.Clamp(value, 0f, 1f);
+            // Update thumb position based on value
+            _thumbArea.X = _inputArea.X + (int)((_inputArea.Width - _thumbArea.Width) * _value);
+        }
+    }
+
     public Vector2 Position
     {
         get => _inputArea.Center.ToVector2();
-        set {
+        set
+        {
             _inputArea.X = (int)value.X;
             _inputArea.Y = (int)value.Y;
         }
@@ -139,22 +151,27 @@ public class Button
     public void AddedToScene(IScene theScene)
     {
         // Add child items to scene.
-        theScene.Add(_backgroundImage);
-        theScene.Add(_label);
+        theScene.Add(_trackTexture);
+        theScene.Add(_thumbTexture);
+
+        theScene.Add(ValueFill);
     }
 
     public void RemovedFromScene(IScene theScene)
     {
         // Remove child items.
-        theScene.Remove(_backgroundImage);
-        theScene.Remove(_label);
+        theScene.Remove(_trackTexture);
+        theScene.Remove(_thumbTexture);
+
+        theScene.Remove(ValueFill);
     }
 
     public void UpdateWithInverseView(Matrix inverseView)
     {
+        //System.Diagnostics.Debug.WriteLine("Slider updating");
         if (!_enabled)
             return;
-
+        //System.Diagnostics.Debug.WriteLine("Slider updating");
         bool wasDown = _isDown;
         _isDown = false;
         _wasPressed = false;
@@ -163,6 +180,7 @@ public class Button
         var mousePositionOnScreen = Mouse.GetState().Position.ToVector2();
         var mousePositionInScene = Vector2.Transform(mousePositionOnScreen, inverseView);
 
+        
         if (_inputArea.Contains(mousePositionInScene))
         {
             if (wasDown)
@@ -172,7 +190,7 @@ public class Button
                 {
                     _wasReleased = true;
                     _activeBackgroundColor = _backgroundColor;
-                    _label.Color = _labelColor;
+                    _valueFill.Color = _labelColor;
                 }
                 // holding pressed button
                 else
@@ -180,7 +198,10 @@ public class Button
                     _isDown = true;
                     _wasPressed = true;
                     _activeBackgroundColor = _backgroundPressedColor;
-                    _label.Color = _labelPressedColor;
+                    _valueFill.Color = _labelPressedColor;
+                    _thumbArea.X = (int)(mousePositionInScene.X - _thumbArea.Width / 2);
+                    _value = (float)Math.Round((float)(_thumbArea.X - _inputArea.X) / (_inputArea.Width - _thumbArea.Width), 2);
+                    _value = MathHelper.Clamp(_value, 0f, 1f);
                 }
             }
             else
@@ -190,25 +211,25 @@ public class Button
                 {
                     _isDown = true;
                     _wasPressed = true;
-                    
                     _activeBackgroundColor = _backgroundPressedColor;
-                    _label.Color = _labelPressedColor;
+                    _valueFill.Color = _labelPressedColor;
+                    
+                    //System.Diagnostics.Debug.WriteLine("Slider clicked");
                 }
                 // hover over button
                 else
                 {
-                    _isHovering = true;
                     _activeBackgroundColor = _backgroundHoverColor;
-                    _label.Color = _labelHoverColor;
+                    _valueFill.Color = _labelHoverColor;
                 }
             }
         }
         // mouse not over button
         else
         {
-            _isHovering = false;
             _activeBackgroundColor = _backgroundColor;
-            _label.Color = _labelColor;
+            _valueFill.Color = _labelColor;
         }
+        
     }
 }
