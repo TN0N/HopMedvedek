@@ -7,7 +7,8 @@ public static class HopMedvedekConstants
     public static float HOP_MEDVEDEK_BEAR_JUMP_VELOCITY = 500;
     public static float HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION = 2000;
     public static readonly float HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION = 500f;
-    public static readonly float HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED = 700f;
+    public static readonly float HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION = 700f;
+    public static readonly float HOP_MEDVEDEK_BEAR_DAZED_ANIMATION_DURATION = 2000f;
 
     // Directories
     public static readonly string HOP_MEDVEDEK_OPTIONS_PATH = "Options/options.json";
@@ -15,6 +16,7 @@ public static class HopMedvedekConstants
 
     // Game texture names
     public static readonly string HOP_MEDVEDEK_BEAR_TEXTURE = "bear";
+    public static readonly string HOP_MEDVEDEK_CROW_TEXTURE = "crow";
     public static readonly string HOP_MEDVEDEK_GROUND_TEXTURE = "ground";
     public static readonly string HOP_MEDVEDEK_GRASS_TEXTURE = "grass";
     public static readonly string HOP_MEDVEDEK_DEFAULT_TEXTURE = "no_texture";

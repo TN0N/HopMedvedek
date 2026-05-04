@@ -33,7 +33,7 @@ public class Player: GameComponent
 
             if (_stateLifeTime == null)
             {
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, 0.7);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_DAZED_ANIMATION_DURATION / 1000);
                 
             }
             //else
@@ -53,7 +53,7 @@ public class Player: GameComponent
         if (_bear.State == BearState.BearWalkThrow)
         {
             if (_stateLifeTime == null)
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED/1000);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION/ 1000);
 
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
@@ -77,7 +77,7 @@ public class Player: GameComponent
         if (_bear.State == BearState.BearJumpThrow)
         {
             if (_stateLifeTime == null)
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_SPEED/1000);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION/ 1000);
 
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
@@ -127,7 +127,7 @@ public class Player: GameComponent
             //_bear.Jumping = true;
         }*/
 
-        if (_bear.Grounded && !_bear.Jumping)
+        if (_bear.Grounded && !_bear.Jumping && _bear.State != BearState.BearDazed)
         {
             _bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
             _bear.Jumping = true;

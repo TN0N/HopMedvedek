@@ -1,15 +1,17 @@
 ﻿using Express.Graphics;
+using Express.Scene.Objects;
 using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
 using Express.Scene.Objects.Rotation;
 using Express.Scene.Objects.Shapes;
+using HopMedvedek.AI;
 using HopMedvedek.Data;
 using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Scene.Objects;
 
-public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRectangleSize, ITextured, ICoefficientOfRestitution, IAngularVelocity, IRotatable
+public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRectangleSize, ITextured, ICoefficientOfRestitution, IAngularVelocity, IRotatable, ICustomUpdate
 {
     protected float _mass;
     protected Vector2 _position;
@@ -25,6 +27,7 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
     protected float _rotationAngle;
     protected Vector2 _pivotPoint;
     protected bool _facing;
+    protected Behaviour _behaviour;
 
     public Entity(Game game) : base(game)
     {
@@ -97,5 +100,19 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
     public bool Facing
     { 
         get => (_velocity.X >= 0);
+    }
+
+    public Behaviour Behaviour
+    {
+        get => _behaviour;
+        set => _behaviour = value;
+    }
+    public override void Update(GameTime gameTime)
+    {
+        if (_behaviour != null)
+        {
+            _behaviour.Update(gameTime);
+        }
+        base.Update(gameTime);
     }
 }

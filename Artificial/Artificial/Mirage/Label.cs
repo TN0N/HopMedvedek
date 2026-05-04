@@ -103,6 +103,17 @@ public class Label
             UpdateOrigin(); // Make sure the text is displayed according to its alignment
         }
     }
+    public ref Vector2 Scale => ref _scale;
+    public Vector2 Origin
+    {
+        get => _origin;
+        set
+        {
+            _origin = value;
+            _horizontalAlign = HorizontalAlign.Custom;
+            _verticalAlign = VerticalAlign.Custom;
+        }
+    }
     /// <summary>
     /// Set the <see cref="Label"/>'s scale along both X and Y axis.
     /// </summary>
