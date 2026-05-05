@@ -21,7 +21,7 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
     {
         _width = 32;
         _height = 42;
-
+        _decay = new Vector2(1f, 1f);
         _level = level;
 
         _mass = 10f;
@@ -44,6 +44,8 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
         {
             return true;
         }
+        if (item is Pinecone)
+            return true;
         return false;
     }
     public void CollidedWith(object item)
@@ -62,8 +64,18 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
                 if (bear.Velocity.Y < 0)
                     bear.Velocity.Y *= -1;
             }
+            else
+            {
+                bear.Velocity.Y = -HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
+                _level.Scene.Remove(this);
+            }
         }
+        if (item is Pinecone pinecone)
+        {
+            _level.Scene.Remove(pinecone);
 
+            _level.Scene.Remove(this);
+        }
     }
 
     public override Sprite Sprite(GameTime gameTime)

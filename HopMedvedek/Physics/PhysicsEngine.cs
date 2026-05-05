@@ -54,9 +54,15 @@ public class PhysicsEngine : GameComponent
                 Collision.CollisionBetween(item, _level.Bear);
 
         // Check pinecone for collisions
-        /*
-        foreach (object item in _level.Scene)
-            if (item is not Pinecone prinecone)
-                Collision.CollisionBetween(pinecone, item);*/
+
+        foreach (object item1 in _level.Scene)
+            if (item1 is Pinecone prinecone)
+            {
+                //System.Diagnostics.Debug.WriteLine("Checking pinecone for collisions");
+                foreach (object item2 in _level.Scene)
+                    if (item2 is not Pinecone && item2 is not Bear && item2 is ICollider)
+                        Collision.CollisionBetween(item1, item2);
+            }
+                
     }
 }

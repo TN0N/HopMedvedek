@@ -36,10 +36,9 @@ public class Pinecone : Entity, IGravity, ICustomCollider
     }
     public bool CollidingWith(object item, bool defaultValue = false)
     {
-
         if (item is Bear bear)
         {
-                return false;
+            return false;
         }
         return true;
     }

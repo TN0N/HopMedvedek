@@ -3,6 +3,7 @@ using Express.Graphics;
 using Express.Scene;
 using HopMedvedek.Data;
 using HopMedvedek.Gui.Elements;
+using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace HopMedvedek.Gui.Hud;
 public class GameHud : GameComponent
 {
     protected SimpleScene _scene;
+    protected LevelBase _level;
 
     protected Image _coinImage, _heartImage, _pineconeImage;
 
@@ -22,9 +24,10 @@ public class GameHud : GameComponent
 
     public IScene Scene => _scene;
 
-    public GameHud(Game game) : base(game)
+    public GameHud(Game game, LevelBase level) : base(game)
     {
         _scene = new SimpleScene(game);
+        _level = level;
         Game.Components.Add(_scene);
     }
     public override void Initialize()

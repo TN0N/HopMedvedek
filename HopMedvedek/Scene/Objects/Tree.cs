@@ -66,7 +66,7 @@ public class Tree: GameComponent
             _treeMids.Add(treeMid);
             _level.Scene.Add(treeMid);
 
-            if (SRandom.Int(100) <= 20)
+            if (lastTreeMid.Position.Y < - 300 && SRandom.Int(100) <= 20)
             {
                 Crow crow = new Crow(Game, _level);
                 crow.Position = treeMid.Position;
