@@ -26,6 +26,7 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_DEFAULT_TEXTURE = "no_texture";
     public static readonly string HOP_MEDVEDEK_NATURE_TEXTURE = "nature";
     public static readonly string HOP_MEDVEDEK_PINECONE_TEXTURE = "pinecone";
+    public static readonly string HOP_MEDVEDEK_OWL_TEXTURE = "owl";
 
     // Hud
     public static readonly string HOP_MEDVEDEK_COIN_TEXTURE = "coin";
@@ -44,5 +45,8 @@ public static class HopMedvedekConstants
     // Backgrounds
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BACKGROUND = "main_menu_background";
 
+    // Year_01 Language question textures
+
+    public static readonly string HOP_MEDVEDEK_YEAR_01 = "main_menu_background";
 
 }

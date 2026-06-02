@@ -19,6 +19,15 @@ public enum StringKey
     HOP_MEDVEDEK_OPTIONS_LANGUAGE_ENGLISH,
     HOP_MEDVEDEK_OPTIONS_LANGUAGE_SLOVENIAN,
 
+    // Year_01_Language_Question
+    HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE,
+
+    // Year_01_Language_Answers
+    HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOTHER,
+    HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FATHER,
+    HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HOUSE,
+    HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TREE,
+
 }
 public static class Strings
 {
@@ -68,6 +77,31 @@ public static class Strings
         {
             [LanguageEnum.en] = "Slovenščina",
             [LanguageEnum.si] = "Slovenščina",
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "What is on the picture?",
+            [LanguageEnum.si] = "Kaj je na sliki?",
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOTHER] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Mother",
+            [LanguageEnum.si] = "Mami",
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FATHER] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Father",
+            [LanguageEnum.si] = "Oče",
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HOUSE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "House",
+            [LanguageEnum.si] = "Hiša",
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TREE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Tree",
+            [LanguageEnum.si] = "Drevo",
         },
     };
 }

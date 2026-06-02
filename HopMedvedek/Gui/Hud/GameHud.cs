@@ -15,7 +15,7 @@ public class GameHud : GameComponent
     protected SimpleScene _scene;
     protected LevelBase _level;
 
-    protected Image _coinImage, _heartImage, _pineconeImage;
+    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage;
 
     protected Label _playerScore;
     protected Label _playerCoins;
@@ -40,6 +40,7 @@ public class GameHud : GameComponent
             [HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE)
         };
 
         _coinImage = new Image(
@@ -54,6 +55,11 @@ public class GameHud : GameComponent
             new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE, new Rectangle(0, 0, 30, 32), new Vector2(15, 16), 9, 1300, true),
             new Rectangle(20, 150, 30, 32)
             );
+        _owlImage = new Image(
+            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE, new Rectangle(0, 0, 68, 54), new Vector2(34, 27), 8, 700, true),
+            new Rectangle(350, 80, 100, 80)
+            );
+
         _playerScore = new Label(font, "0", new Vector2(Game.Window.ClientBounds.Width/2, 20));
         _playerCoins = new Label(font, "0", new Vector2(40, 70));
         _playerHearts = new Label(font, "0", new Vector2(40, 105));
@@ -68,6 +74,7 @@ public class GameHud : GameComponent
         _scene.Add(_coinImage);
         _scene.Add(_heartImage);
         _scene.Add(_pineconeImage);
+        _scene.Add(_owlImage);
 
         _scene.Add(_playerScore);
         _scene.Add(_playerCoins);

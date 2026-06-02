@@ -45,7 +45,7 @@ public class GamePlay : GameState
         _physics = new PhysicsEngine(Game, _level);
         _gameRenderer = new Renderer(Game, _level.Scene);
         _fpsComponent = new FpsComponent(Game);
-        _hud = new GameHud(Game);
+        _hud = new GameHud(Game, _level);
         _debugRenderer = new DebugRenderer(Game, _level.Scene);
         _hudRenderer = new Renderer(Game, _hud.Scene);
         _hudRenderer.ClearScreen = false;
