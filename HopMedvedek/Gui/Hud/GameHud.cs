@@ -1,6 +1,7 @@
 ﻿using Artificial.Artificial.Mirage;
 using Express.Graphics;
 using Express.Scene;
+using Express.Scores;
 using HopMedvedek.Data;
 using HopMedvedek.Gui.Elements;
 using HopMedvedek.Level;
@@ -57,7 +58,7 @@ public class GameHud : GameComponent
             );
         _owlImage = new Image(
             new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE, new Rectangle(0, 0, 68, 54), new Vector2(34, 27), 8, 700, true),
-            new Rectangle(350, 80, 100, 80)
+            new Rectangle(350, 100, 100, 80)
             );
 
         _playerScore = new Label(font, "0", new Vector2(Game.Window.ClientBounds.Width/2, 20));
@@ -83,5 +84,6 @@ public class GameHud : GameComponent
     }
     public override void Update(GameTime gameTime)
     {
+        _playerScore.Text = "" + Scores.score;
     }
 }

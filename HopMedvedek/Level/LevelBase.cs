@@ -1,8 +1,10 @@
 ﻿using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects;
+using Express.Scores;
 using HopMedvedek.Data;
 using HopMedvedek.Graphics;
+using HopMedvedek.Questions;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,7 +21,6 @@ public class LevelBase : GameComponent
     protected Bear _bear;
     protected Tree _tree;
     protected Ground _ground;
-    // protected QuestionGenerator _questionGenerator;
     // protected List<Crow> _crows;
 
     protected Dictionary<string, Texture2D> _textureData;
@@ -55,6 +56,7 @@ public class LevelBase : GameComponent
     public override void Initialize()
     {
         base.Initialize();
+        Scores.score = 0;
 
         //_bear.Position = _bearSpawn;
         //_ground.Position = _groundSpawn;
@@ -70,7 +72,7 @@ public class LevelBase : GameComponent
             var updateable = item as ICustomUpdate;
             updateable?.Update(gameTime);
         }
-
+        Scores.score = (int)(-_bear.Position.Y + 1000);
         _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0);
     }
     public Dictionary<string, Texture2D> TextureData

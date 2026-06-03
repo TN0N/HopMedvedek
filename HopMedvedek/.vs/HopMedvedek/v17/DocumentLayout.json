@@ -3,20 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\express\\physics\\movementphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\physics\\physicsengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:physics\\physicsengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\express\\scores\\scores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\gui\\hud\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gui\\hud\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\data\\hopmedvedekconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:data\\hopmedvedekconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\questions\\year01_language_question_sheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:questions\\year01_language_question_sheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\questions\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:questions\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +36,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HopMedvedekConstants.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Data\\HopMedvedekConstants.cs",
-              "RelativeDocumentMoniker": "Data\\HopMedvedekConstants.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Data\\HopMedvedekConstants.cs",
-              "RelativeToolTip": "Data\\HopMedvedekConstants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T19:10:35.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "GameHud.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Gui\\Hud\\GameHud.cs",
               "RelativeDocumentMoniker": "Gui\\Hud\\GameHud.cs",
               "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Gui\\Hud\\GameHud.cs",
               "RelativeToolTip": "Gui\\Hud\\GameHud.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAmwD0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAFYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T17:49:38.906Z",
+              "WhenOpened": "2026-06-03T13:46:43.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Year01_Language_Question_Sheet.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Questions\\Year01_Language_Question_Sheet.cs",
-              "RelativeDocumentMoniker": "Questions\\Year01_Language_Question_Sheet.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Questions\\Year01_Language_Question_Sheet.cs",
-              "RelativeToolTip": "Questions\\Year01_Language_Question_Sheet.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Title": "LevelBase.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
+              "RelativeDocumentMoniker": "Level\\LevelBase.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
+              "RelativeToolTip": "Level\\LevelBase.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T08:44:21.043Z",
+              "WhenOpened": "2026-06-03T13:45:03.861Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Question.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Questions\\Question.cs",
-              "RelativeDocumentMoniker": "Questions\\Question.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Questions\\Question.cs",
-              "RelativeToolTip": "Questions\\Question.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABKAAAAAAAAAA==",
+              "Title": "Scores.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Scores\\Scores.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Scores\\Scores.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Scores\\Scores.cs",
+              "RelativeToolTip": "..\\Express\\Scores\\Scores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T08:34:49.94Z",
+              "WhenOpened": "2026-06-03T13:17:52.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovementPhysics.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
+              "RelativeDocumentMoniker": "..\\Express\\Physics\\MovementPhysics.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
+              "RelativeToolTip": "..\\Express\\Physics\\MovementPhysics.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwA0AAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T13:15:59.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PhysicsEngine.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Physics\\PhysicsEngine.cs",
+              "RelativeDocumentMoniker": "Physics\\PhysicsEngine.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Physics\\PhysicsEngine.cs",
+              "RelativeToolTip": "Physics\\PhysicsEngine.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T13:11:19.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HopMedvedek.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
+              "RelativeDocumentMoniker": "HopMedvedek.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
+              "RelativeToolTip": "HopMedvedek.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAmwFMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T12:52:22.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T12:52:17.091Z",
               "EditorCaption": ""
             }
           ]

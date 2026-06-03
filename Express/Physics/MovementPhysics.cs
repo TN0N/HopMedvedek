@@ -1,7 +1,8 @@
-using System;
 using Express.Scene.Objects.Movement;
+using Express.Scene.Objects.Physical_Properties;
 using Express.Scene.Objects.Rotation;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Express.Physics;
 /// <summary>
@@ -16,11 +17,14 @@ public static class MovementPhysics
     /// <param name="elapsed">The elapsed time.</param>
     public static void SimulateMovement(object item, TimeSpan elapsed)
     {
+
+        float scaledDt = (float)elapsed.TotalSeconds * (MathF.Sqrt((float)Scores.Scores.score) / 1000 + 1);
+        //System.Diagnostics.Debug.WriteLine(speedMult);
         if (item is IMovable movable)
         {
             
-            movable.Velocity += movable.Acceleration * (float)elapsed.TotalSeconds;
-            movable.Position += movable.Velocity * (float)elapsed.TotalSeconds;
+            movable.Velocity += movable.Acceleration * scaledDt;
+            movable.Position += movable.Velocity * scaledDt;
             movable.Velocity *= movable.Decay;
         }
 
@@ -51,6 +55,11 @@ public static class MovementPhysics
 
 
             //rotatable.RotationAngle += rotatable.AngularVelocity * (float)elapsed.TotalSeconds;
+        }
+        if (item is IGravity gravityItem && item is IVelocity velocityItem)
+        {
+            float gravity = gravityItem.GravitationalAcceleration * scaledDt;
+            velocityItem.Velocity.Y += gravity;
         }
     }
     /*
