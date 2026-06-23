@@ -28,6 +28,10 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_PINECONE_TEXTURE = "pinecone";
     public static readonly string HOP_MEDVEDEK_OWL_TEXTURE = "owl";
 
+    // Question texture names
+    public static readonly string HOP_MEDVEDEK_FATHER_TEXTURE = "father";
+    public static readonly string HOP_MEDVEDEK_MOTHER_TEXTURE = "mother";
+
     // Hud
     public static readonly string HOP_MEDVEDEK_COIN_TEXTURE = "coin";
     public static readonly string HOP_MEDVEDEK_HEART_TEXTURE = "heart";

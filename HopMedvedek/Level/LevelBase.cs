@@ -1,4 +1,5 @@
-﻿using Express.Graphics;
+﻿using Artificial.Artificial.Mirage;
+using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects;
 using Express.Scores;
@@ -22,8 +23,8 @@ public class LevelBase : GameComponent
     protected Tree _tree;
     protected Ground _ground;
     // protected List<Crow> _crows;
-
     protected Dictionary<string, Texture2D> _textureData;
+    protected QuestionSheet _questionSheet;
 
     protected Vector2 _bearSpawn;
     protected Vector2 _treeBaseSpawn;
@@ -101,5 +102,11 @@ public class LevelBase : GameComponent
     {
         get => _ground;
         set => _ground = value;
+    }
+
+    public QuestionSheet QuestionSheet
+    { 
+        get => _questionSheet;
+        set => _questionSheet = value;
     }
 }

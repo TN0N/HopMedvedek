@@ -1,8 +1,11 @@
-﻿using Artificial.Artificial.Utils;
+﻿using Artificial.Artificial.Mirage;
+using Artificial.Artificial.Utils;
 using Express.Scene;
 using HopMedvedek.AI;
+using HopMedvedek.Data;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,6 +19,10 @@ public class Tree: GameComponent
     protected List<TreeMid> _treeMids;
     protected LevelBase _level;
     protected List<Branch> _branches;
+    protected Branch _correctLeaf, _wrongLeaf;
+    protected string _playerAnswer;
+    
+
 
     public Tree(Game game, LevelBase level): base(game)
     {
@@ -28,6 +35,8 @@ public class Tree: GameComponent
         _branches = new List<Branch>();
         _level = level;
 
+        
+
         _level.Scene.Add(_treeBase);
         Game.Components.Add(this);
     }
@@ -37,6 +46,31 @@ public class Tree: GameComponent
         set { 
             _position = value;
             _treeBase.Position = _position;
+        }
+    }
+    public Branch CorrectAnswer
+    {
+        get => _correctLeaf;
+        set => _correctLeaf = value;
+    }
+    public Branch WrongAnswer
+    {
+        get => _wrongLeaf;
+        set => _wrongLeaf = value;
+    }
+    public void AddQuestionsToLeaves(string correctAnswerText, string wrongAnswerText)
+    {
+        if (SRandom.Int() >= 0.5)
+        { 
+            _correctLeaf = _branches[_branches.Count - 1];
+            _wrongLeaf = _branches[_branches.Count - 2];
+
+            _correctLeaf.
+        }
+        else
+        {
+            _wrongLeaf = _branches[_branches.Count - 1];
+            _correctLeaf = _branches[_branches.Count - 2];
         }
     }
     public override void Update(GameTime gameTime)

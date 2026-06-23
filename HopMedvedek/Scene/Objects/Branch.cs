@@ -1,7 +1,10 @@
-﻿using Express.Scene;
+﻿using Artificial.Artificial.Mirage;
+using Express.Scene;
 using Express.Scene.Objects;
+using HopMedvedek.Data;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 namespace HopMedvedek.Scene.Objects;
 
@@ -13,7 +16,9 @@ public class Branch : GameComponent
     protected Leaves _leaves;
     //protected LeafBound _lowerLeafBound;
     //protected Coin _coin;
-    //protected Answer _answer;
+    protected SpriteFont _font;
+
+    protected Label _answer;
     protected IScene _scene;
     public Branch(Game game, IScene scene, Vector2 position, int width) : base(game)
     {
@@ -52,10 +57,10 @@ public class Branch : GameComponent
         _twig.RotationAngle = _leaves.RotationAngle;
         _twig.Position.Y = _leaves.Position.Y;
     }
-    private void GenerateAnswer()
+    private void GenerateAnswer(string answer)
     {
+        _leaves.
         /* TODO generate answer */
-        //_answer = new Answer(game);
         //_level.Scene.Add(_answer);
     }
     private void GenerateCoin()
