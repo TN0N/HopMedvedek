@@ -29,8 +29,7 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_OWL_TEXTURE = "owl";
 
     // Question texture names
-    public static readonly string HOP_MEDVEDEK_FATHER_TEXTURE = "father";
-    public static readonly string HOP_MEDVEDEK_MOTHER_TEXTURE = "mother";
+    public static readonly string HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTIONS_TEXTURES = "year_01_language_questions_textures";
 
     // Hud
     public static readonly string HOP_MEDVEDEK_COIN_TEXTURE = "coin";

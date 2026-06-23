@@ -16,7 +16,7 @@ public class GameHud : GameComponent
     protected SimpleScene _scene;
     protected LevelBase _level;
 
-    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage;
+    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage;
 
     protected Label _playerScore;
     protected Label _playerCoins;
@@ -81,6 +81,22 @@ public class GameHud : GameComponent
         _scene.Add(_playerCoins);
         _scene.Add(_playerHearts);
         _scene.Add(_playerPinecones);
+    }
+    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle)
+    {
+        _questionImage = new Image(
+            new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
+            new Rectangle((int)_owlImage.Position.X - 100, (int)_owlImage.Position.Y+100, 128, 192)
+            );
+        _scene.Add(_questionImage);
+    }
+    public void HideQuestionImage()
+    {
+        if (_questionImage != null)
+        {
+            _scene.Remove(_questionImage);
+            _questionImage = null;
+        }
     }
     public override void Update(GameTime gameTime)
     {

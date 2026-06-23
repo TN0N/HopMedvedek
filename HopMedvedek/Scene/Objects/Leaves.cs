@@ -252,4 +252,8 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
         get => _bounds;
         set => _bounds = value;
     }
+    public Boolean PlayerLanded
+    {
+        get => _playerLanded;
+    }
 }

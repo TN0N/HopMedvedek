@@ -25,6 +25,7 @@ public class GamePlay : GameState
     private Renderer _hudRenderer;
     private PhysicsEngine _physics;
     private DebugRenderer _debugRenderer;
+    private QuestionEngine _questionEngine;
 
     private FpsComponent _fpsComponent;
     public GamePlay(Game game, Type levelClass) : base(game)
@@ -43,9 +44,11 @@ public class GamePlay : GameState
     private void _finishInit()
     { 
         _physics = new PhysicsEngine(Game, _level);
+        
         _gameRenderer = new Renderer(Game, _level.Scene);
         _fpsComponent = new FpsComponent(Game);
         _hud = new GameHud(Game, _level);
+        _questionEngine = new QuestionEngine(Game, _level, _hud);
         _debugRenderer = new DebugRenderer(Game, _level.Scene);
         _hudRenderer = new Renderer(Game, _hud.Scene);
         _hudRenderer.ClearScreen = false;
@@ -54,9 +57,10 @@ public class GamePlay : GameState
 
         _player.UpdateOrder =       0;
         _physics.UpdateOrder =      1;
-        _level.UpdateOrder =        2;
-        _level.Scene.UpdateOrder =  3;
-        UpdateOrder =               4;
+        _questionEngine.UpdateOrder = 2;
+        _level.UpdateOrder =        3;
+        _level.Scene.UpdateOrder =  4;
+        UpdateOrder =               5;
     }
     public override void Activate()
     {
@@ -68,6 +72,7 @@ public class GamePlay : GameState
         Game.Components.Add(_hudRenderer);
         Game.Components.Add(_gameRenderer);
         Game.Components.Add(_physics);
+        Game.Components.Add(_questionEngine);
         Game.Components.Add(_player);
         Game.Components.Add(_fpsComponent);
 

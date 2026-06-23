@@ -16,7 +16,7 @@ public class Branch : GameComponent
     protected Leaves _leaves;
     //protected LeafBound _lowerLeafBound;
     //protected Coin _coin;
-    protected SpriteFont _font;
+    
 
     protected Label _answer;
     protected IScene _scene;
@@ -57,15 +57,13 @@ public class Branch : GameComponent
         _twig.RotationAngle = _leaves.RotationAngle;
         _twig.Position.Y = _leaves.Position.Y;
     }
-    private void GenerateAnswer(string answer)
-    {
-        _leaves.
-        /* TODO generate answer */
-        //_level.Scene.Add(_answer);
-    }
     private void GenerateCoin()
     {
         //_coin = new Coin(game);
         //_level.Scene.Add(_coin);
+    }
+    public Leaves Leaves
+    {
+        get => _leaves;
     }
 }

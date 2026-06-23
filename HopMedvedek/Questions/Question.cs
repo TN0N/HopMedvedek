@@ -1,31 +1,26 @@
 ﻿using HopMedvedek.Data;
+using Microsoft.Xna.Framework;
 namespace HopMedvedek.Questions;
 
 public class Question
 {
-    protected string _questionImage;
     protected string _questionText;
     protected string _questionAnswer;
 
+    protected Rectangle _questionImageBounds;
+
     public Question()
     {
-        _questionImage = HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE;
-
         _questionText = "No question";
         _questionAnswer = "No answer";
     }
-    public Question(string questionImage, string questionText, string questionAnswer)
+    public Question(string questionText, string questionAnswer, Rectangle questionImageBounds)
     {
-        _questionImage = questionImage;
 
         _questionText = questionText;
         _questionAnswer = questionAnswer;
-    }
 
-    public string QuestionImage
-    {
-        get => _questionImage;
-        set => _questionImage = value;
+        _questionImageBounds = questionImageBounds;
     }
     public string QuestionText
     { 
@@ -36,5 +31,10 @@ public class Question
     {
         get => _questionAnswer;
         set => _questionAnswer = value;
+    }
+    public Rectangle QuestionImageBounds
+    {
+        get => _questionImageBounds;
+        set => _questionImageBounds = value;
     }
 }
