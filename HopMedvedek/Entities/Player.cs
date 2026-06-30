@@ -13,6 +13,7 @@ public class Player: GameComponent
     protected Lifetime _stateLifeTime;
     protected Vector2 _throwMouseClickPosition;
 
+    protected bool _startedGame = false;
     protected bool _canThrowPinecone = true;
 
     public Player(Game game, Bear bear): base(game)
@@ -119,15 +120,14 @@ public class Player: GameComponent
     public override void Update(GameTime gameTime)
     {
 
-        /*
-        //PrintHelper.Print(_bear.Velocity);
-        if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
-        {
-            //_bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
-            //_bear.Jumping = true;
-        }*/
 
-        if (_bear.Grounded && !_bear.Jumping && _bear.State != BearState.BearDazed)
+        //PrintHelper.Print(_bear.Velocity);
+
+        if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
+            _startedGame = true;
+
+
+        if (_bear.Grounded && !_bear.Jumping && _bear.State != BearState.BearDazed && _startedGame)
         {
             _bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
             _bear.Jumping = true;

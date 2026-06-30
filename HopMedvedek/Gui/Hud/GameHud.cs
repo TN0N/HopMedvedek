@@ -16,7 +16,7 @@ public class GameHud : GameComponent
     protected SimpleScene _scene;
     protected LevelBase _level;
 
-    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage;
+    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage, _questionBubble;
 
     protected Label _playerScore;
     protected Label _playerCoins;
@@ -41,7 +41,8 @@ public class GameHud : GameComponent
             [HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE)
+            [HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE)
         };
 
         _coinImage = new Image(
@@ -59,6 +60,10 @@ public class GameHud : GameComponent
         _owlImage = new Image(
             new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE, new Rectangle(0, 0, 68, 54), new Vector2(34, 27), 8, 700, true),
             new Rectangle(350, 100, 100, 80)
+            );
+        _questionBubble = new Image(
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE, new Rectangle(0, 0, 300, 400), new Vector2(150, 200)),
+            new Rectangle(Game.Window.ClientBounds.Width / 2, (int)_owlImage.Position.Y + 105, 300, 400)
             );
 
         _playerScore = new Label(font, "0", new Vector2(Game.Window.ClientBounds.Width/2, 20));
@@ -86,14 +91,18 @@ public class GameHud : GameComponent
     {
         _questionImage = new Image(
             new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
-            new Rectangle((int)_owlImage.Position.X - 100, (int)_owlImage.Position.Y+100, 128, 192)
+            new Rectangle(Game.Window.ClientBounds.Width/2, (int)_owlImage.Position.Y+100, 128, 192)
             );
+        _questionImage.LayerDepth = 0.9f;
+        _scene.Add(_questionBubble);
         _scene.Add(_questionImage);
+        
     }
     public void HideQuestionImage()
     {
         if (_questionImage != null)
         {
+            _scene.Remove(_questionBubble);
             _scene.Remove(_questionImage);
             _questionImage = null;
         }

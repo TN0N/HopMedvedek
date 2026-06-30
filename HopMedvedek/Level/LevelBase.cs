@@ -73,7 +73,8 @@ public class LevelBase : GameComponent
             var updateable = item as ICustomUpdate;
             updateable?.Update(gameTime);
         }
-        Scores.score = (int)(-_bear.Position.Y + 1000);
+        //Scores.score = (int)(-_bear.Position.Y + 703);
+        Scores.score = (int)MathF.Max(Scores.score, (int)-_bear.Position.Y + 700);
         _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0);
     }
     public Dictionary<string, Texture2D> TextureData

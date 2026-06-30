@@ -1,4 +1,5 @@
 ﻿using Artificial.Artificial.Mirage;
+using Artificial.Artificial.Utils;
 using HopMedvedek.Data;
 using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
@@ -22,7 +23,7 @@ public class QuestionEngine : GameComponent
     protected Leaves _correctLeaf, _wrongLeaf;
     protected List<Question> _levelQuesitons;
     protected SpriteFont _font;
-    
+
 
     public QuestionEngine(Game game, LevelBase level, GameHud gameHud) : base(game)
     {
@@ -32,75 +33,77 @@ public class QuestionEngine : GameComponent
         _levelQuesitons = _level.QuestionSheet.Questions.OrderBy(x => Random.Shared.Next()).ToList();
         _font = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
 
+
+    }
+    private void GenerateQuestions(GameTime gameTime)
+    {
         
+
+        if (_correctLeaf != null || _wrongLeaf != null || _level.Bear.Position.Y >= -100 || gameTime.TotalGameTime - _lastGenerationRuntime < TimeSpan.FromSeconds(3))
+            return;
+        _lastGenerationRuntime = gameTime.TotalGameTime;
+        // Get the first question from the list and then remove it from the list
+        Question question = _levelQuesitons.First(); 
+        _correctAnswer = question.QuestionAnswer;
+        _levelQuesitons.RemoveAt(0);
+
+        // Shuffle the other questions in the list and select the first to get a wrong answer
+        _wrongAnswer = _levelQuesitons.OrderBy(x => Random.Shared.Next()).ToList().First().QuestionAnswer;
+
+        // Randomly assign the correct and wrong answers to the leaves
+        if (SRandom.Int(1) <= 0.5f)
+        {
+            _correctLeaf = _level.Tree.Branches[_level.Tree.Branches.Count - 1].Leaves;
+            _wrongLeaf = _level.Tree.Branches[_level.Tree.Branches.Count - 2].Leaves;
+        }
+        else
+        {
+            _correctLeaf = _level.Tree.Branches[_level.Tree.Branches.Count - 2].Leaves;
+            _wrongLeaf = _level.Tree.Branches[_level.Tree.Branches.Count - 1].Leaves;
+        }
+
+        // Add labels to the leaves
+        _correctAnswerLabel = new Label(_font, _correctAnswer, new Vector2(_correctLeaf.Position.X, _correctLeaf.Position.Y));
+        _wrongAnswerLabel = new Label(_font, _wrongAnswer, new Vector2(_wrongLeaf.Position.X, _wrongLeaf.Position.Y));
+        _correctAnswerLabel.LayerDepth = 0.9f;
+        _wrongAnswerLabel.LayerDepth = 0.9f;
+
+        _correctAnswerLabel.HorizontalAlign = HorizontalAlign.Center;
+        _correctAnswerLabel.VerticalAlign = VerticalAlign.Bottom;
+        _wrongAnswerLabel.HorizontalAlign = HorizontalAlign.Center;
+        _wrongAnswerLabel.VerticalAlign = VerticalAlign.Bottom;
+
+        _level.Scene.Add(_correctAnswerLabel);
+        _level.Scene.Add(_wrongAnswerLabel);
+
+        // Show the image on the gameHud
+        _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds);
+    }
+    private void CheckAnswer()
+    {
+        if ((_correctLeaf == null || _wrongLeaf == null) || (!_correctLeaf.PlayerLanded && !_wrongLeaf.PlayerLanded))
+            return;
+        if (_correctLeaf.PlayerLanded)
+            System.Diagnostics.Debug.WriteLine("Correct!");
+        if (_wrongLeaf.PlayerLanded)
+            System.Diagnostics.Debug.WriteLine("Incorrect!");
+
+        _correctLeaf = null;
+        _wrongLeaf = null;
+
+        _level.Scene.Remove(_correctAnswerLabel);
+        _level.Scene.Remove(_wrongAnswerLabel);
+        _gameHud.HideQuestionImage();
     }
     public override void Update(GameTime gameTime)
     {
         if (_levelQuesitons.Count < 2)
-        {
             _levelQuesitons = _level.QuestionSheet.Questions.OrderBy(x => Random.Shared.Next()).ToList();
-        }
-        if (_correctLeaf == null && _wrongLeaf == null
-            && _level.Bear.Position.Y < -100 &&
-            gameTime.TotalGameTime - _lastGenerationRuntime >= TimeSpan.FromSeconds(3))
-        {
-            System.Diagnostics.Debug.WriteLine("Generating question");
-            _lastGenerationRuntime = gameTime.TotalGameTime;
 
-
-            Question question = _levelQuesitons.First();
-
-            _correctAnswer = question.QuestionAnswer;
-            _levelQuesitons.RemoveAt(0);
-
-            _wrongAnswer = _levelQuesitons.OrderBy(x => Random.Shared.Next()).ToList().First().QuestionAnswer;
-
-            int leavesCount = _level.Tree.Branches.Count;
-            _correctLeaf = _level.Tree.Branches[leavesCount - 1].Leaves;
-            _wrongLeaf = _level.Tree.Branches[leavesCount - 2].Leaves;
-
-            _correctAnswerLabel = new Label(_font, _correctAnswer, new Vector2(_correctLeaf.Position.X, _correctLeaf.Position.Y));
-            _wrongAnswerLabel = new Label(_font, _wrongAnswer, new Vector2(_wrongLeaf.Position.X, _wrongLeaf.Position.Y));
-            _correctAnswerLabel.LayerDepth = 0.9f;
-            _wrongAnswerLabel.LayerDepth = 0.9f;
-
-            _correctAnswerLabel.HorizontalAlign = HorizontalAlign.Center;
-            _correctAnswerLabel.VerticalAlign = VerticalAlign.Bottom;
-            _wrongAnswerLabel.HorizontalAlign = HorizontalAlign.Center;
-            _wrongAnswerLabel.VerticalAlign = VerticalAlign.Bottom;
-
-            _level.Scene.Add(_correctAnswerLabel);
-            _level.Scene.Add(_wrongAnswerLabel);
-
-            _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds);
-        }
-        else if (_correctLeaf != null && _wrongLeaf != null)
-        {
-            if (_correctLeaf.PlayerLanded)
-            {
-                System.Diagnostics.Debug.WriteLine("Correct!");
-                _correctLeaf = null;
-                _wrongLeaf = null;
-
-                _level.Scene.Remove(_correctAnswerLabel);
-                _level.Scene.Remove(_wrongAnswerLabel);
-                _gameHud.HideQuestionImage();
-                return;
-            }
-
-            if (_wrongLeaf.PlayerLanded)
-            {
-                System.Diagnostics.Debug.WriteLine("Incorrect!");
-                _correctLeaf = null;
-                _wrongLeaf = null;
-
-                _level.Scene.Remove(_correctAnswerLabel);
-                _level.Scene.Remove(_wrongAnswerLabel);
-                _gameHud.HideQuestionImage();
-                return;
-            }
-                
-        }
+       
+        //System.Diagnostics.Debug.WriteLine("Generating question");
+        GenerateQuestions(gameTime);
+        CheckAnswer();
     }
     public override void Initialize()
     {

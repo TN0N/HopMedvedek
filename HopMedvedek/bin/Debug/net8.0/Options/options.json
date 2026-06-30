@@ -3,7 +3,6 @@
   "GraphicsDeviceHeight": 906,
   "GameVolume": 0.7,
   "MusicVolume": 0.7,
-  "Language": 1,
-  "IsMouseVisible": true,
-  "RootDirectory": "Content"
+  "Language": 0,
+  "IsMouseVisible": true
 }
