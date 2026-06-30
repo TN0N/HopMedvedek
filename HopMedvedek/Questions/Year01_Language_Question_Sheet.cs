@@ -11,12 +11,12 @@ namespace HopMedvedek.Questions;
 
 public class Year01_Language_Question_Sheet : QuestionSheet
 {
-    private int _questionImageWidth = 512;
-    private int _questionImageHeight = 768;
+    private int _questionImageWidth = 256;
+    private int _questionImageHeight = 384;
 
     public Year01_Language_Question_Sheet()
     {
-        _questionSheetTextures = HopMedvedekConstants.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTIONS_TEXTURES;
+        _questionSheetTextures = HopMedvedekConstants.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTIONS_TEXTURES_01;
         _questions = new List<Question>()
         {
             // Apple
@@ -85,10 +85,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BREAD][Options.Options.Current.Language],
                 new Rectangle(0 * _questionImageWidth, 1 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // Brother
+            // Castle
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BROTHER][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CASTLE][Options.Options.Current.Language],
                 new Rectangle(1 * _questionImageWidth, 1 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // Bus
@@ -127,10 +127,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CHICKEN][Options.Options.Current.Language],
                 new Rectangle(7 * _questionImageWidth, 1 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // Child
+            // Spoon
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CHILD][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SPOON][Options.Options.Current.Language],
                 new Rectangle(8 * _questionImageWidth, 1 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // Clock
@@ -217,10 +217,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FOOT][Options.Options.Current.Language],
                 new Rectangle(2 * _questionImageWidth, 3 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // Friend
+            // Clown
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FRIEND][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CLOWN][Options.Options.Current.Language],
                 new Rectangle(3 * _questionImageWidth, 3 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // Frog
@@ -259,10 +259,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HAT][Options.Options.Current.Language],
                 new Rectangle(9 * _questionImageWidth, 3 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // Head
+            // Sock
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HEAD][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SOCK][Options.Options.Current.Language],
                 new Rectangle(0 * _questionImageWidth, 4 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // Hill
@@ -355,10 +355,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOON][Options.Options.Current.Language],
                 new Rectangle(5 * _questionImageWidth, 5 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // MORNING
+            // Magnet
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MORNING][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MAGNET][Options.Options.Current.Language],
                 new Rectangle(6 * _questionImageWidth, 5 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // MOUSE
@@ -445,10 +445,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_ROAD][Options.Options.Current.Language],
                 new Rectangle(0 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // SCHOOL
+            // MUSHROOM
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SCHOOL][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MUSHROOM][Options.Options.Current.Language],
                 new Rectangle(1 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // SHEEP
@@ -463,16 +463,16 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SHOE][Options.Options.Current.Language],
                 new Rectangle(3 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // SISTER
+            // SHELL
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SISTER][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SHELL][Options.Options.Current.Language],
                 new Rectangle(4 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // SKY
+            // CLOUD
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SKY][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CLOUD][Options.Options.Current.Language],
                 new Rectangle(5 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // SNAKE
@@ -481,10 +481,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SNAKE][Options.Options.Current.Language],
                 new Rectangle(6 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // SNOW
+            // SNOWFLAKE
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SNOW][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SNOWFLAKE][Options.Options.Current.Language],
                 new Rectangle(7 * _questionImageWidth, 7 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // STAR
@@ -505,10 +505,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TABLE][Options.Options.Current.Language],
                 new Rectangle(0 * _questionImageWidth, 8 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // TEACHER
+            // MAP
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TEACHER][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MAP][Options.Options.Current.Language],
                 new Rectangle(1 * _questionImageWidth, 8 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // BEAR
@@ -577,10 +577,10 @@ public class Year01_Language_Question_Sheet : QuestionSheet
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_ZEBRA][Options.Options.Current.Language],
                 new Rectangle(2 * _questionImageWidth, 9 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
-            // ZOO
+            // MOUNTAIN
             new Question(
                 Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE][Options.Options.Current.Language],
-                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_ZOO][Options.Options.Current.Language],
+                Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOUNTAIN][Options.Options.Current.Language],
                 new Rectangle(3 * _questionImageWidth, 9 * _questionImageHeight, _questionImageWidth, _questionImageHeight)
             ),
             // DRUM
