@@ -110,5 +110,7 @@ public class GameHud : GameComponent
     public override void Update(GameTime gameTime)
     {
         _playerScore.Text = "" + Scores.score;
+        _playerHearts.Text = "" + _level.PlayerHP;
+        _playerCoins.Text = "" + _level.PlayerCoins;
     }
 }

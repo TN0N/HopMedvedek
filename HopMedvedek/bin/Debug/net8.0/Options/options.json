@@ -4,5 +4,6 @@
   "GameVolume": 0.7,
   "MusicVolume": 0.7,
   "Language": 0,
-  "IsMouseVisible": true
+  "IsMouseVisible": true,
+  "HighScore": 8171
 }

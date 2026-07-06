@@ -16,7 +16,7 @@ public class CrowBehaviour : Behaviour
     CrowBehaviourState _currentState = CrowBehaviourState.Flying;
     Vector2 _targetPosition = Vector2.Zero;
     int _prediveHeight = 0;
-
+    private double _timeSinceLastAttack = 0;
 
     public CrowBehaviour(Game game, Entity entity, LevelBase level) : base(game, entity, level)
     {
@@ -29,8 +29,9 @@ public class CrowBehaviour : Behaviour
         {
             case CrowBehaviourState.Flying:
                 // If the crow sees the player, target the player (remember the original Y coordinate)
-                if (SeesPlayer())
+                if (SeesPlayer(gameTime))
                 {
+                    _timeSinceLastAttack = gameTime.TotalGameTime.TotalMilliseconds;
                     _prediveHeight = (int)_gameObject.Position.Y;
                     _targetPosition = _level.Bear.Position;
                     _currentState = CrowBehaviourState.Attacking;
@@ -79,10 +80,11 @@ public class CrowBehaviour : Behaviour
         }
         _gameObject.Velocity = Vector2.Normalize(_targetPosition - _gameObject.Position) * speed;
     }
-    public bool SeesPlayer()
+    public bool SeesPlayer(GameTime gameTime)
     {
         return
             _level.Bear.State != BearState.BearDazed &&
+            gameTime.TotalGameTime.TotalMilliseconds - _timeSinceLastAttack >= 10000 &&
             _level.Bear.Position.Y > _gameObject.Position.Y &&
             Vector2.Distance(_level.Bear.Position, _gameObject.Position) <= HopMedvedekConstants.HOP_MEDVEDEK_CROW_AGRO_DISTANCE;
     }

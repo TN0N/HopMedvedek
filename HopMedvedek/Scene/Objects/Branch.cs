@@ -17,8 +17,6 @@ public class Branch : GameComponent
     //protected LeafBound _lowerLeafBound;
     //protected Coin _coin;
     
-
-    protected Label _answer;
     protected IScene _scene;
     public Branch(Game game, IScene scene, Vector2 position, int width) : base(game)
     {
@@ -61,6 +59,11 @@ public class Branch : GameComponent
     {
         //_coin = new Coin(game);
         //_level.Scene.Add(_coin);
+    }
+    public void RemoveBranch()
+    { 
+        _scene.Remove(_leaves);
+        _scene.Remove(_twig);
     }
     public Leaves Leaves
     {

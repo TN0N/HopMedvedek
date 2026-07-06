@@ -56,13 +56,15 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
             if (bear.Position.Y > _position.Y)
             {
                 bear.State = BearState.BearDazed;
-
+                _level.PlayerHP--;
+                /*
                 Vector2 _hitDirection = _velocity;
                 _hitDirection.Normalize();
-
+                
                 bear.Velocity.X *= -1;
                 if (bear.Velocity.Y < 0)
-                    bear.Velocity.Y *= -1;
+                    bear.Velocity.Y *= -1;*/
+
             }
             else
             {

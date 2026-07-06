@@ -6,6 +6,7 @@ using HopMedvedek.Data;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,6 +20,8 @@ public class Tree: GameComponent
     protected List<TreeMid> _treeMids;
     protected LevelBase _level;
     protected List<Branch> _branches;
+    protected bool _branchDirection = false;
+    private double _lastCrowSpawnTime = 0;
 
     public Tree(Game game, LevelBase level): base(game)
     {
@@ -44,6 +47,29 @@ public class Tree: GameComponent
             _treeBase.Position = _position;
         }
     }
+    private void RemoveBranches()
+    {
+        List<TreeMid> treeMidsToBeRemoved = new List<TreeMid>();
+        List<Branch> branchesToBeRemoved = new List<Branch>();
+        foreach (TreeMid treemid in _treeMids)
+            if (_level.Bear.Position.Y < treemid.Position.Y && MathF.Abs(_level.Bear.Position.Y - treemid.Position.Y) >= 700)
+                treeMidsToBeRemoved.Add(treemid);
+        foreach (Branch branch in _branches)
+            if (_level.Bear.Position.Y < branch.Leaves.Position.Y && MathF.Abs(_level.Bear.Position.Y - branch.Leaves.Position.Y) >= 350)
+                branchesToBeRemoved.Add(branch);
+
+
+        foreach (TreeMid treemid in treeMidsToBeRemoved)
+        { 
+            _level.Scene.Remove(treemid);
+            _treeMids.Remove(treemid);
+        }
+        foreach (Branch branch in branchesToBeRemoved)
+        {
+            branch.RemoveBranch();
+            _branches.Remove(branch);
+        }
+    }
     public override void Update(GameTime gameTime)
     {
         if (_treeMids.Count < 1)
@@ -66,19 +92,22 @@ public class Tree: GameComponent
             int branchLength = SRandom.Int(180);
 
 
-            Branch branch = new Branch(Game, _level.Scene, treeMid.Position, (_treeMids.Count % 2 == 0) ? branchLength : -branchLength);
+            Branch branch = new Branch(Game, _level.Scene, treeMid.Position, (_branchDirection == true) ? branchLength : -branchLength);
+            _branchDirection = !_branchDirection;
             _branches.Add(branch);
             _treeMids.Add(treeMid);
             _level.Scene.Add(treeMid);
 
-            if (lastTreeMid.Position.Y < - 300 && SRandom.Int(100) <= 20)
+            if (lastTreeMid.Position.Y < - 300 && SRandom.Int(100) <= 20 && gameTime.TotalGameTime.TotalMilliseconds - _lastCrowSpawnTime >= 300)
             {
+                _lastCrowSpawnTime = gameTime.TotalGameTime.TotalMilliseconds;
                 Crow crow = new Crow(Game, _level);
                 crow.Position = treeMid.Position;
                 crow.Behaviour = new CrowBehaviour(Game, crow, _level);
                 _level.Scene.Add(crow);
             }
         }
+        RemoveBranches();
         foreach (var branch in _branches)
         {
             branch.Update(gameTime);

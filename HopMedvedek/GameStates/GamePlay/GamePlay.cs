@@ -1,6 +1,8 @@
 ﻿using Artificial.Artificial.Utils;
 using Express.Graphics;
+using Express.Scores;
 using HopMedvedek.Entities;
+using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
 using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
@@ -96,5 +98,16 @@ public class GamePlay : GameState
         /*foreach (var item in _level.Scene)
             if (item is GameComponent gameComponent)
                 Game.Components.Remove(gameComponent);*/
+    }
+    public override void Update(GameTime gameTime)
+    {
+        base.Update(gameTime);
+        if (_level.PlayerHP < 1)
+        {
+            
+            Options.Options.Current.HighScore = Math.Max(Options.Options.Current.HighScore, Scores.score);
+            Options.Options.SaveOptions();
+            _hopMedvedek.PushState(new DeathMenu(Game));
+        }
     }
 }

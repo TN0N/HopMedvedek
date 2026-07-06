@@ -4,11 +4,13 @@ using Express.Scene;
 using Express.Scene.Objects;
 using Express.Scores;
 using HopMedvedek.Data;
+using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
 using HopMedvedek.Questions;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +20,7 @@ namespace HopMedvedek.Level;
 /// </summary>
 public class LevelBase : GameComponent
 {
+    //protected HopMedvedek _hopMedvedek;
     protected SimpleScene _scene;
     protected Bear _bear;
     protected Tree _tree;
@@ -29,6 +32,9 @@ public class LevelBase : GameComponent
     protected Vector2 _bearSpawn;
     protected Vector2 _treeBaseSpawn;
     protected Vector2 _groundSpawn;
+
+    protected int _playerHP = 5;
+    protected int _playerCoins = 0;
 
     protected LevelBase(Game game): base(game)
     {
@@ -76,6 +82,21 @@ public class LevelBase : GameComponent
         //Scores.score = (int)(-_bear.Position.Y + 703);
         Scores.score = (int)MathF.Max(Scores.score, (int)-_bear.Position.Y + 700);
         _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0);
+
+        if (Math.Abs((int)-_bear.Position.Y + 700 - Scores.score) >= 500)
+        {
+            //System.Diagnostics.Debug.WriteLine("Bear dies");
+            _playerHP--;
+            if (_playerHP > 0)
+            {
+                _bear.State = BearState.BearDazed;
+                _bear.Velocity.Y = -1000;
+            }
+        }
+        /*if (PlayerHP < 1)
+        {
+            _hopMedvedek.PushState(new MainMenu(Game));
+        }*/
     }
     public Dictionary<string, Texture2D> TextureData
     {
@@ -109,5 +130,15 @@ public class LevelBase : GameComponent
     { 
         get => _questionSheet;
         set => _questionSheet = value;
+    }
+    public int PlayerHP
+    {
+        get => _playerHP;
+        set => _playerHP = value;
+    }
+    public int PlayerCoins
+    { 
+        get => _playerCoins;
+        set => _playerCoins = value;
     }
 }
