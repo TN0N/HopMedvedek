@@ -1,6 +1,7 @@
 ﻿using Artificial.Artificial.Utils;
 using Express.Graphics;
 using Express.Scores;
+using HopMedvedek.Audio;
 using HopMedvedek.Entities;
 using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
@@ -63,6 +64,8 @@ public class GamePlay : GameState
         _level.UpdateOrder =        3;
         _level.Scene.UpdateOrder =  4;
         UpdateOrder =               5;
+
+        
     }
     public override void Activate()
     {
@@ -107,6 +110,7 @@ public class GamePlay : GameState
             
             Options.Options.Current.HighScore = Math.Max(Options.Options.Current.HighScore, Scores.score);
             Options.Options.SaveOptions();
+            SoundEngine.Play(SoundEffectType.BearDie, null, null, Options.Options.Current.GameVolume);
             _hopMedvedek.PushState(new DeathMenu(Game));
         }
     }

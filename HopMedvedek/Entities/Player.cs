@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using HopMedvedek.Scene.Objects;
 using Express.Scene.Objects;
 using HopMedvedek.Data;
+using HopMedvedek.Audio;
 
 namespace HopMedvedek.Entities;
 
@@ -129,6 +130,7 @@ public class Player: GameComponent
 
         if (_bear.Grounded && !_bear.Jumping && _bear.State != BearState.BearDazed && _startedGame)
         {
+            SoundEngine.Play(SoundEffectType.BearJump, null, null, Options.Options.Current.GameVolume);
             _bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
             _bear.Jumping = true;
         }

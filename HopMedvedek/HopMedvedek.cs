@@ -1,4 +1,5 @@
 ﻿using Artificial.Artificial.Utils;
+using HopMedvedek.Audio;
 using HopMedvedek.Data;
 using HopMedvedek.GameStates;
 using HopMedvedek.GameStates.GamePlay;
@@ -23,6 +24,7 @@ public class HopMedvedek : Game {
 
         //Components.Add(new GamePlay(this));
         Components.Add(new FpsComponent(this));
+        SoundEngine.Init(this);
 
         _stateStack = new Stack<GameState>();
     }
@@ -74,9 +76,11 @@ public class HopMedvedek : Game {
            typeof(Level.Levels.LanguageLevel),
            typeof(Level.Levels.MathLevel)
         };*/
-
+        
         PushState(new MainMenu(this));
+        
         base.Initialize();
+        SoundEngine.Play(SoundEffectType.HopMedvedekMainTheme, null, null, Options.Options.Current.MusicVolume, looping: true);
     }
     protected override void Update(GameTime gameTime)
     {

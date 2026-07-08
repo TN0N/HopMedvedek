@@ -1,9 +1,9 @@
 {
   "GraphicsDeviceWidth": 408,
   "GraphicsDeviceHeight": 906,
-  "GameVolume": 0.7,
-  "MusicVolume": 0.7,
-  "Language": 0,
+  "GameVolume": 0.28,
+  "MusicVolume": 0.04,
+  "Language": 1,
   "IsMouseVisible": true,
-  "HighScore": 8171
+  "HighScore": 9836
 }

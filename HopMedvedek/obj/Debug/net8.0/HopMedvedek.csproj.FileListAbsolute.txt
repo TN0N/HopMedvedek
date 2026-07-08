@@ -114,3 +114,15 @@ C:\Users\AMT\Documents\My projects\HopMedvedek01\HopMedvedek\HopMedvedek\obj\Deb
 C:\Users\AMT\Documents\My projects\HopMedvedek01\HopMedvedek\HopMedvedek\obj\Debug\net8.0\HopMedvedek.pdb
 C:\Users\AMT\Documents\My projects\HopMedvedek01\HopMedvedek\HopMedvedek\obj\Debug\net8.0\HopMedvedek.genruntimeconfig.cache
 C:\Users\AMT\Documents\My projects\HopMedvedek01\HopMedvedek\HopMedvedek\obj\Debug\net8.0\ref\HopMedvedek.dll
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\BearDie.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\BearHit.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\BearJump.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\BearThrow.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\ButtonPressed.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\CorrectAnswer.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\CrowAttack.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\CrowHit.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\OwlQuestion.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\PineConeHit.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\WrongAnswer.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\HopMedvedekMainTheme.xnb
