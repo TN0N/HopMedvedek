@@ -33,8 +33,7 @@ public class LevelBase : GameComponent
     protected Vector2 _treeBaseSpawn;
     protected Vector2 _groundSpawn;
 
-    protected int _playerHP = 5;
-    protected int _playerCoins = 0;
+    
 
     protected LevelBase(Game game): base(game)
     {
@@ -86,8 +85,8 @@ public class LevelBase : GameComponent
         if (Math.Abs((int)-_bear.Position.Y + 700 - Scores.score) >= 500)
         {
             //System.Diagnostics.Debug.WriteLine("Bear dies");
-            _playerHP--;
-            if (_playerHP > 0)
+            _bear.PlayerHP--;
+            if (_bear.PlayerHP > 0)
             {
                 _bear.State = BearState.BearDazed;
                 _bear.Velocity.Y = -1000;
@@ -131,14 +130,5 @@ public class LevelBase : GameComponent
         get => _questionSheet;
         set => _questionSheet = value;
     }
-    public int PlayerHP
-    {
-        get => _playerHP;
-        set => _playerHP = value;
-    }
-    public int PlayerCoins
-    { 
-        get => _playerCoins;
-        set => _playerCoins = value;
-    }
+    
 }

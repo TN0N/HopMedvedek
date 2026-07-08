@@ -1,6 +1,7 @@
 ﻿using Express.Graphics;
 using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
+using HopMedvedek.Audio;
 using HopMedvedek.Data;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
@@ -55,8 +56,9 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
         {
             if (bear.Position.Y > _position.Y)
             {
+                SoundEngine.Play(SoundEffectType.BearHit, _level.Bear.Position, _position, Options.Options.Current.GameVolume);
                 bear.State = BearState.BearDazed;
-                _level.PlayerHP--;
+                _level.Bear.PlayerHP--;
                 /*
                 Vector2 _hitDirection = _velocity;
                 _hitDirection.Normalize();
@@ -74,8 +76,8 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
         }
         if (item is Pinecone pinecone)
         {
+            SoundEngine.Play(SoundEffectType.CrowHit, null, null, Options.Options.Current.GameVolume);
             _level.Scene.Remove(pinecone);
-
             _level.Scene.Remove(this);
         }
     }

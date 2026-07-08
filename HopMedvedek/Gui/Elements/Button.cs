@@ -2,6 +2,7 @@
 using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects.Movement;
+using HopMedvedek.Audio;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -170,6 +171,7 @@ public class Button
                 // release pressed button -> trigger action
                 if (Mouse.GetState().LeftButton != ButtonState.Pressed)
                 {
+                    SoundEngine.Play(SoundEffectType.ButtonPressed, null, null, Options.Options.Current.GameVolume);
                     _wasReleased = true;
                     _activeBackgroundColor = _backgroundColor;
                     _label.Color = _labelColor;

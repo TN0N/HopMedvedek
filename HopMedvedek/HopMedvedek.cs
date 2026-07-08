@@ -23,7 +23,7 @@ public class HopMedvedek : Game {
         _graphics = new GraphicsDeviceManager(this);
 
         //Components.Add(new GamePlay(this));
-        Components.Add(new FpsComponent(this));
+        //Components.Add(new FpsComponent(this));
         SoundEngine.Init(this);
 
         _stateStack = new Stack<GameState>();
@@ -32,7 +32,7 @@ public class HopMedvedek : Game {
     private void LoadOptions()
     {
         Options.Options.LoadOptions();
-        Window.AllowUserResizing = true;
+        //Window.AllowUserResizing = true;
         _graphics.PreferredBackBufferWidth = Options.Options.Current.GraphicsDeviceWidth;
         _graphics.PreferredBackBufferHeight = Options.Options.Current.GraphicsDeviceHeight;
         

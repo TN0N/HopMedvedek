@@ -1,5 +1,6 @@
 ﻿using Artificial.Artificial.Mirage;
 using Artificial.Artificial.Utils;
+using HopMedvedek.Audio;
 using HopMedvedek.Data;
 using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
@@ -10,6 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 namespace HopMedvedek.Graphics;
 
@@ -76,24 +78,82 @@ public class QuestionEngine : GameComponent
         _level.Scene.Add(_correctAnswerLabel);
         _level.Scene.Add(_wrongAnswerLabel);
 
+
+        SoundEngine.Play(SoundEffectType.OwlQuestion, null, null, Options.Options.Current.GameVolume);
         // Show the image on the gameHud
         _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds);
+    }
+    private void GiveReward()
+    {
+        /*
+         Rewards:
+        + 10% 1-2 Hearts, 
+        + 26% 3-10 Coins, 
+        + 23% 1-3 Pinecones
+        + 15% Ultra Jump,
+        + 15% Invincibility for 10 seconds,
+        + 11% Jetpack
+         */
+        int r = SRandom.Int(100);
+
+        if (r < 10) // 1-2 Hearts;
+        {
+            int hearts = SRandom.Int(1) + 1;
+            System.Diagnostics.Debug.WriteLine("Reward: " + hearts + " hearts");
+            _level.Bear.PlayerHP += hearts;
+        }
+        else if (r < 36) // 3-10 coins
+        {
+            int coins = SRandom.Int(7) + 3;
+            System.Diagnostics.Debug.WriteLine("Reward: " + coins + " coins");
+            _level.Bear.PlayerCoins += coins;
+        }
+        else if (r < 59) // 1-3 pinecones
+        {
+            int pinecones = SRandom.Int(2) + 1;
+            System.Diagnostics.Debug.WriteLine("Reward: " + pinecones + " pinecones");
+            _level.Bear.PlayerPinecones += pinecones;
+            
+        }
+        else if (r < 74) // Ultra jump
+        {
+            System.Diagnostics.Debug.WriteLine("Reward: ultrajump");
+        }
+        else if (r < 89) // Invincibility
+        {
+            System.Diagnostics.Debug.WriteLine("Reward: invinsibility");
+        }
+        else if (r <= 100) // Jetpack
+        {
+            System.Diagnostics.Debug.WriteLine("Reward: jetpack");
+        }
+
     }
     private void CheckAnswer()
     {
         if ((_correctBranch == null || _wrongBranch == null) || (!_correctBranch.Leaves.PlayerLanded && !_wrongBranch.Leaves.PlayerLanded))
             return;
         if (_correctBranch.Leaves.PlayerLanded)
+        {
+            SoundEngine.Play(SoundEffectType.CorrectAnswer, null, null, Options.Options.Current.GameVolume);
             System.Diagnostics.Debug.WriteLine("Correct!");
+            GiveReward();
+            _gameHud.HideQuestionImage(true);
+        }
+
         if (_wrongBranch.Leaves.PlayerLanded)
+        {
+            SoundEngine.Play(SoundEffectType.WrongAnswer, null, null, Options.Options.Current.GameVolume);
             System.Diagnostics.Debug.WriteLine("Incorrect!");
+            _gameHud.HideQuestionImage(false);
+        }
 
         _correctBranch = null;
         _wrongBranch = null;
 
         _level.Scene.Remove(_correctAnswerLabel);
         _level.Scene.Remove(_wrongAnswerLabel);
-        _gameHud.HideQuestionImage();
+        
     }
     public override void Update(GameTime gameTime)
     {
@@ -112,7 +172,7 @@ public class QuestionEngine : GameComponent
         }
 
         if (_wrongBranch == null && _correctBranch == null)
-            _gameHud.HideQuestionImage();
+            _gameHud.HideQuestionImage(null);
 
 
         //System.Diagnostics.Debug.WriteLine("Generating question");

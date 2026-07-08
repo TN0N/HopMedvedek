@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Gui.Elements;
 
-public class Image : IRectangleSize, IPosition, ITextured, IRotatable//, ICustomOrigin
+public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable//, ICustomOrigin
 {
     protected float _width;
     protected float _height;
@@ -14,6 +14,10 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable//, ICustom
     protected float _angularVelocity;
     protected Vector2 _pivotPoint;
     protected float _layerDepth;
+    protected Vector2 _velocity;
+    protected Vector2 _acceleration;
+    protected Vector2 _decay;
+    protected bool _facing;
     //protected Vector2 _origin;
     protected Sprite _sprite;
     protected Vector2 _position;
@@ -80,6 +84,17 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable//, ICustom
     {
         get => _pivotPoint;
         set => _pivotPoint = value;
+    }
+    public ref Vector2 Velocity => ref _velocity;
+
+    public ref Vector2 Acceleration => ref _acceleration;
+
+    public ref Vector2 Decay => ref _decay;
+
+    public bool Facing
+    {
+        get => _facing;
+        set => _facing = value;
     }
     /*public Vector2 CustomOrigin
     {

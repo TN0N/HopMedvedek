@@ -22,17 +22,17 @@ public class DeathMenu : Menu
 
 
         //_scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND));
-        _deathTextLabel = new Label(_luckiestGuy, "You died! (replace)", new Vector2(game.Window.ClientBounds.Width / 2, 100));
-        _highScoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE][Options.Options.Current.Language] + Options.Options.Current.HighScore, new Vector2(game.Window.ClientBounds.Width / 2, 200));
-        _scoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE][Options.Options.Current.Language] + Scores.score, new Vector2(game.Window.ClientBounds.Width / 2, 300));
+        _deathTextLabel = new Label(_luckiestGuy, "You died! (replace)", new Vector2(HopMedvedekConstants.screenWidth / 2, 100));
+        _highScoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE][Options.Options.Current.Language] + Options.Options.Current.HighScore, new Vector2(HopMedvedekConstants.screenWidth / 2, 200));
+        _scoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE][Options.Options.Current.Language] + Scores.score, new Vector2(HopMedvedekConstants.screenWidth / 2, 300));
 
         _deathTextLabel.HorizontalAlign = HorizontalAlign.Center;
         _highScoreLabel.HorizontalAlign = HorizontalAlign.Center;
         _scoreLabel.HorizontalAlign = HorizontalAlign.Center;
 
 
-        _restart = new Button(new Rectangle(game.Window.ClientBounds.Width / 2 - _buttonWidth / 2, 700, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_RESTART][Options.Options.Current.Language]);
-        _returnToMainmenu = new Button(new Rectangle(game.Window.ClientBounds.Width / 2 - _buttonWidth / 2, 800, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU][Options.Options.Current.Language]);
+        _restart = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 700, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_RESTART][Options.Options.Current.Language]);
+        _returnToMainmenu = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 800, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU][Options.Options.Current.Language]);
         /*
         Rectangle backgroundImageSize = new Rectangle(0, 0, 864, 1821);
         float scaleFactor = backgroundImageSize.Height / game.Window.ClientBounds.Height;

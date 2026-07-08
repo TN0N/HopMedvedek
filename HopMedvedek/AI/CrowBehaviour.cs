@@ -104,6 +104,6 @@ public class CrowBehaviour : Behaviour
     }
     protected void BounceFromEdge()
     {
-        _targetPosition.X = (_gameObject.Position.X < Game.Window.ClientBounds.Width / 2) ? Game.Window.ClientBounds.Width : 0;
+        _targetPosition.X = (_gameObject.Position.X < HopMedvedekConstants.screenWidth / 2) ? HopMedvedekConstants.screenWidth : 0;
     }
 }

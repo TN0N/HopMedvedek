@@ -1,4 +1,5 @@
-﻿using HopMedvedek.Questions;
+﻿using HopMedvedek.Data;
+using HopMedvedek.Questions;
 using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Level.Levels;
@@ -7,11 +8,11 @@ public class LanguageLevel : LevelBase
 {
     public LanguageLevel(Game game) : base(game)
     {
-        int RightX = Game.Window.ClientBounds.Width;
-        int BottomY = Game.Window.ClientBounds.Height;
+        int RightX = HopMedvedekConstants.screenWidth;
+        int BottomY = HopMedvedekConstants.screenHeight;
 
-        int midX = Game.Window.ClientBounds.Width / 2;
-        int midY = Game.Window.ClientBounds.Height / 2;
+        int midX = HopMedvedekConstants.screenWidth / 2;
+        int midY = HopMedvedekConstants.screenHeight / 2;
 
         _questionSheet = new Year01_Language_Question_Sheet();
         

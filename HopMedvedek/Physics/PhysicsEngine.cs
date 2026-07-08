@@ -3,6 +3,7 @@ using Express.Physics.Collision;
 using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
+using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
@@ -17,15 +18,17 @@ public class PhysicsEngine : GameComponent
     /// This is the level whose objects physics will be simulated by <see cref="PhysicsEngine"/>.
     /// </summary>
     protected LevelBase _level;
+    protected GameHud _gameHud;
 
     /// <summary>
     /// The constructor for <see cref="PhysicsEngine"/> which sets a reference for the level and the game.
     /// </summary>
     /// <param name="game">The <see cref="Game"/></param>
     /// <param name="level">The <see cref="Level"/></param>
-    public PhysicsEngine(Game game, LevelBase level): base(game)
+    public PhysicsEngine(Game game, LevelBase level, GameHud gameHud): base(game)
     { 
         _level = level;
+        _gameHud = gameHud;
     }
     /// <summary>
     /// This method will calculate the physics for objects.
@@ -33,12 +36,17 @@ public class PhysicsEngine : GameComponent
     /// <param name="gameTime">The <see cref="GameTime"/>.</param>
     public override void Update(GameTime gameTime)
     {
+        foreach (object item in _gameHud.Scene)
+        {
+            //float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            MovementPhysics.SimulateMovement(item, gameTime.ElapsedGameTime);
+        }
         foreach (object item in _level.Scene)
         {
             //float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
             MovementPhysics.SimulateMovement(item, gameTime.ElapsedGameTime);
         }
-
+        
         // Check bear for collisions
         foreach (object item in _level.Scene)
             if (item is not Bear && item is ICollider)

@@ -30,6 +30,8 @@ public class Menu : GameState
         _scene = new SimpleScene(Game);
         _renderer = new Renderer(Game, _scene);
 
+        _scene.CameraMatrix = Matrix.CreateScale(Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
+
         _luckiestGuy = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
         _buttonBackground = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE, new Rectangle(0,0, 358, 154), new Vector2(279, 77));
 

@@ -68,6 +68,7 @@ public class Player: GameComponent
             {
                 if (_stateLifeTime.Percentage >= 0.5f && _canThrowPinecone)
                 {
+                    SoundEngine.Play(SoundEffectType.BearThrow, null, null, Options.Options.Current.GameVolume);
                     _bear.ThrowPinecone(_throwMouseClickPosition);
                     _canThrowPinecone = false;
                 }
@@ -90,8 +91,9 @@ public class Player: GameComponent
             }
             else
             {
-                if (_stateLifeTime.Percentage >= 0.5f && _canThrowPinecone)
+                if (_stateLifeTime.Percentage >= 0.5f && _canThrowPinecone && _bear.PlayerPinecones > 0)
                 {
+                    SoundEngine.Play(SoundEffectType.BearThrow, null, null, Options.Options.Current.GameVolume);
                     _bear.ThrowPinecone(_throwMouseClickPosition);
                     _canThrowPinecone = false;
                 }
@@ -156,7 +158,8 @@ public class Player: GameComponent
             //_throwMouseClickPosition.Y -= _bear.Position.Y;
             _throwMouseClickPosition = Vector2.Transform(_throwMouseClickPosition, Matrix.Invert(_bear.Level.Scene.CameraMatrix));
 
-            System.Diagnostics.Debug.WriteLine(_throwMouseClickPosition);
+            
+            //System.Diagnostics.Debug.WriteLine(_throwMouseClickPosition);
 
             if (_bear.Jumping)
                 _bear.State = BearState.BearJumpThrow;

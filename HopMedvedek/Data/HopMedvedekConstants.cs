@@ -14,6 +14,9 @@ public static class HopMedvedekConstants
     public static readonly int HOP_MEDVEDEK_CROW_FLYING_SPEED = 120;
     public static readonly int HOP_MEDVEDEK_CROW_DIVING_SPEED = 240;
 
+    public static readonly int screenWidth = 408;
+    public static readonly int screenHeight = 906;
+
     // Directories
     public static readonly string HOP_MEDVEDEK_OPTIONS_PATH = "Options/options.json";
     public static readonly string HOP_MEDVEDEK_ROOT_DIRECTORY = "Content";
@@ -37,6 +40,9 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_HEART_TEXTURE = "heart";
     public static readonly string HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE = "pinecone_rotate";
     public static readonly string HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE = "speech";
+
+    public static readonly string HOP_MEDVEDEK_CORRECT = "correct";
+    public static readonly string HOP_MEDVEDEK_WRONG = "wrong";
 
     // Menu Button texture names
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE = "main_menu_button";

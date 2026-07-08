@@ -83,7 +83,7 @@ public class Tree: GameComponent
 
         TreeMid lastTreeMid = _treeMids.Last();
 
-        if (lastTreeMid.Position.Y > -_level.Scene.CameraMatrix.Translation.Y - Game.Window.ClientBounds.Height / 2)
+        if (lastTreeMid.Position.Y > -_level.Scene.CameraMatrix.Translation.Y - HopMedvedekConstants.screenHeight / 2)
         {
             TreeMid treeMid = new TreeMid();
             treeMid.Position = new Vector2(lastTreeMid.Position.X, lastTreeMid.Position.Y - treeMid.Height);

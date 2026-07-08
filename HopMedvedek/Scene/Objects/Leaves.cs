@@ -148,7 +148,7 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     }
     public override void Update(GameTime gameTime)
     {
-        bool side = (_position.X <= Game.Window.ClientBounds.Width/2)? false : true;
+        bool side = (_position.X <= HopMedvedekConstants.screenWidth / 2)? false : true;
         float angle = 0.05f;
         float speed = 1f;
 

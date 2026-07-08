@@ -8,7 +8,6 @@ namespace HopMedvedek.Audio;
 public sealed class SoundEngine : GameComponent
 {
     private SoundEffect[] _soundEffects = new SoundEffect[(int)SoundEffectType.LastType];
-    private Dictionary<SoundEffect, SoundEffectInstance> _soundEffectInstances;
     private static SoundEngine _instance;
 
     private SoundEngine(Game game)

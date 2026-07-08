@@ -24,6 +24,9 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     protected bool _jumping;
     protected float _gravitationalAcceleration;
     protected LevelBase _level;
+    protected int _playerHP = 5;
+    protected int _playerCoins = 0;
+    protected int _playerPinecones = 10;
 
     protected BearState _state = BearState.BearIdle;
     public Bear(Game game, LevelBase level) : base(game)
@@ -55,6 +58,7 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     };
     public void ThrowPinecone(Vector2 mousePosition)
     {
+        _playerPinecones--;
         //Vector2 pineconeVelocity = new Vector2(0f, -500f);
         float throwSpeed = 800f;
 
@@ -100,5 +104,20 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     public override Sprite Sprite(GameTime gameTime)
     {
         return _bearStateAnimations[_state].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
+    }
+    public int PlayerHP
+    {
+        get => _playerHP;
+        set => _playerHP = value;
+    }
+    public int PlayerCoins
+    {
+        get => _playerCoins;
+        set => _playerCoins = value;
+    }
+    public int PlayerPinecones
+    {
+        get => _playerPinecones;
+        set => _playerPinecones = value;
     }
 }

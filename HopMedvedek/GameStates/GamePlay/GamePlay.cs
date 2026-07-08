@@ -2,6 +2,7 @@
 using Express.Graphics;
 using Express.Scores;
 using HopMedvedek.Audio;
+using HopMedvedek.Data;
 using HopMedvedek.Entities;
 using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
@@ -18,10 +19,6 @@ public class GamePlay : GameState
 {
     private LevelBase _level;
     private Player _player;
-
-    private int _score;
-    private int _coins;
-    private int _hearts;
 
     private GameHud _hud;
     private Renderer _gameRenderer;
@@ -45,12 +42,15 @@ public class GamePlay : GameState
         
     }
     private void _finishInit()
-    { 
-        _physics = new PhysicsEngine(Game, _level);
-        
+    {
+        _hud = new GameHud(Game, _level);
+        _physics = new PhysicsEngine(Game, _level, _hud);
+        System.Diagnostics.Debug.WriteLine(Game.Window.ClientBounds.Width + "/" + HopMedvedekConstants.screenWidth + "   " + Game.Window.ClientBounds.Height + "/" + HopMedvedekConstants.screenHeight);
+        _level.Scene.CameraMatrix = Matrix.CreateScale(Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
+
         _gameRenderer = new Renderer(Game, _level.Scene);
         _fpsComponent = new FpsComponent(Game);
-        _hud = new GameHud(Game, _level);
+        
         _questionEngine = new QuestionEngine(Game, _level, _hud);
         _debugRenderer = new DebugRenderer(Game, _level.Scene);
         _hudRenderer = new Renderer(Game, _hud.Scene);
@@ -105,7 +105,7 @@ public class GamePlay : GameState
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
-        if (_level.PlayerHP < 1)
+        if (_level.Bear.PlayerHP < 1)
         {
             
             Options.Options.Current.HighScore = Math.Max(Options.Options.Current.HighScore, Scores.score);
