@@ -4,22 +4,25 @@ using Express.Scene;
 using Express.Scene.Objects;
 using Express.Scores;
 using HopMedvedek.Data;
+using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
 using HopMedvedek.Gui.Elements;
 using HopMedvedek.Level;
+using HopMedvedek.Options;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 
 namespace HopMedvedek.Gui.Hud;
 
-public class GameHud : GameComponent
+public class GameHud : Menu
 {
-    protected SimpleScene _scene;
     protected LevelBase _level;
 
     protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage, _questionBubble, _correctWrong, _rewardImage, _activeReward;
+    protected Button _pauseButton;
 
     protected SpriteFont _font;
 
@@ -57,7 +60,9 @@ public class GameHud : GameComponent
             [HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_CORRECT] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_CORRECT),
             [HopMedvedekConstants.HOP_MEDVEDEK_WRONG] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_WRONG),
+            [HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE),
         };
+        _pauseButton = new Button(new Rectangle(10, 10, 50, 50), new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE, new Rectangle(0,0, 358,154), new Vector2(179, 77)), _font, "II");
 
         _coinImage = new Image(
             new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE, new Rectangle(0, 0, 15, 16), new Vector2(7, 8), 8, 900, true),
@@ -90,7 +95,7 @@ public class GameHud : GameComponent
         _playerHearts.HorizontalAlign = HorizontalAlign.Left;
         _playerPinecones.HorizontalAlign = HorizontalAlign.Left;
 
-
+        _scene.Add(_pauseButton);
         _scene.Add(_coinImage);
         _scene.Add(_heartImage);
         _scene.Add(_pineconeImage);
@@ -168,7 +173,17 @@ public class GameHud : GameComponent
     {
         //float v = -200 * (float)gameTime.ElapsedGameTime.TotalSeconds;
         //Vector2 correctWrongVelocity = new Vector2(0, v);
-        /**/
+            /**/
+
+        if (_pauseButton.WasReleased)
+        {
+            //newState = new OptionsMenu(Game);
+
+            System.Diagnostics.Debug.WriteLine("Pause button pressed");
+
+            _hopMedvedek.StackState(new PauseMenu(Game));
+        }
+
         if (_correctWrong != null)
         {
             if (_correctWrongLifetime == null)

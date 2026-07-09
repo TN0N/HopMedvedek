@@ -42,6 +42,17 @@ public class HopMedvedek : Game {
         _graphics.ApplyChanges();
 
     }
+    public void StackState(GameState gameState)
+    {
+        if (_stateStack.Count > 0)
+        {
+            GameState currentActiveState = _stateStack.Peek();
+            currentActiveState.Deactivate();
+        }
+        _stateStack.Push(gameState);
+        Components.Add(gameState);
+        gameState.Activate();
+    }
     public void PushState(GameState gameState)
     {
         // Deactivate Current

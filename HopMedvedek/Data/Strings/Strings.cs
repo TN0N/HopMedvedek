@@ -25,8 +25,13 @@ public enum StringKey
     HOP_MEDVEDEK_DEATH_MENU_COINS,
     HOP_MEDVEDEK_DEATH_MENU_RESTART,
     HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU,
-    
-    
+
+    // Pause menu
+    HOP_MEDVEDEK_PAUSE_MENU_CONTINUE,
+    HOP_MEDVEDEK_PAUSE_MENU_OPTIONS,
+    HOP_MEDVEDEK_PAUSE_MENU_RESTART,
+    HOP_MEDVEDEK_PAUSE_MENU_RETURN_TO_MAIN_MENU,
+
 
     // Year_01_Language_Question
     HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE,
@@ -202,8 +207,55 @@ public static class Strings
             [LanguageEnum.en] = "Slovenščina",
             [LanguageEnum.si] = "Slovenščina",
         },
-// Level question-answer text
-    // Year 01
+        // Death menu
+        [StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Score: ",
+            [LanguageEnum.si] = "Rezultat: "
+        },
+        [StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "High Score: ",
+            [LanguageEnum.si] = "Najboljši Rezultat: "
+        },
+        [StringKey.HOP_MEDVEDEK_DEATH_MENU_COINS] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Coins: ",
+            [LanguageEnum.si] = "Kovanci: "
+        },
+        [StringKey.HOP_MEDVEDEK_DEATH_MENU_RESTART] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Restart",
+            [LanguageEnum.si] = "Igraj"
+        },
+        [StringKey.HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Main Menu",
+            [LanguageEnum.si] = "Glavni Meni"
+        },
+        // Pause menu
+        [StringKey.HOP_MEDVEDEK_PAUSE_MENU_CONTINUE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Continue",
+            [LanguageEnum.si] = "Nadaljuj"
+        },
+        [StringKey.HOP_MEDVEDEK_PAUSE_MENU_OPTIONS] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Options",
+            [LanguageEnum.si] = "Nastavitve"
+        },
+        [StringKey.HOP_MEDVEDEK_PAUSE_MENU_RESTART] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Restart",
+            [LanguageEnum.si] = "Ponovno Začni"
+        },
+        [StringKey.HOP_MEDVEDEK_PAUSE_MENU_RETURN_TO_MAIN_MENU] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Main Menu",
+            [LanguageEnum.si] = "Glavni Meni"
+        },
+        // Level question-answer text
+        // Year 01
         // Year 01 language questions
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE] = new Dictionary<LanguageEnum, string>()
         {
@@ -725,31 +777,6 @@ public static class Strings
         {
             [LanguageEnum.en] = "Card",
             [LanguageEnum.si] = "Karta",
-        },
-        [StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "Score: ",
-            [LanguageEnum.si] = "Rezultat: "
-        },
-        [StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "High Score: ",
-            [LanguageEnum.si] = "Najboljši Rezultat: "
-        },
-        [StringKey.HOP_MEDVEDEK_DEATH_MENU_COINS] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "Coins: ",
-            [LanguageEnum.si] = "Kovanci: "
-        },
-        [StringKey.HOP_MEDVEDEK_DEATH_MENU_RESTART] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "Restart",
-            [LanguageEnum.si] = "Igraj"
-        },
-        [StringKey.HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "Main Menu",
-            [LanguageEnum.si] = "Glavni Meni"
         },
     };
 }
