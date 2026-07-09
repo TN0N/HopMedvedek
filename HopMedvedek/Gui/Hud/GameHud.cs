@@ -4,10 +4,12 @@ using Express.Scene;
 using Express.Scene.Objects;
 using Express.Scores;
 using HopMedvedek.Data;
+using HopMedvedek.Graphics;
 using HopMedvedek.Gui.Elements;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 
 namespace HopMedvedek.Gui.Hud;
@@ -17,12 +19,19 @@ public class GameHud : GameComponent
     protected SimpleScene _scene;
     protected LevelBase _level;
 
-    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage, _questionBubble, _correctWrong;
+    protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage, _questionBubble, _correctWrong, _rewardImage, _activeReward;
+
+    protected SpriteFont _font;
 
     protected Label _playerScore;
     protected Label _playerCoins;
     protected Label _playerHearts;
     protected Label _playerPinecones;
+    protected Label _rewardAmount;
+    protected Label _activeRewardTimer;
+
+    private double _activeRewardStartTime;
+    private double _rewardDuration;
 
     protected Lifetime _correctWrongLifetime;
     public IScene Scene => _scene;
@@ -30,13 +39,14 @@ public class GameHud : GameComponent
     public GameHud(Game game, LevelBase level) : base(game)
     {
         _scene = new SimpleScene(game);
+        _scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
         _level = level;
         Game.Components.Add(_scene);
     }
     public override void Initialize()
     {
-        
-        SpriteFont font = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
+
+        _font = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
 
         _scene.SceneTextureData = new Dictionary<string, Texture2D>
         {
@@ -70,10 +80,10 @@ public class GameHud : GameComponent
             new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 105, 300, 400)
             );
 
-        _playerScore = new Label(font, "0", new Vector2(HopMedvedekConstants.screenWidth / 2, 20));
-        _playerCoins = new Label(font, "0", new Vector2(40, 70));
-        _playerHearts = new Label(font, "0", new Vector2(40, 105));
-        _playerPinecones = new Label(font, "0", new Vector2(40, 140));
+        _playerScore = new Label(_font, "0", new Vector2(HopMedvedekConstants.screenWidth / 2, 20));
+        _playerCoins = new Label(_font, "0", new Vector2(40, 70));
+        _playerHearts = new Label(_font, "0", new Vector2(40, 105));
+        _playerPinecones = new Label(_font, "0", new Vector2(40, 140));
 
         _playerScore.HorizontalAlign = HorizontalAlign.Center;
         _playerCoins.HorizontalAlign = HorizontalAlign.Left;
@@ -91,6 +101,21 @@ public class GameHud : GameComponent
         _scene.Add(_playerHearts);
         _scene.Add(_playerPinecones);
     }
+    public void ShowReward(Sprite rewardTexture, int? rewardAmount)
+    { 
+        if (!_scene.SceneTextureData.ContainsKey(rewardTexture.Src))
+            _scene.SceneTextureData.Add(rewardTexture.Src, Game.Content.Load<Texture2D>(rewardTexture.Src));
+
+        _rewardImage = new Image(rewardTexture, new Rectangle(50, HopMedvedekConstants.screenHeight - 50, 42, 42));
+        if (rewardAmount != null)
+        {
+            _rewardAmount = new Label(_font, "x" + (int)rewardAmount, new Vector2(70, HopMedvedekConstants.screenHeight - 55));
+            _rewardAmount.HorizontalAlign = HorizontalAlign.Left;
+            _scene.Add(_rewardAmount);
+        }
+       
+        _scene.Add(_rewardImage);
+    }
     public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle)
     {
         _questionImage = new Image(
@@ -102,6 +127,16 @@ public class GameHud : GameComponent
         _scene.Add(_questionImage);
         
     }
+    private void ShowCorrectWrong(bool correct)
+    {
+        string texture = correct ? HopMedvedekConstants.HOP_MEDVEDEK_CORRECT : HopMedvedekConstants.HOP_MEDVEDEK_WRONG;
+        _correctWrong = new Image(
+                    new Sprite(texture, new Rectangle(0, 0, 128, 128), new Vector2(64, 64)),
+                    new Rectangle(HopMedvedekConstants.screenWidth / 2, HopMedvedekConstants.screenHeight, 128, 128));
+        _correctWrong.Velocity = new Vector2(0, -200);
+        _correctWrong.Decay = new Vector2(1, 0.99f);
+        _scene.Add(_correctWrong);
+    }
     public void HideQuestionImage(bool? correct)
     {
         if (_questionImage != null)
@@ -111,23 +146,23 @@ public class GameHud : GameComponent
             _questionImage = null;
         }
         if (correct != null)
-        {
-            if ((bool)correct)
-            {
-                _correctWrong = new Image(
-                    new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_CORRECT, new Rectangle(0, 0, 128, 128), new Vector2(64, 64)),
-                    new Rectangle(HopMedvedekConstants.screenWidth / 2, HopMedvedekConstants.screenHeight, 128, 128));
-            }
-            else if (!(bool)correct)
-            {
-                _correctWrong = new Image(
-                    new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_WRONG, new Rectangle(0, 0, 128, 128), new Vector2(64, 64)),
-                    new Rectangle(HopMedvedekConstants.screenWidth / 2, HopMedvedekConstants.screenHeight, 128, 128));
-            }
-            _correctWrong.Velocity = new Vector2(0, -200);
-            _correctWrong.Decay = new Vector2(1, 0.99f);
-            _scene.Add(_correctWrong);
-        }
+            ShowCorrectWrong((bool)correct);
+    }
+    public void ShowActiveReward(Sprite rewardTexture, float duration, GameTime gameTime)
+    {
+        if (!_scene.SceneTextureData.ContainsKey(rewardTexture.Src))
+            _scene.SceneTextureData.Add(rewardTexture.Src, Game.Content.Load<Texture2D>(rewardTexture.Src));
+
+        _activeReward = new Image(rewardTexture, new Rectangle(HopMedvedekConstants.screenWidth - 50, HopMedvedekConstants.screenHeight - 50, 42, 42));
+
+        _rewardDuration = duration/1000;
+        _activeRewardTimer = new Label(_font, "" + (int)_rewardDuration, new Vector2(HopMedvedekConstants.screenWidth - 70, HopMedvedekConstants.screenHeight - 55));
+        _activeRewardTimer.HorizontalAlign = HorizontalAlign.Right;
+
+        _activeRewardStartTime = gameTime.TotalGameTime.TotalMilliseconds;
+
+        _scene.Add(_activeReward);
+        _scene.Add(_activeRewardTimer);
     }
     public override void Update(GameTime gameTime)
     {
@@ -144,11 +179,32 @@ public class GameHud : GameComponent
             {
                 _correctWrongLifetime = null;
                 _scene.Remove(_correctWrong);
+                if (_rewardImage != null)
+                {
+                    _scene.Remove(_rewardImage);
+                    _rewardImage = null;
+                }
+                if (_rewardAmount != null)
+                {
+                    _scene.Remove(_rewardAmount);
+                    _rewardAmount = null;
+                }
                 _correctWrong = null;
             }
         }
 
-        
+        if (_level.Bear.ActiveReward != RewardType.None)
+        {
+            _activeRewardTimer.Text = "" + (int)(_rewardDuration - (gameTime.TotalGameTime.TotalMilliseconds - _activeRewardStartTime) / 1000);
+        }
+        else if (_activeRewardTimer != null)
+        {
+            _scene.Remove(_activeReward);
+            _scene.Remove(_activeRewardTimer);
+
+            _activeReward = null;
+            _activeRewardTimer = null;
+        }
 
         _playerScore.Text = "" + Scores.score;
         _playerHearts.Text = "" + _level.Bear.PlayerHP;

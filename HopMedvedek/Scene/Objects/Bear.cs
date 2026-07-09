@@ -3,6 +3,7 @@ using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
 using HopMedvedek.Data;
+using HopMedvedek.Graphics;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using System;
@@ -16,7 +17,8 @@ public enum BearState {
     BearJumpDown,
     BearWalkThrow,
     BearJumpThrow,
-    BearDazed
+    BearDazed,
+    BearJetpack
 }
 public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
 {
@@ -27,6 +29,7 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     protected int _playerHP = 5;
     protected int _playerCoins = 0;
     protected int _playerPinecones = 10;
+    protected RewardType _activeReward = RewardType.None;
 
     protected BearState _state = BearState.BearIdle;
     public Bear(Game game, LevelBase level) : base(game)
@@ -49,12 +52,13 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     protected Dictionary<Enum, AnimatedSprite> _bearStateAnimations = new()
     {
         [BearState.BearIdle] =      new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 0, 23, 32),     new Vector2(12, 16), 12, 700, true),
+        [BearState.BearWalkThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 32, 23, 32), new Vector2(12, 16), 12, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION, true),
         [BearState.BearWalk] =      new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 64, 23, 32),    new Vector2(12, 16), 12, 700, true),
         [BearState.BearJumpUp] =    new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 96, 23, 32),    new Vector2(12, 16), 6,  350, true),
         [BearState.BearJumpDown] =  new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(138, 96, 23, 32),  new Vector2(12, 16), 6,  350, true),
-        [BearState.BearWalkThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 32, 23, 32),    new Vector2(12, 16), 12, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION, true),
         [BearState.BearJumpThrow] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 128, 23, 32),   new Vector2(12, 16), 12, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION, true),
         [BearState.BearDazed] =     new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 160, 23, 32),   new Vector2(12, 16), 12, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION, true),
+        [BearState.BearJetpack] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE, new Rectangle(0, 544, 23, 32), new Vector2(12, 16), 6, 350, true),
     };
     public void ThrowPinecone(Vector2 mousePosition)
     {
@@ -119,5 +123,10 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
     {
         get => _playerPinecones;
         set => _playerPinecones = value;
+    }
+    public RewardType ActiveReward
+    {
+        get => _activeReward;
+        set => _activeReward = value;
     }
 }

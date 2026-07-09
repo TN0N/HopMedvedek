@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/speech.png</SourceFile>
-  <SourceTime>2026-07-08T11:10:48.2794473+02:00</SourceTime>
+  <SourceTime>2026-07-09T10:28:33.9401971+02:00</SourceTime>
   <DestFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/speech.xnb</DestFile>
-  <DestTime>2026-07-08T11:31:59.5106344+02:00</DestTime>
+  <DestTime>2026-07-09T11:15:24.5696124+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T12:31:02+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

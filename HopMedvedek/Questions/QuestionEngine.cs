@@ -1,7 +1,9 @@
 ﻿using Artificial.Artificial.Mirage;
 using Artificial.Artificial.Utils;
+using Express.Graphics;
 using HopMedvedek.Audio;
 using HopMedvedek.Data;
+using HopMedvedek.Gui.Elements;
 using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
 using HopMedvedek.Questions;
@@ -11,10 +13,19 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 namespace HopMedvedek.Graphics;
 
+public enum RewardType
+{
+    Heart,
+    Coin,
+    Pinecone,
+    UltraJump,
+    Invincibility,
+    Jetpack,
+    None
+}
 public class QuestionEngine : GameComponent
 {
     protected LevelBase _level;
@@ -26,7 +37,9 @@ public class QuestionEngine : GameComponent
     protected List<Question> _levelQuesitons;
     protected SpriteFont _font;
 
+    protected Dictionary<RewardType, Sprite> _rewardImages;
 
+    
     public QuestionEngine(Game game, LevelBase level, GameHud gameHud) : base(game)
     {
         _level = level;
@@ -35,7 +48,15 @@ public class QuestionEngine : GameComponent
         _levelQuesitons = _level.QuestionSheet.Questions.OrderBy(x => Random.Shared.Next()).ToList();
         _font = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
 
-
+        _rewardImages = new Dictionary<RewardType, Sprite>()
+        {
+            [RewardType.Heart] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE, new Rectangle(0,0,15,16), new Vector2(7, 8)),
+            [RewardType.Coin] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE, new Rectangle(0,0,15,16), new Vector2(7,8)),
+            [RewardType.Pinecone] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE, new Rectangle(0,0,30,32), new Vector2(15,16)),
+            [RewardType.UltraJump] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(0,0,19,19), new Vector2(9, 9)), // ultrajump
+            [RewardType.Invincibility] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(19,0,19,19), new Vector2(9, 9)), // invincibility
+            [RewardType.Jetpack] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(38,0,19,19), new Vector2(9, 9)) // jetpack
+        };
     }
     private void GenerateQuestions(GameTime gameTime)
     {
@@ -83,7 +104,7 @@ public class QuestionEngine : GameComponent
         // Show the image on the gameHud
         _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds);
     }
-    private void GiveReward()
+    private void GiveReward(GameTime gameTime)
     {
         /*
          Rewards:
@@ -101,35 +122,50 @@ public class QuestionEngine : GameComponent
             int hearts = SRandom.Int(1) + 1;
             System.Diagnostics.Debug.WriteLine("Reward: " + hearts + " hearts");
             _level.Bear.PlayerHP += hearts;
+
+            _gameHud.ShowReward(_rewardImages[RewardType.Heart], hearts);
         }
         else if (r < 36) // 3-10 coins
         {
             int coins = SRandom.Int(7) + 3;
             System.Diagnostics.Debug.WriteLine("Reward: " + coins + " coins");
             _level.Bear.PlayerCoins += coins;
+
+            _gameHud.ShowReward(_rewardImages[RewardType.Coin], coins);
         }
         else if (r < 59) // 1-3 pinecones
         {
             int pinecones = SRandom.Int(2) + 1;
             System.Diagnostics.Debug.WriteLine("Reward: " + pinecones + " pinecones");
             _level.Bear.PlayerPinecones += pinecones;
-            
+
+            _gameHud.ShowReward(_rewardImages[RewardType.Pinecone], pinecones);
+
         }
         else if (r < 74) // Ultra jump
         {
             System.Diagnostics.Debug.WriteLine("Reward: ultrajump");
+            _level.Bear.ActiveReward = RewardType.UltraJump;
+            _gameHud.ShowReward(_rewardImages[RewardType.UltraJump], null);
+            _gameHud.ShowActiveReward(_rewardImages[RewardType.UltraJump], HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION, gameTime);
         }
         else if (r < 89) // Invincibility
         {
             System.Diagnostics.Debug.WriteLine("Reward: invinsibility");
+            _level.Bear.ActiveReward = RewardType.Invincibility;
+            _gameHud.ShowReward(_rewardImages[RewardType.Invincibility], null);
+            _gameHud.ShowActiveReward(_rewardImages[RewardType.Invincibility], HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION, gameTime);
         }
         else if (r <= 100) // Jetpack
         {
             System.Diagnostics.Debug.WriteLine("Reward: jetpack");
+            _level.Bear.ActiveReward = RewardType.Jetpack;
+            _gameHud.ShowReward(_rewardImages[RewardType.Jetpack], null);
+            _gameHud.ShowActiveReward(_rewardImages[RewardType.Jetpack], HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION, gameTime);
         }
 
     }
-    private void CheckAnswer()
+    private void CheckAnswer(GameTime gameTime)
     {
         if ((_correctBranch == null || _wrongBranch == null) || (!_correctBranch.Leaves.PlayerLanded && !_wrongBranch.Leaves.PlayerLanded))
             return;
@@ -137,7 +173,7 @@ public class QuestionEngine : GameComponent
         {
             SoundEngine.Play(SoundEffectType.CorrectAnswer, null, null, Options.Options.Current.GameVolume);
             System.Diagnostics.Debug.WriteLine("Correct!");
-            GiveReward();
+            GiveReward(gameTime);
             _gameHud.HideQuestionImage(true);
         }
 
@@ -177,7 +213,7 @@ public class QuestionEngine : GameComponent
 
         //System.Diagnostics.Debug.WriteLine("Generating question");
         GenerateQuestions(gameTime);
-        CheckAnswer();
+        CheckAnswer(gameTime);
     }
     public override void Initialize()
     {

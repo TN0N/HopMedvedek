@@ -10,6 +10,11 @@ public static class HopMedvedekConstants
     public static readonly float HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION = 700f;
     public static readonly float HOP_MEDVEDEK_BEAR_DAZED_ANIMATION_DURATION = 2000f;
 
+    public static readonly float HOP_MEDVEDEK_POWER_UP_DURATION= 10000f;
+
+    public static readonly float HOP_MEDVEDEK_JUMP_BOOST_MULT = 1.5f;
+    public static readonly float HOP_MEDVEDEK_BEAR_JETPACK_ACCELERATION = 1050f;
+
     public static readonly int HOP_MEDVEDEK_CROW_AGRO_DISTANCE = 150;
     public static readonly int HOP_MEDVEDEK_CROW_FLYING_SPEED = 120;
     public static readonly int HOP_MEDVEDEK_CROW_DIVING_SPEED = 240;
@@ -43,6 +48,8 @@ public static class HopMedvedekConstants
 
     public static readonly string HOP_MEDVEDEK_CORRECT = "correct";
     public static readonly string HOP_MEDVEDEK_WRONG = "wrong";
+
+    public static readonly string HOP_MEDVEDEK_REWARDS_TEXTURE = "rewards";
 
     // Menu Button texture names
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE = "main_menu_button";

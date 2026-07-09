@@ -4,6 +4,7 @@ using HopMedvedek.Scene.Objects;
 using Express.Scene.Objects;
 using HopMedvedek.Data;
 using HopMedvedek.Audio;
+using HopMedvedek.Graphics;
 
 namespace HopMedvedek.Entities;
 
@@ -13,6 +14,8 @@ public class Player: GameComponent
     protected Matrix _inverseView;
     protected Lifetime _stateLifeTime;
     protected Vector2 _throwMouseClickPosition;
+
+    protected float _bearJumpMult = 1f;
 
     protected bool _startedGame = false;
     protected bool _canThrowPinecone = true;
@@ -29,14 +32,77 @@ public class Player: GameComponent
     private void ChangeState(GameTime gameTime)
     {
         _bear.Grounded = true;
+        _bearJumpMult = 1f;
+        _bear.Acceleration.Y = 0;
 
+        if (_bear.ActiveReward == RewardType.UltraJump)
+        {
+            if (_stateLifeTime == null)
+            {
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
+
+            }
+            //else
+            //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
+            _stateLifeTime.Update(gameTime);
+            if (!_stateLifeTime.IsAlive)
+            {
+                _stateLifeTime = null;
+                _bearJumpMult = 1f;
+                _bear.ActiveReward = RewardType.None;
+            }
+            else
+            {
+                _bearJumpMult = HopMedvedekConstants.HOP_MEDVEDEK_JUMP_BOOST_MULT;
+            }
+        }
+        if (_bear.ActiveReward == RewardType.Invincibility)
+        {
+            if (_stateLifeTime == null)
+            {
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
+
+            }
+            //else
+            //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
+            _stateLifeTime.Update(gameTime);
+            if (!_stateLifeTime.IsAlive)
+            {
+                _stateLifeTime = null;
+                _bear.ActiveReward = RewardType.None;
+            }
+        }
+        if (_bear.ActiveReward == RewardType.Jetpack)
+        {
+            if (_stateLifeTime == null)
+            {
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
+
+            }
+            //else
+            //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
+            _stateLifeTime.Update(gameTime);
+            if (!_stateLifeTime.IsAlive)
+            {
+                _stateLifeTime = null;
+                _bear.State = BearState.BearIdle;
+                _bear.ActiveReward = RewardType.None;
+                _bear.Acceleration.Y = 0;
+            }
+            else
+            {
+                _bear.Acceleration.Y = -HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JETPACK_ACCELERATION;
+                _bear.State = BearState.BearJetpack;
+            }
+            return;
+        }
         if (_bear.State == BearState.BearDazed)
         {
 
             if (_stateLifeTime == null)
             {
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_DAZED_ANIMATION_DURATION / 1000);
-                
+
             }
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
@@ -55,7 +121,7 @@ public class Player: GameComponent
         if (_bear.State == BearState.BearWalkThrow)
         {
             if (_stateLifeTime == null)
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION/ 1000);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION / 1000);
 
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
@@ -72,7 +138,7 @@ public class Player: GameComponent
                     _bear.ThrowPinecone(_throwMouseClickPosition);
                     _canThrowPinecone = false;
                 }
-                    
+
                 _bear.State = BearState.BearWalkThrow;
             }
             return;
@@ -80,7 +146,7 @@ public class Player: GameComponent
         if (_bear.State == BearState.BearJumpThrow)
         {
             if (_stateLifeTime == null)
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION/ 1000);
+                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_THROW_ANIMATION_DURATION / 1000);
 
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
@@ -133,7 +199,7 @@ public class Player: GameComponent
         if (_bear.Grounded && !_bear.Jumping && _bear.State != BearState.BearDazed && _startedGame)
         {
             SoundEngine.Play(SoundEffectType.BearJump, null, null, Options.Options.Current.GameVolume);
-            _bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
+            _bear.Velocity.Y -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY * _bearJumpMult;
             _bear.Jumping = true;
         }
 
@@ -182,5 +248,4 @@ public class Player: GameComponent
         */
 
     }
-
 }

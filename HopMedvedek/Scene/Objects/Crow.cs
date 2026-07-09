@@ -3,6 +3,7 @@ using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using HopMedvedek.Audio;
 using HopMedvedek.Data;
+using HopMedvedek.Graphics;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using System.Runtime.InteropServices;
@@ -41,7 +42,7 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
     public bool CollidingWith(object item, bool defaultValue = false)
     {
         
-        if (item is Bear bear && bear.State != BearState.BearDazed)
+        if (item is Bear bear && bear.State != BearState.BearDazed && bear.ActiveReward != RewardType.Jetpack)
         {
             return true;
         }
@@ -54,7 +55,7 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
 
         if (item is Bear bear)
         {
-            if (bear.Position.Y > _position.Y)
+            if (bear.Position.Y > _position.Y && bear.ActiveReward != RewardType.Invincibility)
             {
                 SoundEngine.Play(SoundEffectType.BearHit, _level.Bear.Position, _position, Options.Options.Current.GameVolume);
                 bear.State = BearState.BearDazed;

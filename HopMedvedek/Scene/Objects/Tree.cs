@@ -98,7 +98,7 @@ public class Tree: GameComponent
             _treeMids.Add(treeMid);
             _level.Scene.Add(treeMid);
 
-            if (lastTreeMid.Position.Y < - 300 && SRandom.Int(100) <= 20 && gameTime.TotalGameTime.TotalMilliseconds - _lastCrowSpawnTime >= 300)
+            if (lastTreeMid.Position.Y < - 300 && SRandom.Int(100) <= 10 && gameTime.TotalGameTime.TotalMilliseconds - _lastCrowSpawnTime >= 700)
             {
                 _lastCrowSpawnTime = gameTime.TotalGameTime.TotalMilliseconds;
                 Crow crow = new Crow(Game, _level);

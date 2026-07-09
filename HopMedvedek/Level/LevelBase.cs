@@ -83,6 +83,8 @@ public class LevelBase : GameComponent
         Matrix matrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
         _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0) * matrix;
 
+        //_scene.CameraMatrix.M42 = -(_bear.Position.Y - 720);
+
 
 
         if (Math.Abs((int)-_bear.Position.Y + 700 - Scores.score) >= 500)
