@@ -46,7 +46,7 @@ public class GamePlay : GameState
         _hud = new GameHud(Game, _level);
         _physics = new PhysicsEngine(Game, _level, _hud);
         System.Diagnostics.Debug.WriteLine(Game.Window.ClientBounds.Width + "/" + HopMedvedekConstants.screenWidth + "   " + Game.Window.ClientBounds.Height + "/" + HopMedvedekConstants.screenHeight);
-        _level.Scene.CameraMatrix = Matrix.CreateScale(Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
+        _level.Scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
 
         _gameRenderer = new Renderer(Game, _level.Scene);
         _fpsComponent = new FpsComponent(Game);

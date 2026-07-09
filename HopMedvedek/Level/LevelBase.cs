@@ -80,7 +80,10 @@ public class LevelBase : GameComponent
         }
         //Scores.score = (int)(-_bear.Position.Y + 703);
         Scores.score = (int)MathF.Max(Scores.score, (int)-_bear.Position.Y + 700);
-        _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0);
+        Matrix matrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
+        _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0) * matrix;
+
+
 
         if (Math.Abs((int)-_bear.Position.Y + 700 - Scores.score) >= 500)
         {

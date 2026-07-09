@@ -198,3 +198,5 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\obj\Debug\net8.0\HopM
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\obj\Debug\net8.0\ref\HopMedvedek.dll
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\correct.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\wrong.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\correct.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\wrong.xnb
