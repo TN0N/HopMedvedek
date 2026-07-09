@@ -7,6 +7,7 @@ using Express.Scene.Objects.Shapes;
 using HopMedvedek.Gui.Elements;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 namespace HopMedvedek.Graphics;
 
 public class Renderer : DrawableGameComponent
@@ -22,6 +23,7 @@ public class Renderer : DrawableGameComponent
     protected Effect _effect = null;
     protected IScene _scene;
     protected bool _clearScreen = true;
+    protected Rectangle _cameraBounds;
     //private Matrix _camera; 
 
     public Renderer(Game game, IScene scene) : base(game)
@@ -64,10 +66,25 @@ public class Renderer : DrawableGameComponent
         set => _clearScreen = value;
     }
 
+    private bool InCameraBounds(Rectangle item)
+    {
+        return _cameraBounds.Intersects(item);
+    }
     public override void Draw(GameTime gameTime)
     {
+        Vector2 cameraPosition = new Vector2(
+            -_scene.CameraMatrix.Translation.X,
+            -_scene.CameraMatrix.Translation.Y);
+
+        _cameraBounds = new Rectangle(
+            (int)cameraPosition.X,
+            (int)cameraPosition.Y,
+            GraphicsDevice.Viewport.Width+100,
+            GraphicsDevice.Viewport.Height+100);
+
         if (_clearScreen)
             GraphicsDevice.Clear(Color.LightSkyBlue);
+        int drawCount = 0;
 
 
         //System.Diagnostics.Debug.WriteLine("drawing");
@@ -91,6 +108,9 @@ public class Renderer : DrawableGameComponent
                 else if (item is IRectangleSize rectangleItem)
                     drawRectangle = new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height);
 
+                if (!InCameraBounds(drawRectangle))
+                    continue;
+
                 // = (item is IRectangleSize rectangleItem) ? new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height) : sprite.SourceRectangle;
 
                 float rotationAngle = (item is IRotatable rotatableItem) ? rotatableItem.RotationAngle : 0f;
@@ -109,9 +129,12 @@ public class Renderer : DrawableGameComponent
                     origin,
                     effect,
                     texturedItem.LayerDepth);
+                drawCount++;
             }
             else if (item is Button button)
             {
+                if (!InCameraBounds(button.InputArea))
+                    continue;
                 _spriteBatch.Draw(
                     _scene.SceneTextureData[button.BackgroundImage.Src],
                     button.InputArea,
@@ -121,7 +144,7 @@ public class Renderer : DrawableGameComponent
                     Vector2.Zero,
                     SpriteEffects.None,
                     0.8f);
-
+                drawCount++;
                 if (button.Label is not null)
                 {
                     _spriteBatch.DrawString(
@@ -139,6 +162,8 @@ public class Renderer : DrawableGameComponent
             else if (item is Label label)
             {
                 //System.Diagnostics.Debug.WriteLine("Drawing label");
+                if (!InCameraBounds(new Rectangle((int)label.Position.X, (int)label.Position.Y, label.Font.Texture.Width, label.Font.Texture.Height)))
+                    continue;
                 _spriteBatch.DrawString(
                     label.Font,
                     label.Text,
@@ -149,10 +174,13 @@ public class Renderer : DrawableGameComponent
                     label.Scale,
                     SpriteEffects.None,
                     label.LayerDepth);
+                drawCount++;
             }
             else if (item is Slider slider)
             {
                 // Track
+                if (!InCameraBounds(slider.InputArea))
+                    continue;
                 _spriteBatch.Draw(
                     _scene.SceneTextureData[slider.TrackTexture.Src],
                     slider.InputArea,
@@ -184,8 +212,12 @@ public class Renderer : DrawableGameComponent
                     SpriteEffects.None,
                     slider.ValueFill.LayerDepth
                     );
+                drawCount++;
             }
         }
+
+
+        System.Diagnostics.Debug.WriteLine("Drawn " + drawCount + "/" + _scene.Count() + " items");
         _spriteBatch.End();
         
     }
