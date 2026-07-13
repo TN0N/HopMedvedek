@@ -64,7 +64,7 @@ public class Branch : GameComponent
 
         _coin = new Coin(Game, _scene);
         _coin.Position = _leaves.Position;
-        _coin.Position.Y -= 10;
+        _coin.Position.Y -= 35;
         _scene.Add(_coin);
     }
     public void RemoveBranch()

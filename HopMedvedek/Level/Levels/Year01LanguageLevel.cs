@@ -17,7 +17,7 @@ public class Year01LanguageLevel : LevelBase
         _questionSheet = new Year01_Language_Question_Sheet();
         
         _ground.Position = new Vector2(midX, BottomY - _ground.Height / 2);
-        _tree.Position = new Vector2(_ground.Position.X, _ground.Position.Y - _ground.Height/1.75f);
+        _tree.Position = new Vector2(_ground.Position.X, _ground.Position.Y - _ground.Height/2);
         _bear.Position = _tree.Position;
 
     }
