@@ -31,6 +31,18 @@
 /processorParam:Quality=Best
 /build:BearDie.wav
 
+#begin BearDie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:BearDie.wav
+
+#begin BearHit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:BearHit.wav
+
 #begin BearHit.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -43,11 +55,35 @@
 /processorParam:Quality=Best
 /build:BearJump.wav
 
+#begin BearJump.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:BearJump.wav
+
 #begin BearThrow.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:BearThrow.wav
+
+#begin BearThrow.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:BearThrow.wav
+
+#begin ButtonHover.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ButtonHover.wav
+
+#begin ButtonPressed.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ButtonPressed.wav
 
 #begin ButtonPressed.wav
 /importer:WavImporter
@@ -67,6 +103,12 @@
 /processorParam:TextureFormat=Color
 /build:coin.png
 
+#begin CoinSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:CoinSound.wav
+
 #begin correct.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -78,6 +120,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:correct.png
+
+#begin CorrectAnswer.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:CorrectAnswer.wav
 
 #begin CorrectAnswer.wav
 /importer:WavImporter
@@ -102,6 +150,18 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:CrowAttack.wav
+
+#begin CrowAttack.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:CrowAttack.wav
+
+#begin CrowHit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:CrowHit.wav
 
 #begin CrowHit.wav
 /importer:WavImporter
@@ -138,6 +198,18 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:HopMedvedekMainTheme.wav
+
+#begin HopMedvedekMainTheme.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:HopMedvedekMainTheme.wav
+
+#begin Leaves.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Leaves.wav
 
 #begin LuckiestGuy.spritefont
 /importer:FontDescriptionImporter
@@ -224,6 +296,12 @@
 /processorParam:Quality=Best
 /build:OwlQuestion.wav
 
+#begin OwlQuestion.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:OwlQuestion.wav
+
 #begin pinecone_rotate.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -247,6 +325,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:pinecone.png
+
+#begin PineConeHit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:PineConeHit.wav
 
 #begin PineConeHit.wav
 /importer:WavImporter
@@ -325,6 +409,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:wrong.png
+
+#begin WrongAnswer.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:WrongAnswer.wav
 
 #begin WrongAnswer.wav
 /importer:WavImporter

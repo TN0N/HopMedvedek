@@ -25,6 +25,7 @@ public enum StringKey
     HOP_MEDVEDEK_DEATH_MENU_COINS,
     HOP_MEDVEDEK_DEATH_MENU_RESTART,
     HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU,
+    HOP_MEDVEDEK_DEATH_MENU_DEATH_TEXT,
 
     // Pause menu
     HOP_MEDVEDEK_PAUSE_MENU_CONTINUE,
@@ -32,6 +33,16 @@ public enum StringKey
     HOP_MEDVEDEK_PAUSE_MENU_RESTART,
     HOP_MEDVEDEK_PAUSE_MENU_RETURN_TO_MAIN_MENU,
 
+    // Year Selection Menu
+
+    HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_01,
+    HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_02,
+    HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_03,
+    HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_04,
+
+    // Subjects
+    HOP_MEDVEDEK_SUBJECT_LANGUAGE,
+    HOP_MEDVEDEK_SUBJECT_MATHS,
 
     // Year_01_Language_Question
     HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE,
@@ -233,6 +244,11 @@ public static class Strings
             [LanguageEnum.en] = "Main Menu",
             [LanguageEnum.si] = "Glavni Meni"
         },
+        [StringKey.HOP_MEDVEDEK_DEATH_MENU_DEATH_TEXT] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Game Over!",
+            [LanguageEnum.si] = "Konec Igre!"
+        },
         // Pause menu
         [StringKey.HOP_MEDVEDEK_PAUSE_MENU_CONTINUE] = new Dictionary<LanguageEnum, string>()
         {
@@ -253,6 +269,38 @@ public static class Strings
         {
             [LanguageEnum.en] = "Main Menu",
             [LanguageEnum.si] = "Glavni Meni"
+        },
+        // Year selection menu
+        [StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_01] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Year 1",
+            [LanguageEnum.si] = "1. Razred"
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_02] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Year 2",
+            [LanguageEnum.si] = "2. Razred"
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_03] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Year 3",
+            [LanguageEnum.si] = "3. Razred"
+        },
+        [StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_04] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Year 4",
+            [LanguageEnum.si] = "4. Razred"
+        },
+        // Subjects
+        [StringKey.HOP_MEDVEDEK_SUBJECT_LANGUAGE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Language",
+            [LanguageEnum.si] = "Jezik"
+        },
+        [StringKey.HOP_MEDVEDEK_SUBJECT_MATHS] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Mathematics",
+            [LanguageEnum.si] = "Matematika"
         },
         // Level question-answer text
         // Year 01

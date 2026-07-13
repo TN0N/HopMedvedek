@@ -13,11 +13,13 @@ public class TreeBase: IRectangleSize, IPosition, ITextured
 
     protected Sprite _treeBaseSprite;
     protected Vector2 _position;
+    protected Color _color;
 
     public TreeBase()
     {
         _width = 47;
         _height = 27;
+        _color = Color.White;
         _position = new();
         _treeBaseSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(28, 10, 47, 27), new Vector2(23, 13));
     }
@@ -38,4 +40,9 @@ public class TreeBase: IRectangleSize, IPosition, ITextured
         return _treeBaseSprite;
     }
     public float LayerDepth => 0.6f;
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
+    }
 }

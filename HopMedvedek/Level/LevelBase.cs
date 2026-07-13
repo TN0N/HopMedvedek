@@ -57,6 +57,7 @@ public class LevelBase : GameComponent
             [HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_CROW_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_CROW_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE),
         };
     }
     public override void Initialize()

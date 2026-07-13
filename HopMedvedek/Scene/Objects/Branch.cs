@@ -1,4 +1,5 @@
 ﻿using Artificial.Artificial.Mirage;
+using Artificial.Artificial.Utils;
 using Express.Scene;
 using Express.Scene.Objects;
 using HopMedvedek.Data;
@@ -15,7 +16,7 @@ public class Branch : GameComponent
     //protected LeafBound _upperLeafBound;
     protected Leaves _leaves;
     //protected LeafBound _lowerLeafBound;
-    //protected Coin _coin;
+    protected Coin _coin;
     
     protected IScene _scene;
     public Branch(Game game, IScene scene, Vector2 position, int width) : base(game)
@@ -31,15 +32,16 @@ public class Branch : GameComponent
         _leaves.PivotPoint = _position;
         _twig.PivotPoint = _position;
         //_leaves.CustomOrigin = new Vector2(width, _leaves.Height/2);
-
+        
 
         _scene.Add(_twig);
         _scene.Add(_leaves);
+        GenerateCoin();
         //_twig = new Twig(game);
         //_upperLeafBound = new LeafBound(game);
         //_leaf = new Leaf(game);
         //_lowerLeafBound = new LeafBound(game);
-        
+
         //_answer = new Answer(game);
         //_level = level;
 
@@ -47,7 +49,7 @@ public class Branch : GameComponent
         _level.Scene.Add(_upperLeafBound);
         _level.Scene.Add(_leaf);
         _level.Scene.Add(_lowerLeafBound);*/
-        
+
     }
     public override void Update(GameTime time)
     { 
@@ -57,11 +59,18 @@ public class Branch : GameComponent
     }
     private void GenerateCoin()
     {
-        //_coin = new Coin(game);
-        //_level.Scene.Add(_coin);
+        if (SRandom.Int(100) >= 8)
+            return;
+
+        _coin = new Coin(Game, _scene);
+        _coin.Position = _leaves.Position;
+        _coin.Position.Y -= 10;
+        _scene.Add(_coin);
     }
     public void RemoveBranch()
     { 
+        if (_coin != null)
+            _scene.Remove(_coin);
         _scene.Remove(_leaves);
         _scene.Remove(_twig);
     }

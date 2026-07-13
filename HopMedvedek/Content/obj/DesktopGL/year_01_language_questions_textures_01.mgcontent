@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/year_01_language_questions_textures_01.png</SourceFile>
-  <SourceTime>2026-07-09T10:28:34.3095358+02:00</SourceTime>
-  <DestFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/year_01_language_questions_textures_01.xnb</DestFile>
-  <DestTime>2026-07-09T11:15:25.6065206+02:00</DestTime>
+  <SourceFile>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/year_01_language_questions_textures_01.png</SourceFile>
+  <SourceTime>2026-06-30T22:31:22.5442717+02:00</SourceTime>
+  <DestFile>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/year_01_language_questions_textures_01.xnb</DestFile>
+  <DestTime>2026-07-10T11:53:07.4802525+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T12:31:02+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

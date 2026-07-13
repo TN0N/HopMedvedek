@@ -45,13 +45,7 @@ public class MainMenu : Menu
 
         if (_play.WasReleased)
         {
-            Type[] levelClasses = new Type[(int)LevelType.LastType] {
-               typeof(Level.Levels.LanguageLevel),
-               typeof(Level.Levels.MathLevel)
-            };
-
-            GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, levelClasses[0]);
-            _hopMedvedek.PushState(gameplay);
+            newState = new YearSelectionMenu(Game);
         }
         
         else if (_options.WasReleased)

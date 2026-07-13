@@ -5,7 +5,9 @@ using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Physical_Properties;
 using Express.Scene.Objects.Rotation;
+using HopMedvedek.Audio;
 using HopMedvedek.Data;
+using HopMedvedek.Options;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
 using System;
@@ -22,6 +24,7 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
 {
     protected float _leafBottomBound;
     protected float _leafTopBound;
+    protected Color _color;
 
     protected float _width;
     protected float _height;
@@ -56,6 +59,7 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     {
         _width = 40;
         _height = 10;
+        _color = Color.White;
 
         _drawWidth = 62;
         _drawHeight = 34;
@@ -138,7 +142,10 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
             if (_stateLifeTime.IsAlive)
                 _stateLifeTime.Update(gameTime);
             else
+            {
                 _state = LeavesState.BearLanded;
+                SoundEngine.Play(SoundEffectType.Leaves, null, null, Options.Current.GameVolume);
+            }
         }
         if (_state == LeavesState.BearLanded)
         { 
@@ -255,5 +262,10 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     public Boolean PlayerLanded
     {
         get => _playerLanded;
+    }
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
     }
 }

@@ -201,3 +201,7 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Cont
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\correct.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\wrong.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\rewards.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\rewards.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\ButtonHover.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\Leaves.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\CoinSound.xnb

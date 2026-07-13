@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/LuckiestGuy.spritefont</SourceFile>
-  <SourceTime>2026-07-09T10:28:32.9809074+02:00</SourceTime>
-  <DestFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/LuckiestGuy.xnb</DestFile>
-  <DestTime>2026-07-09T11:15:23.7651352+02:00</DestTime>
+  <SourceFile>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/LuckiestGuy.spritefont</SourceFile>
+  <SourceTime>2026-07-09T17:15:13.0397422+02:00</SourceTime>
+  <DestFile>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/LuckiestGuy.xnb</DestFile>
+  <DestTime>2026-07-10T11:53:05.970706+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2025-06-02T12:31:02+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

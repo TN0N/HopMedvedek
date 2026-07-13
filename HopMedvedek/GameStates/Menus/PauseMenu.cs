@@ -51,13 +51,14 @@ public class PauseMenu : Menu
         }
         else if (_restart.WasReleased)
         {
+            /*
             Type[] levelClasses = new Type[(int)LevelType.LastType] {
                typeof(Level.Levels.LanguageLevel),
-               typeof(Level.Levels.MathLevel)
+               typeof(Level.Levels.Year01MathLevel)
             };
-
+            
             GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, levelClasses[0]);
-            _hopMedvedek.PushState(gameplay);
+            _hopMedvedek.PushState(gameplay);*/
         }
         else if (_options.WasReleased)
         { 

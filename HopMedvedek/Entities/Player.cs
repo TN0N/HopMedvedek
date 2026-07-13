@@ -14,6 +14,7 @@ public class Player: GameComponent
     protected Matrix _inverseView;
     protected Lifetime _stateLifeTime;
     protected Vector2 _throwMouseClickPosition;
+    protected RewardType _bearPreviousReward;
 
     protected float _bearJumpMult = 1f;
 
@@ -34,10 +35,11 @@ public class Player: GameComponent
         _bear.Grounded = true;
         _bearJumpMult = 1f;
         _bear.Acceleration.Y = 0;
+        _bear.Color = Color.White;
 
         if (_bear.ActiveReward == RewardType.UltraJump)
         {
-            if (_stateLifeTime == null)
+            if (_stateLifeTime == null || _bearPreviousReward != RewardType.UltraJump)
             {
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
 
@@ -58,7 +60,7 @@ public class Player: GameComponent
         }
         if (_bear.ActiveReward == RewardType.Invincibility)
         {
-            if (_stateLifeTime == null)
+            if (_stateLifeTime == null || _bearPreviousReward != RewardType.Invincibility)
             {
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
 
@@ -66,6 +68,7 @@ public class Player: GameComponent
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
             _stateLifeTime.Update(gameTime);
+            _bear.Color = Color.Gray;   
             if (!_stateLifeTime.IsAlive)
             {
                 _stateLifeTime = null;
@@ -74,7 +77,7 @@ public class Player: GameComponent
         }
         if (_bear.ActiveReward == RewardType.Jetpack)
         {
-            if (_stateLifeTime == null)
+            if (_stateLifeTime == null || _bearPreviousReward != RewardType.Jetpack)
             {
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
 
@@ -214,7 +217,7 @@ public class Player: GameComponent
             _bear.Acceleration.X -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION;
 
         ChangeState(gameTime);
-
+        _bearPreviousReward = _bear.ActiveReward;
         if (Keyboard.GetState().IsKeyDown(Keys.F) && _bear.State != BearState.BearDazed)
             _bear.State = BearState.BearDazed;
         if (Mouse.GetState().LeftButton == ButtonState.Pressed && (_bear.State != BearState.BearDazed || _bear.State == BearState.BearWalkThrow || _bear.State == BearState.BearJumpThrow))

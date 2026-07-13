@@ -16,6 +16,7 @@ public class Ground : GameComponent, ICustomCollider, IAARectangleCollider, ITex
 {
     protected float _width; 
     protected float _height;
+    protected Color _color;
     //protected float _mass = 999999999999999999f;
     //protected Sprite _groundSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE, new Rectangle(0, 0, 256, 256), new Vector2(128, 128));
 
@@ -29,6 +30,7 @@ public class Ground : GameComponent, ICustomCollider, IAARectangleCollider, ITex
     {
         _width = 408;
         _height = 183;
+        _color = Color.White;
     }
 
     protected Vector2 _position = new();
@@ -64,6 +66,11 @@ public class Ground : GameComponent, ICustomCollider, IAARectangleCollider, ITex
         return _groundAnimations[GroundState.Default].SpriteAtTime(gameTime.TotalGameTime.TotalMilliseconds);
     }
     public float LayerDepth => 0.9f;
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
+    }
     /*
     public float Mass
     {

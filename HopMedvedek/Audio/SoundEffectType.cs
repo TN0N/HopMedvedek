@@ -14,5 +14,8 @@ public enum SoundEffectType
     CorrectAnswer,
     WrongAnswer,
     ButtonPressed,
+    ButtonHover,
+    Leaves,
+    Coin,
     LastType
 }

@@ -14,6 +14,7 @@ public class Twig : IRectangleSize, IPosition, ITextured, IRotatable
     protected float _rotationAngle;
     protected float _angularVelocity;
     protected Vector2 _pivotPoint;
+    protected Color _color;
 
     protected Sprite _twigSprite;
     protected Vector2 _position;
@@ -24,6 +25,7 @@ public class Twig : IRectangleSize, IPosition, ITextured, IRotatable
         //_rotationAngle = 2f;
         _width = width;
         _height = 7;
+        _color = Color.White;
         _position = new();
         _twigSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(45, 4, 4, 7), new Vector2(2, 3));
     }
@@ -60,5 +62,10 @@ public class Twig : IRectangleSize, IPosition, ITextured, IRotatable
     {
         get => _pivotPoint;
         set => _pivotPoint = value;
+    }
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
     }
 }

@@ -4,6 +4,7 @@ using Express.Scene;
 using Express.Scene.Objects.Movement;
 using Express.Scene.Objects.Rotation;
 using Express.Scene.Objects.Shapes;
+using HopMedvedek.Data;
 using HopMedvedek.Gui.Elements;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -68,13 +69,14 @@ public class Renderer : DrawableGameComponent
 
     private bool InCameraBounds(Rectangle item)
     {
-        return _cameraBounds.Intersects(item);
+        //return _cameraBounds.Intersects(item);
+        return true;
     }
     public override void Draw(GameTime gameTime)
     {
         Vector2 cameraPosition = new Vector2(
-            -_scene.CameraMatrix.Translation.X,
-            -_scene.CameraMatrix.Translation.Y);
+            -_scene.CameraMatrix.Translation.X * ((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth),
+            -_scene.CameraMatrix.Translation.Y * ((float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight));
 
         _cameraBounds = new Rectangle(
             (int)cameraPosition.X,
@@ -124,7 +126,7 @@ public class Renderer : DrawableGameComponent
                     _scene.SceneTextureData[sprite.Src],
                     drawRectangle,
                     sprite.SourceRectangle,
-                    Color.White,
+                    texturedItem.Color,
                     rotationAngle,
                     origin,
                     effect,

@@ -45,6 +45,9 @@ public sealed class SoundEngine : GameComponent
         _soundEffects[(int)SoundEffectType.CorrectAnswer] = Game.Content.Load<SoundEffect>("CorrectAnswer");
         _soundEffects[(int)SoundEffectType.WrongAnswer] = Game.Content.Load<SoundEffect>("WrongAnswer");
         _soundEffects[(int)SoundEffectType.ButtonPressed] = Game.Content.Load<SoundEffect>("ButtonPressed");
+        _soundEffects[(int)SoundEffectType.ButtonHover] = Game.Content.Load<SoundEffect>("ButtonHover");
+        _soundEffects[(int)SoundEffectType.Coin] = Game.Content.Load<SoundEffect>("CoinSound");
+        _soundEffects[(int)SoundEffectType.Leaves] = Game.Content.Load<SoundEffect>("Leaves");
     }
 
     public static void Play(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false)

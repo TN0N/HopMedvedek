@@ -28,6 +28,7 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
     protected Vector2 _pivotPoint;
     protected bool _facing;
     protected Behaviour _behaviour;
+    protected Color _color;
 
     public Entity(Game game) : base(game)
     {
@@ -36,6 +37,7 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
         _height = 2f;
         _layerDepth = 0.1f;
         _facing = true;
+        _color = Color.White;
 
         _velocity = new();
         _acceleration = new();
@@ -106,6 +108,11 @@ public class Entity : GameComponent, IMass, IMovable, IAARectangleCollider, IRec
     {
         get => _behaviour;
         set => _behaviour = value;
+    }
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
     }
     public override void Update(GameTime gameTime)
     {

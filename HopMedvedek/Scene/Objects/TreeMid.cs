@@ -10,6 +10,7 @@ public class TreeMid : IRectangleSize, IPosition, ITextured
 {
     protected float _width;
     protected float _height;
+    protected Color _color;
 
     protected Sprite _treeMidSprite;
     protected Vector2 _position;
@@ -18,6 +19,7 @@ public class TreeMid : IRectangleSize, IPosition, ITextured
     {
         _width = 28;
         _height = 37;
+        _color = Color.White;
         _position = new();
         _treeMidSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(0, 0, 28, 37), new Vector2(14, 18));
     }
@@ -39,4 +41,9 @@ public class TreeMid : IRectangleSize, IPosition, ITextured
         return _treeMidSprite;
     }
     public float LayerDepth => 0.6f;
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
+    }
 }

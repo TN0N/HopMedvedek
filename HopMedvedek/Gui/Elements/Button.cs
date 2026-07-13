@@ -199,6 +199,8 @@ public class Button
                 // hover over button
                 else
                 {
+                    if (!_isHovering)
+                        SoundEngine.Play(SoundEffectType.ButtonHover, null, null, Options.Options.Current.GameVolume);
                     _isHovering = true;
                     _activeBackgroundColor = _backgroundHoverColor;
                     _label.Color = _labelHoverColor;

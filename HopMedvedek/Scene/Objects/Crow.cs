@@ -71,6 +71,8 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
             }
             else
             {
+                SoundEngine.Play(SoundEffectType.CrowHit, null, null, Options.Options.Current.GameVolume);
+                SoundEngine.Play(SoundEffectType.BearJump, null, null, Options.Options.Current.GameVolume);
                 bear.Velocity.Y = -HopMedvedekConstants.HOP_MEDVEDEK_BEAR_JUMP_VELOCITY;
                 _level.Scene.Remove(this);
             }

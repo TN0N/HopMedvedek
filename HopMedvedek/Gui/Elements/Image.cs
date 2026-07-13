@@ -22,6 +22,7 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
     protected Sprite _sprite;
     protected Vector2 _position;
     protected AnimatedSprite _animatedSprite;
+    protected Color _color;
 
     public Image(Sprite sprite, Rectangle dstRectangle/*, Vector2 Origin*/)
     {
@@ -33,6 +34,7 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
         _position = new Vector2(dstRectangle.X, dstRectangle.Y);
         _layerDepth = 0.1f;
         _sprite = sprite;
+        _color = Color.White;
     }
     public Image(AnimatedSprite animatedSprite, Rectangle dstRectangle/*, Vector2 Origin*/)
     {
@@ -44,6 +46,7 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
         _position = new Vector2(dstRectangle.X, dstRectangle.Y);
         _layerDepth = 0.1f;
         _animatedSprite = animatedSprite;
+        _color = Color.White;
     }
 
     public float Width
@@ -95,6 +98,11 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
     {
         get => _facing;
         set => _facing = value;
+    }
+    public Color Color
+    {
+        get => _color;
+        set => _color = value;
     }
     /*public Vector2 CustomOrigin
     {
