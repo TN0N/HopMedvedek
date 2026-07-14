@@ -12,7 +12,7 @@ public class Player: GameComponent
 {
     protected Bear _bear;
     protected Matrix _inverseView;
-    protected Lifetime _stateLifeTime;
+    protected Lifetime _stateLifeTime, _rewardLifeTime;
     protected Vector2 _throwMouseClickPosition;
     protected RewardType _bearPreviousReward;
 
@@ -39,17 +39,17 @@ public class Player: GameComponent
 
         if (_bear.ActiveReward == RewardType.UltraJump)
         {
-            if (_stateLifeTime == null || _bearPreviousReward != RewardType.UltraJump)
+            if (_rewardLifeTime == null || _bearPreviousReward != RewardType.UltraJump)
             {
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
+                _rewardLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
 
             }
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
-            _stateLifeTime.Update(gameTime);
-            if (!_stateLifeTime.IsAlive)
+            _rewardLifeTime.Update(gameTime);
+            if (!_rewardLifeTime.IsAlive)
             {
-                _stateLifeTime = null;
+                _rewardLifeTime = null;
                 _bearJumpMult = 1f;
                 _bear.ActiveReward = RewardType.None;
             }
@@ -60,34 +60,34 @@ public class Player: GameComponent
         }
         if (_bear.ActiveReward == RewardType.Invincibility)
         {
-            if (_stateLifeTime == null || _bearPreviousReward != RewardType.Invincibility)
+            if (_rewardLifeTime == null || _bearPreviousReward != RewardType.Invincibility)
             {
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
+                _rewardLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
 
             }
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
-            _stateLifeTime.Update(gameTime);
+            _rewardLifeTime.Update(gameTime);
             _bear.Color = Color.Gray;   
-            if (!_stateLifeTime.IsAlive)
+            if (!_rewardLifeTime.IsAlive)
             {
-                _stateLifeTime = null;
+                _rewardLifeTime = null;
                 _bear.ActiveReward = RewardType.None;
             }
         }
         if (_bear.ActiveReward == RewardType.Jetpack)
         {
-            if (_stateLifeTime == null || _bearPreviousReward != RewardType.Jetpack)
+            if (_rewardLifeTime == null || _bearPreviousReward != RewardType.Jetpack)
             {
-                _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
+                _rewardLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION / 1000);
 
             }
             //else
             //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
-            _stateLifeTime.Update(gameTime);
-            if (!_stateLifeTime.IsAlive)
+            _rewardLifeTime.Update(gameTime);
+            if (!_rewardLifeTime.IsAlive)
             {
-                _stateLifeTime = null;
+                _rewardLifeTime = null;
                 _bear.State = BearState.BearIdle;
                 _bear.ActiveReward = RewardType.None;
                 _bear.Acceleration.Y = 0;

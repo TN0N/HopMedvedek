@@ -102,7 +102,7 @@ public class QuestionEngine : GameComponent
 
         SoundEngine.Play(SoundEffectType.OwlQuestion, null, null, Options.Options.Current.GameVolume);
         // Show the image on the gameHud
-        _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds);
+        _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds, question.QuestionText);
     }
     private void GiveReward(GameTime gameTime)
     {

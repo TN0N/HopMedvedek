@@ -14,11 +14,16 @@ public class Year01MathLevel : LevelBase
         int midX = HopMedvedekConstants.screenWidth / 2;
         int midY = HopMedvedekConstants.screenHeight / 2;
 
-        _questionSheet = new Year01_Language_Question_Sheet();
+        _questionSheet = new Year01_Maths_Question_Sheet();
 
         _ground.Position = new Vector2(midX, BottomY - _ground.Height / 2);
         _tree.Position = new Vector2(_ground.Position.X, _ground.Position.Y - _ground.Height / 1.75f);
         _bear.Position = _tree.Position;
 
+    }
+    public override void Update(GameTime gameTime)
+    {
+        base.Update(gameTime);
+        ((Year01_Maths_Question_Sheet)_questionSheet).GenerateQuestions();
     }
 }

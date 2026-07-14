@@ -32,6 +32,7 @@ public class GameHud : Menu
     protected Label _playerPinecones;
     protected Label _rewardAmount;
     protected Label _activeRewardTimer;
+    protected Label _questionLabel;
 
     private double _activeRewardStartTime;
     private double _rewardDuration;
@@ -121,15 +122,20 @@ public class GameHud : Menu
        
         _scene.Add(_rewardImage);
     }
-    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle)
+    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, string questionText)
     {
+        
         _questionImage = new Image(
             new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
             new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y+100, 128, 192)
             );
+        _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y - 30));
+        _questionLabel.HorizontalAlign = HorizontalAlign.Center;
+        _questionLabel.VerticalAlign = VerticalAlign.Middle;
         _questionImage.LayerDepth = 0.9f;
         _scene.Add(_questionBubble);
         _scene.Add(_questionImage);
+        _scene.Add(_questionLabel);
         
     }
     private void ShowCorrectWrong(bool correct)
@@ -148,6 +154,7 @@ public class GameHud : Menu
         {
             _scene.Remove(_questionBubble);
             _scene.Remove(_questionImage);
+            _scene.Remove(_questionLabel);
             _questionImage = null;
         }
         if (correct != null)

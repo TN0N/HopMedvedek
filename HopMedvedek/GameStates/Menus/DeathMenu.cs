@@ -8,6 +8,7 @@ using System;
 using Express.Graphics;
 using Artificial.Artificial.Mirage;
 using Express.Scores;
+using System.Linq;
 namespace HopMedvedek.GameStates.Menus;
 
 public class DeathMenu : Menu
@@ -15,11 +16,12 @@ public class DeathMenu : Menu
     protected Button _restart, _returnToMainmenu;
     protected Image _background;
     protected Label _deathTextLabel, _scoreLabel, _highScoreLabel;
+    protected Type _levelClass;
 
-    public DeathMenu(Game game) : base(game)
+    public DeathMenu(Game game, Type LevelClass) : base(game)
     {
         base.Initialize();
-
+        _levelClass = LevelClass;
 
         //_scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND));
         _deathTextLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_DEATH_TEXT][Options.Options.Current.Language], new Vector2(HopMedvedekConstants.screenWidth / 2, 100));
@@ -63,10 +65,10 @@ public class DeathMenu : Menu
                typeof(Level.Levels.LanguageLevel),
                typeof(Level.Levels.Year01MathLevel)
             };
-
-            GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, levelClasses[0]);
-            _hopMedvedek.PushState(gameplay);
             */
+            GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, _levelClass);
+            _hopMedvedek.PushState(gameplay);
+            
         }
 
         else if (_returnToMainmenu.WasReleased)

@@ -11,6 +11,7 @@ using HopMedvedek.Level;
 using HopMedvedek.Physics;
 using Microsoft.Xna.Framework;
 using System;
+using System.Linq;
 
 namespace HopMedvedek.GameStates.GamePlay;
 
@@ -26,10 +27,12 @@ public class GamePlay : GameState
     private PhysicsEngine _physics;
     private DebugRenderer _debugRenderer;
     private QuestionEngine _questionEngine;
+    private Type _levelClass;
 
     private FpsComponent _fpsComponent;
     public GamePlay(Game game, Type levelClass) : base(game)
     {
+        _levelClass = levelClass;
         System.Diagnostics.Debug.WriteLine("Creating new gameplay");
         _startInit(levelClass);
         _player = new Player(game, _level.Bear);
@@ -102,6 +105,10 @@ public class GamePlay : GameState
             if (item is GameComponent gameComponent)
                 Game.Components.Remove(gameComponent);*/
     }
+    public Type LevelClass
+    {
+        get => _levelClass; 
+    }
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
@@ -111,7 +118,7 @@ public class GamePlay : GameState
             Options.Options.Current.HighScore = Math.Max(Options.Options.Current.HighScore, Scores.score);
             Options.Options.SaveOptions();
             SoundEngine.Play(SoundEffectType.BearDie, null, null, Options.Options.Current.GameVolume);
-            _hopMedvedek.PushState(new DeathMenu(Game));
+            _hopMedvedek.PushState(new DeathMenu(Game, _levelClass));
         }
     }
 }

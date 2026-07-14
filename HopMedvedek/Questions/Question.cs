@@ -14,13 +14,14 @@ public class Question
         _questionText = "No question";
         _questionAnswer = "No answer";
     }
-    public Question(string questionText, string questionAnswer, Rectangle questionImageBounds)
+    public Question(string questionText, string questionAnswer, Rectangle? questionImageBounds)
     {
 
         _questionText = questionText;
         _questionAnswer = questionAnswer;
 
-        _questionImageBounds = questionImageBounds;
+        if (questionImageBounds != null)
+            _questionImageBounds = (Rectangle)questionImageBounds;
     }
     public string QuestionText
     { 

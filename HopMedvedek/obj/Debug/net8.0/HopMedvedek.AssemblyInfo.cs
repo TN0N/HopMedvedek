@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HopMedvedek")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4b5937f08a53a226c800a337d4d783e869db35a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d87850dcc00da649de68ead82c7710cd5b4609c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HopMedvedek")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HopMedvedek")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
