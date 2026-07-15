@@ -1,6 +1,7 @@
 ﻿using Artificial.Artificial.Mirage;
 using Artificial.Artificial.Utils;
 using Express.Graphics;
+using Express.Scores;
 using HopMedvedek.Audio;
 using HopMedvedek.Data;
 using HopMedvedek.Gui.Elements;
@@ -57,6 +58,24 @@ public class QuestionEngine : GameComponent
             [RewardType.Invincibility] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(19,0,19,19), new Vector2(9, 9)), // invincibility
             [RewardType.Jetpack] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(38,0,19,19), new Vector2(9, 9)) // jetpack
         };
+    }
+    private void GivePoints(bool correct)
+    {
+        switch (_level.QuestionSheet)
+        {
+            case Year01_Language_Question_Sheet:
+                if (correct)
+                    Scores.year01LanguageLevelCorrectAnswers++;
+                else
+                    Scores.year01LanguageLevelWrongAnswers++;
+                break;
+            case Year01_Maths_Question_Sheet:
+                if (correct)
+                    Scores.year01MathsLevelCorrectAnswers++;
+                else
+                    Scores.year01MathsLevelWrongAnswers++;
+                break;
+        }
     }
     private void GenerateQuestions(GameTime gameTime)
     {
@@ -175,6 +194,7 @@ public class QuestionEngine : GameComponent
             System.Diagnostics.Debug.WriteLine("Correct!");
             GiveReward(gameTime);
             _gameHud.HideQuestionImage(true);
+            GivePoints(true);
         }
 
         if (_wrongBranch.Leaves.PlayerLanded)
@@ -182,8 +202,9 @@ public class QuestionEngine : GameComponent
             SoundEngine.Play(SoundEffectType.WrongAnswer, null, null, Options.Options.Current.GameVolume);
             System.Diagnostics.Debug.WriteLine("Incorrect!");
             _gameHud.HideQuestionImage(false);
+            GivePoints(false);
         }
-
+        
         _correctBranch = null;
         _wrongBranch = null;
 

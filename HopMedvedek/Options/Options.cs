@@ -20,7 +20,6 @@ public static class Options
         public float MusicVolume { get; set; } 
         public LanguageEnum Language { get; set; }
         public bool IsMouseVisible { get; set; }
-        public int HighScore { get; set; }
     }
     /// <summary>
     /// The current option data.

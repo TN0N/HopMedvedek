@@ -24,6 +24,7 @@ public static class HopMedvedekConstants
 
     // Directories
     public static readonly string HOP_MEDVEDEK_OPTIONS_PATH = "Options/options.json";
+    public static readonly string HOP_MEDVEDEK_PLAYER_DATA_PATH = "Data/playerData.json";
     public static readonly string HOP_MEDVEDEK_ROOT_DIRECTORY = "Content";
 
     // Game texture names

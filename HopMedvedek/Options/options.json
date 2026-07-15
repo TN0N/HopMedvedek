@@ -5,6 +5,5 @@
   "MusicVolume": 0.7,
   "Language": 1,
   "IsMouseVisible": true,
-  "RootDirectory": "Content",
-  "HighScore":  0
+  "RootDirectory": "Content"
 }

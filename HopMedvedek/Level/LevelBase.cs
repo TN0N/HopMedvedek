@@ -64,12 +64,16 @@ public class LevelBase : GameComponent
     {
         base.Initialize();
         Scores.score = 0;
-
+        Scores.year01LanguageLevelCorrectAnswers = 0;
+        Scores.year01LanguageLevelWrongAnswers = 0;
+        Scores.year01MathsLevelCorrectAnswers = 0;
+        Scores.year01MathsLevelWrongAnswers = 0;
         //_bear.Position = _bearSpawn;
         //_ground.Position = _groundSpawn;
         //_tree.Position = _treeBaseSpawn;
 
-        Game.Components.Add(_scene);
+        if (!Game.Components.Contains(_scene))
+            Game.Components.Add(_scene);
         
     }
     public override void Update(GameTime gameTime)

@@ -832,13 +832,13 @@ public static class Strings
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_MATHS_QUESTION_ADDITION] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "How much is\n{0} + {1}?",
-            [LanguageEnum.si] = "Koliko je\n{0} + {1}?",
+            [LanguageEnum.en] = "{0} + {1} = ?",
+            [LanguageEnum.si] = "{0} + {1} = ?",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_MATHS_QUESTION_SUBTRACTION] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "How much is\n{0} - {1}?",
-            [LanguageEnum.si] = "Koliko je\n{0} - {1}?",
+            [LanguageEnum.en] = "{0} - {1} = ?",
+            [LanguageEnum.si] = "{0} - {1} = ?",
         },
     };
 }

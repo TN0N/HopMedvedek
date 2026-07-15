@@ -96,17 +96,19 @@ public class SimpleScene : GameComponent, IScene
     /// Adds an item to the scene.
     /// </summary>
     /// <param name="item">The item to be added to the scene.</param>
-    public void Add(object item)
+    public void Add(object? item)
     {
-        _actions.Add(new SceneAction(SceneAction.SceneOperation.Add, item));
+        if (item != null)
+            _actions.Add(new SceneAction(SceneAction.SceneOperation.Add, (object)item));
     }
     /// <summary>
     /// Removes an item from the scene.
     /// </summary>
     /// <param name="item">The item to be removed.</param>
-    public void Remove(object item)
+    public void Remove(object? item)
     {
-        _actions.Add(new SceneAction(SceneAction.SceneOperation.Remove, item));
+        if (item != null)
+            _actions.Add(new SceneAction(SceneAction.SceneOperation.Remove, (object)item));
     }
 
     /// <summary>

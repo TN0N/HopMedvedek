@@ -75,13 +75,19 @@ public class HopMedvedek : Game {
         currentActiveState.Deactivate();
         Components.Remove(currentActiveState);
 
+        
         currentActiveState = _stateStack.Peek();
-        Components.Add(currentActiveState);
+        if (!Components.Contains(currentActiveState))
+        {
+            Components.Add(currentActiveState);
+            
+        }
         currentActiveState.Activate();
     }
     protected override void Initialize()
     {
         LoadOptions();
+        Data.PlayerData.LoadData();
         /*
         _levelClasses = new Type[(int)LevelType.LastType] {
            typeof(Level.Levels.LanguageLevel),

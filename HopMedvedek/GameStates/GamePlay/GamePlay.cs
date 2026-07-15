@@ -74,15 +74,15 @@ public class GamePlay : GameState
     {
         System.Diagnostics.Debug.WriteLine("Activating");
         Game.Components.Add(_level);
-        
+        _hud.Activate();
         Game.Components.Add(_hud);
-        Game.Components.Add(_debugRenderer);
+        //Game.Components.Add(_debugRenderer);
         Game.Components.Add(_hudRenderer);
         Game.Components.Add(_gameRenderer);
         Game.Components.Add(_physics);
         Game.Components.Add(_questionEngine);
         Game.Components.Add(_player);
-        Game.Components.Add(_fpsComponent);
+        //Game.Components.Add(_fpsComponent);
 
         // Add all gameComponents created by level.Scene
         /*foreach (var item in _level.Scene)
@@ -92,13 +92,15 @@ public class GamePlay : GameState
     public override void Deactivate()
     {
         Game.Components.Remove(_level);
+        _hud.Deactivate();
         Game.Components.Remove(_hud);
-        Game.Components.Remove(_debugRenderer);
+        //Game.Components.Remove(_debugRenderer);
         Game.Components.Remove(_hudRenderer);
         Game.Components.Remove(_gameRenderer);
         Game.Components.Remove(_physics);
+        Game.Components.Remove(_questionEngine);
         Game.Components.Remove(_player);
-        Game.Components.Remove(_fpsComponent);
+        //Game.Components.Remove(_fpsComponent);
 
         // Deactivate all gameComponents created by level.Scene
         /*foreach (var item in _level.Scene)
@@ -115,8 +117,13 @@ public class GamePlay : GameState
         if (_level.Bear.PlayerHP < 1)
         {
             
-            Options.Options.Current.HighScore = Math.Max(Options.Options.Current.HighScore, Scores.score);
-            Options.Options.SaveOptions();
+            Data.PlayerData.Current.HighScore = Math.Max(Data.PlayerData.Current.HighScore, Scores.score);
+            Data.PlayerData.Current.Year01LanguageLevelCorrectAnswers += Scores.year01LanguageLevelCorrectAnswers;
+            Data.PlayerData.Current.Year01LanguageLevelWrongAnswers += Scores.year01LanguageLevelWrongAnswers;
+            Data.PlayerData.Current.Year01MathsLevelCorrectAnswers += Scores.year01MathsLevelCorrectAnswers;
+            Data.PlayerData.Current.Year01MathsLevelWrongAnswers += Scores.year01MathsLevelWrongAnswers;
+            Data.PlayerData.Current.Coins += _level.Bear.PlayerCoins;
+            Data.PlayerData.SaveData();
             SoundEngine.Play(SoundEffectType.BearDie, null, null, Options.Options.Current.GameVolume);
             _hopMedvedek.PushState(new DeathMenu(Game, _levelClass));
         }

@@ -31,6 +31,9 @@
     <ProjectReference Include="..\Express\Express.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="Data\playerData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Options\options.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

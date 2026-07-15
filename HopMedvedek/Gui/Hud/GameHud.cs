@@ -45,7 +45,7 @@ public class GameHud : Menu
         _scene = new SimpleScene(game);
         _scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
         _level = level;
-        Game.Components.Add(_scene);
+        
     }
     public override void Initialize()
     {
@@ -127,13 +127,17 @@ public class GameHud : Menu
         
         _questionImage = new Image(
             new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
-            new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y+100, 128, 192)
+            new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y+120, 128, 192)
             );
-        _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y - 30));
+        _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y - 90));
         _questionLabel.HorizontalAlign = HorizontalAlign.Center;
         _questionLabel.VerticalAlign = VerticalAlign.Middle;
+        _questionLabel.Color = Color.Black;
+        _questionLabel.LayerDepth = 0.9f;
+        _questionLabel.Scale = new Vector2(0.7f,0.7f);
         _questionImage.LayerDepth = 0.9f;
         _scene.Add(_questionBubble);
+        _questionBubble.LayerDepth = 0.7f;
         _scene.Add(_questionImage);
         _scene.Add(_questionLabel);
         
@@ -178,9 +182,10 @@ public class GameHud : Menu
     }
     public override void Update(GameTime gameTime)
     {
+        base.Update(gameTime);
         //float v = -200 * (float)gameTime.ElapsedGameTime.TotalSeconds;
         //Vector2 correctWrongVelocity = new Vector2(0, v);
-            /**/
+        /**/
 
         if (_pauseButton.WasReleased)
         {
@@ -232,5 +237,47 @@ public class GameHud : Menu
         _playerHearts.Text = "" + _level.Bear.PlayerHP;
         _playerCoins.Text = "" + _level.Bear.PlayerCoins;
         _playerPinecones.Text = "" + _level.Bear.PlayerPinecones;
+    }
+    public override void Activate()
+    {
+        Game.Components.Add(_scene);
+        _scene.Add(_coinImage);
+        _scene.Add(_heartImage);
+        _scene.Add(_pineconeImage);
+        _scene.Add(_questionImage);
+        _scene.Add(_questionBubble);
+        _scene.Add(_owlImage);
+        _scene.Add(_correctWrong);
+        _scene.Add(_rewardImage);
+        _scene.Add(_activeReward);
+        _scene.Add(_playerPinecones);
+        _scene.Add(_activeReward);
+        _scene.Add(_playerScore);
+        _scene.Add(_playerCoins);
+        _scene.Add(_playerHearts);
+        _scene.Add(_playerPinecones);
+        _scene.Add(_activeRewardTimer);
+        _scene.Add(_questionLabel);
+    }
+    public override void Deactivate()
+    {
+        Game.Components.Remove(_scene);
+        _scene.Remove(_coinImage);
+        _scene.Remove(_heartImage);
+        _scene.Remove(_pineconeImage);
+        _scene.Remove(_questionImage);
+        _scene.Remove(_questionBubble);
+        _scene.Remove(_owlImage);
+        _scene.Remove(_correctWrong);
+        _scene.Remove(_rewardImage);
+        _scene.Remove(_activeReward);
+        _scene.Remove(_playerPinecones);
+        _scene.Remove(_activeReward);
+        _scene.Remove(_playerScore);
+        _scene.Remove(_playerCoins);
+        _scene.Remove(_playerHearts);
+        _scene.Remove(_playerPinecones);
+        _scene.Remove(_activeRewardTimer);
+        _scene.Remove(_questionLabel);
     }
 }

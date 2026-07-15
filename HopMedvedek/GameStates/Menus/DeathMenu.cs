@@ -25,7 +25,7 @@ public class DeathMenu : Menu
 
         //_scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND));
         _deathTextLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_DEATH_TEXT][Options.Options.Current.Language], new Vector2(HopMedvedekConstants.screenWidth / 2, 100));
-        _highScoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE][Options.Options.Current.Language] + Options.Options.Current.HighScore, new Vector2(HopMedvedekConstants.screenWidth / 2, 200));
+        _highScoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE][Options.Options.Current.Language] + Data.PlayerData.Current.HighScore, new Vector2(HopMedvedekConstants.screenWidth / 2, 200));
         _scoreLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE][Options.Options.Current.Language] + Scores.score, new Vector2(HopMedvedekConstants.screenWidth / 2, 300));
 
         _deathTextLabel.HorizontalAlign = HorizontalAlign.Center;
