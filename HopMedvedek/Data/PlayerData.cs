@@ -1,5 +1,7 @@
 ﻿using HopMedvedek.Data;
 using HopMedvedek.Data.Strings;
+using HopMedvedek.GameStates.Menus;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
@@ -44,5 +46,16 @@ public static class PlayerData
         });
 
         File.WriteAllText(HopMedvedekConstants.HOP_MEDVEDEK_PLAYER_DATA_PATH, json);
+    }
+    public static List<int> GetGrades(SubjectType subject)
+    {
+        switch (subject)
+        {
+            case SubjectType.Year01Language:
+                return new List<int> { Current.Year01LanguageLevelCorrectAnswers, Current.Year01LanguageLevelWrongAnswers };
+            case SubjectType.Year01Maths:
+                return new List<int> { Current.Year01MathsLevelCorrectAnswers, Current.Year01MathsLevelWrongAnswers };
+        }
+        return new List<int>();
     }
 }

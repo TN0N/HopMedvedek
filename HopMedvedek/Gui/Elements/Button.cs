@@ -137,14 +137,14 @@ public class Button
 
     public IScene Scene { get; set; }
 
-    public void AddedToScene(IScene theScene)
+    public virtual void AddedToScene(IScene theScene)
     {
         // Add child items to scene.
         theScene.Add(_backgroundImage);
         theScene.Add(_label);
     }
 
-    public void RemovedFromScene(IScene theScene)
+    public virtual void RemovedFromScene(IScene theScene)
     {
         // Remove child items.
         theScene.Remove(_backgroundImage);

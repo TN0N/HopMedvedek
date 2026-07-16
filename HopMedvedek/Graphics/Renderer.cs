@@ -133,6 +133,7 @@ public class Renderer : DrawableGameComponent
                     texturedItem.LayerDepth);
                 drawCount++;
             }
+            
             else if (item is Button button)
             {
                 if (!InCameraBounds(button.InputArea))
@@ -145,7 +146,7 @@ public class Renderer : DrawableGameComponent
                     0f,
                     Vector2.Zero,
                     SpriteEffects.None,
-                    0.8f);
+                    button.LayerDepth);
                 drawCount++;
                 if (button.Label is not null)
                 {
@@ -159,6 +160,31 @@ public class Renderer : DrawableGameComponent
                     button.Label.Scale,
                     SpriteEffects.None,
                     button.Label.LayerDepth);
+                }
+                if (item is not SubjectMenuButton subjectMenuButton)
+                    continue;
+                if (subjectMenuButton.GradeImage != null)
+                {
+                    _spriteBatch.Draw(
+                    _scene.SceneTextureData[subjectMenuButton.GradeImage.Sprite(gameTime).Src],
+                    new Rectangle((int)subjectMenuButton.GradeImage.Position.X, (int)subjectMenuButton.GradeImage.Position.Y, (int)subjectMenuButton.GradeImage.Width, (int)subjectMenuButton.GradeImage.Height),
+                    subjectMenuButton.Sprite(gameTime).SourceRectangle,
+                    subjectMenuButton.GradeImage.Color,
+                    subjectMenuButton.GradeImage.RotationAngle,
+                    Vector2.Zero,
+                    SpriteEffects.None,
+                    subjectMenuButton.GradeImage.LayerDepth);
+
+                    _spriteBatch.DrawString(
+                    subjectMenuButton.GradeLabel.Font,
+                    subjectMenuButton.GradeLabel.Text,
+                    subjectMenuButton.GradeLabel.Position,
+                    subjectMenuButton.GradeLabel.Color,
+                    subjectMenuButton.GradeLabel.Rotation,
+                    subjectMenuButton.GradeLabel.Origin,
+                    subjectMenuButton.GradeLabel.Scale,
+                    SpriteEffects.None,
+                    subjectMenuButton.GradeLabel.LayerDepth);
                 }
             }
             else if (item is Label label)
@@ -219,7 +245,7 @@ public class Renderer : DrawableGameComponent
         }
 
 
-        System.Diagnostics.Debug.WriteLine("Drawn " + drawCount + "/" + _scene.Count() + " items");
+        //System.Diagnostics.Debug.WriteLine("Drawn " + drawCount + "/" + _scene.Count() + " items");
         _spriteBatch.End();
         
     }

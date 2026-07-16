@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj": {}
+    "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj": {}
   },
   "projects": {
-    "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj": {
+    "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj",
+        "projectUniqueName": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj",
         "projectName": "Artificial",
-        "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj",
-        "packagesPath": "C:\\Users\\antma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\obj\\",
+        "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj",
+        "packagesPath": "C:\\Users\\AMT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\antma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AMT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,8 +40,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -73,25 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Express.csproj": {
+    "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Express.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Express.csproj",
+        "projectUniqueName": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Express.csproj",
         "projectName": "Express",
-        "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Express.csproj",
-        "packagesPath": "C:\\Users\\antma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\obj\\",
+        "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Express.csproj",
+        "packagesPath": "C:\\Users\\AMT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\antma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AMT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj": {
-                "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj"
+              "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj": {
+                "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj"
               }
             }
           }
@@ -121,8 +112,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -150,25 +140,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj": {
+    "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj",
+        "projectUniqueName": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj",
         "projectName": "HopMedvedek",
-        "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj",
-        "packagesPath": "C:\\Users\\antma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\obj\\",
+        "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\HopMedvedek.csproj",
+        "packagesPath": "C:\\Users\\AMT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\antma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AMT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -183,11 +169,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj": {
-                "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj"
+              "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj": {
+                "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj"
               },
-              "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Express.csproj": {
-                "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Express\\Express.csproj"
+              "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Express.csproj": {
+                "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Express.csproj"
               }
             }
           }
@@ -201,8 +187,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -233,7 +218,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
