@@ -53,7 +53,7 @@ public class SubjectSelectionMenu : Menu
             float grade = 0;
 
 
-            if (wrongAnswers + correctAnswers >= 20)
+            if (wrongAnswers + correctAnswers > 0)
                 grade = (correctAnswers / (correctAnswers + wrongAnswers));
             SubjectMenuButton button = new SubjectMenuButton(new Rectangle(HopMedvedekConstants.screenWidth / 2 - 180, i, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, _subject[subjectName], grade);
             i += 100;

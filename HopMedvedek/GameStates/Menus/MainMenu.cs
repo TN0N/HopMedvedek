@@ -11,7 +11,7 @@ namespace HopMedvedek.GameStates.Menus;
 
 public class MainMenu : Menu
 {
-    protected Button _play, _options;
+    protected Button _play, _options, _shop;
     protected Image _background;
 
     public MainMenu(Game game) : base(game)
@@ -22,7 +22,8 @@ public class MainMenu : Menu
         _scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND));
 
 
-        _play = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 700, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_PLAY][Options.Options.Current.Language]);
+        _play = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 600, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_PLAY][Options.Options.Current.Language]);
+        _shop = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 700, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_SHOP][Options.Options.Current.Language]);
         _options = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 800, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_OPTIONS][Options.Options.Current.Language]);
 
         Rectangle backgroundImageSize = new Rectangle(0,0, 864, 1821);
@@ -36,6 +37,7 @@ public class MainMenu : Menu
 
         _scene.Add(_background);
         _scene.Add(_play);
+        _scene.Add(_shop);
         _scene.Add(_options);
     }
     public override void Update(GameTime gameTime)

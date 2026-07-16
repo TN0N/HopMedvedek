@@ -8,6 +8,7 @@ public enum StringKey
 
     // Main menu
     HOP_MEDVEDEK_MAIN_MENU_PLAY,
+    HOP_MEDVEDEK_MAIN_MENU_SHOP,
     HOP_MEDVEDEK_MAIN_MENU_OPTIONS,
 
     // Options menu
@@ -185,6 +186,11 @@ public static class Strings
         {
             [LanguageEnum.en] = "Play",
             [LanguageEnum.si] = "Igraj",
+        },
+        [StringKey.HOP_MEDVEDEK_MAIN_MENU_SHOP] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Shop",
+            [LanguageEnum.si] = "Trgovina",
         },
         [StringKey.HOP_MEDVEDEK_MAIN_MENU_OPTIONS] = new Dictionary<LanguageEnum, string>()
         {
