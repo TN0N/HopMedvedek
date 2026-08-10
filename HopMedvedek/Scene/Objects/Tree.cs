@@ -22,6 +22,7 @@ public class Tree: GameComponent
     protected List<Branch> _branches;
     protected bool _branchDirection = false;
     private double _lastCrowSpawnTime = 0;
+    private double _lastCloudSpawnTime = 0;
 
     public Tree(Game game, LevelBase level): base(game)
     {
@@ -105,6 +106,25 @@ public class Tree: GameComponent
                 crow.Position = treeMid.Position;
                 crow.Behaviour = new CrowBehaviour(Game, crow, _level);
                 _level.Scene.Add(crow);
+            }
+
+            if (lastTreeMid.Position.Y < -300 && SRandom.Int(100) <= 30 && gameTime.TotalGameTime.TotalMilliseconds - _lastCloudSpawnTime >= 300)
+            {
+                _lastCloudSpawnTime = gameTime.TotalGameTime.TotalMilliseconds;
+                Cloud cloud = new Cloud();
+                switch (SRandom.Int(2))
+                {
+                    case 0:
+                        cloud.Position = new Vector2(SRandom.Int(HopMedvedekConstants.screenWidth/2), treeMid.Position.Y - SRandom.Int(400) + 100);
+                        cloud.Velocity.X = 15;
+                        break;
+                    case 1:
+                        cloud.Position = new Vector2(SRandom.Int(HopMedvedekConstants.screenWidth) + HopMedvedekConstants.screenWidth / 2, treeMid.Position.Y - SRandom.Int(400) + 100);
+                        cloud.Velocity.X = -15;
+                        break;
+
+                }
+                _level.Scene.Add(cloud);
             }
         }
         RemoveBranches();

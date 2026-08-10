@@ -36,6 +36,7 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_NATURE_TEXTURE = "nature";
     public static readonly string HOP_MEDVEDEK_PINECONE_TEXTURE = "pinecone";
     public static readonly string HOP_MEDVEDEK_OWL_TEXTURE = "owl";
+    public static readonly string HOP_MEDVEDEK_SCENE_ELEMENTS = "scene_elements";
 
     // Question texture names
     public static readonly string HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTIONS_TEXTURES_01 = "year_01_language_questions_textures_01";

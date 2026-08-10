@@ -33,6 +33,7 @@
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/pinecone.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/PineConeHit.wav</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/rewards.png</File>
+    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/scene_elements.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/sky.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/slider_thumb.png</File>
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/slider_track.png</File>
@@ -42,6 +43,7 @@
     <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/year_01_language_questions_textures_01.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
