@@ -96,16 +96,9 @@ public class GameHud : Menu
         _playerHearts.HorizontalAlign = HorizontalAlign.Left;
         _playerPinecones.HorizontalAlign = HorizontalAlign.Left;
 
-        _scene.Add(_pauseButton);
-        _scene.Add(_coinImage);
-        _scene.Add(_heartImage);
-        _scene.Add(_pineconeImage);
-        _scene.Add(_owlImage);
-
-        _scene.Add(_playerScore);
-        _scene.Add(_playerCoins);
-        _scene.Add(_playerHearts);
-        _scene.Add(_playerPinecones);
+        
+        
+        
     }
     public void ShowReward(Sprite rewardTexture, int? rewardAmount)
     { 
@@ -166,6 +159,8 @@ public class GameHud : Menu
     }
     public void ShowActiveReward(Sprite rewardTexture, float duration, GameTime gameTime)
     {
+        _scene.Remove(_activeReward);
+        _scene.Remove(_activeRewardTimer);
         if (!_scene.SceneTextureData.ContainsKey(rewardTexture.Src))
             _scene.SceneTextureData.Add(rewardTexture.Src, Game.Content.Load<Texture2D>(rewardTexture.Src));
 
@@ -241,43 +236,57 @@ public class GameHud : Menu
     public override void Activate()
     {
         Game.Components.Add(_scene);
+
+        // Always add
+        _scene.Add(_pauseButton);
         _scene.Add(_coinImage);
         _scene.Add(_heartImage);
         _scene.Add(_pineconeImage);
-        _scene.Add(_questionImage);
-        _scene.Add(_questionBubble);
         _scene.Add(_owlImage);
+        _scene.Add(_playerScore);
+        _scene.Add(_playerCoins);
+        _scene.Add(_playerPinecones);
+
+        // Add if not null
+        if (_questionImage != null)
+        {
+            _scene.Add(_questionImage);
+            _scene.Add(_questionBubble);
+            _scene.Add(_questionLabel);
+        }
+
         _scene.Add(_correctWrong);
         _scene.Add(_rewardImage);
         _scene.Add(_activeReward);
-        _scene.Add(_playerPinecones);
-        _scene.Add(_activeReward);
-        _scene.Add(_playerScore);
-        _scene.Add(_playerCoins);
         _scene.Add(_playerHearts);
-        _scene.Add(_playerPinecones);
         _scene.Add(_activeRewardTimer);
-        _scene.Add(_questionLabel);
+        
+        
     }
     public override void Deactivate()
     {
-        Game.Components.Remove(_scene);
+
+        _scene.Remove(_pauseButton);
         _scene.Remove(_coinImage);
         _scene.Remove(_heartImage);
         _scene.Remove(_pineconeImage);
-        _scene.Remove(_questionImage);
-        _scene.Remove(_questionBubble);
         _scene.Remove(_owlImage);
-        _scene.Remove(_correctWrong);
-        _scene.Remove(_rewardImage);
-        _scene.Remove(_activeReward);
-        _scene.Remove(_playerPinecones);
-        _scene.Remove(_activeReward);
         _scene.Remove(_playerScore);
         _scene.Remove(_playerCoins);
-        _scene.Remove(_playerHearts);
         _scene.Remove(_playerPinecones);
+
+        _scene.Remove(_questionImage);
+        _scene.Remove(_questionBubble);
+        _scene.Remove(_correctWrong);
+
+
+        _scene.Remove(_rewardImage);
+        _scene.Remove(_activeReward);
+        _scene.Remove(_playerHearts);
         _scene.Remove(_activeRewardTimer);
         _scene.Remove(_questionLabel);
+
+        Game.Components.Remove(_scene);
+        
     }
 }

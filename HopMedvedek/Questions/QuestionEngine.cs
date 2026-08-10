@@ -136,10 +136,9 @@ public class QuestionEngine : GameComponent
          */
         int r = SRandom.Int(100);
 
-        if (r < 10) // 1-2 Hearts;
+        if (r < 10) // 2-4 Hearts;
         {
-            int hearts = SRandom.Int(1) + 1;
-            System.Diagnostics.Debug.WriteLine("Reward: " + hearts + " hearts");
+            int hearts = SRandom.Int(2) + 2;
             _level.Bear.PlayerHP += hearts;
 
             _gameHud.ShowReward(_rewardImages[RewardType.Heart], hearts);
@@ -147,15 +146,13 @@ public class QuestionEngine : GameComponent
         else if (r < 36) // 3-10 coins
         {
             int coins = SRandom.Int(7) + 3;
-            System.Diagnostics.Debug.WriteLine("Reward: " + coins + " coins");
             _level.Bear.PlayerCoins += coins;
 
             _gameHud.ShowReward(_rewardImages[RewardType.Coin], coins);
         }
-        else if (r < 59) // 1-3 pinecones
+        else if (r < 59) // 3-5 pinecones
         {
-            int pinecones = SRandom.Int(2) + 1;
-            System.Diagnostics.Debug.WriteLine("Reward: " + pinecones + " pinecones");
+            int pinecones = SRandom.Int(2) + 3;
             _level.Bear.PlayerPinecones += pinecones;
 
             _gameHud.ShowReward(_rewardImages[RewardType.Pinecone], pinecones);
@@ -163,21 +160,18 @@ public class QuestionEngine : GameComponent
         }
         else if (r < 74) // Ultra jump
         {
-            System.Diagnostics.Debug.WriteLine("Reward: ultrajump");
             _level.Bear.ActiveReward = RewardType.UltraJump;
             _gameHud.ShowReward(_rewardImages[RewardType.UltraJump], null);
             _gameHud.ShowActiveReward(_rewardImages[RewardType.UltraJump], HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION, gameTime);
         }
         else if (r < 89) // Invincibility
         {
-            System.Diagnostics.Debug.WriteLine("Reward: invinsibility");
             _level.Bear.ActiveReward = RewardType.Invincibility;
             _gameHud.ShowReward(_rewardImages[RewardType.Invincibility], null);
             _gameHud.ShowActiveReward(_rewardImages[RewardType.Invincibility], HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION, gameTime);
         }
         else if (r <= 100) // Jetpack
         {
-            System.Diagnostics.Debug.WriteLine("Reward: jetpack");
             _level.Bear.ActiveReward = RewardType.Jetpack;
             _gameHud.ShowReward(_rewardImages[RewardType.Jetpack], null);
             _gameHud.ShowActiveReward(_rewardImages[RewardType.Jetpack], HopMedvedekConstants.HOP_MEDVEDEK_POWER_UP_DURATION, gameTime);
@@ -235,6 +229,12 @@ public class QuestionEngine : GameComponent
         //System.Diagnostics.Debug.WriteLine("Generating question");
         GenerateQuestions(gameTime);
         CheckAnswer(gameTime);
+    }
+
+    public GameHud GameHud
+    {
+        get => _gameHud;
+        set => _gameHud = value;
     }
     public override void Initialize()
     {

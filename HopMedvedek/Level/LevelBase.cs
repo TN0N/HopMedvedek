@@ -90,7 +90,10 @@ public class LevelBase : GameComponent
 
         //_scene.CameraMatrix.M42 = -(_bear.Position.Y - 720);
 
-
+        if (_bear.Position.X + _bear.Width/2 < 0)
+            _bear.Position = new Vector2(HopMedvedekConstants.screenWidth + _bear.Width/2, _bear.Position.Y);
+        if (_bear.Position.X - _bear.Width / 2 > HopMedvedekConstants.screenWidth)
+            _bear.Position = new Vector2(-_bear.Width / 2, _bear.Position.Y);
 
         if (Math.Abs((int)-_bear.Position.Y + 700 - Scores.score) >= 500)
         {

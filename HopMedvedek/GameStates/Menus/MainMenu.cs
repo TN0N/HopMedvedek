@@ -1,11 +1,8 @@
 ﻿using HopMedvedek.Data;
 using HopMedvedek.Data.Strings;
 using HopMedvedek.Gui.Elements;
-using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
 using Express.Graphics;
 namespace HopMedvedek.GameStates.Menus;
 

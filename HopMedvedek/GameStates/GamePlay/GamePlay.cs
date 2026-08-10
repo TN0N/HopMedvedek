@@ -74,8 +74,9 @@ public class GamePlay : GameState
     {
         System.Diagnostics.Debug.WriteLine("Activating");
         Game.Components.Add(_level);
-        _hud.Activate();
+        
         Game.Components.Add(_hud);
+        _hud.Activate();
         //Game.Components.Add(_debugRenderer);
         Game.Components.Add(_hudRenderer);
         Game.Components.Add(_gameRenderer);

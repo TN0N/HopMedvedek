@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/coin.png</SourceFile>
-  <SourceTime>2026-05-08T10:24:52.0368951+02:00</SourceTime>
-  <DestFile>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/Content/coin.xnb</DestFile>
-  <DestTime>2026-07-16T20:01:00.6314473+02:00</DestTime>
+  <SourceFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/coin.png</SourceFile>
+  <SourceTime>2026-07-09T10:28:33.8847064+02:00</SourceTime>
+  <DestFile>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bin/DesktopGL/Content/coin.xnb</DestFile>
+  <DestTime>2026-08-10T09:34:36.6609505+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T12:31:02+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

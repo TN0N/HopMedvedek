@@ -60,12 +60,6 @@ public class DeathMenu : Menu
 
         if (_restart.WasReleased)
         {
-            /*
-            Type[] levelClasses = new Type[(int)LevelType.LastType] {
-               typeof(Level.Levels.LanguageLevel),
-               typeof(Level.Levels.Year01MathLevel)
-            };
-            */
             GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, _levelClass);
             _hopMedvedek.PushState(gameplay);
             

@@ -8,6 +8,7 @@ using System;
 using Express.Graphics;
 using Artificial.Artificial.Mirage;
 using Express.Scores;
+using System.Linq;
 namespace HopMedvedek.GameStates.Menus;
 
 public class PauseMenu : Menu
@@ -48,6 +49,7 @@ public class PauseMenu : Menu
         if (_continue.WasReleased)
         {
             _hopMedvedek.PopState();
+            return;
         }
         else if (_restart.WasReleased)
         {
@@ -59,6 +61,20 @@ public class PauseMenu : Menu
             
             GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, levelClasses[0]);
             _hopMedvedek.PushState(gameplay);*/
+            if (_restart.WasReleased)
+            {
+                /*
+                Type[] levelClasses = new Type[(int)LevelType.LastType] {
+                   typeof(Level.Levels.LanguageLevel),
+                   typeof(Level.Levels.Year01MathLevel)
+                };
+                */
+                GamePlay.GamePlay currentGameplay = Game.Components.OfType<GamePlay.GamePlay>().FirstOrDefault();
+
+                GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, currentGameplay.LevelClass);
+                _hopMedvedek.PushState(gameplay);
+
+            }
         }
         else if (_options.WasReleased)
         { 
