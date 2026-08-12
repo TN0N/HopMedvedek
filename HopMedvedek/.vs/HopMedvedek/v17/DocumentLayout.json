@@ -3,63 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\cloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\cloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4649C9EF-4DC6-4061-904B-669E22F82C33}|..\\Express\\Express.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\express\\physics\\movementphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\physics\\physicsengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:physics\\physicsengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\data\\hopmedvedekconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:data\\hopmedvedekconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\leaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\leaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\crow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\crow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\treemid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\treemid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gamestates\\gameplay\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\gameplay\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\deathmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\deathmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gui\\hud\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gui\\hud\\gamehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\pinecone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\pinecone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\questions\\year01_maths_question_sheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:questions\\year01_maths_question_sheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\questions\\questionengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:questions\\questionengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\data\\hopmedvedekconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:data\\hopmedvedekconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\twig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\twig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\amt\\documents\\my projects\\hopmedvedek\\hopmedvedek\\scene\\objects\\ground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\ground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -77,193 +62,145 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PhysicsEngine.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Physics\\PhysicsEngine.cs",
-              "RelativeDocumentMoniker": "Physics\\PhysicsEngine.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Physics\\PhysicsEngine.cs",
-              "RelativeToolTip": "Physics\\PhysicsEngine.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwAwAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:21:26.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MovementPhysics.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
-              "RelativeDocumentMoniker": "..\\Express\\Physics\\MovementPhysics.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Express\\Physics\\MovementPhysics.cs",
-              "RelativeToolTip": "..\\Express\\Physics\\MovementPhysics.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAD4vxcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:21:15.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Tree.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Tree.cs",
-              "RelativeDocumentMoniker": "Scene\\Objects\\Tree.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Tree.cs",
-              "RelativeToolTip": "Scene\\Objects\\Tree.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAmwG4AAABGAAAAAAAAAA==",
+              "Title": "Pinecone.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Pinecone.cs",
+              "RelativeDocumentMoniker": "Scene\\Objects\\Pinecone.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Pinecone.cs",
+              "RelativeToolTip": "Scene\\Objects\\Pinecone.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwBUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:10:22.967Z",
+              "WhenOpened": "2026-08-12T07:52:56.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Crow.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Crow.cs",
-              "RelativeDocumentMoniker": "Scene\\Objects\\Crow.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Crow.cs",
-              "RelativeToolTip": "Scene\\Objects\\Crow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Year01_Maths_Question_Sheet.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Questions\\Year01_Maths_Question_Sheet.cs",
+              "RelativeDocumentMoniker": "Questions\\Year01_Maths_Question_Sheet.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Questions\\Year01_Maths_Question_Sheet.cs",
+              "RelativeToolTip": "Questions\\Year01_Maths_Question_Sheet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:07:28.736Z",
+              "WhenOpened": "2026-08-12T07:48:59.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HopMedvedekConstants.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Data\\HopMedvedekConstants.cs",
-              "RelativeDocumentMoniker": "Data\\HopMedvedekConstants.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Data\\HopMedvedekConstants.cs",
-              "RelativeToolTip": "Data\\HopMedvedekConstants.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:04:40.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Leaves.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Leaves.cs",
-              "RelativeDocumentMoniker": "Scene\\Objects\\Leaves.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Leaves.cs",
-              "RelativeToolTip": "Scene\\Objects\\Leaves.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADAAAABgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:04:08.718Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TreeMid.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\TreeMid.cs",
-              "RelativeDocumentMoniker": "Scene\\Objects\\TreeMid.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\TreeMid.cs",
-              "RelativeToolTip": "Scene\\Objects\\TreeMid.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:02:35.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Cloud.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Cloud.cs",
-              "RelativeDocumentMoniker": "Scene\\Objects\\Cloud.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Cloud.cs",
-              "RelativeToolTip": "Scene\\Objects\\Cloud.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:02:50.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LevelBase.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
-              "RelativeDocumentMoniker": "Level\\LevelBase.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
-              "RelativeToolTip": "Level\\LevelBase.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAswDMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T12:01:33.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DeathMenu.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\DeathMenu.cs",
-              "RelativeDocumentMoniker": "GameStates\\Menus\\DeathMenu.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\DeathMenu.cs",
-              "RelativeToolTip": "GameStates\\Menus\\DeathMenu.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAgwD0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T10:20:06.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "QuestionEngine.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Questions\\QuestionEngine.cs",
-              "RelativeDocumentMoniker": "Questions\\QuestionEngine.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Questions\\QuestionEngine.cs",
-              "RelativeToolTip": "Questions\\QuestionEngine.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAwwH8AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T08:15:00.203Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GameHud.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Gui\\Hud\\GameHud.cs",
-              "RelativeDocumentMoniker": "Gui\\Hud\\GameHud.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Gui\\Hud\\GameHud.cs",
-              "RelativeToolTip": "Gui\\Hud\\GameHud.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAewJsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T07:57:41.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GamePlay.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\GamePlay\\GamePlay.cs",
-              "RelativeDocumentMoniker": "GameStates\\GamePlay\\GamePlay.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\GamePlay\\GamePlay.cs",
-              "RelativeToolTip": "GameStates\\GamePlay\\GamePlay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T07:51:49.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "HopMedvedek.cs",
               "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
               "RelativeDocumentMoniker": "HopMedvedek.cs",
               "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
               "RelativeToolTip": "HopMedvedek.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAkwGkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T07:50:32.561Z"
+              "WhenOpened": "2026-08-12T07:48:56.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QuestionEngine.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Questions\\QuestionEngine.cs",
+              "RelativeDocumentMoniker": "Questions\\QuestionEngine.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Questions\\QuestionEngine.cs",
+              "RelativeToolTip": "Questions\\QuestionEngine.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAjwDoAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:44:46.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LevelBase.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
+              "RelativeDocumentMoniker": "Level\\LevelBase.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
+              "RelativeToolTip": "Level\\LevelBase.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAADgvzcAAACOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:44:24.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OptionsMenu.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\OptionsMenu.cs",
+              "RelativeDocumentMoniker": "GameStates\\Menus\\OptionsMenu.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\OptionsMenu.cs",
+              "RelativeToolTip": "GameStates\\Menus\\OptionsMenu.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAD4vxcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:43:17.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\Menu.cs",
+              "RelativeDocumentMoniker": "GameStates\\Menus\\Menu.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\Menu.cs",
+              "RelativeToolTip": "GameStates\\Menus\\Menu.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAjwCcAAACMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:42:52.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameHud.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Gui\\Hud\\GameHud.cs",
+              "RelativeDocumentMoniker": "Gui\\Hud\\GameHud.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Gui\\Hud\\GameHud.cs",
+              "RelativeToolTip": "Gui\\Hud\\GameHud.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAADwv00AAAB/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:33:14.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Twig.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Twig.cs",
+              "RelativeDocumentMoniker": "Scene\\Objects\\Twig.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Twig.cs",
+              "RelativeToolTip": "Scene\\Objects\\Twig.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB0AAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:32:02.428Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "PauseMenu.cs",
-              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\PauseMenu.cs",
-              "RelativeDocumentMoniker": "GameStates\\Menus\\PauseMenu.cs",
-              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\PauseMenu.cs",
-              "RelativeToolTip": "GameStates\\Menus\\PauseMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAaAAAAAAAAAA==",
+              "Title": "Ground.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Ground.cs",
+              "RelativeDocumentMoniker": "Scene\\Objects\\Ground.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Ground.cs",
+              "RelativeToolTip": "Scene\\Objects\\Ground.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T07:48:56.714Z",
+              "WhenOpened": "2026-08-12T07:24:51.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HopMedvedekConstants.cs",
+              "DocumentMoniker": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Data\\HopMedvedekConstants.cs",
+              "RelativeDocumentMoniker": "Data\\HopMedvedekConstants.cs",
+              "ToolTip": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\HopMedvedek\\Data\\HopMedvedekConstants.cs",
+              "RelativeToolTip": "Data\\HopMedvedekConstants.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwDQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T07:22:37.439Z",
               "EditorCaption": ""
             }
           ]

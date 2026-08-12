@@ -51,12 +51,12 @@ public class QuestionEngine : GameComponent
 
         _rewardImages = new Dictionary<RewardType, Sprite>()
         {
-            [RewardType.Heart] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE, new Rectangle(0,0,15,16), new Vector2(7, 8)),
-            [RewardType.Coin] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE, new Rectangle(0,0,15,16), new Vector2(7,8)),
-            [RewardType.Pinecone] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE, new Rectangle(0,0,30,32), new Vector2(15,16)),
-            [RewardType.UltraJump] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(0,0,19,19), new Vector2(9, 9)), // ultrajump
-            [RewardType.Invincibility] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(19,0,19,19), new Vector2(9, 9)), // invincibility
-            [RewardType.Jetpack] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_REWARDS_TEXTURE, new Rectangle(38,0,19,19), new Vector2(9, 9)) // jetpack
+            [RewardType.Heart] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358,134,15,16), new Vector2(7, 8)),
+            [RewardType.Coin] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358,118,15,16), new Vector2(7,8)),
+            [RewardType.Pinecone] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(88,238,30,32), new Vector2(15,16)),
+            [RewardType.UltraJump] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(447,99,19,19), new Vector2(9, 9)), // ultrajump
+            [RewardType.Invincibility] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(466,99,19,19), new Vector2(9, 9)), // invincibility
+            [RewardType.Jetpack] = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(485,99,19,19), new Vector2(9, 9)) // jetpack
         };
     }
     private void GivePoints(bool correct)

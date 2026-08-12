@@ -33,11 +33,11 @@ public class Menu : GameState
         _scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
 
         _luckiestGuy = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
-        _buttonBackground = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE, new Rectangle(0,0, 358, 154), new Vector2(279, 77));
+        _buttonBackground = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0,84, 358, 154), new Vector2(279, 77));
 
         _scene.SceneTextureData = new Dictionary<string, Texture2D>
         {
-            [HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE)
+            [HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS)
         };
 
         _back = new Button(new Rectangle(10, 10, _buttonHeight, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK][Options.Options.Current.Language]);

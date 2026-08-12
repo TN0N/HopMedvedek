@@ -21,7 +21,7 @@ public class TreeMid : IRectangleSize, IPosition, ITextured
         _height = 37;
         _color = Color.White;
         _position = new();
-        _treeMidSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(0, 0, 28, 37), new Vector2(14, 18));
+        _treeMidSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 5, 28, 37), new Vector2(14, 18));
     }
 
     public float Width

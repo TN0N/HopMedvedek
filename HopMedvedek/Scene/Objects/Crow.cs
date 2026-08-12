@@ -16,7 +16,7 @@ public enum CrowAnimationState
 public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
 {
     protected LevelBase _level;
-    protected AnimatedSprite _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_CROW_TEXTURE, new Rectangle(0, 0, 53, 42), new Vector2(26, 21), 4, 700, true);
+    protected AnimatedSprite _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(75, 0, 53, 42), new Vector2(26, 21), 4, 700, true);
 
     protected BearState _state = BearState.BearIdle;
     public Crow(Game game, LevelBase level) : base(game)

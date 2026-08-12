@@ -12,8 +12,8 @@ public class Pinecone : Entity, IGravity, ICustomCollider
     protected AnimatedSprite _animation;
     public Pinecone(Game game) : base(game)
     {
-        _width = 28;
-        _height = 28;
+        _width = 30;
+        _height = 32;
 
         _decay = new Vector2(1f, 1f);
         _coefficientOfRestitution = 1f;
@@ -23,7 +23,7 @@ public class Pinecone : Entity, IGravity, ICustomCollider
         _rotationAngle = 0f;
         _layerDepth = 0.8f;
 
-        _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE, new Rectangle(0, 0, 57, 57), new Vector2(28, 28), 8, 500, true);
+        _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(88, 238, 30, 32), new Vector2(15, 16), 9, 500, true);
     }
     public float GravitationalAcceleration
     {

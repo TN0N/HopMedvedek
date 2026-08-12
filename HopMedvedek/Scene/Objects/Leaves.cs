@@ -46,13 +46,13 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     protected bool _playerLanded;
     protected Lifetime _stateLifeTime;
 
-    protected Sprite _defaultSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(0, 37, 62, 33), new Vector2(31, 16));
-    protected Sprite _bearLanededSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(372, 37, 62, 33), new Vector2(31, 16));
+    protected Sprite _defaultSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 42, 62, 33), new Vector2(31, 16));
+    protected Sprite _bearLanededSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(372, 42, 62, 33), new Vector2(31, 16));
     protected LeavesState _state;
 
     protected Dictionary<Enum, AnimatedSprite> _leafAnimations = new()
     {
-        [LeavesState.BearLanding] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(0, 37, 62, 33), new Vector2(31, 16), 7, HopMedvedekConstants.HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION, true),
+        [LeavesState.BearLanding] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 42, 62, 33), new Vector2(31, 16), 7, HopMedvedekConstants.HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION, true),
     };
 
     public Leaves(Game game) : base(game)

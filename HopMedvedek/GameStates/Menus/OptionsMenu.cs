@@ -21,8 +21,7 @@ public class OptionsMenu : Menu
         
         int buttonWidth = 280;
 
-        _scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_THUMB_TEXTURE, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_THUMB_TEXTURE));
-        _scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_TRACK_TEXTURE, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_TRACK_TEXTURE));
+        //_scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS));
 
 
         
@@ -34,8 +33,8 @@ public class OptionsMenu : Menu
         _gameVolumeSlider = new Slider(
             new Rectangle((int)_gameVolumeLabel.Position.X, (int)_gameVolumeLabel.Position.Y + 50, 280, 15),
             new Vector2(30, 35),
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_TRACK_TEXTURE, new Rectangle(0, 0, 480, 30), new Vector2(240, 15)),
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_THUMB_TEXTURE, new Rectangle(0, 0, 24, 32), new Vector2(12, 16)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 0, 480, 30), new Vector2(240, 15)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 84, 24, 32), new Vector2(12, 16)),
             _luckiestGuy,
             Options.Options.Current.GameVolume
             );
@@ -46,8 +45,8 @@ public class OptionsMenu : Menu
         _musicVolumeSlider = new Slider(
             new Rectangle((int)_musicVolumeLabel.Position.X, (int)_musicVolumeLabel.Position.Y + 50, 280, 15),
             new Vector2(30, 35),
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_TRACK_TEXTURE, new Rectangle(0, 0, 480, 30), new Vector2(240, 15)),
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_COMMON_SLIDER_THUMB_TEXTURE, new Rectangle(0, 0, 24, 32), new Vector2(12, 16)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 0, 480, 30), new Vector2(240, 15)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 84, 24, 32), new Vector2(12, 16)),
             _luckiestGuy,
             Options.Options.Current.MusicVolume
             );
@@ -56,7 +55,7 @@ public class OptionsMenu : Menu
         _languageLabel.Scale = new Vector2(0.8f, 0.8f);
         _languageDropdown = new Dropdown(
             new Rectangle((int)_languageLabel.Position.X, (int)_languageLabel.Position.Y + 35, 180, 40),
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE, new Rectangle(0, 0, 358, 154), new Vector2(279, 77)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 84, 358, 154), new Vector2(279, 77)),
             _luckiestGuy,
             (LanguageEnum)Options.Options.Current.Language,
             new Dictionary<object, string>()
@@ -75,7 +74,7 @@ public class OptionsMenu : Menu
         Enum.TryParse("_" + Options.Options.Current.GraphicsDeviceWidth + "x" + Options.Options.Current.GraphicsDeviceHeight, out ResolutionEnum resolution);
         _resolutionDropdown = new Dropdown(
             new Rectangle((int)_resolutionLabel.Position.X, (int)_resolutionLabel.Position.Y + 35, 180, 40),
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE, new Rectangle(0, 0, 358, 154), new Vector2(279, 77)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 84, 358, 154), new Vector2(279, 77)),
             _luckiestGuy,
             resolution,
             new Dictionary<object, string>()

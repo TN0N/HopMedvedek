@@ -27,7 +27,7 @@ public class Twig : IRectangleSize, IPosition, ITextured, IRotatable
         _height = 7;
         _color = Color.White;
         _position = new();
-        _twigSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(45, 4, 4, 7), new Vector2(2, 3));
+        _twigSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(45, 9, 4, 7), new Vector2(2, 3));
     }
 
     public float Width

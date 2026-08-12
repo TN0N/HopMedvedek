@@ -21,7 +21,7 @@ public class TreeBase: IRectangleSize, IPosition, ITextured
         _height = 27;
         _color = Color.White;
         _position = new();
-        _treeBaseSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE, new Rectangle(28, 10, 47, 27), new Vector2(23, 13));
+        _treeBaseSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(28, 16, 47, 27), new Vector2(23, 13));
     }
 
     public float Width { 

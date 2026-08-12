@@ -54,35 +54,28 @@ public class GameHud : Menu
 
         _scene.SceneTextureData = new Dictionary<string, Texture2D>
         {
-            [HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_CORRECT] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_CORRECT),
-            [HopMedvedekConstants.HOP_MEDVEDEK_WRONG] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_WRONG),
-            [HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS),
         };
-        _pauseButton = new Button(new Rectangle(10, 10, 50, 50), new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE, new Rectangle(0,0, 358,154), new Vector2(179, 77)), _font, "II");
+        _pauseButton = new Button(new Rectangle(10, 10, 50, 50), new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0,84, 358,154), new Vector2(179, 77)), _font, "II");
 
         _coinImage = new Image(
-            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE, new Rectangle(0, 0, 15, 16), new Vector2(7, 8), 8, 900, true),
+            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 118, 15, 16), new Vector2(7, 8), 8, 900, true),
             new Rectangle(20, 80, 30, 32)
             );
         _heartImage = new Image(
-            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_HEART_TEXTURE, new Rectangle(0, 0, 15, 16), new Vector2(7, 8), 6, 1000, true),
+            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 134, 15, 16), new Vector2(7, 8), 6, 1000, true),
             new Rectangle(20, 115, 30, 32)
             );
         _pineconeImage = new Image(
-            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE, new Rectangle(0, 0, 30, 32), new Vector2(15, 16), 9, 1300, true),
+            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(88, 238, 30, 32), new Vector2(15, 16), 9, 1300, true),
             new Rectangle(20, 150, 30, 32)
             );
         _owlImage = new Image(
-            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_OWL_TEXTURE, new Rectangle(0, 0, 68, 54), new Vector2(34, 27), 8, 700, true),
+            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 30, 68, 54), new Vector2(34, 27), 8, 700, true),
             new Rectangle(350, 100, 100, 80)
             );
         _questionBubble = new Image(
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE, new Rectangle(0, 0, 300, 400), new Vector2(150, 200)),
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 150, 243, 269), new Vector2(121, 134)),
             new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 105, 300, 400)
             );
 
@@ -137,9 +130,9 @@ public class GameHud : Menu
     }
     private void ShowCorrectWrong(bool correct)
     {
-        string texture = correct ? HopMedvedekConstants.HOP_MEDVEDEK_CORRECT : HopMedvedekConstants.HOP_MEDVEDEK_WRONG;
+        Rectangle rect = correct ? new Rectangle(382,84, 32, 32) : new Rectangle(414, 84, 32, 32);
         _correctWrong = new Image(
-                    new Sprite(texture, new Rectangle(0, 0, 128, 128), new Vector2(64, 64)),
+                    new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, rect, new Vector2(16, 16)),
                     new Rectangle(HopMedvedekConstants.screenWidth / 2, HopMedvedekConstants.screenHeight, 128, 128));
         _correctWrong.Velocity = new Vector2(0, -200);
         _correctWrong.Decay = new Vector2(1, 0.99f);

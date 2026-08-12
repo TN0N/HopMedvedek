@@ -29,13 +29,9 @@ public static class HopMedvedekConstants
 
     // Game texture names
     public static readonly string HOP_MEDVEDEK_BEAR_TEXTURE = "bear";
-    public static readonly string HOP_MEDVEDEK_CROW_TEXTURE = "crow";
     public static readonly string HOP_MEDVEDEK_GROUND_TEXTURE = "ground";
     public static readonly string HOP_MEDVEDEK_GRASS_TEXTURE = "grass";
     public static readonly string HOP_MEDVEDEK_DEFAULT_TEXTURE = "no_texture";
-    public static readonly string HOP_MEDVEDEK_NATURE_TEXTURE = "nature";
-    public static readonly string HOP_MEDVEDEK_PINECONE_TEXTURE = "pinecone";
-    public static readonly string HOP_MEDVEDEK_OWL_TEXTURE = "owl";
     public static readonly string HOP_MEDVEDEK_SCENE_ELEMENTS = "scene_elements";
 
     // Question texture names
@@ -43,20 +39,9 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTIONS_TEXTURES_02 = "year_01_language_questions_textures_02";
 
     // Hud
-    public static readonly string HOP_MEDVEDEK_COIN_TEXTURE = "coin";
-    public static readonly string HOP_MEDVEDEK_HEART_TEXTURE = "heart";
-    public static readonly string HOP_MEDVEDEK_PINECONE_ROTATE_TEXTURE = "pinecone_rotate";
-    public static readonly string HOP_MEDVEDEK_SPEECH_BUBBLE_TEXTURE = "speech";
-
-    public static readonly string HOP_MEDVEDEK_CORRECT = "correct";
-    public static readonly string HOP_MEDVEDEK_WRONG = "wrong";
-
-    public static readonly string HOP_MEDVEDEK_REWARDS_TEXTURE = "rewards";
+    public static readonly string HOP_MEDVEDEK_MENU_ELEMENTS = "menu_elements";
 
     // Menu Button texture names
-    public static readonly string HOP_MEDVEDEK_MAIN_MENU_BUTTON_TEXTURE = "main_menu_button";
-    public static readonly string HOP_MEDVEDEK_COMMON_SLIDER_THUMB_TEXTURE = "slider_thumb";
-    public static readonly string HOP_MEDVEDEK_COMMON_SLIDER_TRACK_TEXTURE = "slider_track";
 
     // Font names
     public static readonly string HOP_MEDVEDEK_LUCKIESTGUY_FONT = "LuckiestGuy";
@@ -66,7 +51,5 @@ public static class HopMedvedekConstants
     public static readonly string HOP_MEDVEDEK_MAIN_MENU_BACKGROUND = "main_menu_background";
 
     // Year_01 Language question textures
-
-    public static readonly string HOP_MEDVEDEK_YEAR_01 = "main_menu_background";
 
 }

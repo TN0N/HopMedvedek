@@ -54,10 +54,7 @@ public class LevelBase : GameComponent
             [HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_NATURE_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_PINECONE_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_CROW_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_CROW_TEXTURE),
-            [HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS),
             [HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS)
         };
     }

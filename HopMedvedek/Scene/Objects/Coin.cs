@@ -13,7 +13,7 @@ namespace HopMedvedek.Scene.Objects;
 
 public class Coin : Entity, IAARectangleCollider, IPosition, ICustomCollider
 {
-    protected AnimatedSprite _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_COIN_TEXTURE, new Rectangle(0, 0, 15, 16), new Vector2(7, 8), 8, 700, true);
+    protected AnimatedSprite _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 118, 15, 16), new Vector2(7, 8), 8, 700, true);
     protected IScene _scene;
 
     public Coin(Game game, IScene scene) : base(game)
