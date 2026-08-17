@@ -46,12 +46,15 @@ public class MainMenu : Menu
         {
             newState = new YearSelectionMenu(Game);
         }
-        
+
         else if (_options.WasReleased)
         {
             newState = new OptionsMenu(Game);
         }
-
+        else if (_shop.WasReleased)
+        {
+            newState = new ShopMenu(Game);
+        }
         if (newState is not null)
         {
             _hopMedvedek.PushState(newState);

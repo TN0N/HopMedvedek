@@ -19,6 +19,10 @@ public enum StringKey
 
     HOP_MEDVEDEK_OPTIONS_LANGUAGE_ENGLISH,
     HOP_MEDVEDEK_OPTIONS_LANGUAGE_SLOVENIAN,
+    // Shop menu
+    HOP_MEDVEDEK_SHOP_MENU_BUY,
+    HOP_MEDVEDEK_SHOP_MENU_APPLY,
+
 
     // Death menu
     HOP_MEDVEDEK_DEATH_MENU_SCORE,
@@ -227,6 +231,17 @@ public static class Strings
         {
             [LanguageEnum.en] = "Slovenščina",
             [LanguageEnum.si] = "Slovenščina",
+        },
+        // Shop
+        [StringKey.HOP_MEDVEDEK_SHOP_MENU_BUY] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Buy",
+            [LanguageEnum.si] = "Kupi"
+        },
+        [StringKey.HOP_MEDVEDEK_SHOP_MENU_APPLY] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Apply",
+            [LanguageEnum.si] = "Nastavi"
         },
         // Death menu
         [StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE] = new Dictionary<LanguageEnum, string>()
