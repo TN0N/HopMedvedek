@@ -24,11 +24,16 @@ public static class HopMedvedekConstants
 
     // Directories
     public static readonly string HOP_MEDVEDEK_OPTIONS_PATH = "Options/options.json";
+    public static readonly string HOP_MEDVEDEK_SHOP_ITEMS_PATH = "Data/ShopItems.json";
     public static readonly string HOP_MEDVEDEK_PLAYER_DATA_PATH = "Data/playerData.json";
     public static readonly string HOP_MEDVEDEK_ROOT_DIRECTORY = "Content";
 
     // Game texture names
     public static readonly string HOP_MEDVEDEK_BEAR_TEXTURE = "bear";
+    public static readonly string HOP_MEDVEDEK_BEAR_RED_TEXTURE = "bear_red";
+    public static readonly string HOP_MEDVEDEK_BEAR_GREEN_TEXTURE = "bear_green";
+    public static readonly string HOP_MEDVEDEK_BEAR_BLUE_TEXTURE = "bear_blue";
+    public static readonly string HOP_MEDVEDEK_BEAR_RAINBOW_TEXTURE = "bear_rainbow";
     public static readonly string HOP_MEDVEDEK_GROUND_TEXTURE = "ground";
     public static readonly string HOP_MEDVEDEK_GRASS_TEXTURE = "grass";
     public static readonly string HOP_MEDVEDEK_DEFAULT_TEXTURE = "no_texture";

@@ -18,6 +18,8 @@ public static class PlayerData
     {
         public int HighScore { get; set; }
         public int Coins { get; set; }
+        public string Skin { get; set; }
+        public string SkinTexture { get; set; }
         public int Year01LanguageLevelCorrectAnswers { get; set; }
         public int Year01LanguageLevelWrongAnswers { get; set; }
         public int Year01MathsLevelCorrectAnswers { get; set; }

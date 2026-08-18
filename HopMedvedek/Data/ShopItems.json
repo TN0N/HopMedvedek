@@ -1,6 +1,6 @@
 {
   "skin_bear_brown": {
-    "string_key": "HOP_MEDVEDEK_SKIN_BEAR_BROWN",
+    "name": "HOP_MEDVEDEK_SKIN_BEAR_BROWN",
     "price": 0,
     "owned": true,
     "texture": "bear"
@@ -28,11 +28,5 @@
     "price": 1000,
     "owned": false,
     "texture": "bear_rainbow"
-  },
-  "skin_bear_lightning": {
-    "name": "HOP_MEDVEDEK_SKIN_LIGHTNING",
-    "price": 1500,
-    "owned": false,
-    "texture": "bear_lightning"
   }
 }

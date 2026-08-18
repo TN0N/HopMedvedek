@@ -53,6 +53,10 @@ public class LevelBase : GameComponent
         {
             [HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_DEFAULT_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_RED_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_RED_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_GREEN_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_GREEN_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_BLUE_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_BLUE_TEXTURE),
+            [HopMedvedekConstants.HOP_MEDVEDEK_BEAR_RAINBOW_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_RAINBOW_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_GRASS_TEXTURE),
             [HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS),
             [HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS)

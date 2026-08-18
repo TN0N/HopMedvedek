@@ -22,7 +22,15 @@ public enum StringKey
     // Shop menu
     HOP_MEDVEDEK_SHOP_MENU_BUY,
     HOP_MEDVEDEK_SHOP_MENU_APPLY,
+    HOP_MEDVEDEK_SHOP_MENU_PRICE,
+    HOP_MEDVEDEK_SHOP_MENU_OWNED,
 
+    // Skin names
+    HOP_MEDVEDEK_SKIN_BEAR_BROWN,
+    HOP_MEDVEDEK_SKIN_BEAR_RED,
+    HOP_MEDVEDEK_SKIN_BEAR_GREEN,
+    HOP_MEDVEDEK_SKIN_BEAR_BLUE,
+    HOP_MEDVEDEK_SKIN_BEAR_RAINBOW,
 
     // Death menu
     HOP_MEDVEDEK_DEATH_MENU_SCORE,
@@ -243,6 +251,43 @@ public static class Strings
             [LanguageEnum.en] = "Apply",
             [LanguageEnum.si] = "Nastavi"
         },
+        [StringKey.HOP_MEDVEDEK_SHOP_MENU_PRICE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Price",
+            [LanguageEnum.si] = "Cena"
+        },
+        [StringKey.HOP_MEDVEDEK_SHOP_MENU_OWNED] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Owned",
+            [LanguageEnum.si] = "Kupljeno"
+        },
+        // Skin names
+        [StringKey.HOP_MEDVEDEK_SKIN_BEAR_BROWN] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Brown bear",
+            [LanguageEnum.si] = "Rjavi medved"
+        },
+        [StringKey.HOP_MEDVEDEK_SKIN_BEAR_RED] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Red bear",
+            [LanguageEnum.si] = "Rdeči medved"
+        },
+        [StringKey.HOP_MEDVEDEK_SKIN_BEAR_GREEN] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Green bear",
+            [LanguageEnum.si] = "Zeleni medved"
+        },
+        [StringKey.HOP_MEDVEDEK_SKIN_BEAR_BLUE] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Blue bear",
+            [LanguageEnum.si] = "Modri medved"
+        },
+        [StringKey.HOP_MEDVEDEK_SKIN_BEAR_RAINBOW] = new Dictionary<LanguageEnum, string>()
+        {
+            [LanguageEnum.en] = "Rainbow bear",
+            [LanguageEnum.si] = "Mavrični medved"
+        },
+
         // Death menu
         [StringKey.HOP_MEDVEDEK_DEATH_MENU_SCORE] = new Dictionary<LanguageEnum, string>()
         {

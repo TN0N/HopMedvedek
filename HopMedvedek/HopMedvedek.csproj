@@ -34,6 +34,9 @@
     <None Update="Data\playerData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\ShopItems.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Options\options.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
