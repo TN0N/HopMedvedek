@@ -20,6 +20,15 @@ public class YearSelectionMenu : Menu
         _year02 = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 300, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_02][Options.Options.Current.Language]);
         _year03 = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 400, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_03][Options.Options.Current.Language]);
         _year04 = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 500, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_04][Options.Options.Current.Language]);
+
+        _year02.Enabled = false;
+        _year03.Enabled = false;
+        _year04.Enabled = false;
+
+        _year02.Color = Color.Gray;
+        _year03.Color = Color.Gray;
+        _year04.Color = Color.Gray;
+
         /*
         Rectangle backgroundImageSize = new Rectangle(0, 0, 864, 1821);
         float scaleFactor = backgroundImageSize.Height / game.Window.ClientBounds.Height;

@@ -69,20 +69,26 @@ public class Renderer : DrawableGameComponent
 
     private bool InCameraBounds(Rectangle item)
     {
-        //return _cameraBounds.Intersects(item);
-        return true;
+        return _cameraBounds.Intersects(item);
+        //return true;
     }
     public override void Draw(GameTime gameTime)
     {
+
+        float scaleX = (float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth;
+        float scaleY = (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight;
+
         Vector2 cameraPosition = new Vector2(
-            -_scene.CameraMatrix.Translation.X * ((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth),
-            -_scene.CameraMatrix.Translation.Y * ((float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight));
+            -_scene.CameraMatrix.Translation.X / scaleX,
+            -_scene.CameraMatrix.Translation.Y / scaleY
+        );
 
         _cameraBounds = new Rectangle(
             (int)cameraPosition.X,
             (int)cameraPosition.Y,
-            GraphicsDevice.Viewport.Width+100,
-            GraphicsDevice.Viewport.Height+100);
+            HopMedvedekConstants.screenWidth + 100,
+            HopMedvedekConstants.screenHeight + 100
+        );
 
         if (_clearScreen)
             GraphicsDevice.Clear(Color.LightSkyBlue);
@@ -168,23 +174,22 @@ public class Renderer : DrawableGameComponent
                     _spriteBatch.Draw(
                     _scene.SceneTextureData[subjectMenuButton.GradeImage.Sprite(gameTime).Src],
                     new Rectangle((int)subjectMenuButton.GradeImage.Position.X, (int)subjectMenuButton.GradeImage.Position.Y, (int)subjectMenuButton.GradeImage.Width, (int)subjectMenuButton.GradeImage.Height),
-                    subjectMenuButton.Sprite(gameTime).SourceRectangle,
+                    subjectMenuButton.GradeImage.Sprite(gameTime).SourceRectangle,
                     subjectMenuButton.GradeImage.Color,
                     subjectMenuButton.GradeImage.RotationAngle,
                     Vector2.Zero,
                     SpriteEffects.None,
                     subjectMenuButton.GradeImage.LayerDepth);
 
-                    _spriteBatch.DrawString(
-                    subjectMenuButton.GradeLabel.Font,
-                    subjectMenuButton.GradeLabel.Text,
-                    subjectMenuButton.GradeLabel.Position,
-                    subjectMenuButton.GradeLabel.Color,
-                    subjectMenuButton.GradeLabel.Rotation,
-                    subjectMenuButton.GradeLabel.Origin,
-                    subjectMenuButton.GradeLabel.Scale,
+                    _spriteBatch.Draw(
+                    _scene.SceneTextureData[subjectMenuButton.GradeSmiley.Sprite(gameTime).Src],
+                    new Rectangle((int)subjectMenuButton.GradeSmiley.Position.X, (int)subjectMenuButton.GradeSmiley.Position.Y, (int)subjectMenuButton.GradeSmiley.Width, (int)subjectMenuButton.GradeSmiley.Height),
+                    subjectMenuButton.GradeSmiley.Sprite(gameTime).SourceRectangle,
+                    subjectMenuButton.GradeSmiley.Color,
+                    subjectMenuButton.GradeSmiley.RotationAngle,
+                    Vector2.Zero,
                     SpriteEffects.None,
-                    subjectMenuButton.GradeLabel.LayerDepth);
+                    subjectMenuButton.GradeSmiley.LayerDepth);
                 }
             }
             else if (item is Label label)
@@ -245,7 +250,7 @@ public class Renderer : DrawableGameComponent
         }
 
 
-        //System.Diagnostics.Debug.WriteLine("Drawn " + drawCount + "/" + _scene.Count() + " items");
+        System.Diagnostics.Debug.WriteLine("Drawn " + drawCount + "/" + _scene.Count() + " items");
         _spriteBatch.End();
         
     }

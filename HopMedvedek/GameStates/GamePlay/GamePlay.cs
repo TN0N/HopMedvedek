@@ -3,6 +3,7 @@ using Express.Graphics;
 using Express.Scores;
 using HopMedvedek.Audio;
 using HopMedvedek.Data;
+using HopMedvedek.Data.Strings;
 using HopMedvedek.Entities;
 using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
@@ -107,6 +108,15 @@ public class GamePlay : GameState
         /*foreach (var item in _level.Scene)
             if (item is GameComponent gameComponent)
                 Game.Components.Remove(gameComponent);*/
+    }
+    public override void ReloadLabels()
+    {
+        if (_questionEngine.CorrectAnswerLabel != null)
+            _questionEngine.CorrectAnswerLabel.Text = Strings.Localizations[_questionEngine.CorrectAnswer][Options.Options.Current.Language];
+        if (_questionEngine.WrongAnswerLabel != null)
+            _questionEngine.WrongAnswerLabel.Text = Strings.Localizations[_questionEngine.WrongAnswer][Options.Options.Current.Language];
+        _hud.ReloadLabels();
+
     }
     public Type LevelClass
     {

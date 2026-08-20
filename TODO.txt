@@ -1,0 +1,5 @@
+TO do:
+- Apply changes to resolution
+- Fix year01 textures
+- Fix math01 text size
+- make smiley faces look better

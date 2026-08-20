@@ -41,7 +41,7 @@ public class Menu : GameState
         };
 
         _back = new Button(new Rectangle(10, 10, _buttonHeight, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK][Options.Options.Current.Language]);
-        _back.Label.Scale = new Vector2(0.7f, 0.7f);
+        _back.Label.Scale = new Vector2(1.2f, 1.2f);
         _back.Label.Position.X = _back.Position.X;
         _back.Label.VerticalAlign = VerticalAlign.Middle;
         _back.Label.HorizontalAlign = HorizontalAlign.Center;
@@ -56,6 +56,11 @@ public class Menu : GameState
     {
         Game.Components.Remove(_scene);
         Game.Components.Remove(_renderer);
+    }
+
+    public override void ReloadLabels()
+    {
+        _back.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK][Options.Options.Current.Language];
     }
 
     public override void Update(GameTime gameTime)

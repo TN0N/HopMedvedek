@@ -4,6 +4,7 @@ using Express.Graphics;
 using Express.Scores;
 using HopMedvedek.Audio;
 using HopMedvedek.Data;
+using HopMedvedek.Data.Strings;
 using HopMedvedek.Gui.Elements;
 using HopMedvedek.Gui.Hud;
 using HopMedvedek.Level;
@@ -32,7 +33,7 @@ public class QuestionEngine : GameComponent
     protected LevelBase _level;
     protected GameHud _gameHud;
     private TimeSpan _lastGenerationRuntime = TimeSpan.Zero;
-    protected string _correctAnswer, _wrongAnswer;
+    protected StringKey _correctAnswer, _wrongAnswer, _questionText;
     protected Label _correctAnswerLabel, _wrongAnswerLabel;
     protected Branch _correctBranch, _wrongBranch;
     protected List<Question> _levelQuesitons;
@@ -105,8 +106,8 @@ public class QuestionEngine : GameComponent
         }
 
         // Add labels to the leaves
-        _correctAnswerLabel = new Label(_font, _correctAnswer, new Vector2(_correctBranch.Leaves.Position.X, _correctBranch.Leaves.Position.Y));
-        _wrongAnswerLabel = new Label(_font, _wrongAnswer, new Vector2(_wrongBranch.Leaves.Position.X, _wrongBranch.Leaves.Position.Y));
+        _correctAnswerLabel = new Label(_font, Strings.Localizations[_correctAnswer][Options.Options.Current.Language], new Vector2(_correctBranch.Leaves.Position.X, _correctBranch.Leaves.Position.Y));
+        _wrongAnswerLabel = new Label(_font, Strings.Localizations[_wrongAnswer][Options.Options.Current.Language], new Vector2(_wrongBranch.Leaves.Position.X, _wrongBranch.Leaves.Position.Y));
         _correctAnswerLabel.LayerDepth = 0.9f;
         _wrongAnswerLabel.LayerDepth = 0.9f;
 
@@ -121,7 +122,10 @@ public class QuestionEngine : GameComponent
 
         SoundEngine.Play(SoundEffectType.OwlQuestion, null, null, Options.Options.Current.GameVolume);
         // Show the image on the gameHud
-        _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds, question.QuestionText);
+        if (question.QuestionTextString != null)
+            _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds, question.QuestionTextString);
+        else
+            _gameHud.ShowQuestionImage(_level.QuestionSheet.QuestionSheetTextures, question.QuestionImageBounds, question.QuestionText);
     }
     private void GiveReward(GameTime gameTime)
     {
@@ -229,6 +233,26 @@ public class QuestionEngine : GameComponent
         //System.Diagnostics.Debug.WriteLine("Generating question");
         GenerateQuestions(gameTime);
         CheckAnswer(gameTime);
+    }
+
+    public StringKey CorrectAnswer
+    {
+        get => _correctAnswer;
+    }
+    public StringKey WrongAnswer
+    {
+        get => _wrongAnswer;
+    }
+
+    public Label CorrectAnswerLabel
+    { 
+        get => _correctAnswerLabel;
+        set => _correctAnswerLabel = value;
+    }
+    public Label WrongAnswerLabel
+    {
+        get => _wrongAnswerLabel;
+        set => _wrongAnswerLabel = value;
     }
 
     public GameHud GameHud

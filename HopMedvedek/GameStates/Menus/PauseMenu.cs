@@ -1,13 +1,7 @@
 ﻿using HopMedvedek.Data;
 using HopMedvedek.Data.Strings;
 using HopMedvedek.Gui.Elements;
-using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using Express.Graphics;
-using Artificial.Artificial.Mirage;
-using Express.Scores;
 using System.Linq;
 namespace HopMedvedek.GameStates.Menus;
 
@@ -41,6 +35,13 @@ public class PauseMenu : Menu
         _scene.Add(_options);
         _scene.Add(_restart);
         _scene.Add(_returnToMainmenu);
+    }
+    public override void ReloadLabels()
+    {
+        _continue.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_PAUSE_MENU_CONTINUE][Options.Options.Current.Language];
+        _options.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_PAUSE_MENU_OPTIONS][Options.Options.Current.Language];
+        _restart.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_PAUSE_MENU_RESTART][Options.Options.Current.Language];
+        _returnToMainmenu.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_RETURN_TO_MAIN_MENU][Options.Options.Current.Language];
     }
     public override void Update(GameTime gameTime)
     {

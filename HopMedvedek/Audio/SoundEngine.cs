@@ -8,6 +8,8 @@ namespace HopMedvedek.Audio;
 public sealed class SoundEngine : GameComponent
 {
     private SoundEffect[] _soundEffects = new SoundEffect[(int)SoundEffectType.LastType];
+    private List<SoundEffectInstance> _soundEffectInstances = new();
+    private SoundEffectInstance _music;
     private static SoundEngine _instance;
 
     private SoundEngine(Game game)
@@ -50,12 +52,12 @@ public sealed class SoundEngine : GameComponent
         _soundEffects[(int)SoundEffectType.Leaves] = Game.Content.Load<SoundEffect>("Leaves");
     }
 
-    public static void Play(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false)
+    public static void Play(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false, bool music=false)
     {
-        _instance.PlaySound(type, playerPosition, emitterPosition, volume, pan, looping);
+        _instance.PlaySound(type, playerPosition, emitterPosition, volume, pan, looping, music);
     }
 
-    public void PlaySound(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false)
+    public void PlaySound(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false, bool music = false)
     {
         pan = Math.Clamp(pan, -1f, 1f);
         //_soundEffects[(int)type].Play(1, 0, pan);
@@ -77,10 +79,26 @@ public sealed class SoundEngine : GameComponent
         soundEffectInstance.Volume = volume;
         soundEffectInstance.IsLooped = looping;
 
-
         soundEffectInstance.Play();
+
+        if (music)
+            _music = soundEffectInstance;
+        else
+            _soundEffectInstances.Add(soundEffectInstance);
+
+        
 
         //soundEffectInstance.Volume = Options.Options.Current.GameVolume;
 
+    }
+
+    public void SetMusicVolume(float volume)
+    { 
+        _music.Volume = volume;
+    }
+    public void SetSoundsVolume(float volume)
+    {
+        foreach (SoundEffectInstance sei in _soundEffectInstances)
+            sei.Volume = volume;
     }
 }

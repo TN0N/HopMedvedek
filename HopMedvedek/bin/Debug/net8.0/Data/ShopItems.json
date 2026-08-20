@@ -1,32 +1,32 @@
 {
   "skin_bear_brown": {
-    "Name": "HOP_MEDVEDEK_SKIN_BEAR_BROWN",
-    "Price": 0,
-    "Owned": true,
-    "Texture": "bear"
+    "name": "HOP_MEDVEDEK_SKIN_BEAR_BROWN",
+    "price": 0,
+    "owned": true,
+    "texture": "bear"
   },
   "skin_bear_red": {
-    "Name": "HOP_MEDVEDEK_SKIN_BEAR_RED",
-    "Price": 500,
-    "Owned": true,
-    "Texture": "bear_red"
+    "name": "HOP_MEDVEDEK_SKIN_BEAR_RED",
+    "price": 500,
+    "owned": false,
+    "texture": "bear_red"
   },
   "skin_bear_green": {
-    "Name": "HOP_MEDVEDEK_SKIN_BEAR_GREEN",
-    "Price": 500,
-    "Owned": false,
-    "Texture": "bear_green"
+    "name": "HOP_MEDVEDEK_SKIN_BEAR_GREEN",
+    "price": 500,
+    "owned": false,
+    "texture": "bear_green"
   },
   "skin_bear_blue": {
-    "Name": "HOP_MEDVEDEK_SKIN_BEAR_BLUE",
-    "Price": 500,
-    "Owned": true,
-    "Texture": "bear_blue"
+    "name": "HOP_MEDVEDEK_SKIN_BEAR_BLUE",
+    "price": 500,
+    "owned": false,
+    "texture": "bear_blue"
   },
   "skin_bear_rainbow": {
-    "Name": "HOP_MEDVEDEK_SKIN_BEAR_RAINBOW",
-    "Price": 1000,
-    "Owned": true,
-    "Texture": "bear_rainbow"
+    "name": "HOP_MEDVEDEK_SKIN_BEAR_RAINBOW",
+    "price": 1000,
+    "owned": false,
+    "texture": "bear_rainbow"
   }
 }

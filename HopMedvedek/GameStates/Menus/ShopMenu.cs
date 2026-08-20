@@ -59,6 +59,13 @@ public class ShopMenu : Menu
         _scene.Add(_rightButton);
         _scene.Add(_back);
     }
+    public override void ReloadLabels()
+    {
+        _buyButton.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_SHOP_MENU_BUY][Options.Options.Current.Language];
+        _applyButton.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_SHOP_MENU_APPLY][Options.Options.Current.Language];
+        _back.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK][Options.Options.Current.Language];
+        LoadSkin();
+    }
     private void LoadSkin()
     {
         _scene.Remove(_skinImage);

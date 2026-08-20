@@ -197,3 +197,8 @@ C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_rainbow.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_red.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Data\ShopItems.json
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Data\ShopItems.json
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_blue.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_green.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_rainbow.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_red.xnb

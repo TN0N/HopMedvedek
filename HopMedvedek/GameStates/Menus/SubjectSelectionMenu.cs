@@ -67,6 +67,14 @@ public class SubjectSelectionMenu : Menu
         }
         _scene.Add(_back);
     }
+    public override void ReloadLabels()
+    {
+        foreach (SubjectType subjectName in _subject.Keys)
+        {
+            _buttons[subjectName].Label.Text = _subject[subjectName];
+        }
+        _back.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK][Options.Options.Current.Language];
+    }
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);

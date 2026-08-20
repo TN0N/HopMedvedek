@@ -4,15 +4,13 @@ using Express.Scene;
 using Express.Scene.Objects;
 using Express.Scores;
 using HopMedvedek.Data;
+using HopMedvedek.Data.Strings;
 using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
 using HopMedvedek.Gui.Elements;
 using HopMedvedek.Level;
-using HopMedvedek.Options;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
 using System.Collections.Generic;
 
 namespace HopMedvedek.Gui.Hud;
@@ -23,6 +21,7 @@ public class GameHud : Menu
 
     protected Image _coinImage, _heartImage, _pineconeImage, _owlImage, _questionImage, _questionBubble, _correctWrong, _rewardImage, _activeReward;
     protected Button _pauseButton;
+    protected StringKey _questionText;
 
     protected SpriteFont _font;
 
@@ -67,7 +66,7 @@ public class GameHud : Menu
             new Rectangle(20, 115, 30, 32)
             );
         _pineconeImage = new Image(
-            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(88, 238, 30, 32), new Vector2(15, 16), 9, 1300, true),
+            new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 238, 30, 32), new Vector2(15, 16), 9, 1300, true),
             new Rectangle(20, 150, 30, 32)
             );
         _owlImage = new Image(
@@ -75,8 +74,8 @@ public class GameHud : Menu
             new Rectangle(350, 100, 100, 80)
             );
         _questionBubble = new Image(
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 150, 243, 269), new Vector2(121, 134)),
-            new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 105, 300, 400)
+            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(358, 150, 235, 269), new Vector2(117, 134)),
+            new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 135, 235, 269)
             );
 
         _playerScore = new Label(_font, "0", new Vector2(HopMedvedekConstants.screenWidth / 2, 20));
@@ -88,10 +87,6 @@ public class GameHud : Menu
         _playerCoins.HorizontalAlign = HorizontalAlign.Left;
         _playerHearts.HorizontalAlign = HorizontalAlign.Left;
         _playerPinecones.HorizontalAlign = HorizontalAlign.Left;
-
-        
-        
-        
     }
     public void ShowReward(Sprite rewardTexture, int? rewardAmount)
     { 
@@ -108,14 +103,14 @@ public class GameHud : Menu
        
         _scene.Add(_rewardImage);
     }
-    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, string questionText)
+    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, StringKey questionText)
     {
-        
+        _questionText = questionText;
         _questionImage = new Image(
             new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
             new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y+120, 128, 192)
             );
-        _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y - 90));
+        _questionLabel = new Label(_font, Strings.Localizations[questionText][Options.Options.Current.Language], new Vector2(_questionImage.Position.X, _questionImage.Position.Y + 110));
         _questionLabel.HorizontalAlign = HorizontalAlign.Center;
         _questionLabel.VerticalAlign = VerticalAlign.Middle;
         _questionLabel.Color = Color.Black;
@@ -127,6 +122,25 @@ public class GameHud : Menu
         _scene.Add(_questionImage);
         _scene.Add(_questionLabel);
         
+    }
+    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, string questionText)
+    {
+        _questionImage = new Image(
+            new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
+            new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 120, 128, 192)
+            );
+        _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y + 110));
+        _questionLabel.HorizontalAlign = HorizontalAlign.Center;
+        _questionLabel.VerticalAlign = VerticalAlign.Middle;
+        _questionLabel.Color = Color.Black;
+        _questionLabel.LayerDepth = 0.9f;
+        _questionLabel.Scale = new Vector2(0.7f, 0.7f);
+        _questionImage.LayerDepth = 0.9f;
+        _scene.Add(_questionBubble);
+        _questionBubble.LayerDepth = 0.7f;
+        _scene.Add(_questionImage);
+        _scene.Add(_questionLabel);
+
     }
     private void ShowCorrectWrong(bool correct)
     {
@@ -171,18 +185,9 @@ public class GameHud : Menu
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
-        //float v = -200 * (float)gameTime.ElapsedGameTime.TotalSeconds;
-        //Vector2 correctWrongVelocity = new Vector2(0, v);
-        /**/
 
         if (_pauseButton.WasReleased)
-        {
-            //newState = new OptionsMenu(Game);
-
-            System.Diagnostics.Debug.WriteLine("Pause button pressed");
-
             _hopMedvedek.StackState(new PauseMenu(Game));
-        }
 
         if (_correctWrong != null)
         {
@@ -209,9 +214,7 @@ public class GameHud : Menu
         }
 
         if (_level.Bear.ActiveReward != RewardType.None)
-        {
             _activeRewardTimer.Text = "" + (int)(_rewardDuration - (gameTime.TotalGameTime.TotalMilliseconds - _activeRewardStartTime) / 1000);
-        }
         else if (_activeRewardTimer != null)
         {
             _scene.Remove(_activeReward);
@@ -281,5 +284,9 @@ public class GameHud : Menu
 
         Game.Components.Remove(_scene);
         
+    }
+    public override void ReloadLabels()
+    {
+        _questionLabel.Text = Strings.Localizations[_questionText][Options.Options.Current.Language];
     }
 }

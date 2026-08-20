@@ -3,6 +3,7 @@ using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects;
 using Express.Scores;
+using HopMedvedek.Audio;
 using HopMedvedek.Data;
 using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Graphics;
@@ -88,7 +89,8 @@ public class LevelBase : GameComponent
         //Scores.score = (int)(-_bear.Position.Y + 703);
         Scores.score = (int)MathF.Max(Scores.score, (int)-_bear.Position.Y + 700);
         Matrix matrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
-        _scene.CameraMatrix = Matrix.CreateTranslation(0, -(_bear.Position.Y - 720), 0) * matrix;
+
+        _scene.CameraMatrix = Matrix.CreateTranslation(0, -(MathF.Round(_bear.Position.Y) - 720), 0) * matrix;
 
         //_scene.CameraMatrix.M42 = -(_bear.Position.Y - 720);
 
@@ -99,18 +101,14 @@ public class LevelBase : GameComponent
 
         if (Math.Abs((int)-_bear.Position.Y + 700 - Scores.score) >= 500)
         {
-            //System.Diagnostics.Debug.WriteLine("Bear dies");
             _bear.PlayerHP--;
+            SoundEngine.Play(SoundEffectType.BearHit, null, null, Options.Options.Current.GameVolume);
             if (_bear.PlayerHP > 0)
             {
                 _bear.State = BearState.BearDazed;
-                _bear.Velocity.Y = -1000;
+                _bear.Velocity.Y = -900;
             }
         }
-        /*if (PlayerHP < 1)
-        {
-            _hopMedvedek.PushState(new MainMenu(Game));
-        }*/
     }
     public Dictionary<string, Texture2D> TextureData
     {

@@ -37,6 +37,13 @@ public class MainMenu : Menu
         _scene.Add(_shop);
         _scene.Add(_options);
     }
+    public override void ReloadLabels()
+    {
+        _play.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_PLAY][Options.Options.Current.Language];
+        _shop.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_SHOP][Options.Options.Current.Language];
+        _options.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_MAIN_MENU_OPTIONS][Options.Options.Current.Language];
+
+    }
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);

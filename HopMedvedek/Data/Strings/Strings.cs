@@ -190,8 +190,8 @@ public static class Strings
     // Common
         [StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Back",
-            [LanguageEnum.si] = "Nazaj",
+            [LanguageEnum.en] = "<",
+            [LanguageEnum.si] = "<",
         },
     // Main Menu
         [StringKey.HOP_MEDVEDEK_MAIN_MENU_PLAY] = new Dictionary<LanguageEnum, string>()
@@ -377,8 +377,8 @@ public static class Strings
         // Year 01 language questions
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "What is on the picture?",
-            [LanguageEnum.si] = "Kaj je na sliki?",
+            [LanguageEnum.en] = "What is it?",
+            [LanguageEnum.si] = "Kaj je to?",
         },
         // Year 01 language answers
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_APPLE] = new Dictionary<LanguageEnum, string>()

@@ -23,7 +23,7 @@ public class Pinecone : Entity, IGravity, ICustomCollider
         _rotationAngle = 0f;
         _layerDepth = 0.8f;
 
-        _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(88, 238, 30, 32), new Vector2(15, 16), 9, 500, true);
+        _animation = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 238, 30, 32), new Vector2(15, 16), 9, 500, true);
     }
     public float GravitationalAcceleration
     {

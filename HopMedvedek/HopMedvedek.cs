@@ -8,6 +8,7 @@ using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace HopMedvedek;
@@ -84,6 +85,14 @@ public class HopMedvedek : Game {
         }
         currentActiveState.Activate();
     }
+
+    public void ApplyOptions()
+    {
+        SoundEngine.Instance.SetMusicVolume(Options.Options.Current.MusicVolume);
+        SoundEngine.Instance.SetSoundsVolume(Options.Options.Current.GameVolume);
+        foreach (GameState state in _stateStack)
+            state.ReloadLabels();
+    }
     protected override void Initialize()
     {
         LoadOptions();
@@ -97,7 +106,7 @@ public class HopMedvedek : Game {
         PushState(new MainMenu(this));
         
         base.Initialize();
-        SoundEngine.Play(SoundEffectType.HopMedvedekMainTheme, null, null, Options.Options.Current.MusicVolume, looping: true);
+        SoundEngine.Play(SoundEffectType.HopMedvedekMainTheme, null, null, Options.Options.Current.MusicVolume, looping: true, music:true);
     }
     protected override void Update(GameTime gameTime)
     {

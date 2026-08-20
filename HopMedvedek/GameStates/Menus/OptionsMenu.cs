@@ -68,7 +68,7 @@ public class OptionsMenu : Menu
 
         
 
-        _resolutionLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language], new Vector2(20, 420));
+        _resolutionLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language], new Vector2(210, 320));
         _resolutionLabel.Scale = new Vector2(0.8f, 0.8f);
 
         Enum.TryParse("_" + Options.Options.Current.GraphicsDeviceWidth + "x" + Options.Options.Current.GraphicsDeviceHeight, out ResolutionEnum resolution);
@@ -100,6 +100,14 @@ public class OptionsMenu : Menu
         _scene.Add(_musicVolumeLabel);
         _scene.Add(_languageLabel);
     }
+    public override void ReloadLabels()
+    {
+        _resolutionLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language];
+        _gameVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL][Options.Options.Current.Language];
+        _musicVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_MUSIC_VOLUME_LABEL][Options.Options.Current.Language];
+        _languageLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_LANGUAGE_LABEL][Options.Options.Current.Language];
+        
+    }
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
@@ -119,6 +127,8 @@ public class OptionsMenu : Menu
             Options.Options.Current.GraphicsDeviceWidth = int.Parse(dimensions[0]);
             Options.Options.Current.GraphicsDeviceHeight = int.Parse(dimensions[1]);
             Options.Options.SaveOptions();
+
+            _hopMedvedek.ApplyOptions();
         }
 
         if (newState is not null)
