@@ -42,7 +42,7 @@ public class GameHud : Menu
     public GameHud(Game game, LevelBase level) : base(game)
     {
         _scene = new SimpleScene(game);
-        _scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
+        
         _level = level;
         
     }
@@ -50,7 +50,7 @@ public class GameHud : Menu
     {
 
         _font = Game.Content.Load<SpriteFont>(HopMedvedekConstants.HOP_MEDVEDEK_LUCKIESTGUY_FONT);
-
+        _scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
         _scene.SceneTextureData = new Dictionary<string, Texture2D>
         {
             [HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS] = Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS),
@@ -103,25 +103,38 @@ public class GameHud : Menu
        
         _scene.Add(_rewardImage);
     }
-    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, StringKey questionText)
+    private void CreateQuestionLabel(Rectangle textureRectangle, string questionText)
     {
-        _questionText = questionText;
-        _questionImage = new Image(
-            new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
-            new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y+120, 128, 192)
-            );
-        _questionLabel = new Label(_font, Strings.Localizations[questionText][Options.Options.Current.Language], new Vector2(_questionImage.Position.X, _questionImage.Position.Y + 110));
+        if (textureRectangle.Width == 0 || textureRectangle.Height == 0)
+            _questionLabel = new Label(_font, questionText, new Vector2(204, 240));
+        else
+            _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y + 110));
+
+        float maxTextWidth = _questionBubble.Width - 70;
+        float textWidth = _font.MeasureString(questionText).X;
+
+        float scaleFactor = maxTextWidth / textWidth;
+
         _questionLabel.HorizontalAlign = HorizontalAlign.Center;
         _questionLabel.VerticalAlign = VerticalAlign.Middle;
         _questionLabel.Color = Color.Black;
         _questionLabel.LayerDepth = 0.9f;
-        _questionLabel.Scale = new Vector2(0.7f,0.7f);
+        _questionLabel.Scale = new Vector2(scaleFactor,scaleFactor);
+    }
+    public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, StringKey questionText)
+    {
+        _questionText = questionText;
+        _questionImage = new Image(
+                new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
+                new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 120, 128, 192)
+                );
+        CreateQuestionLabel(textureRectangle, Strings.Localizations[questionText][Options.Options.Current.Language]);
+
         _questionImage.LayerDepth = 0.9f;
         _scene.Add(_questionBubble);
         _questionBubble.LayerDepth = 0.7f;
         _scene.Add(_questionImage);
         _scene.Add(_questionLabel);
-        
     }
     public void ShowQuestionImage(string questionSheetTexture, Rectangle textureRectangle, string questionText)
     {
@@ -129,18 +142,13 @@ public class GameHud : Menu
             new Sprite(questionSheetTexture, textureRectangle, new Vector2(textureRectangle.Width / 2, textureRectangle.Height / 2)),
             new Rectangle(HopMedvedekConstants.screenWidth / 2, (int)_owlImage.Position.Y + 120, 128, 192)
             );
-        _questionLabel = new Label(_font, questionText, new Vector2(_questionImage.Position.X, _questionImage.Position.Y + 110));
-        _questionLabel.HorizontalAlign = HorizontalAlign.Center;
-        _questionLabel.VerticalAlign = VerticalAlign.Middle;
-        _questionLabel.Color = Color.Black;
-        _questionLabel.LayerDepth = 0.9f;
-        _questionLabel.Scale = new Vector2(0.7f, 0.7f);
+        CreateQuestionLabel(textureRectangle, questionText);
+
         _questionImage.LayerDepth = 0.9f;
         _scene.Add(_questionBubble);
         _questionBubble.LayerDepth = 0.7f;
         _scene.Add(_questionImage);
         _scene.Add(_questionLabel);
-
     }
     private void ShowCorrectWrong(bool correct)
     {
@@ -285,8 +293,9 @@ public class GameHud : Menu
         Game.Components.Remove(_scene);
         
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
-        _questionLabel.Text = Strings.Localizations[_questionText][Options.Options.Current.Language];
+        if (_questionLabel != null)
+            _questionLabel.Text = Strings.Localizations[_questionText][Options.Options.Current.Language];
     }
 }

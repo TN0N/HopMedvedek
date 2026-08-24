@@ -32,7 +32,7 @@ public class CrowBehaviour : Behaviour
                 // If the crow sees the player, target the player (remember the original Y coordinate)
                 if (SeesPlayer(gameTime))
                 {
-                    SoundEngine.Play(SoundEffectType.CrowAttack, _level.Bear.Position, _gameObject.Position, Options.Options.Current.GameVolume);
+                    SoundEngine.Play(SoundEffectType.CrowAttack, null, null, Options.Options.Current.GameVolume);
                     _timeSinceLastAttack = gameTime.TotalGameTime.TotalMilliseconds;
                     _prediveHeight = (int)_gameObject.Position.Y;
                     _targetPosition = _level.Bear.Position;

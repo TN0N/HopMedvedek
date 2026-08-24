@@ -50,14 +50,28 @@ public sealed class SoundEngine : GameComponent
         _soundEffects[(int)SoundEffectType.ButtonHover] = Game.Content.Load<SoundEffect>("ButtonHover");
         _soundEffects[(int)SoundEffectType.Coin] = Game.Content.Load<SoundEffect>("CoinSound");
         _soundEffects[(int)SoundEffectType.Leaves] = Game.Content.Load<SoundEffect>("Leaves");
+        _soundEffects[(int)SoundEffectType.PineconeFlying] = Game.Content.Load<SoundEffect>("PineconeFlying");
     }
-
-    public static void Play(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false, bool music=false)
+    public void Calculate3DSound(SoundEffectInstance soundEffectInstance, Vector2 playerPosition, Vector2 emitterPosition)
     {
-        _instance.PlaySound(type, playerPosition, emitterPosition, volume, pan, looping, music);
+        // Volume
+        float distance = Vector2.Distance(playerPosition, emitterPosition);
+        float relativeVolume = 1f - (distance / 500f);
+        System.Diagnostics.Debug.WriteLine(playerPosition + " " + emitterPosition + " " + relativeVolume);
+        ; // Adjust the divisor to control the falloff distance
+
+        soundEffectInstance.Volume = Math.Clamp(relativeVolume * Options.Options.Current.GameVolume, 0f, 1f);
+
+        // Pan
+        float pan = (emitterPosition.X - playerPosition.X) / 500f; // Adjust the divisor to control the pan sensitivity
+        soundEffectInstance.Pan = Math.Clamp(pan, -1f, 1f);
+    }
+    public static SoundEffectInstance Play(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false, bool music=false)
+    {
+        return _instance.PlaySound(type, playerPosition, emitterPosition, volume, pan, looping, music);
     }
 
-    public void PlaySound(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false, bool music = false)
+    public SoundEffectInstance PlaySound(SoundEffectType type, Vector2? playerPosition, Vector2? emitterPosition, float volume, float pan = 0f, bool looping=false, bool music = false)
     {
         pan = Math.Clamp(pan, -1f, 1f);
         //_soundEffects[(int)type].Play(1, 0, pan);
@@ -65,20 +79,13 @@ public sealed class SoundEngine : GameComponent
 
         SoundEffectInstance soundEffectInstance = _soundEffects[(int)type].CreateInstance();
 
+        soundEffectInstance.IsLooped = looping;
+        soundEffectInstance.Volume = volume;
+
         if (playerPosition != null && emitterPosition != null)
         {
-            AudioListener _player = new AudioListener();
-            _player.Position = new Vector3((Vector2)playerPosition, 0);
-
-            AudioEmitter _emitter = new AudioEmitter();
-            _emitter.Position = new Vector3((Vector2)emitterPosition, 0);
-
-            soundEffectInstance.Apply3D(_player, _emitter);
+            Calculate3DSound(soundEffectInstance, (Vector2)playerPosition, (Vector2)emitterPosition);
         }
-
-        soundEffectInstance.Volume = volume;
-        soundEffectInstance.IsLooped = looping;
-
         soundEffectInstance.Play();
 
         if (music)
@@ -87,11 +94,15 @@ public sealed class SoundEngine : GameComponent
             _soundEffectInstances.Add(soundEffectInstance);
 
         
-
+        return soundEffectInstance;
         //soundEffectInstance.Volume = Options.Options.Current.GameVolume;
 
     }
-
+    public void StopSound(SoundEffectInstance soundEffectInstance)
+    { 
+        soundEffectInstance.Stop();
+        _soundEffectInstances.Remove(soundEffectInstance);
+    }
     public void SetMusicVolume(float volume)
     { 
         _music.Volume = volume;

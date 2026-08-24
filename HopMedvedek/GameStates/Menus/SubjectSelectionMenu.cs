@@ -67,7 +67,7 @@ public class SubjectSelectionMenu : Menu
         }
         _scene.Add(_back);
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
         foreach (SubjectType subjectName in _subject.Keys)
         {

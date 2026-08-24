@@ -66,7 +66,7 @@ public class Bear : Entity, IAARectangleCollider, IPosition, IGravity
         //Vector2 pineconeVelocity = new Vector2(0f, -500f);
         float throwSpeed = 800f;
 
-        Pinecone pinecone = new Pinecone(Game);
+        Pinecone pinecone = new Pinecone(Game, _level);
 
         Vector2 direction = Vector2.Normalize(mousePosition - Position);
 

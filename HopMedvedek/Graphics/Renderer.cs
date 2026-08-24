@@ -248,9 +248,6 @@ public class Renderer : DrawableGameComponent
                 drawCount++;
             }
         }
-
-
-        System.Diagnostics.Debug.WriteLine("Drawn " + drawCount + "/" + _scene.Count() + " items");
         _spriteBatch.End();
         
     }

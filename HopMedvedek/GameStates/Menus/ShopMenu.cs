@@ -59,7 +59,7 @@ public class ShopMenu : Menu
         _scene.Add(_rightButton);
         _scene.Add(_back);
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
         _buyButton.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_SHOP_MENU_BUY][Options.Options.Current.Language];
         _applyButton.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_SHOP_MENU_APPLY][Options.Options.Current.Language];

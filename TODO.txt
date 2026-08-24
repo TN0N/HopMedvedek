@@ -1,4 +1,4 @@
 TO do:
-- Apply changes to resolution
-- Fix math01 text size
-- fix maths answers
+- Change Font to something better
+- Apply continueous sound to pinecone
+- Apply rotation to pinecone

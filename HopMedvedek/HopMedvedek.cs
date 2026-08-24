@@ -90,8 +90,17 @@ public class HopMedvedek : Game {
     {
         SoundEngine.Instance.SetMusicVolume(Options.Options.Current.MusicVolume);
         SoundEngine.Instance.SetSoundsVolume(Options.Options.Current.GameVolume);
+
+        _graphics.PreferredBackBufferWidth = Options.Options.Current.GraphicsDeviceWidth;
+        _graphics.PreferredBackBufferHeight = Options.Options.Current.GraphicsDeviceHeight;
+        _graphics.ApplyChanges();
+
         foreach (GameState state in _stateStack)
-            state.ReloadLabels();
+        {
+            state.Initialize();
+            state.Reload();
+        }
+        
     }
     protected override void Initialize()
     {

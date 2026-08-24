@@ -16,7 +16,7 @@ public class GameState : GameComponent
     public virtual void Deactivate()
     {
     }
-    public virtual void ReloadLabels()
+    public virtual void Reload()
     { 
     }
 }

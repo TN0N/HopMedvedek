@@ -57,7 +57,7 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
         {
             if (bear.Position.Y > _position.Y && bear.ActiveReward != RewardType.Invincibility)
             {
-                SoundEngine.Play(SoundEffectType.BearHit, _level.Bear.Position, _position, Options.Options.Current.GameVolume);
+                SoundEngine.Play(SoundEffectType.BearHit, null, null, Options.Options.Current.GameVolume);
                 bear.State = BearState.BearDazed;
                 _level.Bear.PlayerHP--;
                 /*
@@ -80,7 +80,6 @@ public class Crow : Entity, IAARectangleCollider, IPosition, ICustomCollider
         if (item is Pinecone pinecone)
         {
             SoundEngine.Play(SoundEffectType.CrowHit, null, null, Options.Options.Current.GameVolume);
-            _level.Scene.Remove(pinecone);
             _level.Scene.Remove(this);
         }
     }

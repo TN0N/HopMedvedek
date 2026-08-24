@@ -12,7 +12,6 @@ using HopMedvedek.Level;
 using HopMedvedek.Physics;
 using Microsoft.Xna.Framework;
 using System;
-using System.Linq;
 
 namespace HopMedvedek.GameStates.GamePlay;
 
@@ -49,7 +48,7 @@ public class GamePlay : GameState
     {
         _hud = new GameHud(Game, _level);
         _physics = new PhysicsEngine(Game, _level, _hud);
-        System.Diagnostics.Debug.WriteLine(Game.Window.ClientBounds.Width + "/" + HopMedvedekConstants.screenWidth + "   " + Game.Window.ClientBounds.Height + "/" + HopMedvedekConstants.screenHeight);
+        
         _level.Scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
 
         _gameRenderer = new Renderer(Game, _level.Scene);
@@ -73,7 +72,6 @@ public class GamePlay : GameState
     }
     public override void Activate()
     {
-        System.Diagnostics.Debug.WriteLine("Activating");
         Game.Components.Add(_level);
         
         Game.Components.Add(_hud);
@@ -109,13 +107,14 @@ public class GamePlay : GameState
             if (item is GameComponent gameComponent)
                 Game.Components.Remove(gameComponent);*/
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
-        if (_questionEngine.CorrectAnswerLabel != null)
+        if (_questionEngine.CorrectAnswerLabel != null && _questionEngine.CorrectAnswerString == null)
             _questionEngine.CorrectAnswerLabel.Text = Strings.Localizations[_questionEngine.CorrectAnswer][Options.Options.Current.Language];
-        if (_questionEngine.WrongAnswerLabel != null)
+        if (_questionEngine.WrongAnswerLabel != null && _questionEngine.WrongAnswerString == null)
             _questionEngine.WrongAnswerLabel.Text = Strings.Localizations[_questionEngine.WrongAnswer][Options.Options.Current.Language];
-        _hud.ReloadLabels();
+        if (_questionEngine.CorrectAnswerString == null)
+            _hud.Reload();
 
     }
     public Type LevelClass

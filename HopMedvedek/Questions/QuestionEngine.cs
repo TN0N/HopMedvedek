@@ -33,6 +33,7 @@ public class QuestionEngine : GameComponent
     protected LevelBase _level;
     protected GameHud _gameHud;
     private TimeSpan _lastGenerationRuntime = TimeSpan.Zero;
+    protected string _correctAnswerString, _wrongAnswerString;
     protected StringKey _correctAnswer, _wrongAnswer, _questionText;
     protected Label _correctAnswerLabel, _wrongAnswerLabel;
     protected Branch _correctBranch, _wrongBranch;
@@ -84,16 +85,8 @@ public class QuestionEngine : GameComponent
 
         if (_correctBranch != null || _wrongBranch != null || _level.Bear.Position.Y >= -100 || gameTime.TotalGameTime - _lastGenerationRuntime < TimeSpan.FromSeconds(3))
             return;
-        _lastGenerationRuntime = gameTime.TotalGameTime;
-        // Get the first question from the list and then remove it from the list
-        Question question = _levelQuesitons.First(); 
-        _correctAnswer = question.QuestionAnswer;
-        _levelQuesitons.RemoveAt(0);
 
-        // Shuffle the other questions in the list and select the first to get a wrong answer
-        _wrongAnswer = _levelQuesitons.OrderBy(x => Random.Shared.Next()).ToList().First().QuestionAnswer;
 
-        // Randomly assign the correct and wrong answers to the leaves
         if (SRandom.Int(1) <= 0.5f)
         {
             _correctBranch = _level.Tree.Branches[_level.Tree.Branches.Count - 1];
@@ -105,9 +98,34 @@ public class QuestionEngine : GameComponent
             _wrongBranch = _level.Tree.Branches[_level.Tree.Branches.Count - 1];
         }
 
+
+        _lastGenerationRuntime = gameTime.TotalGameTime;
+        // Get the first question from the list and then remove it from the list
+        Question question = _levelQuesitons.First();
+        if (question.QuestionTextString != null)
+        {
+            _correctAnswerString = question.QuestionAnswerString;
+            _levelQuesitons.RemoveAt(0);
+            _wrongAnswerString = _levelQuesitons.OrderBy(x => Random.Shared.Next()).ToList().First().QuestionAnswerString;
+            _correctAnswerLabel = new Label(_font, _correctAnswerString, new Vector2(_correctBranch.Leaves.Position.X, _correctBranch.Leaves.Position.Y));
+            _wrongAnswerLabel = new Label(_font, _wrongAnswerString, new Vector2(_wrongBranch.Leaves.Position.X, _wrongBranch.Leaves.Position.Y));
+        }
+        else
+        {
+            _correctAnswer = question.QuestionAnswer;
+            _levelQuesitons.RemoveAt(0);
+            // Shuffle the other questions in the list and select the first to get a wrong answer
+            _wrongAnswer = _levelQuesitons.OrderBy(x => Random.Shared.Next()).ToList().First().QuestionAnswer;
+            _correctAnswerLabel = new Label(_font, Strings.Localizations[_correctAnswer][Options.Options.Current.Language], new Vector2(_correctBranch.Leaves.Position.X, _correctBranch.Leaves.Position.Y));
+            _wrongAnswerLabel = new Label(_font, Strings.Localizations[_wrongAnswer][Options.Options.Current.Language], new Vector2(_wrongBranch.Leaves.Position.X, _wrongBranch.Leaves.Position.Y));
+        }
+       
+
+        // Randomly assign the correct and wrong answers to the leaves
+        
+
         // Add labels to the leaves
-        _correctAnswerLabel = new Label(_font, Strings.Localizations[_correctAnswer][Options.Options.Current.Language], new Vector2(_correctBranch.Leaves.Position.X, _correctBranch.Leaves.Position.Y));
-        _wrongAnswerLabel = new Label(_font, Strings.Localizations[_wrongAnswer][Options.Options.Current.Language], new Vector2(_wrongBranch.Leaves.Position.X, _wrongBranch.Leaves.Position.Y));
+        
         _correctAnswerLabel.LayerDepth = 0.9f;
         _wrongAnswerLabel.LayerDepth = 0.9f;
 
@@ -189,7 +207,6 @@ public class QuestionEngine : GameComponent
         if (_correctBranch.Leaves.PlayerLanded)
         {
             SoundEngine.Play(SoundEffectType.CorrectAnswer, null, null, Options.Options.Current.GameVolume);
-            System.Diagnostics.Debug.WriteLine("Correct!");
             GiveReward(gameTime);
             _gameHud.HideQuestionImage(true);
             GivePoints(true);
@@ -198,7 +215,6 @@ public class QuestionEngine : GameComponent
         if (_wrongBranch.Leaves.PlayerLanded)
         {
             SoundEngine.Play(SoundEffectType.WrongAnswer, null, null, Options.Options.Current.GameVolume);
-            System.Diagnostics.Debug.WriteLine("Incorrect!");
             _gameHud.HideQuestionImage(false);
             GivePoints(false);
         }
@@ -242,6 +258,14 @@ public class QuestionEngine : GameComponent
     public StringKey WrongAnswer
     {
         get => _wrongAnswer;
+    }
+    public string CorrectAnswerString
+    {
+        get => _correctAnswerString;
+    }
+    public string WrongAnswerString
+    {
+        get => _wrongAnswerString;
     }
 
     public Label CorrectAnswerLabel

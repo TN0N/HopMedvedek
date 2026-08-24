@@ -127,7 +127,6 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Cont
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\CrowHit.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\grass.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\HopMedvedekMainTheme.xnb
-C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\LuckiestGuy.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\no_texture.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\objects.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\OwlQuestion.xnb
@@ -202,3 +201,6 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Cont
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_green.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_rainbow.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear_red.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\PineconeFlying.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\Schoolbell-Regular.xnb
+C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\EduNSWACTHandPre-VariableFont_wght.xnb

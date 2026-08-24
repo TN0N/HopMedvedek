@@ -377,7 +377,7 @@ public static class Strings
         // Year 01 language questions
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "What is it?",
+            [LanguageEnum.en] = "What is this?",
             [LanguageEnum.si] = "Kaj je to?",
         },
         // Year 01 language answers

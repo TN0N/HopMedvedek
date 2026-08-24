@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj": {}
+    "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj": {
+    "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj",
+        "projectUniqueName": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj",
         "projectName": "Artificial",
-        "projectPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\Artificial.csproj",
-        "packagesPath": "C:\\Users\\antma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\Artificial\\obj\\",
+        "projectPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\Artificial.csproj",
+        "packagesPath": "C:\\Users\\AMT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AMT\\Documents\\My projects\\HopMedvedek\\Artificial\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\antma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AMT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,8 +40,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -54,7 +49,7 @@
             "MonoGame.Framework.DesktopGL": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.8.1.303, )"
+              "version": "[3.8.*, )"
             }
           },
           "imports": [
@@ -73,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

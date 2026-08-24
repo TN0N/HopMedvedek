@@ -73,18 +73,6 @@
 /processorParam:TextureFormat=Color
 /build:bear.png
 
-#begin bear.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:bear.png
-
 #begin BearDie.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -145,6 +133,13 @@
 /processorParam:Quality=Best
 /build:CrowHit.wav
 
+#begin EduNSWACTHandPre-VariableFont_wght.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:EduNSWACTHandPre-VariableFont_wght.spritefont
+
 #begin grass.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -168,13 +163,6 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Leaves.wav
-
-#begin LuckiestGuy.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:LuckiestGuy.spritefont
 
 #begin main_menu_background.png
 /importer:TextureImporter
@@ -218,6 +206,12 @@
 /processorParam:Quality=Best
 /build:OwlQuestion.wav
 
+#begin PineconeFlying.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:PineconeFlying.wav
+
 #begin PineConeHit.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -235,6 +229,13 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:scene_elements.png
+
+#begin Schoolbell-Regular.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Schoolbell-Regular.spritefont
 
 #begin sky.png
 /importer:TextureImporter

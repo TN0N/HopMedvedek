@@ -17,5 +17,6 @@ public enum SoundEffectType
     ButtonHover,
     Leaves,
     Coin,
+    PineconeFlying,
     LastType
 }

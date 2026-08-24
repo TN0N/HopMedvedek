@@ -100,7 +100,7 @@ public class OptionsMenu : Menu
         _scene.Add(_musicVolumeLabel);
         _scene.Add(_languageLabel);
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
         _resolutionLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language];
         _gameVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL][Options.Options.Current.Language];
@@ -110,10 +110,10 @@ public class OptionsMenu : Menu
     }
     public override void Update(GameTime gameTime)
     {
-        base.Update(gameTime);
-        GameState newState = null;
-
         
+        GameState newState = null;
+        base.Update(gameTime);
+        //
         if (_back.WasReleased)
         {
 
@@ -126,14 +126,15 @@ public class OptionsMenu : Menu
             Options.Options.Current.Language = (LanguageEnum)_languageDropdown.SelectedKey;
             Options.Options.Current.GraphicsDeviceWidth = int.Parse(dimensions[0]);
             Options.Options.Current.GraphicsDeviceHeight = int.Parse(dimensions[1]);
+            _hopMedvedek.ApplyOptions();
             Options.Options.SaveOptions();
 
-            _hopMedvedek.ApplyOptions();
         }
-
+        
         if (newState is not null)
         {
             _hopMedvedek.PushState(newState);
         }
+        
     }
 }

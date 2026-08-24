@@ -46,6 +46,10 @@ public class Menu : GameState
         _back.Label.VerticalAlign = VerticalAlign.Middle;
         _back.Label.HorizontalAlign = HorizontalAlign.Center;
     }
+    public override void Initialize()
+    {
+        _scene.CameraMatrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
+    }
     public override void Activate()
     {
         Game.Components.Add(_scene);
@@ -58,7 +62,7 @@ public class Menu : GameState
         Game.Components.Remove(_renderer);
     }
 
-    public override void ReloadLabels()
+    public override void Reload()
     {
         _back.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_COMMON_MENU_BACK][Options.Options.Current.Language];
     }

@@ -36,7 +36,7 @@ public class PauseMenu : Menu
         _scene.Add(_restart);
         _scene.Add(_returnToMainmenu);
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
         _continue.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_PAUSE_MENU_CONTINUE][Options.Options.Current.Language];
         _options.Label.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_PAUSE_MENU_OPTIONS][Options.Options.Current.Language];

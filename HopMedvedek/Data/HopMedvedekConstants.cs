@@ -49,7 +49,7 @@ public static class HopMedvedekConstants
     // Menu Button texture names
 
     // Font names
-    public static readonly string HOP_MEDVEDEK_LUCKIESTGUY_FONT = "LuckiestGuy";
+    public static readonly string HOP_MEDVEDEK_LUCKIESTGUY_FONT = "EduNSWACTHandPre-VariableFont_wght";
 
 
     // Backgrounds

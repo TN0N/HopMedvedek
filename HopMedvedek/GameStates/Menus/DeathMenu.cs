@@ -53,7 +53,7 @@ public class DeathMenu : Menu
         _scene.Add(_restart);
         _scene.Add(_returnToMainmenu);
     }
-    public override void ReloadLabels()
+    public override void Reload()
     {
         _deathTextLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_DEATH_TEXT][Options.Options.Current.Language];
         _highScoreLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_DEATH_MENU_HIGH_SCORE][Options.Options.Current.Language] + Data.PlayerData.Current.HighScore;
