@@ -13,6 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Andika-Regular.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Andika-Regular.spritefont
+
 #begin bear_blue.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -133,12 +140,12 @@
 /processorParam:Quality=Best
 /build:CrowHit.wav
 
-#begin EduNSWACTHandPre-VariableFont_wght.spritefont
+#begin DynaPuff-Regular.spritefont
 /importer:FontDescriptionImporter
 /processor:LocalizedFontProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:EduNSWACTHandPre-VariableFont_wght.spritefont
+/build:DynaPuff-Regular.spritefont
 
 #begin grass.png
 /importer:TextureImporter
@@ -229,13 +236,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:scene_elements.png
-
-#begin Schoolbell-Regular.spritefont
-/importer:FontDescriptionImporter
-/processor:LocalizedFontProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Schoolbell-Regular.spritefont
 
 #begin sky.png
 /importer:TextureImporter

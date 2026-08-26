@@ -1,6 +1,5 @@
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\bear.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\grass.xnb
-C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\LuckiestGuy.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\main_menu_background.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\no_texture.xnb
 C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\objects.xnb
@@ -204,3 +203,6 @@ C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Cont
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\PineconeFlying.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\Schoolbell-Regular.xnb
 C:\Users\AMT\Documents\My projects\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\EduNSWACTHandPre-VariableFont_wght.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\PineconeFlying.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\Andika-Regular.xnb
+C:\Users\antma\Documents\FRI\3. Letnik\HopMedvedek\HopMedvedek\bin\Debug\net8.0\Content\DynaPuff-Regular.xnb

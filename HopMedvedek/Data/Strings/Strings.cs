@@ -377,524 +377,509 @@ public static class Strings
         // Year 01 language questions
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_QUESTION_WHAT_IS_ON_THE_PICTURE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "What is this?",
-            [LanguageEnum.si] = "Kaj je to?",
+            [LanguageEnum.en] = "WHAT  IS  THIS?",
+            [LanguageEnum.si] = "KAJ  JE  TO?",
         },
         // Year 01 language answers
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_APPLE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Apple",
-            [LanguageEnum.si] = "Jabolka",
+            [LanguageEnum.en] = "APPLE",
+            [LanguageEnum.si] = "JABOLKA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BABY] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Baby",
-            [LanguageEnum.si] = "Dojenček",
+            [LanguageEnum.en] = "BABY",
+            [LanguageEnum.si] = "DOJENČEK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BALL] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Ball",
-            [LanguageEnum.si] = "Žoga",
+            [LanguageEnum.en] = "BALL",
+            [LanguageEnum.si] = "ŽOGA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BANANA] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Banana",
-            [LanguageEnum.si] = "Banana",
+            [LanguageEnum.en] = "BANANA",
+            [LanguageEnum.si] = "BANANA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BED] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Bed",
-            [LanguageEnum.si] = "Postelja",
+            [LanguageEnum.en] = "BED",
+            [LanguageEnum.si] = "POSTELJA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BEE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Bee",
-            [LanguageEnum.si] = "Čebela",
+            [LanguageEnum.en] = "BEE",
+            [LanguageEnum.si] = "ČEBELA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BIRD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Bird",
-            [LanguageEnum.si] = "Ptica",
+            [LanguageEnum.en] = "BIRD",
+            [LanguageEnum.si] = "PTICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BOAT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Boat",
-            [LanguageEnum.si] = "Ladja",
+            [LanguageEnum.en] = "BOAT",
+            [LanguageEnum.si] = "LADJA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BOOK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Book",
-            [LanguageEnum.si] = "Knjiga",
+            [LanguageEnum.en] = "BOOK",
+            [LanguageEnum.si] = "KNJIGA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BOY] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Boy",
-            [LanguageEnum.si] = "Fant",
+            [LanguageEnum.en] = "BOY",
+            [LanguageEnum.si] = "FANT",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BREAD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Bread",
-            [LanguageEnum.si] = "Kruh",
+            [LanguageEnum.en] = "BREAD",
+            [LanguageEnum.si] = "KRUH",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CASTLE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Castle",
-            [LanguageEnum.si] = "Grad",
+            [LanguageEnum.en] = "CASTLE",
+            [LanguageEnum.si] = "GRAD",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BUS] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Bus",
-            [LanguageEnum.si] = "Avtobus",
+            [LanguageEnum.en] = "BUS",
+            [LanguageEnum.si] = "AVTOBUS",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CAKE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Cake",
-            [LanguageEnum.si] = "Torta",
+            [LanguageEnum.en] = "CAKE",
+            [LanguageEnum.si] = "TORTA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CAR] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Car",
-            [LanguageEnum.si] = "Avto",
+            [LanguageEnum.en] = "CAR",
+            [LanguageEnum.si] = "AVTO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CAT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Cat",
-            [LanguageEnum.si] = "Mačka",
+            [LanguageEnum.en] = "CAT",
+            [LanguageEnum.si] = "MAČKA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CHAIR] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Chair",
-            [LanguageEnum.si] = "Stol",
+            [LanguageEnum.en] = "CHAIR",
+            [LanguageEnum.si] = "STOL",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CHICKEN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Chicken",
-            [LanguageEnum.si] = "Kokoš",
+            [LanguageEnum.en] = "CHICKEN",
+            [LanguageEnum.si] = "KOKOŠ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SPOON] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Spoon",
-            [LanguageEnum.si] = "Žlica",
+            [LanguageEnum.en] = "SPOON",
+            [LanguageEnum.si] = "ŽLICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CLOCK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Clock",
-            [LanguageEnum.si] = "Ura",
+            [LanguageEnum.en] = "CLOCK",
+            [LanguageEnum.si] = "URA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_COAT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Coat",
-            [LanguageEnum.si] = "Bunda",
+            [LanguageEnum.en] = "COAT",
+            [LanguageEnum.si] = "BUNDA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_COW] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Cow",
-            [LanguageEnum.si] = "Krava",
+            [LanguageEnum.en] = "COW",
+            [LanguageEnum.si] = "KRAVA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CUP] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Cup",
-            [LanguageEnum.si] = "Kozarec",
+            [LanguageEnum.en] = "CUP",
+            [LanguageEnum.si] = "KOZAREC",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_DAD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Dad",
-            [LanguageEnum.si] = "Oče",
+            [LanguageEnum.en] = "DAD",
+            [LanguageEnum.si] = "OČE",
         },
-       /* [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_DESK] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "",
-            [LanguageEnum.si] = "Banana",
-        },*/
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_DOG] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Dog",
-            [LanguageEnum.si] = "Pes",
+            [LanguageEnum.en] = "DOG",
+            [LanguageEnum.si] = "PES",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_DOOR] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Door",
-            [LanguageEnum.si] = "Vrata",
+            [LanguageEnum.en] = "DOOR",
+            [LanguageEnum.si] = "VRATA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_DUCK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Duck",
-            [LanguageEnum.si] = "Raca",
+            [LanguageEnum.en] = "DUCK",
+            [LanguageEnum.si] = "RACA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_EGG] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Egg",
-            [LanguageEnum.si] = "Jajce",
+            [LanguageEnum.en] = "EGG",
+            [LanguageEnum.si] = "JAJCE",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_EYE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Eye",
-            [LanguageEnum.si] = "Uč",
+            [LanguageEnum.en] = "EYE",
+            [LanguageEnum.si] = "OKO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FARM] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Farm",
-            [LanguageEnum.si] = "Kmetija",
+            [LanguageEnum.en] = "FARM",
+            [LanguageEnum.si] = "KMETIJA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FISH] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Fish",
-            [LanguageEnum.si] = "Riba",
+            [LanguageEnum.en] = "FISH",
+            [LanguageEnum.si] = "RIBA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FLOWER] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Flower",
-            [LanguageEnum.si] = "Roža",
+            [LanguageEnum.en] = "FLOWER",
+            [LanguageEnum.si] = "ROŽA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FOOT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Foot",
-            [LanguageEnum.si] = "Stopalo",
+            [LanguageEnum.en] = "FOOT",
+            [LanguageEnum.si] = "STOPALO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CLOWN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Clown",
-            [LanguageEnum.si] = "Klovn",
+            [LanguageEnum.en] = "CLOWN",
+            [LanguageEnum.si] = "KLOVN",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_FROG] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Frog",
-            [LanguageEnum.si] = "Žaba",
+            [LanguageEnum.en] = "FROG",
+            [LanguageEnum.si] = "ŽABA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_GAME] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Game",
-            [LanguageEnum.si] = "Igra",
+            [LanguageEnum.en] = "GAME",
+            [LanguageEnum.si] = "IGRA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_GARDEN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Garden",
-            [LanguageEnum.si] = "Vrt",
+            [LanguageEnum.en] = "GARDEN",
+            [LanguageEnum.si] = "VRT",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_GIRL] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Girl",
-            [LanguageEnum.si] = "Punca",
+            [LanguageEnum.en] = "GIRL",
+            [LanguageEnum.si] = "PUNCA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HAND] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Roka",
-            [LanguageEnum.si] = "Dlan",
+            [LanguageEnum.en] = "ROKA",
+            [LanguageEnum.si] = "DLAN",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HAT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Hat",
-            [LanguageEnum.si] = "Klobuk",
+            [LanguageEnum.en] = "HAT",
+            [LanguageEnum.si] = "KLOBUK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SOCK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Sock",
-            [LanguageEnum.si] = "Nogavica",
+            [LanguageEnum.en] = "SOCK",
+            [LanguageEnum.si] = "NOGAVICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HILL] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Hill",
-            [LanguageEnum.si] = "Hrib",
+            [LanguageEnum.en] = "HILL",
+            [LanguageEnum.si] = "HRIB",
         },
-        /*[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HOME] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "Home",
-            [LanguageEnum.si] = "Dom",
-        },*/
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HORSE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Horse",
-            [LanguageEnum.si] = "Konj",
+            [LanguageEnum.en] = "HORSE",
+            [LanguageEnum.si] = "KONJ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HOUSE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "House",
-            [LanguageEnum.si] = "Hiša",
+            [LanguageEnum.en] = "HOUSE",
+            [LanguageEnum.si] = "HIŠA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_ICE_CREAM] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Ice cream",
-            [LanguageEnum.si] = "Sladoled",
+            [LanguageEnum.en] = "ICE CREAM",
+            [LanguageEnum.si] = "SLADOLED",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_JUICE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Juice",
-            [LanguageEnum.si] = "Sok",
+            [LanguageEnum.en] = "JUICE",
+            [LanguageEnum.si] = "SOK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_KEY] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Key",
-            [LanguageEnum.si] = "Ključ",
+            [LanguageEnum.en] = "KEY",
+            [LanguageEnum.si] = "KLJUČ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_KING] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "King",
-            [LanguageEnum.si] = "Kral",
+            [LanguageEnum.en] = "KING",
+            [LanguageEnum.si] = "KRAL",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_KITE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Kite",
-            [LanguageEnum.si] = "Zmaj",
+            [LanguageEnum.en] = "KITE",
+            [LanguageEnum.si] = "ZMAJ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_LEG] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Leg",
-            [LanguageEnum.si] = "Noga",
+            [LanguageEnum.en] = "LEG",
+            [LanguageEnum.si] = "NOGA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_LION] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Lion",
-            [LanguageEnum.si] = "Lev",
+            [LanguageEnum.en] = "LION",
+            [LanguageEnum.si] = "LEV",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MAN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Man",
-            [LanguageEnum.si] = "Moški",
+            [LanguageEnum.en] = "MAN",
+            [LanguageEnum.si] = "MOŠKI",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MILK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Milk",
-            [LanguageEnum.si] = "Mleko",
+            [LanguageEnum.en] = "MILK",
+            [LanguageEnum.si] = "MLEKO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MUM] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Mum",
-            [LanguageEnum.si] = "Mami",
+            [LanguageEnum.en] = "MUM",
+            [LanguageEnum.si] = "MAMI",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MONKEY] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Monkey",
-            [LanguageEnum.si] = "Opica",
+            [LanguageEnum.en] = "MONKEY",
+            [LanguageEnum.si] = "OPICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOON] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Moon",
-            [LanguageEnum.si] = "Luna",
+            [LanguageEnum.en] = "MOON",
+            [LanguageEnum.si] = "LUNA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MAGNET] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Magnet",
-            [LanguageEnum.si] = "Magnet",
+            [LanguageEnum.en] = "MAGNET",
+            [LanguageEnum.si] = "MAGNET",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOUSE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Mouse",
-            [LanguageEnum.si] = "Miš",
+            [LanguageEnum.en] = "MOUSE",
+            [LanguageEnum.si] = "MIŠ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_NEST] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Nest",
-            [LanguageEnum.si] = "Gnezdo",
+            [LanguageEnum.en] = "NEST",
+            [LanguageEnum.si] = "GNEZDO",
         },
-        /*[StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_NIGHT] = new Dictionary<LanguageEnum, string>()
-        {
-            [LanguageEnum.en] = "Night",
-            [LanguageEnum.si] = "Noč",
-        },*/
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_NOSE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Nose",
-            [LanguageEnum.si] = "Nos",
+            [LanguageEnum.en] = "NOSE",
+            [LanguageEnum.si] = "NOS",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PARK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Park",
-            [LanguageEnum.si] = "Park",
+            [LanguageEnum.en] = "PARK",
+            [LanguageEnum.si] = "PARK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PEN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Pen",
-            [LanguageEnum.si] = "Pero",
+            [LanguageEnum.en] = "PEN",
+            [LanguageEnum.si] = "PERO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PENCIL] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Pencil",
-            [LanguageEnum.si] = "Svinčnik",
+            [LanguageEnum.en] = "PENCIL",
+            [LanguageEnum.si] = "SVINČNIK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PIG] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Pig",
-            [LanguageEnum.si] = "Pujs",
+            [LanguageEnum.en] = "PIG",
+            [LanguageEnum.si] = "PUJS",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PIZZA] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Pizza",
-            [LanguageEnum.si] = "Pica",
+            [LanguageEnum.en] = "PIZZA",
+            [LanguageEnum.si] = "PICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PLANT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Plant",
-            [LanguageEnum.si] = "Rastlina",
+            [LanguageEnum.en] = "PLANT",
+            [LanguageEnum.si] = "RASTLINA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_QUEEN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Queen",
-            [LanguageEnum.si] = "Kraljica",
+            [LanguageEnum.en] = "QUEEN",
+            [LanguageEnum.si] = "KRALJICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_RABBIT] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Rabbit",
-            [LanguageEnum.si] = "Zajec",
+            [LanguageEnum.en] = "RABBIT",
+            [LanguageEnum.si] = "ZAJEC",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_RAIN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Rain",
-            [LanguageEnum.si] = "Dež",
+            [LanguageEnum.en] = "RAIN",
+            [LanguageEnum.si] = "DEŽ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_RIVER] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "River",
-            [LanguageEnum.si] = "Reka",
+            [LanguageEnum.en] = "RIVER",
+            [LanguageEnum.si] = "REKA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_ROAD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Road",
-            [LanguageEnum.si] = "Cesta",
+            [LanguageEnum.en] = "ROAD",
+            [LanguageEnum.si] = "CESTA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MUSHROOM] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Mushroom",
-            [LanguageEnum.si] = "Goba",
+            [LanguageEnum.en] = "MUSHROOM",
+            [LanguageEnum.si] = "GOBA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SHEEP] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Sheep",
-            [LanguageEnum.si] = "Ovca",
+            [LanguageEnum.en] = "SHEEP",
+            [LanguageEnum.si] = "OVCA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SHOE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Shoe",
-            [LanguageEnum.si] = "Čevelj",
+            [LanguageEnum.en] = "SHOE",
+            [LanguageEnum.si] = "ČEVELJ",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SHELL] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Shell",
-            [LanguageEnum.si] = "Školka",
+            [LanguageEnum.en] = "SHELL",
+            [LanguageEnum.si] = "ŠKOLJKA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CLOUD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Cloud",
-            [LanguageEnum.si] = "Oblak",
+            [LanguageEnum.en] = "CLOUD",
+            [LanguageEnum.si] = "OBLAK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SNAKE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Snake",
-            [LanguageEnum.si] = "Kača",
+            [LanguageEnum.en] = "SNAKE",
+            [LanguageEnum.si] = "KAČA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SNOWFLAKE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Snowflake",
-            [LanguageEnum.si] = "Snežinka",
+            [LanguageEnum.en] = "SNOWFLAKE",
+            [LanguageEnum.si] = "SNEŽINKA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_STAR] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Star",
-            [LanguageEnum.si] = "Zvezda",
+            [LanguageEnum.en] = "STAR",
+            [LanguageEnum.si] = "ZVEZDA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_SUN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Sun",
-            [LanguageEnum.si] = "Sonce",
+            [LanguageEnum.en] = "SUN",
+            [LanguageEnum.si] = "SONCE",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TABLE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Table",
-            [LanguageEnum.si] = "Miza",
+            [LanguageEnum.en] = "TABLE",
+            [LanguageEnum.si] = "MIZA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MAP] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Map",
-            [LanguageEnum.si] = "Zemljevid",
+            [LanguageEnum.en] = "MAP",
+            [LanguageEnum.si] = "ZEMLJEVID",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_BEAR] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Bear",
-            [LanguageEnum.si] = "Medved",
+            [LanguageEnum.en] = "BEAR",
+            [LanguageEnum.si] = "MEDVED",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TIGER] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Tiger",
-            [LanguageEnum.si] = "Tiger",
+            [LanguageEnum.en] = "TIGER",
+            [LanguageEnum.si] = "TIGER",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TRAIN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Train",
-            [LanguageEnum.si] = "Vlak",
+            [LanguageEnum.en] = "TRAIN",
+            [LanguageEnum.si] = "VLAK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TREE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Tree",
-            [LanguageEnum.si] = "Drevo",
+            [LanguageEnum.en] = "TREE",
+            [LanguageEnum.si] = "DREVO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_TRUCK] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Truck",
-            [LanguageEnum.si] = "Tovornjak",
+            [LanguageEnum.en] = "TRUCK",
+            [LanguageEnum.si] = "TOVORNJAK",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_WATER] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Water",
-            [LanguageEnum.si] = "Voda",
+            [LanguageEnum.en] = "WATER",
+            [LanguageEnum.si] = "VODA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_WHALE] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Whale",
-            [LanguageEnum.si] = "kit",
+            [LanguageEnum.en] = "WHALE",
+            [LanguageEnum.si] = "KIT",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_WINDOW] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Window",
-            [LanguageEnum.si] = "Okno",
+            [LanguageEnum.en] = "WINDOW",
+            [LanguageEnum.si] = "OKNO",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_WOMAN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Woman",
-            [LanguageEnum.si] = "Ženska",
+            [LanguageEnum.en] = "WOMAN",
+            [LanguageEnum.si] = "ŽENSKA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_WORM] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Worm",
-            [LanguageEnum.si] = "Deževnica",
+            [LanguageEnum.en] = "WORM",
+            [LanguageEnum.si] = "DEŽEVNICA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_ZEBRA] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Zebra",
-            [LanguageEnum.si] = "Zebra",
+            [LanguageEnum.en] = "ZEBRA",
+            [LanguageEnum.si] = "ZEBRA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_MOUNTAIN] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Mountain",
-            [LanguageEnum.si] = "Gora",
+            [LanguageEnum.en] = "MOUNTAIN",
+            [LanguageEnum.si] = "GORA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_DRUM] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Drum",
-            [LanguageEnum.si] = "Boben",
+            [LanguageEnum.en] = "DRUM",
+            [LanguageEnum.si] = "BOBEN",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_HEART] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Heart",
-            [LanguageEnum.si] = "Srce",
+            [LanguageEnum.en] = "HEART",
+            [LanguageEnum.si] = "SRCE",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CUPBOARD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Cupboard",
-            [LanguageEnum.si] = "Omara",
+            [LanguageEnum.en] = "CUPBOARD",
+            [LanguageEnum.si] = "OMARA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_NET] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Net",
-            [LanguageEnum.si] = "Mreža",
+            [LanguageEnum.en] = "NET",
+            [LanguageEnum.si] = "MREŽA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_PEACH] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Peach",
-            [LanguageEnum.si] = "Breskev",
+            [LanguageEnum.en] = "PEACH",
+            [LanguageEnum.si] = "BRESKEV",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_LANGUAGE_ANSWER_CARD] = new Dictionary<LanguageEnum, string>()
         {
-            [LanguageEnum.en] = "Card",
-            [LanguageEnum.si] = "Karta",
+            [LanguageEnum.en] = "CARD",
+            [LanguageEnum.si] = "KARTA",
         },
         [StringKey.HOP_MEDVEDEK_YEAR_01_MATHS_QUESTION_ADDITION] = new Dictionary<LanguageEnum, string>()
         {

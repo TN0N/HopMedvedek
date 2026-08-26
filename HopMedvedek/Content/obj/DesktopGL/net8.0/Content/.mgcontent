@@ -4,36 +4,36 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear_blue.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear_green.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear_rainbow.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear_red.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/bear.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/BearDie.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/BearHit.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/BearJump.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/BearThrow.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/ButtonHover.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/ButtonPressed.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/CoinSound.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/CorrectAnswer.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/CrowAttack.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/CrowHit.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/EduNSWACTHandPre-VariableFont_wght.spritefont</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/grass.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/HopMedvedekMainTheme.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/Leaves.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/main_menu_background.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/menu_elements.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/no_texture.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/OwlQuestion.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/PineconeFlying.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/PineConeHit.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/scene_elements.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/Schoolbell-Regular.spritefont</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/sky.png</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/WrongAnswer.wav</File>
-    <File>C:/Users/AMT/Documents/My projects/HopMedvedek/HopMedvedek/Content/year_01_language_questions_textures_01.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/Andika-Regular.spritefont</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bear_blue.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bear_green.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bear_rainbow.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bear_red.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/bear.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/BearDie.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/BearHit.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/BearJump.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/BearThrow.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/ButtonHover.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/ButtonPressed.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/CoinSound.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/CorrectAnswer.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/CrowAttack.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/CrowHit.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/DynaPuff-Regular.spritefont</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/grass.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/HopMedvedekMainTheme.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/Leaves.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/main_menu_background.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/menu_elements.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/no_texture.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/OwlQuestion.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/PineconeFlying.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/PineConeHit.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/scene_elements.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/sky.png</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/WrongAnswer.wav</File>
+    <File>C:/Users/antma/Documents/FRI/3. Letnik/HopMedvedek/HopMedvedek/Content/year_01_language_questions_textures_01.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
