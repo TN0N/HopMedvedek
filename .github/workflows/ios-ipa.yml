@@ -33,26 +33,35 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
-      - name: Toolchain / environment
+      - name: Environment
         run: |
-          echo "== Installed Xcodes =="
-          ls -d /Applications/Xcode*.app 2>/dev/null || true
-          echo "== dotnet =="
           dotnet --version
           dotnet --list-sdks
-          echo "== workloads =="
-          dotnet workload list || true
-
-      - name: Select the newest installed Xcode
-        run: |
-          NEWEST=$(ls -d /Applications/Xcode_*.app 2>/dev/null | sort -V | tail -1)
-          if [ -z "$NEWEST" ]; then NEWEST=/Applications/Xcode.app; fi
-          echo "Selecting $NEWEST"
-          sudo xcode-select -s "$NEWEST/Contents/Developer"
-          xcodebuild -version
+          echo "Installed Xcodes:"; ls -d /Applications/Xcode*.app 2>/dev/null || true
 
       - name: Restore the iOS workload
         run: dotnet workload restore "HopMedvedek iOS/HopMedvedek.iOS.csproj"
+
+      - name: Select the Xcode that matches the restored iOS workload
+        run: |
+          set -e
+          REQ=$(ls -d "$HOME"/.dotnet/packs/Microsoft.iOS.Sdk.net9.0_*/ 2>/dev/null \
+                | sed -E 's#.*net9\.0_([0-9]+\.[0-9]+)/?$#\1#' | sort -V | tail -1)
+          echo "iOS workload requires Xcode: ${REQ:-unknown}"
+          {
+            echo "### iOS build toolchain"
+            echo "- Workload wants Xcode: \`${REQ:-unknown}\`"
+            echo "- Installed Xcodes:"
+            for a in /Applications/Xcode*.app; do echo "  - \`$a\`"; done
+          } >> "$GITHUB_STEP_SUMMARY"
+          XAPP=$(ls -d /Applications/Xcode_${REQ}*.app 2>/dev/null | sort -V | head -1)
+          if [ -z "$XAPP" ]; then
+            echo "::error::Xcode $REQ is not installed on this runner. Installed: $(ls -d /Applications/Xcode*.app | tr '\n' ' '). Pin the iOS workload to a matching version instead."
+            exit 1
+          fi
+          echo "Selecting $XAPP"
+          sudo xcode-select -s "$XAPP/Contents/Developer"
+          xcodebuild -version
 
       - name: Build unsigned .app (Release, device arm64)
         run: >
