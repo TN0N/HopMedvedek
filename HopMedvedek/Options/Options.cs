@@ -32,7 +32,7 @@ public static class Options
     /// </summary>
     public static void LoadOptions()
     {
-        string json = File.ReadAllText(HopMedvedekConstants.HOP_MEDVEDEK_OPTIONS_PATH);
+        string json = DataStore.ReadText(HopMedvedekConstants.HOP_MEDVEDEK_OPTIONS_PATH);
         Current = JsonSerializer.Deserialize<OptionsData>(json) ?? new OptionsData();
     }
     /// <summary>
@@ -45,6 +45,6 @@ public static class Options
             WriteIndented = true
         });
 
-        File.WriteAllText(HopMedvedekConstants.HOP_MEDVEDEK_OPTIONS_PATH, json);
+        DataStore.WriteText(HopMedvedekConstants.HOP_MEDVEDEK_OPTIONS_PATH, json);
     }
 }

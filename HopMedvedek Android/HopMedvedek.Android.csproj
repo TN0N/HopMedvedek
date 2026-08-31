@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Android head project for HopMedvedek.
+
+    It does NOT reference HopMedvedek.csproj / Express.csproj / Artificial.csproj,
+    because those pull in MonoGame.Framework.DesktopGL which cannot coexist with
+    MonoGame.Framework.Android. Instead it link-compiles their source files and
+    builds them against the Android MonoGame runtime. The desktop solution is
+    left completely untouched.
+
+    Content is not built here with MGCB. The prebuilt, platform-neutral .xnb files
+    (uncompressed textures + PCM sound + SpriteFont) produced by the desktop build
+    are copied into Content/ and shipped as Android assets.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HopMedvedekDroid</RootNamespace>
+    <AssemblyName>HopMedvedek.Android</AssemblyName>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <ApplicationId>com.tn0n.hopmedvedek</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <RunAOTCompilation>false</RunAOTCompilation>
+
+    <!-- Pack the managed assemblies into the .apk so a plain `adb install` of the
+         output works. Without this, Debug builds use Fast Deployment and the APK
+         is non-standalone (assemblies get pushed only by `dotnet build -t:Run`). -->
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+
+    <!-- .NET for Android already defines ANDROID; make it explicit so the guarded
+         code in the shared project is unambiguous. -->
+    <DefineConstants>$(DefineConstants);ANDROID</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.Android" Version="3.8.4.1" />
+  </ItemGroup>
+
+  <!-- Shared game + engine source, compiled against the Android MonoGame runtime. -->
+  <ItemGroup>
+    <Compile Include="..\HopMedvedek\**\*.cs"
+             Exclude="..\HopMedvedek\obj\**\*.cs;..\HopMedvedek\bin\**\*.cs;..\HopMedvedek\Program.cs"
+             LinkBase="Shared\HopMedvedek" />
+    <Compile Include="..\Express\**\*.cs"
+             Exclude="..\Express\obj\**\*.cs;..\Express\bin\**\*.cs"
+             LinkBase="Shared\Express" />
+    <Compile Include="..\Artificial\**\*.cs"
+             Exclude="..\Artificial\obj\**\*.cs;..\Artificial\bin\**\*.cs"
+             LinkBase="Shared\Artificial" />
+  </ItemGroup>
+
+  <!-- Prebuilt content, shipped as APK assets under assets/Content/. -->
+  <ItemGroup>
+    <AndroidAsset Include="Content\*.xnb" Link="Assets\Content\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <!-- Read-only default data/options, read via TitleContainer on first run. -->
+  <ItemGroup>
+    <AndroidAsset Include="..\HopMedvedek\Data\playerData.json" Link="Assets\Data\playerData.json" />
+    <AndroidAsset Include="..\HopMedvedek\Data\ShopItems.json" Link="Assets\Data\ShopItems.json" />
+    <AndroidAsset Include="..\HopMedvedek\Options\options.json" Link="Assets\Options\options.json" />
+  </ItemGroup>
+
+</Project>

@@ -5,6 +5,7 @@ using Express.Scene.Objects;
 using HopMedvedek.Data;
 using HopMedvedek.Audio;
 using HopMedvedek.Graphics;
+using HopMedvedek.Input;
 
 namespace HopMedvedek.Entities;
 
@@ -26,6 +27,7 @@ public class Player: GameComponent
         _bear = bear;
         _bear.Velocity = Vector2.Zero;
         _bear.Acceleration = Vector2.Zero;
+        HopControls.ResetGestures();
     }
     public void SetCamera(Matrix camera) {
         _inverseView = Matrix.Invert(camera);
@@ -195,7 +197,8 @@ public class Player: GameComponent
 
         //PrintHelper.Print(_bear.Velocity);
 
-        if (Keyboard.GetState().IsKeyDown(Keys.Space) && !_bear.Jumping)
+        // Desktop: Space. Android: swipe up. Kicks off the continuous auto-bounce below.
+        if (HopControls.ConsumeStart() && !_bear.Jumping)
             _startedGame = true;
 
 
@@ -206,29 +209,18 @@ public class Player: GameComponent
             _bear.Jumping = true;
         }
 
-        if (Keyboard.GetState().IsKeyDown(Keys.A) && _bear.Acceleration.X >= 0)
-            _bear.Acceleration.X -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION;
-            
-        if (Keyboard.GetState().IsKeyDown(Keys.D) && _bear.Acceleration.X <= 0)
-            _bear.Acceleration.X += HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION;
-        if (Keyboard.GetState().IsKeyUp(Keys.A) && _bear.Acceleration.X < 0)
-            _bear.Acceleration.X += HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION;
-        if (Keyboard.GetState().IsKeyUp(Keys.D) && _bear.Acceleration.X > 0)
-            _bear.Acceleration.X -= HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION;
+        // Desktop: A / D give -1 / +1. Android: proportional device tilt (-1..+1).
+        _bear.Acceleration.X = HopControls.HorizontalAcceleration(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION);
 
         ChangeState(gameTime);
         _bearPreviousReward = _bear.ActiveReward;
         if (Keyboard.GetState().IsKeyDown(Keys.F) && _bear.State != BearState.BearDazed)
             _bear.State = BearState.BearDazed;
-        if (Mouse.GetState().LeftButton == ButtonState.Pressed && (_bear.State != BearState.BearDazed || _bear.State == BearState.BearWalkThrow || _bear.State == BearState.BearJumpThrow))
-        { 
-            _throwMouseClickPosition = Mouse.GetState().Position.ToVector2();
-
-            //_throwMouseClickPosition.Y -= _bear.Position.Y;
-            _throwMouseClickPosition = Vector2.Transform(_throwMouseClickPosition, Matrix.Invert(_bear.Level.Scene.CameraMatrix));
-
-            
-            //System.Diagnostics.Debug.WriteLine(_throwMouseClickPosition);
+        // Desktop: left mouse button. Android: tap. Screen point -> world via the camera.
+        if (HopControls.ConsumeThrow(out Vector2 throwScreenPosition)
+            && (_bear.State != BearState.BearDazed || _bear.State == BearState.BearWalkThrow || _bear.State == BearState.BearJumpThrow))
+        {
+            _throwMouseClickPosition = Vector2.Transform(throwScreenPosition, Matrix.Invert(_bear.Level.Scene.CameraMatrix));
 
             if (_bear.Jumping)
                 _bear.State = BearState.BearJumpThrow;

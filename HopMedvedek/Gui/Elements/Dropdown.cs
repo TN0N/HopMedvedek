@@ -1,11 +1,11 @@
 ﻿using Artificial.Artificial.Mirage;
 using Express.Graphics;
 using Express.Scene;
+using HopMedvedek.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace HopMedvedek.Gui.Elements;
 
@@ -92,7 +92,7 @@ public class Dropdown
     {
         
 
-        var mousePositionOnScreen = Mouse.GetState().Position.ToVector2();
+        var mousePositionOnScreen = HopInput.GetMouseState().Position.ToVector2();
         var mousePositionInScene = Vector2.Transform(mousePositionOnScreen, inverseView);
 
         if (!_dropdownArea.Contains(mousePositionInScene))

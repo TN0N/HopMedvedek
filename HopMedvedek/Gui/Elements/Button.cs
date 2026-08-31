@@ -3,6 +3,7 @@ using Express.Graphics;
 using Express.Scene;
 using Express.Scene.Objects.Movement;
 using HopMedvedek.Audio;
+using HopMedvedek.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -161,7 +162,7 @@ public class Button
         _wasPressed = false;
         _wasReleased = false;
 
-        var mousePositionOnScreen = Mouse.GetState().Position.ToVector2();
+        var mousePositionOnScreen = HopInput.GetMouseState().Position.ToVector2();
         var mousePositionInScene = Vector2.Transform(mousePositionOnScreen, inverseView);
 
         if (_inputArea.Contains(mousePositionInScene))
@@ -169,7 +170,7 @@ public class Button
             if (wasDown)
             {
                 // release pressed button -> trigger action
-                if (Mouse.GetState().LeftButton != ButtonState.Pressed)
+                if (HopInput.GetMouseState().LeftButton != ButtonState.Pressed)
                 {
                     SoundEngine.Play(SoundEffectType.ButtonPressed, null, null, Options.Options.Current.GameVolume);
                     _wasReleased = true;
@@ -188,11 +189,11 @@ public class Button
             else
             {
                 // click on button
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+                if (HopInput.GetMouseState().LeftButton == ButtonState.Pressed)
                 {
                     _isDown = true;
                     _wasPressed = true;
-                    
+
                     _activeBackgroundColor = _backgroundPressedColor;
                     _label.Color = _labelPressedColor;
                 }

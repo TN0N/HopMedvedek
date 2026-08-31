@@ -1,6 +1,7 @@
 using Artificial.Artificial.Mirage;
 using Express.Graphics;
 using Express.Scene;
+using HopMedvedek.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -177,16 +178,16 @@ public class Slider
         _wasPressed = false;
         _wasReleased = false;
 
-        var mousePositionOnScreen = Mouse.GetState().Position.ToVector2();
+        var mousePositionOnScreen = HopInput.GetMouseState().Position.ToVector2();
         var mousePositionInScene = Vector2.Transform(mousePositionOnScreen, inverseView);
 
-        
+
         if (_inputArea.Contains(mousePositionInScene))
         {
             if (wasDown)
             {
                 // release pressed button -> trigger action
-                if (Mouse.GetState().LeftButton != ButtonState.Pressed)
+                if (HopInput.GetMouseState().LeftButton != ButtonState.Pressed)
                 {
                     _wasReleased = true;
                     _activeBackgroundColor = _backgroundColor;
@@ -207,13 +208,13 @@ public class Slider
             else
             {
                 // click on button
-                if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+                if (HopInput.GetMouseState().LeftButton == ButtonState.Pressed)
                 {
                     _isDown = true;
                     _wasPressed = true;
                     _activeBackgroundColor = _backgroundPressedColor;
                     _valueFill.Color = _labelPressedColor;
-                    
+
                     //System.Diagnostics.Debug.WriteLine("Slider clicked");
                 }
                 // hover over button

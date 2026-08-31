@@ -1,0 +1,67 @@
+name: iOS .ipa (unsigned, for sideloading)
+
+# Produces an UNSIGNED .ipa on a macOS runner. Download the artifact and install
+# it onto an iPhone from Windows with Sideloadly or AltStore (AltServer for
+# Windows) - those tools re-sign it with your free Apple ID (7-day, refresh
+# weekly). Nothing here needs an Apple Developer account or signing secrets.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'HopMedvedek iOS/**'
+      - 'HopMedvedek/**'
+      - 'Express/**'
+      - 'Artificial/**'
+      - '.github/workflows/ios-ipa.yml'
+
+jobs:
+  build-ipa:
+    runs-on: macos-15
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select latest stable Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore the iOS workload for this project
+        run: dotnet workload restore "HopMedvedek iOS/HopMedvedek.iOS.csproj"
+
+      - name: Build unsigned .app (Release, device arm64)
+        run: >
+          dotnet build "HopMedvedek iOS/HopMedvedek.iOS.csproj"
+          -c Release
+          -r ios-arm64
+          -p:EnableCodeSigning=false
+          -p:DisableCodesignVerification=true
+          -p:MtouchLink=SdkOnly
+
+      - name: Package .app into an .ipa (Payload/ zip)
+        run: |
+          set -euo pipefail
+          APP=$(find "HopMedvedek iOS/bin/Release" -type d -name "HopMedvedek.iOS.app" | head -n 1)
+          if [ -z "$APP" ]; then echo "::error::HopMedvedek.iOS.app not found"; exit 1; fi
+          echo "App bundle: $APP"
+          rm -rf out && mkdir -p out/Payload
+          cp -R "$APP" out/Payload/
+          ( cd out && zip -qry HopMedvedek.iOS.ipa Payload )
+          ls -lh out/HopMedvedek.iOS.ipa
+
+      - name: Upload .ipa
+        uses: actions/upload-artifact@v4
+        with:
+          name: HopMedvedek-iOS-unsigned-ipa
+          path: out/HopMedvedek.iOS.ipa
+          if-no-files-found: error
+          retention-days: 14

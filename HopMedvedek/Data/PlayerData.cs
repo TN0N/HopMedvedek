@@ -34,7 +34,7 @@ public static class PlayerData
     /// </summary>
     public static void LoadData()
     {
-        string json = File.ReadAllText(HopMedvedekConstants.HOP_MEDVEDEK_PLAYER_DATA_PATH);
+        string json = DataStore.ReadText(HopMedvedekConstants.HOP_MEDVEDEK_PLAYER_DATA_PATH);
         Current = JsonSerializer.Deserialize<Player>(json) ?? new Player();
     }
     /// <summary>
@@ -47,7 +47,7 @@ public static class PlayerData
             WriteIndented = true
         });
 
-        File.WriteAllText(HopMedvedekConstants.HOP_MEDVEDEK_PLAYER_DATA_PATH, json);
+        DataStore.WriteText(HopMedvedekConstants.HOP_MEDVEDEK_PLAYER_DATA_PATH, json);
     }
     public static List<int> GetGrades(SubjectType subject)
     {

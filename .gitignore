@@ -1,0 +1,5 @@
+# Build output for the mobile head projects (APKs here exceed GitHub's 100 MB limit).
+HopMedvedek Android/bin/
+HopMedvedek Android/obj/
+HopMedvedek iOS/bin/
+HopMedvedek iOS/obj/

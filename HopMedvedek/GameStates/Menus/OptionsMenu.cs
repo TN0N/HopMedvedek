@@ -12,9 +12,14 @@ namespace HopMedvedek.GameStates.Menus;
 
 public class OptionsMenu : Menu
 {
-    protected Label _resolutionLabel, _gameVolumeLabel, _musicVolumeLabel, _languageLabel;
+    protected Label _gameVolumeLabel, _musicVolumeLabel, _languageLabel;
     protected Slider _gameVolumeSlider, _musicVolumeSlider;
-    protected Dropdown _languageDropdown, _resolutionDropdown;
+    protected Dropdown _languageDropdown;
+#if !ANDROID && !IOS
+    // Mobile always renders at the device's native resolution - not user-selectable.
+    protected Label _resolutionLabel;
+    protected Dropdown _resolutionDropdown;
+#endif
     public OptionsMenu(Game game) : base(game)
     {
         base.Initialize();
@@ -68,6 +73,7 @@ public class OptionsMenu : Menu
 
         
 
+#if !ANDROID && !IOS
         _resolutionLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language], new Vector2(210, 320));
         _resolutionLabel.Scale = new Vector2(0.8f, 0.8f);
 
@@ -85,24 +91,23 @@ public class OptionsMenu : Menu
             },
             _scene
             );
-
-
-
-
-        
-        _scene.Add(_languageDropdown);
         _scene.Add(_resolutionDropdown);
+        _scene.Add(_resolutionLabel);
+#endif
+
+        _scene.Add(_languageDropdown);
         _scene.Add(_back);
         _scene.Add(_gameVolumeSlider);
         _scene.Add(_musicVolumeSlider);
-        _scene.Add(_resolutionLabel);
         _scene.Add(_gameVolumeLabel);
         _scene.Add(_musicVolumeLabel);
         _scene.Add(_languageLabel);
     }
     public override void Reload()
     {
+#if !ANDROID && !IOS
         _resolutionLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language];
+#endif
         _gameVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL][Options.Options.Current.Language];
         _musicVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_MUSIC_VOLUME_LABEL][Options.Options.Current.Language];
         _languageLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_LANGUAGE_LABEL][Options.Options.Current.Language];
@@ -116,16 +121,15 @@ public class OptionsMenu : Menu
         //
         if (_back.WasReleased)
         {
-
-            string resolution = ((ResolutionEnum)_resolutionDropdown.SelectedKey).ToString();
-            resolution = resolution.Replace("_", "");
-            string[] dimensions = resolution.Split('x');
-
             Options.Options.Current.GameVolume = _gameVolumeSlider.Value;
             Options.Options.Current.MusicVolume = _musicVolumeSlider.Value;
             Options.Options.Current.Language = (LanguageEnum)_languageDropdown.SelectedKey;
+#if !ANDROID && !IOS
+            string resolution = ((ResolutionEnum)_resolutionDropdown.SelectedKey).ToString().Replace("_", "");
+            string[] dimensions = resolution.Split('x');
             Options.Options.Current.GraphicsDeviceWidth = int.Parse(dimensions[0]);
             Options.Options.Current.GraphicsDeviceHeight = int.Parse(dimensions[1]);
+#endif
             _hopMedvedek.ApplyOptions();
             Options.Options.SaveOptions();
 

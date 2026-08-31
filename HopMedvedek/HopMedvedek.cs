@@ -6,6 +6,9 @@ using HopMedvedek.GameStates.GamePlay;
 using HopMedvedek.GameStates.Menus;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
+#if ANDROID || IOS
+using Microsoft.Xna.Framework.Graphics;
+#endif
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections;
@@ -34,14 +37,35 @@ public class HopMedvedek : Game {
     {
         Options.Options.LoadOptions();
         //Window.AllowUserResizing = true;
-        _graphics.PreferredBackBufferWidth = Options.Options.Current.GraphicsDeviceWidth;
-        _graphics.PreferredBackBufferHeight = Options.Options.Current.GraphicsDeviceHeight;
-        
+        ApplyBackBufferSize();
+
         IsMouseVisible = Options.Options.Current.IsMouseVisible;
         Content.RootDirectory = HopMedvedekConstants.HOP_MEDVEDEK_ROOT_DIRECTORY;
 
         _graphics.ApplyChanges();
 
+    }
+
+    /// <summary>
+    /// Desktop: honour the user-chosen resolution from options.
+    /// Android / iOS: there is no windowed mode - render full screen at the
+    /// device's native resolution so the back buffer matches the touch surface
+    /// 1:1 (no letterbox, so screen-space taps map straight onto scene coords).
+    /// </summary>
+    private void ApplyBackBufferSize()
+    {
+#if ANDROID || IOS
+        DisplayMode native = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
+        if (native.Width > 0 && native.Height > 0)
+        {
+            _graphics.PreferredBackBufferWidth = native.Width;
+            _graphics.PreferredBackBufferHeight = native.Height;
+        }
+        _graphics.IsFullScreen = true;
+#else
+        _graphics.PreferredBackBufferWidth = Options.Options.Current.GraphicsDeviceWidth;
+        _graphics.PreferredBackBufferHeight = Options.Options.Current.GraphicsDeviceHeight;
+#endif
     }
     public void StackState(GameState gameState)
     {
@@ -91,8 +115,7 @@ public class HopMedvedek : Game {
         SoundEngine.Instance.SetMusicVolume(Options.Options.Current.MusicVolume);
         SoundEngine.Instance.SetSoundsVolume(Options.Options.Current.GameVolume);
 
-        _graphics.PreferredBackBufferWidth = Options.Options.Current.GraphicsDeviceWidth;
-        _graphics.PreferredBackBufferHeight = Options.Options.Current.GraphicsDeviceHeight;
+        ApplyBackBufferSize();
         _graphics.ApplyChanges();
 
         foreach (GameState state in _stateStack)
@@ -119,9 +142,13 @@ public class HopMedvedek : Game {
     }
     protected override void Update(GameTime gameTime)
     {
+#if !IOS
+        // iOS forbids an app closing itself (Game.Exit() is an error there).
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
+#endif
         base.Update(gameTime);
+        global::HopMedvedek.Input.HopInput.EndFrame();
     }
     protected override void Draw(GameTime gameTime)
     {

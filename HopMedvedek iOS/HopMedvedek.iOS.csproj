@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    iOS head project for HopMedvedek. Same idea as "HopMedvedek Android":
+    it does NOT reference the desktop .csproj files (they pull in
+    MonoGame.Framework.DesktopGL); instead it link-compiles the shared source
+    and builds it against MonoGame.Framework.iOS.
+
+    NOTE: a runnable .app / .ipa can only be produced on macOS (or from Windows
+    with Visual Studio "Pair to Mac", or a macOS CI runner). On Windows this
+    project compiles the managed assembly only.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-ios</TargetFramework>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HopMedvedekiOS</RootNamespace>
+    <AssemblyName>HopMedvedek.iOS</AssemblyName>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <ApplicationId>com.tn0n.hopmedvedek</ApplicationId>
+    <ApplicationTitle>Hop Medvedek</ApplicationTitle>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+
+    <!-- .NET for iOS already defines IOS; make it explicit so the guarded code
+         in the shared project is unambiguous. -->
+    <DefineConstants>$(DefineConstants);IOS</DefineConstants>
+
+    <!-- Device builds are arm64 only. Simulator RID is picked by the tooling. -->
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' And '$(Configuration)' == 'Release'">ios-arm64</RuntimeIdentifier>
+
+    <!-- Signing / provisioning are intentionally left blank: set them on the Mac
+         (or via CI secrets). A Debug simulator build needs none. -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.iOS" Version="3.8.4.1" />
+  </ItemGroup>
+
+  <!-- Shared game + engine source, compiled against the iOS MonoGame runtime. -->
+  <ItemGroup>
+    <Compile Include="..\HopMedvedek\**\*.cs"
+             Exclude="..\HopMedvedek\obj\**\*.cs;..\HopMedvedek\bin\**\*.cs;..\HopMedvedek\Program.cs"
+             LinkBase="Shared\HopMedvedek" />
+    <Compile Include="..\Express\**\*.cs"
+             Exclude="..\Express\obj\**\*.cs;..\Express\bin\**\*.cs"
+             LinkBase="Shared\Express" />
+    <Compile Include="..\Artificial\**\*.cs"
+             Exclude="..\Artificial\obj\**\*.cs;..\Artificial\bin\**\*.cs"
+             LinkBase="Shared\Artificial" />
+  </ItemGroup>
+
+  <!-- Prebuilt content + default data, copied into the app bundle. -->
+  <ItemGroup>
+    <BundleResource Include="Content\*.xnb" Link="Content\%(Filename)%(Extension)" />
+    <BundleResource Include="..\HopMedvedek\Data\playerData.json" Link="Data\playerData.json" />
+    <BundleResource Include="..\HopMedvedek\Data\ShopItems.json" Link="Data\ShopItems.json" />
+    <BundleResource Include="..\HopMedvedek\Options\options.json" Link="Options\options.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\**" />
+  </ItemGroup>
+
+</Project>

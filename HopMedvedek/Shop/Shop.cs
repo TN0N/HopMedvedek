@@ -29,7 +29,7 @@ public class Shop
     {
         _displaySkin = PlayerData.Current.Skin;
 
-        string json = File.ReadAllText(
+        string json = DataStore.ReadText(
             HopMedvedekConstants.HOP_MEDVEDEK_SHOP_ITEMS_PATH
         );
         JsonSerializerOptions jsonOptions = new JsonSerializerOptions();
@@ -71,7 +71,7 @@ public class Shop
             WriteIndented = true
         });
 
-        File.WriteAllText(HopMedvedekConstants.HOP_MEDVEDEK_SHOP_ITEMS_PATH, json);
+        DataStore.WriteText(HopMedvedekConstants.HOP_MEDVEDEK_SHOP_ITEMS_PATH, json);
     }
     public void ApplySkin()
     {
