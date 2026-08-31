@@ -2,13 +2,8 @@ name: iOS .ipa (unsigned, for sideloading)
 
 # Produces an UNSIGNED .ipa on a macOS runner. Download the artifact and install
 # it onto an iPhone from Windows with Sideloadly or AltStore (AltServer for
-# Windows) - those tools re-sign it with your free Apple ID (7-day, refresh
-# weekly). Nothing here needs an Apple Developer account or signing secrets.
-#
-# It uses the runner's PRE-INSTALLED .NET SDK + `ios` workload + Xcode, which
-# GitHub keeps version-matched. Do NOT add `setup-dotnet` / `dotnet workload
-# restore` here - a fresh SDK pulls the newest .NET-for-iOS, which usually needs
-# a newer Xcode than the image has and the build fails the Xcode version gate.
+# Windows) - those re-sign it with your free Apple ID (7-day, refresh weekly).
+# No Apple Developer account, no signing secrets, no Mac.
 
 on:
   workflow_dispatch:
@@ -19,22 +14,45 @@ on:
       - 'HopMedvedek/**'
       - 'Express/**'
       - 'Artificial/**'
+      - 'global.json'
       - '.github/workflows/ios-ipa.yml'
 
 jobs:
   build-ipa:
-    runs-on: macos-15
-    timeout-minutes: 40
+    runs-on: macos-latest
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show toolchain
+      # global.json pins .NET 9 (the runner default is .NET 10, which has no iOS
+      # workload here). setup-dotnet makes sure a 9.0.x SDK is present.
+      - name: Set up .NET 9 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Toolchain / environment
         run: |
-          xcodebuild -version || true
-          dotnet --info | head -n 15
-          dotnet workload list
+          echo "== Installed Xcodes =="
+          ls -d /Applications/Xcode*.app 2>/dev/null || true
+          echo "== dotnet =="
+          dotnet --version
+          dotnet --list-sdks
+          echo "== workloads =="
+          dotnet workload list || true
+
+      - name: Select the newest installed Xcode
+        run: |
+          NEWEST=$(ls -d /Applications/Xcode_*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$NEWEST" ]; then NEWEST=/Applications/Xcode.app; fi
+          echo "Selecting $NEWEST"
+          sudo xcode-select -s "$NEWEST/Contents/Developer"
+          xcodebuild -version
+
+      - name: Restore the iOS workload
+        run: dotnet workload restore "HopMedvedek iOS/HopMedvedek.iOS.csproj"
 
       - name: Build unsigned .app (Release, device arm64)
         run: >
