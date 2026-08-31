@@ -49,8 +49,16 @@ can restore packages and compile the **managed assembly**, but not produce an
 4. The app runs for **7 days** (free Apple ID limit). Re-sideload to renew;
    AltStore can auto-refresh while AltServer is running.
 
-No Apple Developer account, no signing secrets, no Mac. The CI just needs the
-repo's `ios` workload, which `dotnet workload restore` pulls on the runner.
+No Apple Developer account, no signing secrets, no Mac.
+
+The workflow uses the runner's **pre-installed** .NET SDK + `ios` workload + Xcode
+(GitHub keeps them version-matched). Do not add `setup-dotnet` /
+`dotnet workload restore` - a fresh SDK pulls the newest .NET-for-iOS, which
+usually needs a newer Xcode than the runner image has, and the build fails a
+version gate (`This version of .NET for iOS (…) requires Xcode …`). If the
+pre-installed workload is ever mismatched after an Xcode bump, pin it instead
+with `dotnet workload install ios --version <workload-set>` (see
+`dotnet workload search version`).
 
 ## Build (on a Mac / paired Mac / macOS CI)
 

@@ -4,6 +4,11 @@ name: iOS .ipa (unsigned, for sideloading)
 # it onto an iPhone from Windows with Sideloadly or AltStore (AltServer for
 # Windows) - those tools re-sign it with your free Apple ID (7-day, refresh
 # weekly). Nothing here needs an Apple Developer account or signing secrets.
+#
+# It uses the runner's PRE-INSTALLED .NET SDK + `ios` workload + Xcode, which
+# GitHub keeps version-matched. Do NOT add `setup-dotnet` / `dotnet workload
+# restore` here - a fresh SDK pulls the newest .NET-for-iOS, which usually needs
+# a newer Xcode than the image has and the build fails the Xcode version gate.
 
 on:
   workflow_dispatch:
@@ -25,18 +30,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select latest stable Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: latest-stable
-
-      - name: Set up .NET SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '9.0.x'
-
-      - name: Restore the iOS workload for this project
-        run: dotnet workload restore "HopMedvedek iOS/HopMedvedek.iOS.csproj"
+      - name: Show toolchain
+        run: |
+          xcodebuild -version || true
+          dotnet --info | head -n 15
+          dotnet workload list
 
       - name: Build unsigned .app (Release, device arm64)
         run: >
