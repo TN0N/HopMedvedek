@@ -1,10 +1,6 @@
 {
-  "HighScore": 28804,
-  "Coins": 226,
+  "HighScore": 0,
+  "Coins": 0,
   "Skin": "skin_bear_brown",
-  "SkinTexture": "bear",
-  "Year01LanguageLevelCorrectAnswers": 37,
-  "Year01LanguageLevelWrongAnswers": 3,
-  "Year01MathsLevelCorrectAnswers": 5,
-  "Year01MathsLevelWrongAnswers": 0
+  "SkinTexture": "bear"
 }

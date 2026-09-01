@@ -48,7 +48,11 @@ public class LevelBase : GameComponent
         _scene.Add(_tree);
         _scene.Add(_ground);
 
-
+        int BottomY = HopMedvedekConstants.screenHeight;
+        int midX = HopMedvedekConstants.screenWidth / 2;
+        _ground.Position = new Vector2(midX, BottomY - _ground.Height / 2);
+        _tree.Position = new Vector2(_ground.Position.X, _ground.Position.Y - _ground.Height / 2);
+        _bear.Position = _tree.Position;
 
         _scene.SceneTextureData = new Dictionary<string, Texture2D>
         {
@@ -106,7 +110,7 @@ public class LevelBase : GameComponent
             if (_bear.PlayerHP > 0)
             {
                 _bear.State = BearState.BearDazed;
-                _bear.Velocity.Y = -900;
+                _bear.Velocity.Y = -700;
             }
         }
     }

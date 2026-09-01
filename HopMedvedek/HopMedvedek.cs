@@ -77,9 +77,11 @@ public class HopMedvedek : Game {
         _stateStack.Push(gameState);
         Components.Add(gameState);
         gameState.Activate();
+
     }
     public void PushState(GameState gameState)
     {
+        
         // Deactivate Current
         if (_stateStack.Count > 0)
         {
@@ -92,6 +94,7 @@ public class HopMedvedek : Game {
         _stateStack.Push(gameState);
         Components.Add(gameState);
         gameState.Activate();
+
     }
 
     public void PopState()
@@ -108,6 +111,7 @@ public class HopMedvedek : Game {
             
         }
         currentActiveState.Activate();
+        
     }
 
     public void ApplyOptions()

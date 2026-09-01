@@ -49,7 +49,11 @@ public static class HopControls
     public static void SetTilt(float gravityFraction)
     {
         float v = TiltSign * gravityFraction;
+#if ANDROID
         float sign = v < 0f ? -1f : 1f;
+#elif IOS
+        float sign = v < 0f ? 1f : -1f;
+#endif
         float magnitude = Math.Abs(v) - TiltDeadzone;
         if (magnitude <= 0f)
         {

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artificial", "..\Artificial
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HopMedvedek.Android", "..\HopMedvedek Android\HopMedvedek.Android.csproj", "{77F63A62-842B-47ED-85DA-6A68EE26599A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HopMedvedek.iOS", "..\HopMedvedek iOS\HopMedvedek.iOS.csproj", "{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{77F63A62-842B-47ED-85DA-6A68EE26599A}.Release|x64.Build.0 = Release|Any CPU
 		{77F63A62-842B-47ED-85DA-6A68EE26599A}.Release|x86.ActiveCfg = Release|Any CPU
 		{77F63A62-842B-47ED-85DA-6A68EE26599A}.Release|x86.Build.0 = Release|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Debug|x64.Build.0 = Debug|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Debug|x86.Build.0 = Debug|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Release|x64.ActiveCfg = Release|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Release|x64.Build.0 = Release|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Release|x86.ActiveCfg = Release|Any CPU
+		{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

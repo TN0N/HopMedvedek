@@ -3,23 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\gui\\elements\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|solutionrelative:gui\\elements\\button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\input\\hopcontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|solutionrelative:input\\hopcontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\gamestates\\gameplay\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\gameplay\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\input\\hopinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|solutionrelative:input\\hopinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:hopmedvedek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77F63A62-842B-47ED-85DA-6A68EE26599A}|..\\HopMedvedek Android\\HopMedvedek.Android.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\audio\\soundengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:audio\\soundengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:level\\levelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\scene\\objects\\leaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:scene\\objects\\leaves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,67 +46,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HopControls.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Input\\HopControls.cs",
-              "RelativeDocumentMoniker": "Input\\HopControls.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Input\\HopControls.cs",
-              "RelativeToolTip": "Input\\HopControls.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAMwCUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T16:23:42.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainActivity.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek Android\\MainActivity.cs",
-              "RelativeDocumentMoniker": "..\\HopMedvedek Android\\MainActivity.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek Android\\MainActivity.cs",
-              "RelativeToolTip": "..\\HopMedvedek Android\\MainActivity.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAFkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T10:27:39.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HopInput.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Input\\HopInput.cs",
-              "RelativeDocumentMoniker": "Input\\HopInput.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Input\\HopInput.cs",
-              "RelativeToolTip": "Input\\HopInput.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAcwDMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T10:27:29.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Button.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Gui\\Elements\\Button.cs",
-              "RelativeDocumentMoniker": "Gui\\Elements\\Button.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Gui\\Elements\\Button.cs",
-              "RelativeToolTip": "Gui\\Elements\\Button.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKIAAAAdAAAAAAAAAA==",
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "GameStates\\Menus\\PauseMenu.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\PauseMenu.cs",
+              "RelativeToolTip": "GameStates\\Menus\\PauseMenu.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAADwAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T10:26:13.663Z",
+              "WhenOpened": "2026-09-01T09:42:49.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OptionsMenu.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\OptionsMenu.cs",
+              "RelativeDocumentMoniker": "GameStates\\Menus\\OptionsMenu.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\OptionsMenu.cs",
+              "RelativeToolTip": "GameStates\\Menus\\OptionsMenu.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAAAHwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T09:41:54.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Entities\\Player.cs",
-              "RelativeDocumentMoniker": "Entities\\Player.cs",
-              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Entities\\Player.cs",
-              "RelativeToolTip": "Entities\\Player.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAMwNQAAAAvAAAAAAAAAA==",
+              "Title": "GamePlay.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\GamePlay\\GamePlay.cs",
+              "RelativeDocumentMoniker": "GameStates\\GamePlay\\GamePlay.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\GamePlay\\GamePlay.cs",
+              "RelativeToolTip": "GameStates\\GamePlay\\GamePlay.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T10:25:47.043Z",
+              "WhenOpened": "2026-09-01T09:41:05.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LevelBase.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
+              "RelativeDocumentMoniker": "Level\\LevelBase.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
+              "RelativeToolTip": "Level\\LevelBase.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAHAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T09:38:29.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SoundEngine.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Audio\\SoundEngine.cs",
+              "RelativeDocumentMoniker": "Audio\\SoundEngine.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Audio\\SoundEngine.cs",
+              "RelativeToolTip": "Audio\\SoundEngine.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAMwGkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T09:36:05.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HopMedvedek.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
+              "RelativeDocumentMoniker": "HopMedvedek.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
+              "RelativeToolTip": "HopMedvedek.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T09:34:45.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Leaves.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Leaves.cs",
+              "RelativeDocumentMoniker": "Scene\\Objects\\Leaves.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Leaves.cs",
+              "RelativeToolTip": "Scene\\Objects\\Leaves.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAAADEAAACVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T08:39:44.027Z",
               "EditorCaption": ""
             }
           ]

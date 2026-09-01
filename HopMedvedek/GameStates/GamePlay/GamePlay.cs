@@ -134,6 +134,7 @@ public class GamePlay : GameState
             Data.PlayerData.Current.Year01MathsLevelWrongAnswers += Scores.year01MathsLevelWrongAnswers;
             Data.PlayerData.Current.Coins += _level.Bear.PlayerCoins;
             Data.PlayerData.SaveData();
+            SoundEngine.Instance.StopSounds();
             SoundEngine.Play(SoundEffectType.BearDie, null, null, Options.Options.Current.GameVolume);
             _hopMedvedek.PushState(new DeathMenu(Game, _levelClass));
         }

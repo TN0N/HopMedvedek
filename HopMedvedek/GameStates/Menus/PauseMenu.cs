@@ -1,4 +1,5 @@
-﻿using HopMedvedek.Data;
+﻿using HopMedvedek.Audio;
+using HopMedvedek.Data;
 using HopMedvedek.Data.Strings;
 using HopMedvedek.Gui.Elements;
 using Microsoft.Xna.Framework;
@@ -54,28 +55,14 @@ public class PauseMenu : Menu
         }
         else if (_restart.WasReleased)
         {
-            /*
-            Type[] levelClasses = new Type[(int)LevelType.LastType] {
-               typeof(Level.Levels.LanguageLevel),
-               typeof(Level.Levels.Year01MathLevel)
-            };
-            
-            GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, levelClasses[0]);
-            _hopMedvedek.PushState(gameplay);*/
-            if (_restart.WasReleased)
-            {
-                /*
-                Type[] levelClasses = new Type[(int)LevelType.LastType] {
-                   typeof(Level.Levels.LanguageLevel),
-                   typeof(Level.Levels.Year01MathLevel)
-                };
-                */
-                GamePlay.GamePlay currentGameplay = Game.Components.OfType<GamePlay.GamePlay>().FirstOrDefault();
+ 
+            SoundEngine.Instance.StopSounds();
 
-                GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, currentGameplay.LevelClass);
-                _hopMedvedek.PushState(gameplay);
+            GamePlay.GamePlay currentGameplay = Game.Components.OfType<GamePlay.GamePlay>().FirstOrDefault();
 
-            }
+            GamePlay.GamePlay gameplay = new GamePlay.GamePlay(Game, currentGameplay.LevelClass);
+            _hopMedvedek.PushState(gameplay);
+
         }
         else if (_options.WasReleased)
         { 
@@ -83,6 +70,7 @@ public class PauseMenu : Menu
         }
         else if (_returnToMainmenu.WasReleased)
         {
+            SoundEngine.Instance.StopSounds();
             newState = new MainMenu(Game);
         }
 

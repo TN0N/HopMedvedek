@@ -103,6 +103,14 @@ public sealed class SoundEngine : GameComponent
         soundEffectInstance.Stop();
         _soundEffectInstances.Remove(soundEffectInstance);
     }
+    public void StopSounds()
+    {
+        foreach (SoundEffectInstance sei in _soundEffectInstances)
+        {
+            sei.Stop();
+        }
+        _soundEffectInstances.Clear();
+    }
     public void SetMusicVolume(float volume)
     { 
         _music.Volume = volume;

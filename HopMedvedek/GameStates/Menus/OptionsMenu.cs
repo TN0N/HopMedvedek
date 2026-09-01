@@ -8,6 +8,7 @@ using Express.Graphics;
 using HopMedvedek.Options;
 using System.Collections.Generic;
 using System;
+using HopMedvedek.Audio;
 namespace HopMedvedek.GameStates.Menus;
 
 public class OptionsMenu : Menu
@@ -121,6 +122,7 @@ public class OptionsMenu : Menu
         //
         if (_back.WasReleased)
         {
+            SoundEngine.Instance.StopSounds();
             Options.Options.Current.GameVolume = _gameVolumeSlider.Value;
             Options.Options.Current.MusicVolume = _musicVolumeSlider.Value;
             Options.Options.Current.Language = (LanguageEnum)_languageDropdown.SelectedKey;

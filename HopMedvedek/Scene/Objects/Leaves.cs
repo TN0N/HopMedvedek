@@ -46,23 +46,23 @@ public class Leaves : GameComponent, ICustomCollider, ICoefficientOfRestitution,
     protected bool _playerLanded;
     protected Lifetime _stateLifeTime;
 
-    protected Sprite _defaultSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 42, 62, 33), new Vector2(31, 16));
-    protected Sprite _bearLanededSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(372, 42, 62, 33), new Vector2(31, 16));
+    protected Sprite _defaultSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 42, 89, 33), new Vector2(44, 16));
+    protected Sprite _bearLanededSprite = new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(528, 42, 89, 33), new Vector2(44, 16));
     protected LeavesState _state;
 
     protected Dictionary<Enum, AnimatedSprite> _leafAnimations = new()
     {
-        [LeavesState.BearLanding] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 42, 62, 33), new Vector2(31, 16), 7, HopMedvedekConstants.HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION, true),
+        [LeavesState.BearLanding] = new AnimatedSprite(HopMedvedekConstants.HOP_MEDVEDEK_SCENE_ELEMENTS, new Rectangle(0, 42, 89, 33), new Vector2(44, 16), 7, HopMedvedekConstants.HOP_MEDVEDEK_LEAVES_BEAR_LANDED_ANIMATION_DURATION, true),
     };
 
     public Leaves(Game game) : base(game)
     {
-        _width = 40;
+        _width = 77;
         _height = 10;
         _color = Color.White;
 
-        _drawWidth = 62;
-        _drawHeight = 34;
+        _drawWidth = 89;
+        _drawHeight = 33;
 
         _angularMass = 125000f;
         _rotationAngle =0f;
