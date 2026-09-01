@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}|..\\HopMedvedek iOS\\HopMedvedek.iOS.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\input\\hopcontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36B6E595-47B1-44E9-87E9-8979A2DA4D1A}|..\\HopMedvedek iOS\\HopMedvedek.iOS.csproj|solutionrelative:input\\hopcontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|c:\\users\\antma\\documents\\fri\\3. letnik\\hopmedvedek\\hopmedvedek\\gamestates\\menus\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBE2DE93-5A14-D367-0747-7714FBF9A476}|HopMedvedek.csproj|solutionrelative:gamestates\\menus\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,6 +51,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HopControls.cs",
+              "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Input\\HopControls.cs",
+              "RelativeDocumentMoniker": "Input\\HopControls.cs",
+              "ToolTip": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Input\\HopControls.cs",
+              "RelativeToolTip": "Input\\HopControls.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T10:14:24.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PauseMenu.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\PauseMenu.cs",
               "RelativeDocumentMoniker": "GameStates\\Menus\\PauseMenu.cs",
@@ -54,12 +71,11 @@
               "RelativeToolTip": "GameStates\\Menus\\PauseMenu.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAAADwAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T09:42:49.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T09:42:49.471Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "OptionsMenu.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\Menus\\OptionsMenu.cs",
               "RelativeDocumentMoniker": "GameStates\\Menus\\OptionsMenu.cs",
@@ -67,12 +83,11 @@
               "RelativeToolTip": "GameStates\\Menus\\OptionsMenu.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAAAAAHwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T09:41:54.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T09:41:54.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GamePlay.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\GameStates\\GamePlay\\GamePlay.cs",
               "RelativeDocumentMoniker": "GameStates\\GamePlay\\GamePlay.cs",
@@ -80,12 +95,11 @@
               "RelativeToolTip": "GameStates\\GamePlay\\GamePlay.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAAAFMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T09:41:05.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T09:41:05.661Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LevelBase.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Level\\LevelBase.cs",
               "RelativeDocumentMoniker": "Level\\LevelBase.cs",
@@ -93,12 +107,11 @@
               "RelativeToolTip": "Level\\LevelBase.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAAAHAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T09:38:29.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T09:38:29.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SoundEngine.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Audio\\SoundEngine.cs",
               "RelativeDocumentMoniker": "Audio\\SoundEngine.cs",
@@ -106,12 +119,11 @@
               "RelativeToolTip": "Audio\\SoundEngine.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAMwGkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T09:36:05.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T09:36:05.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HopMedvedek.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\HopMedvedek.cs",
               "RelativeDocumentMoniker": "HopMedvedek.cs",
@@ -119,12 +131,11 @@
               "RelativeToolTip": "HopMedvedek.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T09:34:45.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T09:34:45.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Leaves.cs",
               "DocumentMoniker": "C:\\Users\\antma\\Documents\\FRI\\3. Letnik\\HopMedvedek\\HopMedvedek\\Scene\\Objects\\Leaves.cs",
               "RelativeDocumentMoniker": "Scene\\Objects\\Leaves.cs",
@@ -132,8 +143,7 @@
               "RelativeToolTip": "Scene\\Objects\\Leaves.cs",
               "ViewState": "AgIAANUAAAAAAAAAAAAAADEAAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T08:39:44.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-01T08:39:44.027Z"
             }
           ]
         }
