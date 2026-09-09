@@ -10,42 +10,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace HopMedvedek.Input;
 
-/// <summary>
-/// Platform-neutral surface for the three in-game controls, so <c>Player</c>
-/// does not need per-platform branches:
-///
-/// <list type="bullet">
-///   <item><see cref="ConsumeStart"/> - start / kick off the auto-bounce.
-///     Desktop: <c>Space</c>. Mobile: swipe up.</item>
-///   <item><see cref="ConsumeThrow"/> - throw a pinecone toward a screen point.
-///     Desktop: left mouse button. Mobile: tap.</item>
-///   <item><see cref="HorizontalAcceleration"/> - left/right drive.
-///     Desktop: <c>A</c> / <c>D</c>. Mobile: device tilt (accelerometer).</item>
-/// </list>
-///
-/// The mobile head projects feed raw accelerometer through <see cref="SetTilt"/>
-/// (Android from <c>DispatchTouchEvent</c> also feeds touch via
-/// <see cref="FeedTouch"/>; iOS reads MonoGame's <c>TouchPanel</c> directly).
-/// </summary>
 public static class HopControls
 {
-    /// <summary>-1 = full left, +1 = full right, 0 = centred / desktop.</summary>
     public static float TiltX { get; private set; }
 
 #if ANDROID || IOS
-    // === tilt (accelerometer) - shared ===================================
-
-    // "Tilt right" = dip the right edge down (accel X goes negative) -> move right.
-    // Flip to +1f if a device/user wants the opposite.
     private const float TiltSign = -1f;
-    private const float TiltDeadzone = 0.05f;   // fraction of g ignored around flat
-    private const float TiltFullAt = 0.25f;     // fraction of g (~33 deg) for full speed
+    private const float TiltDeadzone = 0.05f;   
+    private const float TiltFullAt = 0.25f;   
 
-    /// <param name="gravityFraction">
-    /// Accelerometer X in units of g. Flat (roll = 0) is always the centre, so
-    /// starting a run while the device is rolled to one side just steers the bear
-    /// that way - it is not taken as the new neutral.
-    /// </param>
     public static void SetTilt(float gravityFraction)
     {
         float v = TiltSign * gravityFraction;
@@ -65,14 +38,12 @@ public static class HopControls
 
     public static float HorizontalAcceleration(float maxAcceleration) => TiltX * maxAcceleration;
 
-    // === gestures (start = swipe up, throw = tap) - shared state ==========
 
     private static readonly object _gate = new object();
     private static bool _tapPending;
     private static bool _swipeUpPending;
     private static float _tapX, _tapY;
 
-    /// <summary>Drop any gesture picked up before a level starts (e.g. the menu tap).</summary>
     public static void ResetGestures()
     {
         PollGestures();
@@ -114,10 +85,9 @@ public static class HopControls
     }
 
 #if ANDROID
-    // --- Android: gestures are pushed from Activity.DispatchTouchEvent -----
 
-    private const long TapMaxMs = 250;      // press shorter than this...
-    private const float TapSlopPx = 48f;    // ...and moving less than this = tap
+    private const long TapMaxMs = 250;    
+    private const float TapSlopPx = 48f;  
     private const float SwipeUpMinPx = 110f;
 
     private static bool _tracking;
@@ -126,10 +96,8 @@ public static class HopControls
 
     private static void PollGestures()
     {
-        // Nothing to poll - FeedTouch pushes gestures as events arrive.
     }
 
-    /// <summary>Feed a raw Android touch event (from <c>Activity.DispatchTouchEvent</c>).</summary>
     public static void FeedTouch(MotionEvent e)
     {
         if (e == null)
@@ -177,9 +145,8 @@ public static class HopControls
     }
 
 #elif IOS
-    // --- iOS: read MonoGame's TouchPanel gesture recogniser --------------
 
-    private const float SwipeUpMinFlickVelocity = 700f;   // px/s, upward
+    private const float SwipeUpMinFlickVelocity = 700f;   
 
     static HopControls()
     {

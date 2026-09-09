@@ -62,14 +62,4 @@ public static class MovementPhysics
             velocityItem.Velocity.Y += gravity;
         }
     }
-    /*
-    public static void SimulateMovement(IMovable item, TimeSpan elapsed)
-    {
-        
-        item.Velocity += item.Acceleration * (float)elapsed.TotalSeconds;
-        
-        item.Position += item.Velocity * (float)elapsed.TotalSeconds;
-        
-        item.Velocity.X *= item.Decay;
-    }*/
 }

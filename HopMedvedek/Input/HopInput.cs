@@ -9,20 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace HopMedvedek.Input;
 
-/// <summary>
-/// Cross-platform pointer input for the GUI layer.
-///
-/// On desktop this is a thin pass-through to <see cref="Mouse"/>.
-///
-/// On mobile there is no mouse; MonoGame does not feed <see cref="Mouse"/> from
-/// touch, so the existing <c>Mouse.GetState()</c>-based UI (Button / Slider /
-/// Dropdown) never sees a click. A <see cref="MouseState"/> is synthesised from
-/// touch instead - on Android from raw <c>MotionEvent</c>s the Activity forwards
-/// through <c>FeedTouch</c>, on iOS from MonoGame's <c>TouchPanel</c>. Either way
-/// the coordinates are in the same
-/// back-buffer space <c>Mouse.GetState().Position</c> uses on desktop, so the
-/// existing inverse-view hit-testing works unchanged.
-/// </summary>
+
 public static class HopInput
 {
 #if ANDROID
@@ -33,10 +20,6 @@ public static class HopInput
     private static int _y;
     private static readonly object _gate = new object();
 
-    /// <summary>
-    /// Forward a raw Android touch event. Call this from
-    /// <c>Activity.DispatchTouchEvent</c>.
-    /// </summary>
     public static void FeedTouch(MotionEvent e)
     {
         if (e == null)
@@ -78,10 +61,6 @@ public static class HopInput
         }
     }
 
-    /// <summary>
-    /// Ends the one-frame "released" pulse. Call once per frame, after every
-    /// component has updated (see <c>HopMedvedek.Update</c>).
-    /// </summary>
     public static void EndFrame()
     {
         lock (_gate)
@@ -98,9 +77,6 @@ public static class HopInput
     private static int _x;
     private static int _y;
 
-    // MonoGame forwards UITouch events into TouchPanel on iOS. Positions are in
-    // back-buffer space which, with the native-resolution back buffer, matches
-    // Game.Window.ClientBounds - the space the desktop Mouse position uses.
     public static MouseState GetMouseState()
     {
         TouchCollection touches = TouchPanel.GetState();
@@ -122,7 +98,7 @@ public static class HopInput
                 _phase = Phase.Up;
         }
         if (!active && _phase == Phase.Down)
-            _phase = Phase.Up;   // touch vanished without a Released frame
+            _phase = Phase.Up; 
 
         ButtonState left = _phase == Phase.Down ? ButtonState.Pressed : ButtonState.Released;
         return new MouseState(_x, _y, 0, left,

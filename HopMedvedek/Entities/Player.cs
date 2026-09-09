@@ -109,8 +109,6 @@ public class Player: GameComponent
                 _stateLifeTime = new Lifetime(gameTime.TotalGameTime.TotalMilliseconds, HopMedvedekConstants.HOP_MEDVEDEK_BEAR_DAZED_ANIMATION_DURATION / 1000);
 
             }
-            //else
-            //    System.Diagnostics.Debug.WriteLine(_stateLifeTime.IsAlive + "    " + _stateLifeTime.Progress);
             _stateLifeTime.Update(gameTime);
             if (!_stateLifeTime.IsAlive)
             {
@@ -176,12 +174,10 @@ public class Player: GameComponent
         if (_bear.Velocity.Y < -17)
         {
             _bear.State = BearState.BearJumpUp;
-            //_bear.Grounded = false;
         }
         else if (_bear.Velocity.Y > 17)
         {
             _bear.State = BearState.BearJumpDown;
-            //_bear.Grounded = false;
         }
         else if (_bear.Velocity.X < -2)
             _bear.State = BearState.BearWalk;
@@ -194,10 +190,6 @@ public class Player: GameComponent
     public override void Update(GameTime gameTime)
     {
 
-
-        //PrintHelper.Print(_bear.Velocity);
-
-        // Desktop: Space. Android: swipe up. Kicks off the continuous auto-bounce below.
         if (HopControls.ConsumeStart() && !_bear.Jumping)
             _startedGame = true;
 
@@ -209,14 +201,13 @@ public class Player: GameComponent
             _bear.Jumping = true;
         }
 
-        // Desktop: A / D give -1 / +1. Android: proportional device tilt (-1..+1).
         _bear.Acceleration.X = HopControls.HorizontalAcceleration(HopMedvedekConstants.HOP_MEDVEDEK_BEAR_MOVEMENT_ACCELERATION);
 
         ChangeState(gameTime);
         _bearPreviousReward = _bear.ActiveReward;
         if (Keyboard.GetState().IsKeyDown(Keys.F) && _bear.State != BearState.BearDazed)
             _bear.State = BearState.BearDazed;
-        // Desktop: left mouse button. Android: tap. Screen point -> world via the camera.
+
         if (HopControls.ConsumeThrow(out Vector2 throwScreenPosition)
             && (_bear.State != BearState.BearDazed || _bear.State == BearState.BearWalkThrow || _bear.State == BearState.BearJumpThrow))
         {
@@ -227,20 +218,5 @@ public class Player: GameComponent
             else
                 _bear.State = BearState.BearWalkThrow;
         }
-            
-        //if (Mouse.GetState().RightButton == ButtonState.Pressed)
-        //    _bear.State = BearState.BearJumpThrow;
-
-       
-
-        /*
-        _bear.Velocity.Normalize();
-        if (float.IsNaN(_bear.Velocity.X)) 
-            _bear.Velocity.X = 0;
-        if (float.IsNaN(_bear.Velocity.Y))
-            _bear.Velocity.Y = 0;
-        _bear.Velocity *= _bear.MaxSpeed;
-        */
-
     }
 }

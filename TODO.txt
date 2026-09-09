@@ -1,4 +1,0 @@
-TO do:
-- Change Font to something better
-- Apply continueous sound to pinecone
-- Apply rotation to pinecone

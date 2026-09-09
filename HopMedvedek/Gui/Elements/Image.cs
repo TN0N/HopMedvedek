@@ -18,17 +18,14 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
     protected Vector2 _acceleration;
     protected Vector2 _decay;
     protected bool _facing;
-    //protected Vector2 _origin;
     protected Sprite _sprite;
     protected Vector2 _position;
     protected AnimatedSprite _animatedSprite;
     protected Color _color;
 
-    public Image(Sprite sprite, Rectangle dstRectangle/*, Vector2 Origin*/)
+    public Image(Sprite sprite, Rectangle dstRectangle)
     {
-        //_angularVelocity = 1f;
-        //_rotationAngle = 2f;
-        //_origin = Origin;
+
         _width = dstRectangle.Width;
         _height = dstRectangle.Height;
         _position = new Vector2(dstRectangle.X, dstRectangle.Y);
@@ -36,11 +33,8 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
         _sprite = sprite;
         _color = Color.White;
     }
-    public Image(AnimatedSprite animatedSprite, Rectangle dstRectangle/*, Vector2 Origin*/)
+    public Image(AnimatedSprite animatedSprite, Rectangle dstRectangle)
     {
-        //_angularVelocity = 1f;
-        //_rotationAngle = 2f;
-        //_origin = Origin;
         _width = dstRectangle.Width;
         _height = dstRectangle.Height;
         _position = new Vector2(dstRectangle.X, dstRectangle.Y);
@@ -104,9 +98,5 @@ public class Image : IRectangleSize, IPosition, ITextured, IRotatable, IMovable/
         get => _color;
         set => _color = value;
     }
-    /*public Vector2 CustomOrigin
-    {
-        get => _origin;
-        set => _origin = value;
-    }*/
+
 }

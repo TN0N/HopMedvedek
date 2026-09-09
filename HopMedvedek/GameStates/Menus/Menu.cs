@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework;
 using Artificial.Artificial.Mirage;
 using HopMedvedek.Data.Strings;
 using System.Collections.Generic;
-using System;
 
 namespace HopMedvedek.GameStates.Menus;
 

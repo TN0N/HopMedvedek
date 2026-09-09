@@ -12,7 +12,6 @@ namespace HopMedvedek.Gui.Elements;
 public class Slider
 {
     protected IScene _scene;
-    //protected Image _backgroundImage;
     protected Sprite _trackTexture, _thumbTexture;
     protected float _value;
 
@@ -111,7 +110,6 @@ public class Slider
         set
         {
             _backgroundColor = value;
-            //_backgroundImage.Color = _backgroundColor;
         }
     }
 
@@ -132,7 +130,6 @@ public class Slider
         set
         {
             _value = MathHelper.Clamp(value, 0f, 1f);
-            // Update thumb position based on value
             _thumbArea.X = _inputArea.X + (int)((_inputArea.Width - _thumbArea.Width) * _value);
         }
     }
@@ -169,10 +166,8 @@ public class Slider
 
     public void UpdateWithInverseView(Matrix inverseView)
     {
-        //System.Diagnostics.Debug.WriteLine("Slider updating");
         if (!_enabled)
             return;
-        //System.Diagnostics.Debug.WriteLine("Slider updating");
         bool wasDown = _isDown;
         _isDown = false;
         _wasPressed = false;
@@ -186,14 +181,12 @@ public class Slider
         {
             if (wasDown)
             {
-                // release pressed button -> trigger action
                 if (HopInput.GetMouseState().LeftButton != ButtonState.Pressed)
                 {
                     _wasReleased = true;
                     _activeBackgroundColor = _backgroundColor;
                     _valueFill.Color = _labelColor;
                 }
-                // holding pressed button
                 else
                 {
                     _isDown = true;
@@ -207,17 +200,13 @@ public class Slider
             }
             else
             {
-                // click on button
                 if (HopInput.GetMouseState().LeftButton == ButtonState.Pressed)
                 {
                     _isDown = true;
                     _wasPressed = true;
                     _activeBackgroundColor = _backgroundPressedColor;
                     _valueFill.Color = _labelPressedColor;
-
-                    //System.Diagnostics.Debug.WriteLine("Slider clicked");
                 }
-                // hover over button
                 else
                 {
                     _activeBackgroundColor = _backgroundHoverColor;
@@ -225,7 +214,6 @@ public class Slider
                 }
             }
         }
-        // mouse not over button
         else
         {
             _activeBackgroundColor = _backgroundColor;

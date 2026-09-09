@@ -1,10 +1,8 @@
-﻿using Artificial.Artificial.Mirage;
-using Express.Graphics;
+﻿using Express.Graphics;
 using Express.Scene;
 using HopMedvedek.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace HopMedvedek.Gui.Elements;
@@ -109,7 +107,6 @@ public class Dropdown
             ExpandDropdown();
             _isActive = true;
         }
-        //if (_inputButton.)
         foreach (Button button in _dropdownItemButtons)
             button.UpdateWithInverseView(inverseView);
         int i = 0;

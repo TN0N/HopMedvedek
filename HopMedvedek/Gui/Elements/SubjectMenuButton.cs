@@ -12,7 +12,6 @@ public class SubjectMenuButton : Button
     protected Label _gradeLabel;
     protected Image _gradeSmiley;
     protected Image _gradeImage;
-    //protected Rectangle _gradeDstRectangle;
     public SubjectMenuButton(Rectangle inputArea, Sprite backgroundImage, SpriteFont font, string text, float grade): base(inputArea, backgroundImage, font, text)
     {
         _gradeImage = new Image(new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, new Rectangle(0, 84, 358, 154), new Vector2(179, 77)), new Rectangle(inputArea.X + 270, inputArea.Y, 90, inputArea.Height));
@@ -44,7 +43,6 @@ public class SubjectMenuButton : Button
                 break;
 
         }
-        //_gradeImage.Color = Color.LimeGreen;
         _gradeImage.LayerDepth = 0.7f;
         _gradeSmiley.LayerDepth = 0.71f;
         _gradeLabel = new Label(font, grade.ToString("P0"), new Vector2(inputArea.X + 320, inputArea.Y + 40));
@@ -56,10 +54,8 @@ public class SubjectMenuButton : Button
     }
     public override void AddedToScene(IScene theScene)
     {
-        // Add child items to scene.
         theScene.Add(_backgroundImage);
         theScene.Add(_label);
-        //theScene.Add(_gradeLabel);
         theScene.Add(_gradeSmiley);
         theScene.Add(_gradeImage);
         
@@ -67,10 +63,8 @@ public class SubjectMenuButton : Button
 
     public override void RemovedFromScene(IScene theScene)
     {
-        // Remove child items.
         theScene.Remove(_backgroundImage);
         theScene.Remove(_label);
-        //theScene.Remove(_gradeLabel);
         theScene.Remove(_gradeSmiley);
         theScene.Remove(_gradeImage);
         
@@ -90,10 +84,4 @@ public class SubjectMenuButton : Button
         get => _gradeSmiley;
         set => _gradeSmiley = value;
     }
-    /*
-    public Rectangle GradeDstRectangle
-    {
-        get => _gradeDstRectangle;
-        set => _gradeDstRectangle = value;
-    }*/
 }

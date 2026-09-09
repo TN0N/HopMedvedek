@@ -8,7 +8,6 @@ using HopMedvedek.Data;
 using HopMedvedek.Gui.Elements;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Linq;
 namespace HopMedvedek.Graphics;
 
 public class Renderer : DrawableGameComponent
@@ -25,13 +24,10 @@ public class Renderer : DrawableGameComponent
     protected IScene _scene;
     protected bool _clearScreen = true;
     protected Rectangle _cameraBounds;
-    //private Matrix _camera; 
 
     public Renderer(Game game, IScene scene) : base(game)
     {
         _scene = scene;
-        //_camera = Matrix.CreateScale(new Vector3(Game.Window.ClientBounds.Width / 320f, Game.Window.ClientBounds.Height / 480f, 1));
-        // _camera = _scene.CameraMatrix;
         _spriteBatch = new SpriteBatch(game.GraphicsDevice);
     }
     protected void ChangeSpriteMode(Sprite textureItem)
@@ -70,7 +66,6 @@ public class Renderer : DrawableGameComponent
     private bool InCameraBounds(Rectangle item)
     {
         return _cameraBounds.Intersects(item);
-        //return true;
     }
     public override void Draw(GameTime gameTime)
     {
@@ -95,15 +90,11 @@ public class Renderer : DrawableGameComponent
         int drawCount = 0;
 
 
-        //System.Diagnostics.Debug.WriteLine("drawing");
         _spriteBatch.Begin(_spriteSortMode, _blendState, _samplerState, _depthStencilState, _rasterizerState, _effect, _scene.CameraMatrix);
-        //_spriteBatch.Begin();
         foreach (object item in _scene)
         {
             if (item is ITextured texturedItem && item is IPosition itemPosition)
             {
-                // Get items sprite to display at current time
-                //System.Diagnostics.Debug.WriteLine("Drawing " + item);
                 Sprite sprite = texturedItem.Sprite(gameTime);
 
                 ChangeSpriteMode(sprite);
@@ -119,14 +110,10 @@ public class Renderer : DrawableGameComponent
                 if (!InCameraBounds(drawRectangle))
                     continue;
 
-                // = (item is IRectangleSize rectangleItem) ? new Rectangle((int)itemPosition.Position.X, (int)itemPosition.Position.Y, (int)rectangleItem.Width, (int)rectangleItem.Height) : sprite.SourceRectangle;
-
                 float rotationAngle = (item is IRotatable rotatableItem) ? rotatableItem.RotationAngle : 0f;
 
                 Vector2 origin = (item is ICustomOrigin customOriginItem) ? customOriginItem.CustomOrigin : sprite.Origin;
-                //float layerDepth = (itemPosition.Position.Y + drawRectangle.Height) / (_scene.CameraMatrix.Translation.Y + Game.Window.ClientBounds.Height);
 
-                //System.Diagnostics.Debug.WriteLine(item + " " + layerDepth);
 
                 _spriteBatch.Draw(
                     _scene.SceneTextureData[sprite.Src],
@@ -248,6 +235,8 @@ public class Renderer : DrawableGameComponent
                 drawCount++;
             }
         }
+
+
         _spriteBatch.End();
         
     }

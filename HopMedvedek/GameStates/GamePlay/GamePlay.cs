@@ -33,14 +33,12 @@ public class GamePlay : GameState
     public GamePlay(Game game, Type levelClass) : base(game)
     {
         _levelClass = levelClass;
-        System.Diagnostics.Debug.WriteLine("Creating new gameplay");
         _startInit(levelClass);
         _player = new Player(game, _level.Bear);
         _finishInit();
     }
     private void _startInit(Type levelClass)
     {
-        System.Diagnostics.Debug.WriteLine("Creating new level");
         _level = Activator.CreateInstance(levelClass, Game) as LevelBase;
         
     }
@@ -76,36 +74,22 @@ public class GamePlay : GameState
         
         Game.Components.Add(_hud);
         _hud.Activate();
-        //Game.Components.Add(_debugRenderer);
         Game.Components.Add(_hudRenderer);
         Game.Components.Add(_gameRenderer);
         Game.Components.Add(_physics);
         Game.Components.Add(_questionEngine);
         Game.Components.Add(_player);
-        //Game.Components.Add(_fpsComponent);
-
-        // Add all gameComponents created by level.Scene
-        /*foreach (var item in _level.Scene)
-            if (item is GameComponent gameComponent)
-                Game.Components.Add(gameComponent);*/
     }
     public override void Deactivate()
     {
         Game.Components.Remove(_level);
         _hud.Deactivate();
         Game.Components.Remove(_hud);
-        //Game.Components.Remove(_debugRenderer);
         Game.Components.Remove(_hudRenderer);
         Game.Components.Remove(_gameRenderer);
         Game.Components.Remove(_physics);
         Game.Components.Remove(_questionEngine);
         Game.Components.Remove(_player);
-        //Game.Components.Remove(_fpsComponent);
-
-        // Deactivate all gameComponents created by level.Scene
-        /*foreach (var item in _level.Scene)
-            if (item is GameComponent gameComponent)
-                Game.Components.Remove(gameComponent);*/
     }
     public override void Reload()
     {
@@ -127,13 +111,13 @@ public class GamePlay : GameState
         if (_level.Bear.PlayerHP < 1)
         {
             
-            Data.PlayerData.Current.HighScore = Math.Max(Data.PlayerData.Current.HighScore, Scores.score);
-            Data.PlayerData.Current.Year01LanguageLevelCorrectAnswers += Scores.year01LanguageLevelCorrectAnswers;
-            Data.PlayerData.Current.Year01LanguageLevelWrongAnswers += Scores.year01LanguageLevelWrongAnswers;
-            Data.PlayerData.Current.Year01MathsLevelCorrectAnswers += Scores.year01MathsLevelCorrectAnswers;
-            Data.PlayerData.Current.Year01MathsLevelWrongAnswers += Scores.year01MathsLevelWrongAnswers;
-            Data.PlayerData.Current.Coins += _level.Bear.PlayerCoins;
-            Data.PlayerData.SaveData();
+            PlayerData.Current.HighScore = Math.Max(Data.PlayerData.Current.HighScore, Scores.score);
+            PlayerData.Current.Year01LanguageLevelCorrectAnswers += Scores.year01LanguageLevelCorrectAnswers;
+            PlayerData.Current.Year01LanguageLevelWrongAnswers += Scores.year01LanguageLevelWrongAnswers;
+            PlayerData.Current.Year01MathsLevelCorrectAnswers += Scores.year01MathsLevelCorrectAnswers;
+            PlayerData.Current.Year01MathsLevelWrongAnswers += Scores.year01MathsLevelWrongAnswers;
+            PlayerData.Current.Coins += _level.Bear.PlayerCoins;
+            PlayerData.SaveData();
             SoundEngine.Instance.StopSounds();
             SoundEngine.Play(SoundEffectType.BearDie, null, null, Options.Options.Current.GameVolume);
             _hopMedvedek.PushState(new DeathMenu(Game, _levelClass));

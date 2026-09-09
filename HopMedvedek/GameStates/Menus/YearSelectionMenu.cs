@@ -1,7 +1,6 @@
 ﻿using HopMedvedek.Data;
 using HopMedvedek.Data.Strings;
 using HopMedvedek.Gui.Elements;
-using HopMedvedek.Options;
 using Microsoft.Xna.Framework;
 namespace HopMedvedek.GameStates.Menus;
 
@@ -13,9 +12,6 @@ public class YearSelectionMenu : Menu
     public YearSelectionMenu(Game game) : base(game)
     {
         base.Initialize();
-
-
-        //_scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND));
         _year01 = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 200, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_01][Options.Options.Current.Language]);
         _year02 = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 300, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_02][Options.Options.Current.Language]);
         _year03 = new Button(new Rectangle(HopMedvedekConstants.screenWidth / 2 - _buttonWidth / 2, 400, _buttonWidth, _buttonHeight), _buttonBackground, _luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_YEAR_SELECTION_MENU_YEAR_03][Options.Options.Current.Language]);
@@ -29,17 +25,7 @@ public class YearSelectionMenu : Menu
         _year03.Color = Color.Gray;
         _year04.Color = Color.Gray;
 
-        /*
-        Rectangle backgroundImageSize = new Rectangle(0, 0, 864, 1821);
-        float scaleFactor = backgroundImageSize.Height / game.Window.ClientBounds.Height;
 
-        _background = new Image(
-            new Sprite(HopMedvedekConstants.HOP_MEDVEDEK_MAIN_MENU_BACKGROUND, backgroundImageSize, new Vector2(backgroundImageSize.Width / 2, backgroundImageSize.Height / 2)),
-            new Rectangle(game.Window.ClientBounds.Width / 2, game.Window.ClientBounds.Height / 2, (int)(backgroundImageSize.Width / scaleFactor), (int)(backgroundImageSize.Height / scaleFactor))
-            );
-        _background.LayerDepth = 0.1f;*/
-
-        //_scene.Add(_background);
         _scene.Add(_year01);
         _scene.Add(_year02);
         _scene.Add(_year03);

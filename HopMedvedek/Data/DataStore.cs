@@ -2,17 +2,6 @@
 
 namespace HopMedvedek.Data;
 
-/// <summary>
-/// Small indirection over the JSON persistence files (player data, options, shop).
-///
-/// On desktop this is a straight pass-through to <see cref="File"/> using the same
-/// relative paths as before, so behaviour is unchanged.
-///
-/// On Android / iOS the app cannot write next to its installed assets, so writes
-/// are redirected to app-private storage and reads fall back to the read-only
-/// copy bundled in the app (assets/ on Android, the .app bundle on iOS) the first
-/// time the game runs.
-/// </summary>
 public static class DataStore
 {
 #if ANDROID || IOS

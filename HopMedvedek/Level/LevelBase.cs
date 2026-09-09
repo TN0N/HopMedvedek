@@ -21,12 +21,10 @@ namespace HopMedvedek.Level;
 /// </summary>
 public class LevelBase : GameComponent
 {
-    //protected HopMedvedek _hopMedvedek;
     protected SimpleScene _scene;
     protected Bear _bear;
     protected Tree _tree;
     protected Ground _ground;
-    // protected List<Crow> _crows;
     protected Dictionary<string, Texture2D> _textureData;
     protected QuestionSheet _questionSheet;
 
@@ -75,9 +73,6 @@ public class LevelBase : GameComponent
         Scores.year01LanguageLevelWrongAnswers = 0;
         Scores.year01MathsLevelCorrectAnswers = 0;
         Scores.year01MathsLevelWrongAnswers = 0;
-        //_bear.Position = _bearSpawn;
-        //_ground.Position = _groundSpawn;
-        //_tree.Position = _treeBaseSpawn;
 
         if (!Game.Components.Contains(_scene))
             Game.Components.Add(_scene);
@@ -90,13 +85,11 @@ public class LevelBase : GameComponent
             var updateable = item as ICustomUpdate;
             updateable?.Update(gameTime);
         }
-        //Scores.score = (int)(-_bear.Position.Y + 703);
         Scores.score = (int)MathF.Max(Scores.score, (int)-_bear.Position.Y + 700);
         Matrix matrix = Matrix.CreateScale((float)Game.Window.ClientBounds.Width / HopMedvedekConstants.screenWidth, (float)Game.Window.ClientBounds.Height / HopMedvedekConstants.screenHeight, 1f);
 
         _scene.CameraMatrix = Matrix.CreateTranslation(0, -(MathF.Round(_bear.Position.Y) - 720), 0) * matrix;
 
-        //_scene.CameraMatrix.M42 = -(_bear.Position.Y - 720);
 
         if (_bear.Position.X + _bear.Width/2 < 0)
             _bear.Position = new Vector2(HopMedvedekConstants.screenWidth + _bear.Width/2, _bear.Position.Y);

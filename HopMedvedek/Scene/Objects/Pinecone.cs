@@ -6,7 +6,6 @@ using HopMedvedek.Data;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
-using System;
 
 namespace HopMedvedek.Scene.Objects;
 

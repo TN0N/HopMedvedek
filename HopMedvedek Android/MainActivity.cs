@@ -1,5 +1,4 @@
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
 using Android.Hardware;
 using Android.OS;
@@ -33,9 +32,6 @@ public class MainActivity : AndroidGameActivity, ISensorEventListener
     protected override void OnCreate(Bundle bundle)
     {
         base.OnCreate(bundle);
-
-        // Full screen: the game renders at the native resolution with no status/nav
-        // bar inset, so touch coordinates line up with the render surface exactly.
         Window?.AddFlags(WindowManagerFlags.Fullscreen);
 
         _sensorManager = (SensorManager)GetSystemService(SensorService);
@@ -61,7 +57,6 @@ public class MainActivity : AndroidGameActivity, ISensorEventListener
         _sensorManager?.UnregisterListener(this);
     }
 
-    // --- ISensorEventListener: feed device tilt to HopControls -----------------
 
     public void OnAccuracyChanged(Sensor sensor, [GeneratedEnum] SensorStatus accuracy)
     {
@@ -72,16 +67,10 @@ public class MainActivity : AndroidGameActivity, ISensorEventListener
         if (e?.Sensor?.Type != SensorType.Accelerometer || e.Values == null || e.Values.Count < 1)
             return;
 
-        // Portrait: values[0] is along the screen's horizontal, right = positive.
-        // Express it as a fraction of gravity so HopControls can apply its curve.
         float gravityFraction = e.Values[0] / SensorManager.GravityEarth;
         global::HopMedvedek.Input.HopControls.SetTilt(gravityFraction);
     }
 
-    // The game's UI and gameplay are written against Mouse/Keyboard; MonoGame does
-    // not feed those from touch on Android. Forward raw touch to both the UI shim
-    // (HopInput) and the gameplay gesture reader (HopControls). Runs before the
-    // event reaches the game view; the base call keeps normal dispatch.
     public override bool DispatchTouchEvent(MotionEvent e)
     {
         global::HopMedvedek.Input.HopInput.FeedTouch(e);

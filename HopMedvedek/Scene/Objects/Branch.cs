@@ -1,11 +1,6 @@
-﻿using Artificial.Artificial.Mirage;
-using Artificial.Artificial.Utils;
+﻿using Artificial.Artificial.Utils;
 using Express.Scene;
-using Express.Scene.Objects;
-using HopMedvedek.Data;
-using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 namespace HopMedvedek.Scene.Objects;
 
@@ -31,24 +26,12 @@ public class Branch : GameComponent
         _leaves.Position = new Vector2(_position.X - width, _position.Y);
         _leaves.PivotPoint = _position;
         _twig.PivotPoint = _position;
-        //_leaves.CustomOrigin = new Vector2(width, _leaves.Height/2);
         
 
         _scene.Add(_twig);
         _scene.Add(_leaves);
         GenerateCoin();
-        //_twig = new Twig(game);
-        //_upperLeafBound = new LeafBound(game);
-        //_leaf = new Leaf(game);
-        //_lowerLeafBound = new LeafBound(game);
 
-        //_answer = new Answer(game);
-        //_level = level;
-
-        /*_level.Scene.Add(_twig);
-        _level.Scene.Add(_upperLeafBound);
-        _level.Scene.Add(_leaf);
-        _level.Scene.Add(_lowerLeafBound);*/
 
     }
     public override void Update(GameTime time)

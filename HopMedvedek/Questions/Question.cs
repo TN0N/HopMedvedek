@@ -1,5 +1,4 @@
-﻿using HopMedvedek.Data;
-using HopMedvedek.Data.Strings;
+﻿using HopMedvedek.Data.Strings;
 using Microsoft.Xna.Framework;
 namespace HopMedvedek.Questions;
 

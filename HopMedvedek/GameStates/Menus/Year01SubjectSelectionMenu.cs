@@ -1,10 +1,5 @@
-﻿using Artificial.Artificial.Mirage;
-using HopMedvedek.Data;
-using HopMedvedek.Data.Strings;
-using HopMedvedek.Gui.Elements;
-using HopMedvedek.Level;
+﻿using HopMedvedek.Data.Strings;
 using HopMedvedek.Level.Levels;
-using HopMedvedek.Options;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

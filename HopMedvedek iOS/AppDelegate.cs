@@ -14,13 +14,9 @@ public class AppDelegate : UIApplicationDelegate
     {
         _game = new global::HopMedvedek.HopMedvedek();
 
-        // Feed the device accelerometer into the shared tilt-steering code.
-        // CoreMotion reports acceleration in g units, which is exactly what
-        // HopControls.SetTilt expects.
         _motion = new CMMotionManager { AccelerometerUpdateInterval = 1.0 / 60.0 };
         StartMotion();
 
-        // On iOS Game.Run() starts the display-link loop and returns; it does not block.
         _game.Run();
         return true;
     }

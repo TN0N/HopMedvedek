@@ -1,8 +1,6 @@
-﻿using Express.Scene;
-using HopMedvedek.Level;
+﻿using HopMedvedek.Level;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;
-using System.Collections;
 
 namespace HopMedvedek.AI;
 

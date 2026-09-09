@@ -1,6 +1,5 @@
 ﻿using Express.Graphics;
 using Express.Scene.Objects.Colliders;
-using Express.Scene.Objects.Physical_Properties;
 using HopMedvedek.Data;
 using HopMedvedek.Scene.Objects;
 using Microsoft.Xna.Framework;

@@ -24,13 +24,13 @@ public class OptionsMenu : Menu
     public OptionsMenu(Game game) : base(game)
     {
         base.Initialize();
-        
+
         int buttonWidth = 280;
 
         //_scene.SceneTextureData.Add(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS, Game.Content.Load<Texture2D>(HopMedvedekConstants.HOP_MEDVEDEK_MENU_ELEMENTS));
 
 
-        
+
 
         _gameVolumeLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL][Options.Options.Current.Language], new Vector2(20, 120));
         _gameVolumeLabel.Scale = new Vector2(0.8f, 0.8f);
@@ -72,7 +72,7 @@ public class OptionsMenu : Menu
             _scene
             );
 
-        
+
 
 #if !ANDROID && !IOS
         _resolutionLabel = new Label(_luckiestGuy, Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_RESOLUTION_LABEL][Options.Options.Current.Language], new Vector2(210, 320));
@@ -112,11 +112,11 @@ public class OptionsMenu : Menu
         _gameVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_GAME_VOLUME_LABEL][Options.Options.Current.Language];
         _musicVolumeLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_MUSIC_VOLUME_LABEL][Options.Options.Current.Language];
         _languageLabel.Text = Strings.Localizations[StringKey.HOP_MEDVEDEK_OPTIONS_LANGUAGE_LABEL][Options.Options.Current.Language];
-        
+
     }
     public override void Update(GameTime gameTime)
     {
-        
+
         GameState newState = null;
         base.Update(gameTime);
         //
@@ -136,11 +136,11 @@ public class OptionsMenu : Menu
             Options.Options.SaveOptions();
 
         }
-        
+
         if (newState is not null)
         {
             _hopMedvedek.PushState(newState);
         }
-        
+
     }
 }

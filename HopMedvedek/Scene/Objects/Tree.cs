@@ -1,11 +1,8 @@
-﻿using Artificial.Artificial.Mirage;
-using Artificial.Artificial.Utils;
-using Express.Scene;
+﻿using Artificial.Artificial.Utils;
 using HopMedvedek.AI;
 using HopMedvedek.Data;
 using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;

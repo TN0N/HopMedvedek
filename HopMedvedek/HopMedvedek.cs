@@ -11,23 +11,19 @@ using Microsoft.Xna.Framework.Graphics;
 #endif
 using Microsoft.Xna.Framework.Input;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace HopMedvedek;
 
 public class HopMedvedek : Game {
-    private GraphicsDeviceManager _graphics; // The graphics device.
-    private Type[] _levelClasses; // The level types
+    private GraphicsDeviceManager _graphics;
+    private Type[] _levelClasses;
 
-    private Stack<GameState> _stateStack; // The game states
+    private Stack<GameState> _stateStack;
 
     public HopMedvedek()
     {
         _graphics = new GraphicsDeviceManager(this);
-
-        //Components.Add(new GamePlay(this));
-        //Components.Add(new FpsComponent(this));
         SoundEngine.Init(this);
 
         _stateStack = new Stack<GameState>();
@@ -36,7 +32,6 @@ public class HopMedvedek : Game {
     private void LoadOptions()
     {
         Options.Options.LoadOptions();
-        //Window.AllowUserResizing = true;
         ApplyBackBufferSize();
 
         IsMouseVisible = Options.Options.Current.IsMouseVisible;
@@ -46,12 +41,6 @@ public class HopMedvedek : Game {
 
     }
 
-    /// <summary>
-    /// Desktop: honour the user-chosen resolution from options.
-    /// Android / iOS: there is no windowed mode - render full screen at the
-    /// device's native resolution so the back buffer matches the touch surface
-    /// 1:1 (no letterbox, so screen-space taps map straight onto scene coords).
-    /// </summary>
     private void ApplyBackBufferSize()
     {
 #if ANDROID || IOS
@@ -133,11 +122,6 @@ public class HopMedvedek : Game {
     {
         LoadOptions();
         Data.PlayerData.LoadData();
-        /*
-        _levelClasses = new Type[(int)LevelType.LastType] {
-           typeof(Level.Levels.LanguageLevel),
-           typeof(Level.Levels.MathLevel)
-        };*/
         
         PushState(new MainMenu(this));
         

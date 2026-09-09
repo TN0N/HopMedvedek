@@ -1,5 +1,4 @@
-﻿using HopMedvedek.Data;
-using HopMedvedek.Questions;
+﻿using HopMedvedek.Questions;
 using Microsoft.Xna.Framework;
 
 namespace HopMedvedek.Level.Levels;

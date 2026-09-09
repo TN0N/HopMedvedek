@@ -1,7 +1,6 @@
 ﻿using Artificial.Artificial.Mirage;
 using Express.Graphics;
 using Express.Scene;
-using Express.Scene.Objects.Movement;
 using HopMedvedek.Audio;
 using HopMedvedek.Input;
 using Microsoft.Xna.Framework;
@@ -13,7 +12,6 @@ namespace HopMedvedek.Gui.Elements;
 public class Button
 {
     protected IScene _scene;
-    //protected Image _backgroundImage;
     protected Sprite _backgroundImage;
     protected Label _label;
     protected Rectangle _inputArea;
@@ -112,7 +110,6 @@ public class Button
         set
         {
             _backgroundColor = value;
-            //_backgroundImage.Color = _backgroundColor;
         }
     }
 
@@ -140,14 +137,12 @@ public class Button
 
     public virtual void AddedToScene(IScene theScene)
     {
-        // Add child items to scene.
         theScene.Add(_backgroundImage);
         theScene.Add(_label);
     }
 
     public virtual void RemovedFromScene(IScene theScene)
     {
-        // Remove child items.
         theScene.Remove(_backgroundImage);
         theScene.Remove(_label);
     }
@@ -169,7 +164,6 @@ public class Button
         {
             if (wasDown)
             {
-                // release pressed button -> trigger action
                 if (HopInput.GetMouseState().LeftButton != ButtonState.Pressed)
                 {
                     SoundEngine.Play(SoundEffectType.ButtonPressed, null, null, Options.Options.Current.GameVolume);
@@ -177,7 +171,6 @@ public class Button
                     _activeBackgroundColor = _backgroundColor;
                     _label.Color = _labelColor;
                 }
-                // holding pressed button
                 else
                 {
                     _isDown = true;
@@ -188,7 +181,6 @@ public class Button
             }
             else
             {
-                // click on button
                 if (HopInput.GetMouseState().LeftButton == ButtonState.Pressed)
                 {
                     _isDown = true;
@@ -197,7 +189,6 @@ public class Button
                     _activeBackgroundColor = _backgroundPressedColor;
                     _label.Color = _labelPressedColor;
                 }
-                // hover over button
                 else
                 {
                     if (!_isHovering)
@@ -208,7 +199,6 @@ public class Button
                 }
             }
         }
-        // mouse not over button
         else
         {
             _isHovering = false;

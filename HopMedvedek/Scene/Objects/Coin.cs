@@ -4,10 +4,7 @@ using Express.Scene.Objects.Colliders;
 using Express.Scene.Objects.Movement;
 using HopMedvedek.Audio;
 using HopMedvedek.Data;
-using HopMedvedek.Graphics;
-using HopMedvedek.Level;
 using Microsoft.Xna.Framework;
-using System.Runtime.InteropServices;
 
 namespace HopMedvedek.Scene.Objects;
 
